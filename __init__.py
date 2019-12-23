@@ -23,11 +23,56 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
    sudo pip install <package> -t .
 
 """
-
+import os
+import sys
+import shutil
+from winreg import *
+import time
 from bs4 import BeautifulSoup
 from selenium.webdriver import ActionChains
+from selenium.webdriver import Chrome
+base_path = tmp_global_obj["basepath"]
+cur_path = base_path + 'modules' + os.sep + 'webpro' + os.sep + 'libs' + os.sep
+sys.path.append(cur_path)
+print(cur_path)
+
+from selenium.webdriver.chrome.options import Options
+from PIL import Image
 
 module = GetParams("module")
+
+def makeTmpDir(name):
+    try:
+        os.mkdir("tmp")
+        os.mkdir("tmp" + os.sep + name)
+    except:
+        try:
+            os.mkdir("tmp" + os.sep + name)
+        except:
+            pass
+
+
+def getBoundingClientRect(type_element, selector):
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
+    if type_element == "xpath":
+        rect = driver.execute_script("""element = document.evaluate('{}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; 
+        return element.getBoundingClientRect()""".format(selector))
+    elif type_element == "id":
+        rect = driver.execute_script("element = document.getElementById('{}');return element.getBoundingClientRect() ".format(selector))
+    elif type_element == "name":
+        rect = driver.execute_script("element = document.getElementsByName('{}')[0];return element.getBoundingClientRect()".format(selector))
+    elif type_element == "tag name":
+        rect = driver.execute_script("element = document.getElementsByTagName('{}')[0];return element.getBoundingClientRect()".format(selector))
+    elif type_element == "class name":
+        rect = driver.execute_script(
+            "element = document.getElementsByClassName('{}')[0];return element.getBoundingClientRect()".format(selector))
+    else:
+        return Exception("Invalid type")
+
+    return rect
+
 
 if module == "webelementlist":
     webdriver = GetGlobals("web")
@@ -38,9 +83,11 @@ if module == "webelementlist":
 
     driver = webdriver.driver_list[webdriver.driver_actual_id]
     global getChild
-    def getChild( el):
+
+
+    def getChild(el):
         res = []
-        if len(el) >0:
+        if len(el) > 0:
             for c in el:
                 tmp = c.attrs
                 tmp["text"] = c.text
@@ -48,34 +95,34 @@ if module == "webelementlist":
                 tmp['value'] = c.get('value')
                 res.append(tmp)
                 if len(c.findChildren()) > 1:
-                    res.append( getChild(c.findChildren()) )
+                    res.append(getChild(c.findChildren()))
         else:
             tmp = el.attrs
             tmp["text"] = el.text
-            tmp["etype"] = el.name    
+            tmp["etype"] = el.name
             res.append(tmp)
-            
+
         return res
-    
+
+
     html = BeautifulSoup(driver.page_source, 'html.parser')
-    objs = html.find_all(el_, attrs= {type_: data_})
+    objs = html.find_all(el_, attrs={type_: data_})
     re = []
     for element in objs:
-        if element.findChildren():            
+        if element.findChildren():
             re.append(getChild(element.findChildren()))
         else:
-            re.append( getChild(element))
-    
+            re.append(getChild(element))
+
     SetVar(var_, str(re))
 
-        
 if module == "CleanInputs":
     webdriver = GetGlobals("web")
     driver = webdriver.driver_list[webdriver.driver_actual_id]
     search = GetParams('search_data')
     texto = GetParams('texto')
     search_type = GetParams("tipo")
-    element =  None
+    element = None
     print(search_type)
     if search_type == 'name':
         element = driver.find_element_by_name(search)
@@ -87,34 +134,44 @@ if module == "CleanInputs":
         element = driver.find_element_by_id(search)
     if search_type == 'tag':
         element = driver.find_element_by_tag(search)
-        
+
     if element is not None and texto is not None:
         element.clear()
-        element.send_keys(texto)  
+        element.send_keys(texto)
 
 if module == "LoadCookies":
     import pickle
+
     webdriver = GetGlobals("web")
     driver = webdriver.driver_list[webdriver.driver_actual_id]
     file_ = GetParams('file_')
     with open(file_, 'rb') as cookiesfile:
-         cookies = pickle.load(cookiesfile)
-         print(cookies)
-         for cookie in cookies:
-             driver.add_cookie(cookie)
+        cookies = pickle.load(cookiesfile)
+        print(cookies)
+        for cookie in cookies:
+            driver.add_cookie(cookie)
 
 if module == "SaveCookies":
     import pickle
+
     webdriver = GetGlobals("web")
 
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
-    print(driver.title)
     file_ = GetParams('file_')
-    cookies = driver.get_cookies()
-    print(cookies)
-    with open(file_, 'wb') as filehandler:
-        pickle.dump(cookies, filehandler)
-        
+    result = GetParams('result')
+
+    try:
+        driver = webdriver.driver_list['default']
+        cookies = driver.get_cookies()
+        print("--*", cookies)
+        with open(file_, 'wb') as filehandler:
+            pickle.dump(cookies, filehandler)
+
+        if result:
+            SetVar(result, str(cookies))
+    except Exception as e:
+        PrintException()
+        raise e
+
 if module == "reloadPage":
     webdriver = GetGlobals("web")
     driver = webdriver.driver_list[webdriver.driver_actual_id]
@@ -124,7 +181,6 @@ if module == "back":
     webdriver = GetGlobals("web")
     driver = webdriver.driver_list[webdriver.driver_actual_id]
     driver.back()
-
 
 if module == "DoubleClick":
     webdriver = GetGlobals("web")
@@ -137,3 +193,205 @@ if module == "DoubleClick":
     elementLocator = driver.find_element(data_type, data_)
 
     actionChains.double_click(elementLocator).perform()
+
+if module == "Scroll":
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
+    position = GetParams("position")
+
+    if position == "end":
+        last_height = driver.execute_script("return document.body.scrollHeight")
+        driver.execute_script("window.scrollTo(0, {})".format(last_height))
+    else:
+        driver.execute_script("window.scrollTo(0, {})".format(position))
+
+if module == "length_":
+
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    search = GetParams('search_data')
+    var_ = GetParams("var_")
+
+    try:
+        element = driver.execute_script(" return document.getElementsByClassName('"+search+"').length")
+        print(element)
+    except:
+        PrintException()
+
+    SetVar(var_, element)
+
+if module == "selectElement":
+
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    option_ = GetParams('option_')
+    search = GetParams('search_data')
+    index_ = GetParams("index_")
+    print(option_,index_)
+    element = None
+    index_ = eval(index_)
+    res = False
+
+    try:
+
+        if option_ is None:
+            raise Exception('Debe seleccionar una opcion')
+
+        if option_ == 'name':
+            element = driver.find_elements_by_name(search)[index_]
+        if option_ == 'class':
+            element = driver.find_elements_by_class_name(search)[index_]
+            webdriver._object_selected = element
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "html2pdf":
+
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    name_ = GetParams("name_")
+    var_ = GetParams("var_")
+
+    lk1 = cur_path+'html2canvas.js'
+    lk2 = cur_path+'jspdf.debug.js'
+
+    try:
+        read_ = open(lk1, "r").read()
+        read2_ = open(lk2, "r").read()
+        driver.execute_script(read_)
+        driver.execute_script(read2_)
+
+        element = driver.execute_script("let doc = new jsPDF('p','pt','a4'); doc.addHTML(document.body,function() {"
+                                       "doc.save('"+name_+".pdf');});")
+
+        res = True
+
+    except Exception as e:
+       PrintException()
+       raise e
+
+    SetVar(var_,res)
+
+if module == "chromeHeadless":
+
+    url = GetParams("url")
+    print(url)
+    try:
+        base_path = tmp_global_obj["basepath"]
+
+        web = GetGlobals("web")
+
+        chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+        chrome_options = Options()
+
+        chrome_options.add_argument('headless')
+        web.driver_list[web.driver_actual_id] = Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
+        if url:
+            web.driver_list[web.driver_actual_id].get(url)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "screenshot":
+    path = GetParams("path")
+    location = GetParams("location")
+    size = GetParams("size")
+
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
+    tmp_path = "tmp/webpro/screenshot.png"
+    try:
+        element = driver.find_element("xpath", "/html/body")
+
+        makeTmpDir("webpro")
+        driver.save_screenshot(tmp_path)
+
+        print(location, size)
+
+        location = eval(location)
+        size = eval(size)
+
+        x = location[0]
+        y = location[1]
+        w = size[0]
+        h = size[1]
+        try:
+            if _platform == "darwin":
+                if subprocess.call("system_profiler SPDisplaysDataType | grep 'Retina'", shell=True) == 0:
+                    x = x * 2
+                    y = y * 2
+                    w = w * 2
+                    h = h * 2
+        except:
+            pass
+        width = x + w
+        height = y + h
+
+        im = Image.open(tmp_path)
+        im = im.crop((int(x), int(y), int(width), int(height)))
+        im.save(path)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "getBoundingClientRect":
+    data = GetParams("data")
+    type_ = GetParams("data_type")
+    result = GetParams("result")
+
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
+    try:
+        rect = getBoundingClientRect(type_, data)
+        if result:
+            SetVar(result, rect)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "getLocation":
+    data = GetParams("data")
+    type_ = GetParams("data_type")
+    result = GetParams("result")
+
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
+    try:
+        rect = getBoundingClientRect(type_, data)
+        location = {"x": rect["x"], "y": rect["y"]}
+        if result:
+            SetVar(result, location)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "getSize":
+    data = GetParams("data")
+    type_ = GetParams("data_type")
+    result = GetParams("result")
+
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
+    try:
+        rect = getBoundingClientRect(type_, data)
+        size = {"width": rect["width"], "height": rect["height"]}
+        if result:
+            SetVar(result, size)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+
+
