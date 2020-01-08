@@ -1,5 +1,5 @@
 # Webpro
-Module to work with web pages in a simpler way
+Module to work with web pages more easily.
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Webpro/master/example/webpro.png)
 
