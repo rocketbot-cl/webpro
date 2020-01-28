@@ -37,6 +37,7 @@ sys.path.append(cur_path)
 print(cur_path)
 
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from PIL import Image
 
 module = GetParams("module")
@@ -388,6 +389,55 @@ if module == "getSize":
         size = {"width": rect["width"], "height": rect["height"]}
         if result:
             SetVar(result, size)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "chromeMode":
+    url = GetParams("url")
+    mode = GetParams("mode")
+    base_path = tmp_global_obj["basepath"]
+
+    web = GetGlobals("web")
+    try:
+        chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+        if mode == "unsafe":
+            chrome_options = Options()
+            chrome_options.add_experimental_option("prefs", {'safebrowsing.enabled': 'false',
+                                                             'profile.default_content_setting_values.automatic_downloads': 1})
+            web.driver_list[web.driver_actual_id] = Chrome(desired_capabilities=chrome_options.to_capabilities(),
+                                                           executable_path=chrome_driver)
+        elif mode == "debugger":
+            d = DesiredCapabilities.CHROME
+            d['loggingPrefs'] = {'browser': 'ALL'}
+            web.driver_list[web.driver_actual_id] = Chrome(desired_capabilities=d, executable_path=chrome_driver)
+
+        if url:
+            web.driver_list[web.driver_actual_id].get(url)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "debugger":
+    result = GetParams("result")
+    level = GetParams("level")
+    web = GetGlobals('web')
+    try:
+        driver = web.driver_list[web.driver_actual_id]
+        # print messages
+        logs = driver.get_log('browser')
+        r = []
+        if level != "ALL":
+            for entry in logs:
+                if entry['level'] == level:
+                    r.append(entry)
+        else:
+            r = logs
+
+        if result:
+            SetVar(result, r)
 
     except Exception as e:
         PrintException()
