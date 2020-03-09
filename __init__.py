@@ -271,8 +271,8 @@ if module == "html2pdf":
         res = True
 
     except Exception as e:
-       PrintException()
-       raise e
+        PrintException()
+        raise e
 
     SetVar(var_,res)
 
@@ -442,6 +442,50 @@ if module == "debugger":
     except Exception as e:
         PrintException()
         raise e
+
+if module == "fullScreenshot":
+    url = GetParams("url")
+    path = GetParams("path")
+    web = GetGlobals('web')
+
+    try:
+        chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--start-maximized')
+        web.driver_list[web.driver_actual_id] = Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
+        web_driver = web.driver_list[web.driver_actual_id]
+        if url:
+            web_driver.get(url)
+        time.sleep(2)
+        ele = web_driver.find_element("xpath", "/html/body")
+        total_height = ele.size["height"] + 1000
+
+        web_driver.set_window_size(1920, total_height)
+        time.sleep(2)
+        web_driver.save_screenshot(path)
+        web_driver.quit()
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
