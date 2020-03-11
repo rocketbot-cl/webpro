@@ -1180,29 +1180,18 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "http://www.rocketbot.co",
-              "en": "http://www.rocketbot.co"
+              "es": "web",
+              "en": "web"
             },
-            "description": "url de la página donde se quiere sacar la captura de pantalla",
+            "help": {
+              "es": "Por defecto, se descargará en la carpeta descargas",
+              "en": "bBy default, it is downloaded in the downloads folder"
+            },
             "title": {
-              "es": "Url de Servidor",
-              "en": "Server URL"
+              "es": "Nombre:",
+              "en": "Name"
             },
-            "id": "url",
-            "css": "col-md-12"
-          },
-          {
-            "type": "file_new",
-            "placeholder": {
-              "es": "/ruta/donde/guardar/imagen.png",
-              "en": "/path/to/save/image.png"
-            },
-            "description": "ruta donde se guardará la imagen",
-            "title": {
-              "es": "Imagen",
-              "en": "Image"
-            },
-            "id": "path",
+            "id": "name",
             "css": "col-md-12"
           }
         ]

@@ -23,9 +23,11 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
    sudo pip install <package> -t .
 
 """
+import base64
 import os
 import sys
 import shutil
+from io import BytesIO
 from winreg import *
 import time
 from bs4 import BeautifulSoup
@@ -444,31 +446,32 @@ if module == "debugger":
         raise e
 
 if module == "fullScreenshot":
-    url = GetParams("url")
-    path = GetParams("path")
+    name = GetParams("name")
     web = GetGlobals('web')
 
     try:
-        chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
-        chrome_options = Options()
-        chrome_options.add_argument('--headless')
-        chrome_options.add_argument('--start-maximized')
-        web.driver_list[web.driver_actual_id] = Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
-        web_driver = web.driver_list[web.driver_actual_id]
-        if url:
-            web_driver.get(url)
-        time.sleep(2)
-        ele = web_driver.find_element("xpath", "/html/body")
-        total_height = ele.size["height"] + 1000
-
-        web_driver.set_window_size(1920, total_height)
-        time.sleep(2)
-        web_driver.save_screenshot(path)
-        web_driver.quit()
-
+        name += ".png"
+        driver = web.driver_list[web.driver_actual_id]
+        with open("modules/webpro/libs/dom-to-image.min.js", "r", encoding="utf-8") as js_lib:
+            driver.execute_script(js_lib.read())
+        print(name)
+        script = """
+                node = document.querySelector('body');
+                html2canvas(node).then(canvas => {
+                    img = canvas.toDataURL()
+                    console.log(img)
+                    a = document.createElement("a")
+                    a.href = img
+                    a.download = "%s"
+                    a.click()
+                })
+                """ % name
+        driver.execute_script(script)
+        time.sleep(6)
     except Exception as e:
         PrintException()
         raise e
+
 
 
 
