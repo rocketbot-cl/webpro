@@ -1167,8 +1167,8 @@
     },
     {
       "title": {
-        "es": "Convertir página a JPG",
-        "en": "WebPage to JPG"
+        "es": "Convertir página a PNG",
+        "en": "WebPage to PNG"
       },
       "description": {
         "es": "Toma una captura a la página web completa",
