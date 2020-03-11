@@ -23,9 +23,11 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
    sudo pip install <package> -t .
 
 """
+import base64
 import os
 import sys
 import shutil
+from io import BytesIO
 from winreg import *
 import time
 from bs4 import BeautifulSoup
@@ -271,8 +273,8 @@ if module == "html2pdf":
         res = True
 
     except Exception as e:
-       PrintException()
-       raise e
+        PrintException()
+        raise e
 
     SetVar(var_,res)
 
@@ -442,6 +444,51 @@ if module == "debugger":
     except Exception as e:
         PrintException()
         raise e
+
+if module == "fullScreenshot":
+    name = GetParams("name")
+    web = GetGlobals('web')
+
+    try:
+        name += ".png"
+        driver = web.driver_list[web.driver_actual_id]
+        with open("modules/webpro/libs/dom-to-image.min.js", "r", encoding="utf-8") as js_lib:
+            driver.execute_script(js_lib.read())
+        print(name)
+        script = """
+                node = document.querySelector('body');
+                html2canvas(node).then(canvas => {
+                    img = canvas.toDataURL()
+                    console.log(img)
+                    a = document.createElement("a")
+                    a.href = img
+                    a.download = "%s"
+                    a.click()
+                })
+                """ % name
+        driver.execute_script(script)
+        time.sleep(6)
+    except Exception as e:
+        PrintException()
+        raise e
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
