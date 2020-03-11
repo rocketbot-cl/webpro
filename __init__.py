@@ -450,24 +450,50 @@ if module == "fullScreenshot":
     web = GetGlobals('web')
 
     try:
+        time.sleep(2)
         name += ".png"
         driver = web.driver_list[web.driver_actual_id]
-        with open("modules/webpro/libs/dom-to-image.min.js", "r", encoding="utf-8") as js_lib:
-            driver.execute_script(js_lib.read())
-        print(name)
-        script = """
-                node = document.querySelector('body');
-                html2canvas(node).then(canvas => {
-                    img = canvas.toDataURL()
-                    console.log(img)
-                    a = document.createElement("a")
-                    a.href = img
-                    a.download = "%s"
-                    a.click()
-                })
-                """ % name
-        driver.execute_script(script)
-        time.sleep(6)
+
+        lk1 = cur_path + 'html2canvas.js'
+
+        read_ = open(lk1, "r", encoding="utf-8").read()
+        print(len(read_))
+        driver.execute_script(read_)
+
+        driver.execute_script("""
+        html2canvas(document.body, {
+            onrendered: function(canvas) {
+                img = canvas.toDataURL(); 
+                a = document.createElement("a")
+                a.href = img
+                a.download = "%s"
+                a.click()
+                console.log(img)
+            }
+        })"""  % name)
+
+#         script = """
+#  \nnode = document.querySelector('body');
+# html2canvas(node).then(canvas => {
+#     img = canvas.toDataURL()
+#     console.log(img)
+#     a = document.createElement("a")
+#     a.href = img
+#     a.download = "%s"
+#     a.click()
+# })
+#                         """ % name
+#         with open("modules/webpro/libs/dom-to-image.js", "r", encoding="utf-8") as js_lib:
+#             lib = js_lib.read()
+#             code = "let newScript = document.createElement('script');newScript.type='text/javascript';newScript.appendChild(document.createTextNode(`"+lib+script+"`)); document.body.appendChild(newScript);"
+#             print(code)
+#             driver.execute_script(code)
+#             print(type(lib))
+#         print(name)
+#         time.sleep(6)
+#
+#         driver.execute_script(script)
+#         time.sleep(6)
     except Exception as e:
         PrintException()
         raise e
