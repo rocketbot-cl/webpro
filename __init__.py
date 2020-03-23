@@ -337,6 +337,7 @@ if module == "screenshot":
 
         im = Image.open(tmp_path)
         im = im.crop((int(x), int(y), int(width), int(height)))
+        im = im.convert("RGB")
         im.save(path)
 
     except Exception as e:
