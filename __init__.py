@@ -28,7 +28,7 @@ import os
 import sys
 import shutil
 from io import BytesIO
-from winreg import *
+
 import time
 from bs4 import BeautifulSoup
 from selenium.webdriver import ActionChains
@@ -478,6 +478,39 @@ if module == "fullScreenshot":
     except Exception as e:
         PrintException()
         raise e
+
+if module == "Hover":
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
+    data_ = GetParams("data")
+    data_type = GetParams("data_type")
+
+    actionChains = ActionChains(driver)
+    elementLocator = driver.find_element(data_type, data_)
+    actionChains.move_to_element(elementLocator).perform()
+
+# if module == "DragAndDrop":
+#     webdriver = GetGlobals("web")
+#     driver = webdriver.driver_list[webdriver.driver_actual_id]
+#
+#     data_ = GetParams("data")
+#     data_type = GetParams("data_type")
+#
+#     data2_ = GetParams("data2")
+#     data2_type = GetParams("data_type2")
+#
+#     print(data_,data_type, data2_, data2_type)
+#
+#     actionChains = ActionChains(driver)
+#     elementLocator = driver.find_element(data_type, data_)
+#     elementDest = driver.find_element(data2_type, data2_)
+#     print(elementLocator, elementDest)
+#     actionChains.click_and_hold(elementLocator)
+#     actionChains.pause(1)
+#     # actionChains.move_to_element(elementDest)
+#     actionChains.release(elementDest)
+#     actionChains.perform()
 
 
 
