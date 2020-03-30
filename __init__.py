@@ -40,6 +40,7 @@ print(cur_path)
 
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium import webdriver
 from PIL import Image
 
 module = GetParams("module")
@@ -292,6 +293,28 @@ if module == "chromeHeadless":
 
         chrome_options.add_argument('headless')
         web.driver_list[web.driver_actual_id] = Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
+        if url:
+            web.driver_list[web.driver_actual_id].get(url)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+
+if module == "Edge_":
+
+    url = GetParams("url")
+    print(url)
+    try:
+        base_path = tmp_global_obj["basepath"]
+        print(base_path)
+
+        web = GetGlobals("web")
+
+        edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
+        driver = webdriver.Edge(edge_driver)
+
+        web.driver_list[web.driver_actual_id] = driver
         if url:
             web.driver_list[web.driver_actual_id].get(url)
 
