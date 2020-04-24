@@ -39,7 +39,11 @@ sys.path.append(cur_path)
 print(cur_path)
 
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.common.exceptions import TimeoutException
 from PIL import Image
 
 module = GetParams("module")
@@ -76,6 +80,13 @@ def getBoundingClientRect(type_element, selector):
 
     return rect
 
+types = {
+        "name": By.NAME,
+        "id": By.ID,
+        "class name": By.CLASS_NAME,
+        "xpath": By.XPATH,
+        "tag name": By.TAG_NAME
+    }
 
 if module == "webelementlist":
     webdriver = GetGlobals("web")
@@ -490,30 +501,77 @@ if module == "Hover":
     elementLocator = driver.find_element(data_type, data_)
     actionChains.move_to_element(elementLocator).perform()
 
-# if module == "DragAndDrop":
-#     webdriver = GetGlobals("web")
-#     driver = webdriver.driver_list[webdriver.driver_actual_id]
-#
-#     data_ = GetParams("data")
-#     data_type = GetParams("data_type")
-#
-#     data2_ = GetParams("data2")
-#     data2_type = GetParams("data_type2")
-#
-#     print(data_,data_type, data2_, data2_type)
-#
-#     actionChains = ActionChains(driver)
-#     elementLocator = driver.find_element(data_type, data_)
-#     elementDest = driver.find_element(data2_type, data2_)
-#     print(elementLocator, elementDest)
-#     actionChains.click_and_hold(elementLocator)
-#     actionChains.pause(1)
-#     # actionChains.move_to_element(elementDest)
-#     actionChains.release(elementDest)
-#     actionChains.perform()
+if module == "clickPro":
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
 
+    data_ = GetParams("data")
+    wait_ = GetParams("wait")
+    data_type = GetParams("data_type")
 
+    try:
+        if not wait_:
+            wait_ = 5
+        actionChains = ActionChains(driver)
+        wait = WebDriverWait(driver, int(wait_))
+        try:
+            elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
+            actionChains.click(elementLocator).perform()
+        except TimeoutException:
+            raise Exception("The item is not available to be clicked")
 
+    except Exception as e:
+        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        PrintException()
+        raise e
+
+if module == "getText":
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
+    data_ = GetParams("data")
+    wait_ = GetParams("wait")
+    data_type = GetParams("data_type")
+    result = GetParams("result")
+    try:
+        if not wait_:
+            wait_ = 5
+        actionChains = ActionChains(driver)
+        wait = WebDriverWait(driver, int(wait_))
+        try:
+            elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
+            SetVar(result, elementLocator.text)
+        except TimeoutException:
+            raise Exception("The item is not available to be selected")
+
+    except Exception as e:
+        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        PrintException()
+        raise e
+
+if module == "selectPro":
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
+    data_ = GetParams("data")
+    wait_ = GetParams("wait")
+    data_type = GetParams("data_type")
+
+    try:
+        if not wait_:
+            wait_ = 5
+        actionChains = ActionChains(driver)
+        wait = WebDriverWait(driver, int(wait_))
+        try:
+            elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
+            webdriver._object_selected = elementLocator
+        except TimeoutException:
+            raise Exception("The item is not available to be clicked")
+
+    except Exception as e:
+        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        PrintException()
+        raise e
 
 
 
