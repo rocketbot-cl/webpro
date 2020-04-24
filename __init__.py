@@ -310,6 +310,28 @@ if module == "chromeHeadless":
         PrintException()
         raise e
 
+if module == "Edge_":
+
+    url = GetParams("url")
+    print(url)
+    try:
+        base_path = tmp_global_obj["basepath"]
+        print(base_path)
+
+        web = GetGlobals("web")
+
+        edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
+        driver = webdriver.Edge(edge_driver)
+
+        web.driver_list[web.driver_actual_id] = driver
+        if url:
+            web.driver_list[web.driver_actual_id].get(url)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+
 if module == "screenshot":
     path = GetParams("path")
     location = GetParams("location")
@@ -563,7 +585,7 @@ if module == "selectPro":
         actionChains = ActionChains(driver)
         wait = WebDriverWait(driver, int(wait_))
         try:
-            elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
+            elementLocator = wait.until(EC.presence_of_element_located((types[data_type], data_)))
             webdriver._object_selected = elementLocator
         except TimeoutException:
             raise Exception("The item is not available to be clicked")
