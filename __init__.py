@@ -561,7 +561,7 @@ if module == "getText":
         actionChains = ActionChains(driver)
         wait = WebDriverWait(driver, int(wait_))
         try:
-            elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
+            elementLocator = wait.until(EC.presence_of_element_located((types[data_type], data_)))
             SetVar(result, elementLocator.text)
         except TimeoutException:
             raise Exception("The item is not available to be selected")
@@ -588,7 +588,7 @@ if module == "selectPro":
             elementLocator = wait.until(EC.presence_of_element_located((types[data_type], data_)))
             webdriver._object_selected = elementLocator
         except TimeoutException:
-            raise Exception("The item is not available to be clicked")
+            raise Exception("The item is not available to be selected")
 
     except Exception as e:
         print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
