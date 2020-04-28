@@ -538,6 +538,7 @@ if module == "clickPro":
         wait = WebDriverWait(driver, int(wait_))
         try:
             elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
+            webdriver._object_selected = elementLocator
             actionChains.click(elementLocator).perform()
         except TimeoutException:
             raise Exception("The item is not available to be clicked")
