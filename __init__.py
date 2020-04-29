@@ -596,7 +596,29 @@ if module == "selectPro":
         PrintException()
         raise e
 
+if module == "changeIframePro":
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
 
+    data_ = GetParams("data")
+    wait_ = GetParams("wait")
+    data_type = GetParams("data_type")
+
+    try:
+        if not wait_:
+            wait_ = 5
+        actionChains = ActionChains(driver)
+        wait = WebDriverWait(driver, int(wait_))
+        try:
+            elementLocator = wait.until(EC.presence_of_element_located((types[data_type], data_)))
+            driver.switch_to_frame(elementLocator)
+        except TimeoutException:
+            raise Exception("The item is not available to be clicked")
+
+    except Exception as e:
+        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        PrintException()
+        raise e
 
 
 
