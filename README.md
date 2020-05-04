@@ -2,7 +2,7 @@
 Module to work with web pages more easily.
 
 ## Commands
-<ul>
+<ul class="commands_readme">
     <li>List Elements</li>
     <li>Clean input and send text</li>
     <li>Save Cookies</li>
