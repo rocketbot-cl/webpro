@@ -1,6 +1,35 @@
 # Webpro
 Module to work with web pages more easily.
 
+## Commands
+<ul>
+    <li>List Elements</li>
+    <li>Clean input and send text</li>
+    <li>Save Cookies</li>
+    <li>Load Cookies</li>
+    <li>Reload Page</li>
+    <li>Back</li>
+    <li>Double Click</li>
+    <li>Scroll</li>
+    <li>Count Elements</li>
+    <li>Select Object by Index</li>
+    <li>Export page to PDF</li>
+    <li>Open Chrome Headless</li>
+    <li>Take screenshot from coordinates</li>
+    <li>Get bounding rect</li>
+    <li>Get location of an object</li>
+    <li>Get size of and object</li>
+    <li>Open Chrome developer mode</li>
+    <li>See Console</li>
+    <li>WebPage to PNG</li>
+    <li>Hover Element</li>
+    <li>Open Edge (Chromium)</li>
+    <li>Click Pro</li>
+    <li>Extract text Pro</li>
+    <li>Select object Pro</li>
+    <li>Change to iframe Pro</li>
+</ul>
+
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Webpro/master/example/webpro.png)
 
 <strong>Video Example:</strong>
