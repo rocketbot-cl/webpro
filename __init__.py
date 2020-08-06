@@ -697,7 +697,7 @@ if module == "sendkeys":
         web_driver = GetGlobals("web")
         driver = web_driver.driver_list[web_driver.driver_actual_id]
         actions = ActionChains(driver)
-        if len(special):
+        if len(special) > 0:
             actions.send_keys(special_keys[special])
         else:
             actions.send_keys(text)
