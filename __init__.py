@@ -27,6 +27,7 @@ import base64
 import os
 import sys
 import shutil
+import platform
 from io import BytesIO
 
 import time
@@ -366,7 +367,13 @@ if module == "chromeHeadless":
 
         web = GetGlobals("web")
 
-        chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+        platform_ = platform.system()
+
+        if platform_.endswith('dows'):
+            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+        else:
+            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+
         chrome_options = Options()
 
         chrome_options.add_argument('headless')
@@ -504,8 +511,13 @@ if module == "chromeMode":
     base_path = tmp_global_obj["basepath"]
 
     web = GetGlobals("web")
+    platform_ = platform.system()
     try:
-        chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+        if platform_.endswith('dows'):
+            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+        else:
+            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+
         if mode == "unsafe":
             chrome_options = Options()
             chrome_options.add_experimental_option("prefs", {'safebrowsing.enabled': 'false',
