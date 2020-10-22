@@ -28,6 +28,8 @@ Module to work with web pages more easily.
     <li>Extract text Pro</li>
     <li>Select object Pro</li>
     <li>Change to iframe Pro</li>
+    <li>Send Keys</li>
+    <li>Print to PDF (Chrome)</li>
 </ul>
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Webpro/master/example/webpro.png)
