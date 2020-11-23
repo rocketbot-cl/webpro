@@ -742,8 +742,29 @@ if module == "printPDF":
     driver.execute_script('window.print();')
 
 
+if module == "forceDownload":
+    url_file = GetParams("url_file")
+    name_file = GetParams("name_file")
 
+    try:
+        from json import dumps
+        web_driver = GetGlobals("web")
+        driver = web_driver.driver_list[web_driver.driver_actual_id]
 
+        driver.execute_script("""
+            var url_file = arguments[0]
+            var name_file = arguments[1]
+            var link = document.createElement("a");
+            link.download = name_file
+            link.href = url_file;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            delete link;
+            """, url_file, name_file)
+    except Exception as e:
+        PrintException()
+        raise e
 
 
 
