@@ -324,8 +324,46 @@ if module == "selectElement":
         if option_ == 'name':
             element = driver.find_elements_by_name(search)[index_]
         if option_ == 'class':
-            element = driver.find_elements_by_class_name(search)[index_]
-            webdriver._object_selected = element
+            elements = driver.find_elements_by_xpath(f'//*[contains(@class,"{search}")]')[index_]
+            webdriver._object_selected = elements
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "clickElement":
+
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    option_ = GetParams('option_')
+    search = GetParams('search_data')
+    index_ = GetParams("index_")
+    print(option_,index_)
+    element = None
+    index_ = eval(index_)
+    res = False
+    cont_ = 0
+
+    try:
+
+        if option_ is None:
+            raise Exception('Debe seleccionar una opcion')
+
+        if option_ == 'name':
+            element = driver.find_elements_by_name(search)
+
+            for ele in element:
+                if cont_ == index_:
+                    ele.click()
+                    webdriver._object_selected = ele
+                    break
+                else:
+                    cont_ += 1
+
+        if option_ == 'class':
+            elements = driver.find_elements_by_xpath(f'//*[contains(@class,"{search}")]')[index_]
+            elements.click()
+            webdriver._object_selected = elements
 
     except Exception as e:
         PrintException()
