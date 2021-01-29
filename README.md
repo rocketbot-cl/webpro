@@ -13,6 +13,7 @@ Module to work with web pages more easily.
     <li>Scroll</li>
     <li>Count Elements</li>
     <li>Select Object by Index</li>
+    <li>Click Object by Index</li>
     <li>Export page to PDF</li>
     <li>Open Chrome Headless</li>
     <li>Take screenshot from coordinates</li>
@@ -30,6 +31,7 @@ Module to work with web pages more easily.
     <li>Change to iframe Pro</li>
     <li>Send Keys</li>
     <li>Print to PDF (Chrome)</li>
+    <li>Force Download</li>
 </ul>
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Webpro/master/example/webpro.png)
