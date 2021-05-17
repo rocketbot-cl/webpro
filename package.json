@@ -17,20 +17,20 @@
   "title": {
     "en": "WEB Pro",
     "es": "WEB Pro",
-    "cn": "WEB Pro"
+    "pr": "WEB Pro"
   },
   "icon": "data:image/png;base64,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",
   "children": [
     {
       "title": {
-        "en": "Lista de elementos",
+        "en": "List of items",
         "es": "Lista de elementos",
-        "ch": "Lista de elementos"
+        "pr": "Lista de itens"
       },
       "description": {
-        "en": "Obtiene una lista de todos los elementos y sus hijos a partir de una clase o nombre para poder iterar sobre el.",
-        "es": "Obtiene una lista de todos los elementos y sus hijos a partir de una clase o nombre para poder iterar sobre el.",
-        "ch": "Obtiene una lista de todos los elementos y sus hijos a partir de una clase o nombre para poder iterar sobre el."
+        "en": "Gets a list of all elements and their children from a class or name in order to iterate over it.",
+        "es": "Obtiene una lista de todos los elementos y sus hijos a partir de una clase o nombre para poder iterar sobre ella.",
+        "pr": "Obtém uma lista de todos os elementos e seus filhos de uma classe ou nome, para poder iterar sobre ela."
       },
       "form": {
         "css": "modal-lg",
@@ -40,17 +40,17 @@
             "placeholder": {
               "es": "Tipo de clase o atributo",
               "en": "Class",
-              "cn": "Class"
+              "pr": "Classe"
             },
             "title": {
               "es": "Tipo Clases o atributo",
               "en": "Class",
-              "cn": "Class"
+              "pr": "Classe"
             },
             "help": {
               "es": "Puede ser class, name, data-*, etc.",
-              "en": "Puede ser class, name, data-*, etc.",
-              "cn": "Puede ser class, name, data-*, etc."
+              "en": "Can be class, name, data-*, etc.",
+              "pr": "Pode ser classe, nome, dados*, etc."
             },
             "id": "type_",
             "css": "col-md-6"
@@ -60,17 +60,17 @@
             "placeholder": {
               "es": "Clases o atributo",
               "en": "Class",
-              "cn": "Class"
+              "pr": "Classe"
             },
             "title": {
               "es": "Clases o atributo",
               "en": "Class",
-              "cn": "Class"
+              "pr": "Classe"
             },
             "help": {
-              "es": "Puede poner una o todas los atributos del elemento",
-              "en": "Puede poner una o todas los atributos del elemento",
-              "cn": "Puede poner una o todas los atributos del elemento"
+              "es": "Puede poner uno o todos los atributos del elemento",
+              "en": "You can set one or all attributes of the element",
+              "pr": "Pode definir um ou todos os atributos do elemento"
             },
             "id": "data_",
             "css": "col-md-6"
@@ -79,13 +79,13 @@
             "type": "input",
             "title": {
               "es": "Tipo de Elemento/Objeto web",
-              "en": "Element type",
-              "cn": "Element type"
+              "en": "Element Type",
+              "pr": "Tipo do Elemento"
             },
             "help": {
               "es": "DIV, SPAN, INPUT, etc*",
               "en": "DIV, SPAN, INPUT, etc*",
-              "cn": "DIV, SPAN, INPUT, etc*"
+              "pr": "DIV, SPAN, INPUT, etc*"
             },
             "id": "el_",
             "css": "col-md-6"
@@ -94,13 +94,13 @@
             "type": "input",
             "title": {
               "es": "Variable donde almacenar resultado",
-              "en": "Variable donde almacenar resultado",
-              "cn": "Variable donde almacenar resultado"
+              "en": "Variable where to store the result",
+              "pr": "Variável onde armazenar o resultado"
             },
             "help": {
-              "es": "Coloque solo el nombre sin {}",
-              "en": "Coloque solo el nombre sin {}",
-              "cn": "Coloque solo el nombre sin {}"
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
             },
             "id": "result",
             "css": "col-md-6"
@@ -123,12 +123,12 @@
       "title": {
         "es": "Limpia un input y envia el texto",
         "en": "Clean input and send text",
-        "cn": "Clean input and send text"
+        "pr": "Limpa uma entrada e envia o texto"
       },
       "description": {
         "es": "Borra el contenido de un objeto tipo input y envia el texto",
-        "en": "Borra el contenido de un objeto tipo input y envia el texto",
-        "cn": "Borra el contenido de un objeto tipo input y envia el texto"
+        "en": "Deletes the contents of an input object and sends the text",
+        "pr": "Deleta o conteúdo de um objeto tipo input e envia o texto"
       },
       "form": {
         "css": "modal-lg",
@@ -136,14 +136,14 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Texo o Variable",
-              "en": "Texo o Variable",
-              "cn": "Texo o Variable"
+              "es": "Texto o Variable",
+              "en": "Text or Variable",
+              "pr": "Texto ou Variável"
             },
             "title": {
               "es": "Texto a enviar o variable",
-              "en": "Texto a enviar o variable",
-              "cn": "Texto a enviar o variable"
+              "en": "Text to send or variable",
+              "pr": "Texto para enviar ou variável"
             },
             "id": "texto",
             "css": "col-md-12"
@@ -152,13 +152,13 @@
             "type": "input",
             "placeholder": {
               "es": "Dato a buscar",
-              "en": "Dato a buscar",
-              "cn": "Dato a buscar"
+              "en": "Data to search",
+              "pr": "Dado a buscar"
             },
             "title": {
               "es": "Dato a buscar",
-              "en": "Dato a buscar",
-              "cn": "Dato a buscar"
+              "en": "Data to search",
+              "pr": "Dado a buscar"
             },
             "id": "search_data",
             "css": "col-md-12"
@@ -167,13 +167,13 @@
             "type": "select",
             "placeholder": {
               "es": "Dato a buscar",
-              "en": "Dato a buscar",
-              "cn": "Dato a buscar"
+              "en": "Data to search",
+              "pr": "Dado a buscar"
             },
             "title": {
               "es": "Tipo de dato",
-              "en": "Tipo de dato",
-              "cn": "Tipo de dato"
+              "en": "Data type",
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -218,12 +218,12 @@
       "title": {
         "es": "Guardar Cookies",
         "en": "Save Cookies",
-        "cn": "Save Cookies"
+        "pr": "Salvar Cookies"
       },
       "description": {
         "es": "Guarda las cookies de una página para poder ser cargada en otra instancia",
-        "en": "Guarda las cookies de una página para poder ser cargada en otra instancia",
-        "cn": "Guarda las cookies de una página para poder ser cargada en otra instancia"
+        "en": "Saves the cookies of a page so that it can be loaded in another instance",
+        "pr": "Salva os cookies de uma página para que possam ser carregados em outra instância"
       },
       "form": {
         "css": "modal-md",
@@ -233,11 +233,12 @@
             "placeholder": {
               "es": "C:/tmp/etc",
               "en": "C:/tmp/etc",
-              "cn": "C:/tmp/etc"
+              "pr": "C:/tmp/etc"
             },
             "title": {
-              "es": "Ruta al archivo donde se guardará las cookies",
-              "en": "Path to file where cookies will be saved"
+              "es": "Ruta al archivo donde se guardarán las cookies",
+              "en": "Path to file where cookies will be saved",
+              "pr": "Caminho para o arquivo onde os cookies serão salvos"
             },
             "id": "file_",
             "css": "col-md-12"
@@ -247,15 +248,17 @@
             "placeholder": {
               "es": "cookies",
               "en": "cookies",
-              "cn": "cookies"
+              "pr": "cookies"
             },
             "title": {
               "es": "Variable donde se guardará las cookies",
-              "en": "Variable where cookies will be stored"
+              "en": "Variable where cookies will be stored",
+              "pr": "Variável onde os cookies serão salvos"
             },
             "help": {
-              "es": "Nombre de variable sin llave {}",
-              "en": "Variable name without {}"
+              "es": "Nombre de variable sin llaves {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
             },
             "id": "result",
             "css": "col-md-12"
@@ -278,12 +281,12 @@
       "title": {
         "es": "Cargar Cookies",
         "en": "Load Cookies",
-        "cn": "Load Cookies"
+        "pr": "Carregar Cookies"
       },
       "description": {
-        "es": "Carga un archivos con las cookies",
-        "en": "Carga un archivos con las cookies",
-        "cn": "Carga un archivos con las cookies"
+        "es": "Carga un archivo con las cookies",
+        "en": "Loads a file with cookies",
+        "pr": "Carrega um arquivo com cookies"
       },
       "form": {
         "css": "modal-md",
@@ -293,12 +296,12 @@
             "placeholder": {
               "es": "C:/tmp/etc",
               "en": "C:/tmp/etc",
-              "cn": "C:/tmp/etc"
+              "pr": "C:/tmp/etc"
             },
             "title": {
-              "es": "Ruta al archivo donde esta guardada las cookies",
-              "en": "Ruta al archivo donde esta guardada las cookies",
-              "cn": "Ruta al archivo donde esta guardada las cookies"
+              "es": "Ruta al archivo donde están guardadas las cookies",
+              "en": "Path to the file where cookies are stored",
+              "pr": "Caminho para o arquivo onde os cookies são armazenados"
             },
             "id": "file_",
             "css": "col-md-12"
@@ -321,12 +324,12 @@
       "title": {
         "es": "Recargar Página",
         "en": "Reload Page",
-        "cn": "Reload Page"
+        "pr": "Recarregar página"
       },
       "description": {
         "es": "Recarga una página",
         "en": "Reload Page",
-        "cn": "Reload page"
+        "pr": "Recarregar página"
       },
       "form": {
         "css": "modal-md",
@@ -348,12 +351,12 @@
       "title": {
         "es": "Volver atrás",
         "en": "Back",
-        "cn": "Back"
+        "pr": "Back"
       },
       "description": {
-        "es": "Volver atrás",
-        "en": "Back",
-        "cn": "Back"
+        "es": "Volver a la página anterior",
+        "en": "Back to previous page",
+        "pr": "retorna à página anterior"
       },
       "form": {
         "css": "modal-md",
@@ -375,12 +378,12 @@
       "title": {
         "es": "Doble Click",
         "en": "Double Click",
-        "cn": "双击"
+        "pr": "Clique duplo"
       },
       "description": {
         "es": "Hace doble click sobre un objeto seleccionado",
         "en": "Double click on a selected object",
-        "cn": "双击所选对象"
+        "pr": "Clique duplo sobre um objeto selecionado"
       },
       "form": {
         "css": "modal-lg",
@@ -391,7 +394,7 @@
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
-              "cn": "要搜索的数据"
+              "pr": "Dado a buscar"
             },
             "id": "data",
             "css": "col-md-12"
@@ -401,12 +404,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Tipo de dato",
               "en": "Data type",
-              "cn": "要搜索的数据"
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -450,15 +453,18 @@
     {
       "title": {
         "es": "Scroll",
-        "en": "Scroll"
+        "en": "Scroll",
+        "pr": "Scroll"
       },
       "description": {
         "es": "Hace scroll hasta una posición determinada",
-        "en": "Scroll to a position"
+        "en": "Scroll to a specific position",
+        "pr": "Rolar para uma determinada posição"
       },
       "help": {
         "es": "Para hacer scroll hasta el final de página, escribir 'end'",
-        "en": "To scroll to the bottom of the page, type 'end'"
+        "en": "To scroll to the bottom of the page, type 'end'",
+        "pr": "Para rolar até o final da página, digite 'end'"
       },
       "form": {
         "css": "modal-md",
@@ -468,7 +474,8 @@
             "placeholder": "",
             "title": {
               "es": "Posición",
-              "en": "Position"
+              "en": "Position",
+              "pr": "Posição"
             },
             "id": "position",
             "css": "col-md-12"
@@ -490,11 +497,13 @@
     {
       "title": {
         "es": "Contar Eelementos",
-        "en": "Count Elements"
+        "en": "Count Elements",
+        "pr": "Contar iten"
       },
       "description": {
         "es": "Entrega el total de elementos",
-        "en": "Get total of elements"
+        "en": "Delivers the total number of elements",
+        "pr": "Entregar o número total de itens"
       },
       "form": {
         "css": "modal-md",
@@ -504,11 +513,13 @@
             "placeholder": "",
             "title": {
               "es": "Nombre de la clase:",
-              "en": "Class Name:"
+              "en": "Class Name:",
+              "pr": "Nome da classe:"
             },
             "help": {
               "es": "Nombre de la clase del elemento",
-              "en": "Write class name of element"
+              "en": "Class name of element",
+              "pr": "Nome da classe do elemento"
             },
             "id": "search_data",
             "css": "col-md-12"
@@ -518,11 +529,13 @@
             "placeholder": "Variable",
             "title": {
               "es": "Asignar resultado a variable",
-              "en": "Assign result to variable"
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado à variável"
             },
             "help": {
               "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}"
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
             },
             "id": "var_",
             "css": "col-md-12"
@@ -544,11 +557,13 @@
     {
       "title": {
         "es": "Seleccionar Objeto por Index",
-        "en": "Select Object by Index"
+        "en": "Select Object by Index",
+        "pr": "Selecionar Objeto por Índice"
       },
       "description": {
         "es": "Selecciona un objeto pasándole el index",
-        "en": "Select an object by passing it the index"
+        "en": "Select an object by passing it the index",
+        "pr": "Seleciona um objeto passando-lhe o índice"
       },
       "form": {
         "css": "modal-lg",
@@ -558,7 +573,8 @@
             "placeholder": "form-control",
             "title": {
               "es": "Dato a Buscar:",
-              "en": "Data to Search:"
+              "en": "Data to Search:",
+              "pr": "Dado a Buscar:"
             },
             "id": "search_data",
             "css": "col-md-12"
@@ -568,7 +584,8 @@
             "placeholder": "1",
             "title": {
               "es": "Index:",
-              "en": "Index:"
+              "en": "Index:",
+              "pr": "Índice:"
             },
             "id": "index_",
             "css": "col-md-12"
@@ -577,11 +594,12 @@
             "type": "select",
             "title": {
               "es": "Tipo de dato:",
-              "en": "Data type:"
+              "en": "Data type:",
+              "pr": "Tipo de dado:"
             },
             "options": [
               {
-                "title": "--Seleccione--",
+                "title": "--Select--",
                 "value": ""
               },
               {
@@ -613,11 +631,13 @@
     {
       "title": {
         "es": "Clickear Objeto por Index",
-        "en": "Click Object by Index"
+        "en": "Click Object by Index",
+        "pr": "Clique Objeto por Índice"
       },
       "description": {
         "es": "Clickea un objeto pasándole el index",
-        "en": "Click an object by passing it the index"
+        "en": "Click an object by passing it the index",
+        "pr": "Clique em um objeto passando o índice"
       },
       "form": {
         "css": "modal-lg",
@@ -627,7 +647,8 @@
             "placeholder": "form-control",
             "title": {
               "es": "Dato a Buscar:",
-              "en": "Data to Search:"
+              "en": "Data to Search:",
+              "pr": "Dado a Buscar:"
             },
             "id": "search_data",
             "css": "col-md-12"
@@ -637,7 +658,8 @@
             "placeholder": "1",
             "title": {
               "es": "Index:",
-              "en": "Index:"
+              "en": "Index:",
+              "pr": "Índice:"
             },
             "id": "index_",
             "css": "col-md-12"
@@ -646,11 +668,12 @@
             "type": "select",
             "title": {
               "es": "Tipo de dato:",
-              "en": "Data type:"
+              "en": "Data type:",
+              "pr": "Tipo de dado:"
             },
             "options": [
               {
-                "title": "--Seleccione--",
+                "title": "--Select--",
                 "value": ""
               },
               {
@@ -682,11 +705,13 @@
     {
       "title": {
         "es": "Exportar página a PDF",
-        "en": "Export page to PDF"
+        "en": "Export page to PDF",
+        "pr": "Exportar página para PDF"
       },
       "description": {
         "es": "Exporta la página a un archivo PDF",
-        "en": "Export page to a PDF file"
+        "en": "Export page to a PDF file",
+        "pr": "Exporta a página para um arquivo PDF"
       },
       "form": {
         "css": "modal-lg",
@@ -696,11 +721,13 @@
             "placeholder": "",
             "title": {
               "es": "Nombre de Archivo:",
-              "en": "File Name:"
+              "en": "File Name:",
+              "pr": "Nome do arquivo:"
             },
             "help": {
               "es": "Nombre sin extensión",
-              "en": "Name without extension"
+              "en": "Name without extension",
+              "pr": "Nome sem extensão"
             },
             "id": "name_",
             "css": "col-md-12"
@@ -710,11 +737,13 @@
             "placeholder": "Variable",
             "title": {
               "es": "Asignar resultado a variable",
-              "en": "Assign result to variable"
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado à variável"
             },
             "help": {
               "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}"
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
             },
             "id": "var_",
             "css": "col-md-12"
@@ -736,11 +765,13 @@
     {
       "title": {
         "es": "Abrir Chrome en modo headless",
-        "en": "Open Chrome headless"
+        "en": "Open Chrome headless",
+        "pr": "Abrir Chrome em modo headless"
       },
       "description": {
         "es": "Abre Chrome en modo Headless",
-        "en": "Open Chrome in headless mode"
+        "en": "Open Chrome in headless mode",
+        "pr": "Abre Chrome em modo headless"
       },
       "form": {
         "css": "modal-lg",
@@ -749,11 +780,13 @@
             "type": "input",
             "placeholder": {
               "es": "http://www.rocketbot.co",
-              "en": "http://www.rocketbot.co"
+              "en": "http://www.rocketbot.co",
+              "pr": "http://www.rocketbot.co"
             },
             "title": {
               "es": "Url de Servidor",
-              "en": "Server URL"
+              "en": "Server URL",
+              "pr": "URL do Servidor"
             },
             "id": "url",
             "css": "col-md-12"
@@ -775,11 +808,13 @@
     {
       "title": {
         "es": "Tomar captura por coordenadas",
-        "en": "Take screenshot from coordinates"
+        "en": "Take screenshot from coordinates",
+        "pr": "Tomar captura por coordenadas"
       },
       "description": {
         "es": "Toma una captura de pantalla a una sección de la página mediante coordenadas",
-        "en": "Take a screenshot of a section of the page using coordinates"
+        "en": "Take a screenshot to a section of the page by coordinates",
+        "pr": "Tira uma foto da tela de uma seção da página usando coordenadas"
       },
       "form": {
         "css": "modal-lg",
@@ -788,11 +823,13 @@
             "type": "input",
             "placeholder": {
               "es": "x,y",
-              "en": "x,y"
+              "en": "x,y",
+              "pr": "x,y"
             },
             "title": {
               "es": "Posición",
-              "en": "Location"
+              "en": "Position",
+              "pr": "Posição"
             },
             "id": "location",
             "css": "col-md-6"
@@ -801,11 +838,13 @@
             "type": "input",
             "placeholder": {
               "es": "ancho, alto",
-              "en": "width, height"
+              "en": "width, height",
+              "pr": "largura, altura"
             },
             "title": {
               "es": "Dimensiones",
-              "en": "size"
+              "en": "size",
+              "pr": "Dimensões"
             },
             "id": "size",
             "css": "col-md-6"
@@ -814,11 +853,13 @@
             "type": "file_new",
             "placeholder": {
               "es": "/Users/User/folder/image.jpg",
-              "en": "/Users/User/folder/image.jpg"
+              "en": "/Users/User/folder/image.jpg",
+              "pr": "/Users/User/folder/image.jpg"
             },
             "title": {
               "es": "Ruta y nombre donde se guardará la imagen",
-              "en": "Path and name where image saved"
+              "en": "Path and name where the image will be saved",
+              "pr": "Caminho e nome onde a imagem será salva"
             },
             "id": "path",
             "css": "col-md-12"
@@ -840,12 +881,13 @@
     {
       "title": {
         "es": "Obtener rectangulo delimitador",
-        "en": "Get bounding rect",
-        "cn": "双击"
+        "en": "Get bounding rectangle",
+        "pr": "Obter o retângulo de delimitação"
       },
       "description": {
         "es": "Obtiene coordenadas x e y, y dimensiones de un objeto",
-        "en": "Get x and y coordinates and size of an object"
+        "en": "Obtains x and y coordinates and dimensions of an object",
+        "pr": "Obtém as coordenadas x e y e as dimensões de um objeto."
       },
       "form": {
         "css": "modal-lg",
@@ -856,7 +898,7 @@
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
-              "cn": "要搜索的数据"
+              "pr": "Dado a Buscar"
             },
             "id": "data",
             "css": "col-md-6"
@@ -866,12 +908,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Tipo de dato",
               "en": "Data type",
-              "cn": "要搜索的数据"
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -902,13 +944,13 @@
             "type": "input",
             "title": {
               "es": "Variable donde almacenar resultado",
-              "en": "Variable donde almacenar resultado",
-              "cn": "Variable donde almacenar resultado"
+              "en": "Variable where to store result",
+              "pr": "Variável onde armazenar o resultadoo"
             },
             "help": {
-              "es": "Coloque solo el nombre sin {}",
-              "en": "Coloque solo el nombre sin {}",
-              "cn": "Coloque solo el nombre sin {}"
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
             },
             "id": "result",
             "css": "col-md-6"
@@ -931,11 +973,12 @@
       "title": {
         "es": "Obtener coordenadas de un objeto",
         "en": "Get location of an object",
-        "cn": "双击"
+        "pr": "Obter coordenadas de um objeto"
       },
       "description": {
         "es": "Obtiene coordenadas x e y de un objeto",
-        "en": "Get x and y coordinates of an object"
+        "en": "Get x and y coordinates of an object",
+        "pr": "Obtém as coordenadas x e y de um objeto."
       },
       "form": {
         "css": "modal-lg",
@@ -945,7 +988,8 @@
             "placeholder": "",
             "title": {
               "es": "Dato a buscar",
-              "en": "Data to search"
+              "en": "Data to search",
+              "pr": "Dado a buscar"
             },
             "id": "data",
             "css": "col-md-6"
@@ -954,11 +998,13 @@
             "type": "select",
             "placeholder": {
               "es": "",
-              "en": ""
+              "en": "",
+              "pr": ""
             },
             "title": {
               "es": "Tipo de dato",
-              "en": "Data type"
+              "en": "Data type",
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -989,11 +1035,13 @@
             "type": "input",
             "title": {
               "es": "Variable donde almacenar resultado",
-              "en": "Variable donde almacenar resultado"
+              "en": "Variable where to store result",
+              "pr": "Variável onde armazenar o resultado"
             },
             "help": {
-              "es": "Coloque solo el nombre sin {}",
-              "en": "Coloque solo el nombre sin {}"
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
             },
             "id": "result",
             "css": "col-md-6"
@@ -1016,11 +1064,12 @@
       "title": {
         "es": "Obtener dimensiones de un objeto",
         "en": "Get size of an object",
-        "cn": "双击"
+        "pr": "Obter dimensões de um objeto"
       },
       "description": {
         "es": "Obtiene dimensiones de un objeto",
-        "en": "Get size of an object"
+        "en": "Get size of an object",
+        "pr": "Obtém dimensões de um objeto"
       },
       "form": {
         "css": "modal-lg",
@@ -1031,7 +1080,7 @@
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
-              "cn": "要搜索的数据"
+              "pr": "Dado a buscar"
             },
             "id": "data",
             "css": "col-md-6"
@@ -1041,12 +1090,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Tipo de dato",
               "en": "Data type",
-              "cn": "要搜索的数据"
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -1077,13 +1126,13 @@
             "type": "input",
             "title": {
               "es": "Variable donde almacenar resultado",
-              "en": "Variable donde almacenar resultado",
-              "cn": "Variable donde almacenar resultado"
+              "en": "Variable where to store result",
+              "pr": "Variável onde armazenar o resultado"
             },
             "help": {
-              "es": "Coloque solo el nombre sin {}",
-              "en": "Coloque solo el nombre sin {}",
-              "cn": "Coloque solo el nombre sin {}"
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
             },
             "id": "result",
             "css": "col-md-6"
@@ -1105,11 +1154,13 @@
     {
       "title": {
         "es": "Abrir Chrome modo desarrollador ",
-        "en": "Open Chrome developer mode"
+        "en": "Open Chrome developer mode",
+        "pr": "Abrir Chrome modo desenvolvedor"
       },
       "description": {
         "es": "Abre Google Chrome en modo seguro o modo debugger",
-        "en": "Open Google Chrome with unsafe mode or debugger mode"
+        "en": "Open Google Chrome with unsafe mode or debugger mode",
+        "pr": "Abre o Google Chrome em modo seguro ou debugger"
       },
       "form": {
         "css": "modal-lg",
@@ -1118,11 +1169,13 @@
             "type": "input",
             "placeholder": {
               "es": "http://www.rocketbot.co",
-              "en": "http://www.rocketbot.co"
+              "en": "http://www.rocketbot.co",
+              "pr": "http://www.rocketbot.co"
             },
             "title": {
               "es": "Url de Servidor",
-              "en": "Server URL"
+              "en": "Server URL",
+              "pr": "URL do Servidor"
             },
             "id": "url",
             "css": "col-md-8"
@@ -1132,11 +1185,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Modo",
-              "en": "Mode"
+              "en": "Mode",
+              "pr": "Modo"
             },
             "options": [
               {
@@ -1168,11 +1222,13 @@
     {
       "title": {
         "es": "Ver Consola",
-        "en": "See Console"
+        "en": "See Console",
+        "pr": "Ver Consola"
       },
       "description": {
         "es": "Obtiene información desde la consola",
-        "en": "Get info from console"
+        "en": "Get info from console",
+        "pr": "Obtém informações do console"
       },
       "form": {
         "css": "modal-lg",
@@ -1181,13 +1237,13 @@
             "type": "input",
             "title": {
               "es": "Variable donde almacenar resultado",
-              "en": "Variable donde almacenar resultado",
-              "cn": "Variable donde almacenar resultado"
+              "en": "Variable where to store result",
+              "pr": "Variável onde armazenar o resultado"
             },
             "help": {
-              "es": "Coloque solo el nombre sin {}",
-              "en": "Coloque solo el nombre sin {}",
-              "cn": "Coloque solo el nombre sin {}"
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
             },
             "id": "result",
             "css": "col-md-8"
@@ -1197,11 +1253,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Nivel: ",
-              "en": "Level: "
+              "en": "Level: ",
+              "pr": "Nível: "
             },
             "options": [
               {
@@ -1237,11 +1294,13 @@
     {
       "title": {
         "es": "Convertir página a PNG",
-        "en": "WebPage to PNG"
+        "en": "WebPage to PNG",
+        "pr": "Converter página para PNGG"
       },
       "description": {
         "es": "Toma una captura a la página web completa",
-        "en": "Take screenshot to full webpage"
+        "en": "Take screenshot to full webpage",
+        "pr": "Tira uma foto de tela para a página web completa"
       },
       "form": {
         "css": "modal-lg",
@@ -1250,15 +1309,18 @@
             "type": "input",
             "placeholder": {
               "es": "web",
-              "en": "web"
+              "en": "web",
+              "pr": "web"
             },
             "help": {
               "es": "Por defecto, se descargará en la carpeta descargas",
-              "en": "bBy default, it is downloaded in the downloads folder"
+              "en": "By default, it is downloaded in the downloads folder",
+              "pr": "Por padrão, será baixado na pasta de downloads"
             },
             "title": {
               "es": "Nombre:",
-              "en": "Name"
+              "en": "Name:",
+              "pr": "Nome:"
             },
             "id": "name",
             "css": "col-md-12"
@@ -1281,12 +1343,12 @@
       "title": {
         "es": "Mover encima",
         "en": "Hover Element",
-        "cn": "双击"
+        "pr": "Hover Element"
       },
       "description": {
         "es": "Mueve el mouse encima de un elemento",
-        "en": "Hover a element",
-        "cn": "双击所选对象"
+        "en": "Move mouse over the element",
+        "cn": "Passar o mouse sobre o elemento"
       },
       "form": {
         "css": "modal-lg",
@@ -1297,7 +1359,7 @@
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
-              "cn": "要搜索的数据"
+              "pr": "Dado a buscar"
             },
             "id": "data",
             "css": "col-md-12"
@@ -1307,12 +1369,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Tipo de dato",
               "en": "Data type",
-              "cn": "要搜索的数据"
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -1356,11 +1418,13 @@
     {
       "title": {
         "es": "Abrir Edge (Chromium)",
-        "en": "Open Edge (Chromium)"
+        "en": "Open Edge (Chromium)",
+        "pr": "Abrir Edge (Chromium)"
       },
       "description": {
         "es": "Abre el nuevo Edge basado en Chromium",
-        "en": "Open the new Edge based on Chromium"
+        "en": "Open the new Edge based on Chromium",
+        "pr": "Abrir o novo Chromium-based Edge"
       },
       "form": {
         "css": "modal-lg",
@@ -1369,11 +1433,13 @@
             "type": "input",
             "placeholder": {
               "es": "http://www.rocketbot.co",
-              "en": "http://www.rocketbot.co"
+              "en": "http://www.rocketbot.co",
+              "pr": "http://www.rocketbot.co"
             },
             "title": {
               "es": "Url de Servidor",
-              "en": "Server URL"
+              "en": "Server URL",
+              "pr": "URL do Servidor"
             },
             "id": "url",
             "css": "col-md-12"
@@ -1395,11 +1461,13 @@
     {
       "title": {
         "es": "Click Pro",
-        "en": "Click Pro"
+        "en": "Click Pro",
+        "pr": "Clique Pro"
       },
       "description": {
         "es": "Hace click sobre un objeto seleccionado esperando que se encuentre cliqueable",
-        "en": "Click on a selected object waiting that it's clickeable"
+        "en": "Click on a selected object waiting that it's clickeable",
+        "pr": "Clica em um objeto selecionado, esperando que ele se torne clicável."
       },
       "form": {
         "css": "modal-lg",
@@ -1409,7 +1477,8 @@
             "placeholder": "",
             "title": {
               "es": "Dato a buscar",
-              "en": "Data to search"
+              "en": "Data to search",
+              "pr": "Dado a buscar"
             },
             "id": "data",
             "css": "col-md-12"
@@ -1419,11 +1488,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Tipo de dato",
-              "en": "Data type"
+              "en": "Data type",
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -1455,7 +1525,8 @@
             "placeholder": "5",
             "title": {
               "es": "Esperar",
-              "en": "Wait"
+              "en": "Wait",
+              "pr": "Esperar"
             },
             "id": "wait",
             "css": "col-md-6"
@@ -1477,11 +1548,13 @@
     {
       "title": {
         "es": "Extraer texto Pro",
-        "en": "Extract text Pro"
+        "en": "Extract text Pro",
+        "pr": "Extrair Texto Pro"
       },
       "description": {
         "es": "Obtiene el texto de un objeto esperando que este se encuentre disponible",
-        "en": "Get a text object waiting that it's present"
+        "en": "Get a text object waiting that it's present",
+        "pr": "Obtém o texto de um objeto esperando que ele esteja disponível."
       },
       "form": {
         "css": "modal-lg",
@@ -1491,7 +1564,8 @@
             "placeholder": "",
             "title": {
               "es": "Dato a buscar",
-              "en": "Data to search"
+              "en": "Data to search",
+              "pr": "Dado a buscar"
             },
             "id": "data",
             "css": "col-md-12"
@@ -1501,11 +1575,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Tipo de dato",
-              "en": "Data type"
+              "en": "Data type",
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -1537,7 +1612,8 @@
             "placeholder": "5",
             "title": {
               "es": "Esperar",
-              "en": "Wait"
+              "en": "Wait",
+              "pr": "Esperar"
             },
             "id": "wait",
             "css": "col-md-3"
@@ -1546,13 +1622,13 @@
             "type": "input",
             "title": {
               "es": "Variable donde almacenar resultado",
-              "en": "Variable donde almacenar resultado",
-              "cn": "Variable donde almacenar resultado"
+              "en": "Variable where to store result",
+              "pr": "Variável onde armazenar o resultado"
             },
             "help": {
-              "es": "Coloque solo el nombre sin {}",
-              "en": "Coloque solo el nombre sin {}",
-              "cn": "Coloque solo el nombre sin {}"
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
             },
             "id": "result",
             "css": "col-md-6"
@@ -1574,11 +1650,13 @@
         {
       "title": {
         "es": "Seleccionar objeto Pro",
-        "en": "Select object Pro"
+        "en": "Select object Pro",
+        "pr": "Selecionar objeto Pro"
       },
       "description": {
         "es": "Selecciona un objeto esperando que se encuentre presente",
-        "en": "CSelect an object waiting that it's present"
+        "en": "Select an object waiting that it's present",
+        "pr": "Seleciona um objeto esperando que ele esteja presente"
       },
       "form": {
         "css": "modal-lg",
@@ -1588,7 +1666,8 @@
             "placeholder": "",
             "title": {
               "es": "Dato a buscar",
-              "en": "Data to search"
+              "en": "Data to search",
+              "pr": "Dado a buscar"
             },
             "id": "data",
             "css": "col-md-12"
@@ -1598,11 +1677,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Tipo de dato",
-              "en": "Data type"
+              "en": "Data type",
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -1634,7 +1714,8 @@
             "placeholder": "5",
             "title": {
               "es": "Esperar",
-              "en": "Wait"
+              "en": "Wait",
+              "pr": "Esperar"
             },
             "id": "wait",
             "css": "col-md-6"
@@ -1656,11 +1737,13 @@
     {
       "title": {
         "es": "Cambiar a iframe Pro",
-        "en": "Change to iframe Pro"
+        "en": "Change to iframe Pro",
+        "pr": "Mudar para iframe Pro"
       },
       "description": {
         "es": "Cambia a un iframe esperando que se encuentre presente",
-        "en": "Change to iframe waiting that it's present"
+        "en": "Change to iframe waiting that it's present",
+        "pr": "Troca para um iframe esperando que ele esteja presente"
       },
       "form": {
         "css": "modal-lg",
@@ -1670,7 +1753,8 @@
             "placeholder": "",
             "title": {
               "es": "Dato a buscar",
-              "en": "Data to search"
+              "en": "Data to search",
+              "pr": "Dado a buscar"
             },
             "id": "data",
             "css": "col-md-12"
@@ -1680,11 +1764,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Tipo de dato",
-              "en": "Data type"
+              "en": "Data type",
+              "pr": "Tipo de dado"
             },
             "options": [
               {
@@ -1716,7 +1801,8 @@
             "placeholder": "5",
             "title": {
               "es": "Esperar",
-              "en": "Wait"
+              "en": "Wait",
+              "pr": "Esperar"
             },
             "id": "wait",
             "css": "col-md-6"
@@ -1738,11 +1824,13 @@
     {
       "title": {
         "es": "Enviar Teclas",
-        "en": "Send Keys"
+        "en": "Send Keys",
+        "pr": "Enviar Teclas"
       },
       "description": {
         "es": "Similar a Enviar texto web, pero a más bajo nivel",
-        "en": "Similar to Send keys web, but low level"
+        "en": "Similar to Send keys web, but low level",
+        "pr": "Similar ao Send Web Text, mas em um nível inferior"
       },
       "form": {
         "css": "modal-md",
@@ -1752,7 +1840,8 @@
             "placeholder": "",
             "title": {
               "es": "Texto",
-              "en": "Text"
+              "en": "Text",
+              "pr": "Texto"
             },
             "id": "text",
             "css": "col-md-12"
@@ -1762,11 +1851,12 @@
             "placeholder": {
               "es": "",
               "en": "",
-              "cn": ""
+              "pr": ""
             },
             "title": {
               "es": "Tecla especial",
-              "en": "Special Key"
+              "en": "Special Key",
+              "pr": "Tecla especial"
             },
             "options": [
               {
@@ -1978,11 +2068,13 @@
     {
       "title": {
         "es": "Imprimir como PDF (Chrome)",
-        "en": "Print to PDF (Chrome)"
+        "en": "Print to PDF (Chrome)",
+        "pr": "Imprimir como PDF (Chrome)"
       },
       "description": {
         "es": "Imprimir la página como PDF en Chrome",
-        "en": "Print webpage to PDF in Chrome"
+        "en": "Print webpage to PDF in Chrome",
+        "pr": "Imprimir página como PDF em Chrome"
       },
       "form": {
         "css": "modal-lg",
@@ -2005,11 +2097,13 @@
     {
       "title": {
         "es": "Forzar Descarga",
-        "en": "Force Download"
+        "en": "Force Download",
+        "pr": "Forçar o download"
       },
       "description": {
         "es": "Forzar una descarga",
-        "en": "Force Download"
+        "en": "Force Download",
+        "pr": "Forçando um download"
       },
       "form": {
 
@@ -2020,7 +2114,8 @@
             "placeholder": "http://www.web.test/file.csv",
             "title": {
               "es": "URL Descarga:",
-              "en": "Download URL:"
+              "en": "Download URL:",
+              "pr": "URL de Download:"
             },
             "id": "url_file",
             "css": "col-md-12"
@@ -2031,11 +2126,13 @@
             "placeholder": "file.csv",
             "title": {
               "es": "Nombre de archivo:",
-              "en": "File Name:"
+              "en": "File Name:",
+              "pr": "Nome do arquivo:"
             },
              "help": {
               "es": "Vacío para nombre original",
-              "en": "Empty for original name"
+              "en": "Empty for original name",
+              "pr": "Vazio para o nome original"
             },
             "id": "name_file",
             "css": "col-md-12"
