@@ -804,8 +804,14 @@ if module == "forceDownload":
         PrintException()
         raise e
 
+if module == "new_tab":
+    url_ = GetParams("url_")
+    webdriver = GetGlobals("web")
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
 
-
+    # open tab
+    driver.execute_script(f'''window.open("{url_}","_blank");''')
+    driver.switch_to.window(driver.window_handles[-1])
 
 
 
