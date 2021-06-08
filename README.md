@@ -33,6 +33,7 @@ Module to work with web pages more easily.
     <li>Print to PDF (Chrome)</li>
     <li>Force Download</li>
     <li>Open New Tab</li>
+    <li>Open Browser</li>
 </ul>
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Webpro/master/example/webpro.png)

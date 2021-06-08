@@ -813,7 +813,22 @@ if module == "new_tab":
     driver.execute_script(f'''window.open("{url_}","_blank");''')
     driver.switch_to.window(driver.window_handles[-1])
 
-
-
-
-
+if module == "open_browser":
+    webdriver = GetGlobals("web")
+    timeout = GetParams("timeout")
+    url_ = GetParams("url_")
+    try:
+        platform_ = platform.system()
+        if platform_.endswith('dows'):
+            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+        else:
+            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+        browser_driver = Chrome(executable_path=chrome_driver)
+        webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
+        driver = webdriver.driver_list[webdriver.driver_actual_id]
+        driver.set_page_load_timeout(int(timeout))
+        driver.get(url_)        
+    except Exception as e:
+        PrintException()
+        raise e
+    
