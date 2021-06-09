@@ -426,15 +426,19 @@ if module == "chromeHeadless":
 if module == "Edge_":
 
     url = GetParams("url")
-    print(url)
+    platform_ = platform.system()
+
     try:
         base_path = tmp_global_obj["basepath"]
-        print(base_path)
 
         web = GetGlobals("web")
 
-        edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
-        driver = webdriver.Edge(edge_driver)
+        if platform_.lower() == "windows":
+            edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
+        else:
+            edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
+
+        driver = webdriver.Edge(edge_driver, {})
 
         web.driver_list[web.driver_actual_id] = driver
         if url:
