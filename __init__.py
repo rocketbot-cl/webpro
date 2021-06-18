@@ -746,6 +746,8 @@ if module == "sendkeys":
 
     text = GetParams("text")
     special = GetParams("special")
+    if special is None:
+        special = ""
 
     try:
         web_driver = GetGlobals("web")
