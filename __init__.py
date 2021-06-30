@@ -846,12 +846,8 @@ if module == "drag_and_drop":
     try:
         driver = webdriver.driver_list[webdriver.driver_actual_id]
         script_js = """
-            path1 = "{path1}"
-            source = document.evaluate(path1, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-            path2 = "{path2}"
-            target = document.evaluate(path2, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-            target.appendChild(source)
-        """.format(path1=source, path2=target)
+            path1="{path1}",path2="{path2}",option="{tipo}","xpath"==option&&(source=document.evaluate(path1,document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue,target=document.evaluate(path2,document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue),"id"==option&&(source=document.querySelector("#"+path1),target=document.querySelector("#"+path2)),"class"==option&&(source=document.querySelector("."+path1),target=document.querySelector("."+path2)),"tag"==option&&(source=document.querySelector(path1),target=document.querySelector(path2)),target.appendChild(source);
+        """.format(path1=source, path2=target, tipo=tipo)
         driver.execute_script(script_js)
     except Exception as e:
         PrintException()

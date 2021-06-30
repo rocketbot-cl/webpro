@@ -34,6 +34,7 @@ Module to work with web pages more easily.
     <li>Force Download</li>
     <li>Open New Tab</li>
     <li>Open Browser</li>
+    <li>Drag and drop</li>
 </ul>
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Webpro/master/example/webpro.png)
