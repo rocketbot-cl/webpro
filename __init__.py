@@ -837,4 +837,22 @@ if module == "open_browser":
     except Exception as e:
         PrintException()
         raise e
-    
+
+if module == "drag_and_drop":
+    webdriver = GetGlobals("web")
+    source = GetParams("source")
+    target = GetParams("target")
+    tipo = GetParams("tipo")
+    try:
+        driver = webdriver.driver_list[webdriver.driver_actual_id]
+        script_js = """
+            path1 = "{path1}"
+            source = document.evaluate(path1, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+            path2 = "{path2}"
+            target = document.evaluate(path2, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+            target.appendChild(source)
+        """.format(path1=source, path2=target)
+        driver.execute_script(script_js)
+    except Exception as e:
+        PrintException()
+        raise e

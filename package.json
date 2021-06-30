@@ -2238,6 +2238,91 @@
       "options": false,
       "father": "module",
       "group": "scripts"
+    },
+    {
+      "title": {
+        "es": "Drag and drop",
+        "en": "Drag and drop"
+      },
+      "description": {
+        "es": "Realiza un drag and drop",
+        "en": "Do a drag and drop"
+      },
+      "form": {
+
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": "source",
+            "title": {
+              "es": "Origen",
+              "en": "Source",
+              "pr": "Source"
+            },
+            "id": "source",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "target",
+            "title": {
+              "es": "Destino",
+              "en": "Target"
+            },
+            "id": "target",
+            "css": "col-md-12"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "Dato a buscar",
+              "en": "Data to search",
+              "pr": "Dado a buscar"
+            },
+            "title": {
+              "es": "Tipo de dato",
+              "en": "Data type",
+              "pr": "Tipo de dado"
+            },
+            "options": [
+              {
+                "title": "xpath",
+                "value": "xpath"
+              },
+              {
+                "title": "class",
+                "value": "class"
+              },
+              {
+                "title": "name",
+                "value": "name"
+              },
+              {
+                "title": "tag",
+                "value": "tag"
+              },
+              {
+                "title": "id",
+                "value": "id"
+              }
+            ],
+            "id": "tipo",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "video_youtube": "",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJHSURBVFiF7dbNi81RGAfwzzCMyftb8lLTSKHIoEwsxmgommapZspCFvIPqMlSTRZKFjY2FhSJxsLOyAwpKUqsEIWIJm40CIXFc27OHdcdzcXd+Nat+zvP8/s93+flfM/hP2qMOqxAW43iX6vDM5zB138cfAJ66lDAbDShNxnGixHsV5rMSrRiONlX4SKeolCfORZwpYrg8NHPlRzGvRT8E76kWIgZ+IKhKgOPF+11eIctNSIwSFaOGqC31gQaRk/8AjSiHkuxKK3PT89Tkm3JHyLwkB8VmCsmdS86cAvXMQnn0vNubMcbsbWqRSEnMBndv/niDlGVqgnkLWhQPqt1ZdZWC/GqGrkQzRKlH43zWIu32doG3EYXesaIcRpHKjkUWzAR27L1LgwIdRvEvsy2ETOFgHWKAS3361RZ5EpmYA4uZMYZWI8XaFfa86NoSR9vSWvTsAsLM781YxHIW9CYWBfxTpR5ADeEjhexWOkMtOKk0PxDuIP7mJ4I7cJrsXue4GUJi+z/8gpsczSLoR3CKTwSVSLmqhsfcBYHcUwc+XdTIlPz2EUC8xLzZqEJO0UPYXN6bhKtuJSyHhIaUW5HtKZsi1t7kziC92Q+JS14K4Zttej7VnxOwTqESr4XpXyIx+m9PuXl/KYo/VUsE/eM4ziRO+UXkvGgX1zpPvzC3piS+ZZIXBZKW0RJBcaDHjGQlfBcXFL68KCcQy1Pw0I1978/gpoTqBdH8GEhNv04IFTwb2MiRuqF/rfhVTI8/kcEiK3+H7XFd7e0gB6imHT9AAAAAElFTkSuQmCC",
+      "module": "drag_and_drop",
+      "module_name": "webpro",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts"
     }
   ]
 }
