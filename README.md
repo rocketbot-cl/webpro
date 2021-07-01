@@ -35,6 +35,7 @@ Module to work with web pages more easily.
     <li>Open New Tab</li>
     <li>Open Browser</li>
     <li>Drag and drop</li>
+    <li>Upload file</li>
 </ul>
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Webpro/master/example/webpro.png)
@@ -43,6 +44,9 @@ Module to work with web pages more easily.
 
 [![WebPro](https://img.youtube.com/vi/q3f0-kDs3_s/0.jpg)](https://www.youtube.com/watch?v=q3f0-kDs3_s "WebPro")
 
+## Updates
+### 01-Jul-2021
+- Upload Files: New command to upload files to file type input
 
 <h2>License</h2>
 

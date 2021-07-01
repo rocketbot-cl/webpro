@@ -2,7 +2,7 @@
   "author": "David Cuello - José González - Marcela Vergara - Danilo Toro>",
   "description": "Módulos para manejo extendido de navegador",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "10.7",
+  "version": "11.0",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
   "name": "webpro",
@@ -2314,6 +2314,95 @@
       "video_youtube": "",
       "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAA7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJHSURBVFiF7dbNi81RGAfwzzCMyftb8lLTSKHIoEwsxmgommapZspCFvIPqMlSTRZKFjY2FhSJxsLOyAwpKUqsEIWIJm40CIXFc27OHdcdzcXd+Nat+zvP8/s93+flfM/hP2qMOqxAW43iX6vDM5zB138cfAJ66lDAbDShNxnGixHsV5rMSrRiONlX4SKeolCfORZwpYrg8NHPlRzGvRT8E76kWIgZ+IKhKgOPF+11eIctNSIwSFaOGqC31gQaRk/8AjSiHkuxKK3PT89Tkm3JHyLwkB8VmCsmdS86cAvXMQnn0vNubMcbsbWqRSEnMBndv/niDlGVqgnkLWhQPqt1ZdZWC/GqGrkQzRKlH43zWIu32doG3EYXesaIcRpHKjkUWzAR27L1LgwIdRvEvsy2ETOFgHWKAS3361RZ5EpmYA4uZMYZWI8XaFfa86NoSR9vSWvTsAsLM781YxHIW9CYWBfxTpR5ADeEjhexWOkMtOKk0PxDuIP7mJ4I7cJrsXue4GUJi+z/8gpsczSLoR3CKTwSVSLmqhsfcBYHcUwc+XdTIlPz2EUC8xLzZqEJO0UPYXN6bhKtuJSyHhIaUW5HtKZsi1t7kziC92Q+JS14K4Zttej7VnxOwTqESr4XpXyIx+m9PuXl/KYo/VUsE/eM4ziRO+UXkvGgX1zpPvzC3piS+ZZIXBZKW0RJBcaDHjGQlfBcXFL68KCcQy1Pw0I1978/gpoTqBdH8GEhNv04IFTwb2MiRuqF/rfhVTI8/kcEiK3+H7XFd7e0gB6imHT9AAAAAElFTkSuQmCC",
       "module": "drag_and_drop",
+      "module_name": "webpro",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts"
+    },
+    {
+      "title": {
+        "es": "Subir Archivo",
+        "en": "Upload files",
+        "pr": "Subir arquivo"
+      },
+      "description": {
+        "es": "Comando para subir uno o más archivos a un input de tipo file",
+        "en": "Command to upload one or more files to an input of type file",
+        "pr": "Comando para fazer upload um ou mais arquivos para um input do tipo file"
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": "",
+            "title": {
+              "es": "Dato a buscar",
+              "en": "Data to search",
+              "pr": "Dado a buscar"
+            },
+            "id": "data",
+            "css": "col-md-12"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "",
+              "en": "",
+              "pr": ""
+            },
+            "title": {
+              "es": "Tipo de dato",
+              "en": "Data type",
+              "pr": "Tipo de dado"
+            },
+            "options": [
+              {
+                "title": "name",
+                "value": "name"
+              },
+              {
+                "title": "id",
+                "value": "id"
+              },
+              {
+                "title": "class",
+                "value": "class name"
+              },
+              {
+                "title": "xpath",
+                "value": "xpath"
+              },
+              {
+                "title": "tag",
+                "value": "tag name"
+              }
+            ],
+            "id": "data_type",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "en": "['C:/Users/user/file.pdf']"
+            },
+            "title": {
+              "es": "Archivo(s)",
+              "en": "File(s)",
+              "pr": "Arquivo(s)"
+            },
+            "id": "files",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "video_youtube": "",
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iLTIzIDAgNTEyIDUxMi4wMDA3MiIgd2lkdGg9IjUxMnB0Ij4KPGcgaWQ9InN1cmZhY2UxIj4KPHBhdGggZD0iTSAzNDguOTQ1MzEyIDIyMS42NDA2MjUgTCAzNDguOTQ1MzEyIDEyNC43NDYwOTQgQyAzNDguOTQ1MzEyIDEyMS45NzI2NTYgMzQ3LjY2NDA2MiAxMTkuNDEwMTU2IDM0NS44NTE1NjIgMTE3LjM4MjgxMiBMIDIzNy4yMTg3NSAzLjMwODU5NCBDIDIzNS4xOTE0MDYgMS4xNzU3ODEgMjMyLjMwODU5NCAwIDIyOS40Mjk2ODggMCBMIDU3LjE5NTMxMiAwIEMgMjUuMzk4NDM4IDAgMCAyNS45Mjk2ODggMCA1Ny43MzA0NjkgTCAwIDM4My40MTQwNjIgQyAwIDQxNS4yMTQ4NDQgMjUuMzk4NDM4IDQ0MC43MTg3NSA1Ny4xOTUzMTIgNDQwLjcxODc1IEwgMTkzLjE0ODQzOCA0NDAuNzE4NzUgQyAyMTguODYzMjgxIDQ4My40MDIzNDQgMjY1LjYwNTQ2OSA1MTIgMzE4Ljg1MTU2MiA1MTIgQyAzOTkuNzM4MjgxIDUxMiA0NjUuNzkyOTY5IDQ0Ni4yNjU2MjUgNDY1Ljc5Mjk2OSAzNjUuMjczNDM4IEMgNDY1LjkwMjM0NCAyOTQuNTIzNDM4IDQxNS4xMDU0NjkgMjM1LjQwNjI1IDM0OC45NDUzMTIgMjIxLjY0MDYyNSBaIE0gMjQwLjEwMTU2MiAzNy40NTcwMzEgTCAzMTIuOTg0Mzc1IDExNC4xNzk2ODggTCAyNjUuNzEwOTM4IDExNC4xNzk2ODggQyAyNTEuNjI1IDExNC4xNzk2ODggMjQwLjEwMTU2MiAxMDIuNTUwNzgxIDI0MC4xMDE1NjIgODguNDY0ODQ0IFogTSA1Ny4xOTUzMTIgNDE5LjM3NSBDIDM3LjI0MjE4OCA0MTkuMzc1IDIxLjM0Mzc1IDQwMy4zNjcxODggMjEuMzQzNzUgMzgzLjQxNDA2MiBMIDIxLjM0Mzc1IDU3LjczMDQ2OSBDIDIxLjM0Mzc1IDM3LjY2Nzk2OSAzNy4yNDIxODggMjEuMzQzNzUgNTcuMTk1MzEyIDIxLjM0Mzc1IEwgMjE4Ljc1NzgxMiAyMS4zNDM3NSBMIDIxOC43NTc4MTIgODguNDY0ODQ0IEMgMjE4Ljc1NzgxMiAxMTQuMzk0NTMxIDIzOS43ODEyNSAxMzUuNTIzNDM4IDI2NS43MTA5MzggMTM1LjUyMzQzOCBMIDMyNy42MDE1NjIgMTM1LjUyMzQzOCBMIDMyNy42MDE1NjIgMjE4Ljg2MzI4MSBDIDMyNC40MDIzNDQgMjE4Ljc1NzgxMiAzMjEuODM5ODQ0IDIxOC40Mzc1IDMxOS4wNjY0MDYgMjE4LjQzNzUgQyAyODEuODI0MjE5IDIxOC40Mzc1IDI0Ny41NzAzMTIgMjMyLjczODI4MSAyMjEuNzQ2MDk0IDI1NS4xNDg0MzggTCA4Ni4yMjI2NTYgMjU1LjE0ODQzOCBDIDgwLjM1MTU2MiAyNTUuMTQ4NDM4IDc1LjU1MDc4MSAyNTkuOTQ5MjE5IDc1LjU1MDc4MSAyNjUuODE2NDA2IEMgNzUuNTUwNzgxIDI3MS42ODc1IDgwLjM1MTU2MiAyNzYuNDg4MjgxIDg2LjIyMjY1NiAyNzYuNDg4MjgxIEwgMjAxLjg5ODQzOCAyNzYuNDg4MjgxIEMgMTk0LjMyMDMxMiAyODcuMTYwMTU2IDE4OC4wMjM0MzggMjk3LjgzMjAzMSAxODMuMTE3MTg4IDMwOS41NzAzMTIgTCA4Ni4yMjI2NTYgMzA5LjU3MDMxMiBDIDgwLjM1MTU2MiAzMDkuNTcwMzEyIDc1LjU1MDc4MSAzMTQuMzcxMDk0IDc1LjU1MDc4MSAzMjAuMjQyMTg4IEMgNzUuNTUwNzgxIDMyNi4xMDkzNzUgODAuMzUxNTYyIDMzMC45MTQwNjIgODYuMjIyNjU2IDMzMC45MTQwNjIgTCAxNzYuMTc5Njg4IDMzMC45MTQwNjIgQyAxNzMuNTExNzE5IDM0MS41ODU5MzggMTcyLjEyNSAzNTMuNDI5Njg4IDE3Mi4xMjUgMzY1LjI3MzQzOCBDIDE3Mi4xMjUgMzg0LjQ4MDQ2OSAxNzUuODU5Mzc1IDQwMy40NzY1NjIgMTgyLjU4MjAzMSA0MTkuNDg0Mzc1IEwgNTcuMTk1MzEyIDQxOS40ODQzNzUgWiBNIDMxOC45NjA5MzggNDkwLjc2NTYyNSBDIDI0OS44MTI1IDQ5MC43NjU2MjUgMTkzLjU3NDIxOSA0MzQuNTI3MzQ0IDE5My41NzQyMTkgMzY1LjM3ODkwNiBDIDE5My41NzQyMTkgMjk2LjIzMDQ2OSAyNDkuNzAzMTI1IDIzOS45OTIxODggMzE4Ljk2MDkzOCAyMzkuOTkyMTg4IEMgMzg4LjIxNDg0NCAyMzkuOTkyMTg4IDQ0NC4zNDM3NSAyOTYuMjMwNDY5IDQ0NC4zNDM3NSAzNjUuMzc4OTA2IEMgNDQ0LjM0Mzc1IDQzNC41MjczNDQgMzg4LjEwOTM3NSA0OTAuNzY1NjI1IDMxOC45NjA5MzggNDkwLjc2NTYyNSBaIE0gMzE4Ljk2MDkzOCA0OTAuNzY1NjI1ICIgc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYigwJSwwJSwwJSk7ZmlsbC1vcGFjaXR5OjE7IiAvPgo8cGF0aCBkPSJNIDg2LjIyMjY1NiAyMjMuMDI3MzQ0IEwgMTk0LjMyMDMxMiAyMjMuMDI3MzQ0IEMgMjAwLjE5MTQwNiAyMjMuMDI3MzQ0IDIwNC45OTIxODggMjE4LjIyMjY1NiAyMDQuOTkyMTg4IDIxMi4zNTU0NjkgQyAyMDQuOTkyMTg4IDIwNi40ODQzNzUgMjAwLjE5MTQwNiAyMDEuNjgzNTk0IDE5NC4zMjAzMTIgMjAxLjY4MzU5NCBMIDg2LjIyMjY1NiAyMDEuNjgzNTk0IEMgODAuMzUxNTYyIDIwMS42ODM1OTQgNzUuNTUwNzgxIDIwNi40ODQzNzUgNzUuNTUwNzgxIDIxMi4zNTU0NjkgQyA3NS41NTA3ODEgMjE4LjIyMjY1NiA4MC4zNTE1NjIgMjIzLjAyNzM0NCA4Ni4yMjI2NTYgMjIzLjAyNzM0NCBaIE0gODYuMjIyNjU2IDIyMy4wMjczNDQgIiBzdHlsZT0iIHN0cm9rZTpub25lO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6cmdiKDAlLDAlLDAlKTtmaWxsLW9wYWNpdHk6MTsiIC8+CjxwYXRoIGQ9Ik0gMzI2LjUzNTE1NiAyODYuNjI1IEMgMzI0LjUwNzgxMiAyODQuNDkyMTg4IDMyMS43MzQzNzUgMjgzLjIxMDkzOCAzMTguNzQ2MDk0IDI4My4yMTA5MzggQyAzMTUuNzU3ODEyIDI4My4yMTA5MzggMzEyLjk4NDM3NSAyODQuNDkyMTg4IDMxMC45NTcwMzEgMjg2LjYyNSBMIDI0OC40MjE4NzUgMzUzLjc0NjA5NCBDIDI0NC4zNjcxODggMzU4LjAxNTYyNSAyNDQuNjg3NSAzNjQuODQzNzUgMjQ4Ljk1NzAzMSAzNjguNzkyOTY5IEMgMjUzLjIyNjU2MiAzNzIuODQ3NjU2IDI2MC4xNjAxNTYgMzcyLjUyNzM0NCAyNjQuMjE0ODQ0IDM2OC4yNjE3MTkgTCAzMDguMzk0NTMxIDMyMC45ODgyODEgTCAzMDguMzk0NTMxIDQzNy41MTU2MjUgQyAzMDguMzk0NTMxIDQ0My4zODY3MTkgMzEzLjE5NTMxMiA0NDguMTg3NSAzMTkuMDY2NDA2IDQ0OC4xODc1IEMgMzI0LjkzMzU5NCA0NDguMTg3NSAzMjkuNzM4MjgxIDQ0My4zODY3MTkgMzI5LjczODI4MSA0MzcuNTE1NjI1IEwgMzI5LjczODI4MSAzMjAuOTg4MjgxIEwgMzczLjU5Mzc1IDM2OC4yNjE3MTkgQyAzNzUuNzMwNDY5IDM3MC41IDM3OC41MDM5MDYgMzcxLjY3NTc4MSAzODEuMzg2NzE5IDM3MS42NzU3ODEgQyAzODMuOTQ1MzEyIDM3MS42NzU3ODEgMzg2LjUwNzgxMiAzNzAuNzE0ODQ0IDM4OC42NDA2MjUgMzY4Ljc5Mjk2OSBDIDM5Mi45MTAxNTYgMzY0LjczODI4MSAzOTMuMjMwNDY5IDM1OC4wMTU2MjUgMzg5LjE3NTc4MSAzNTMuNzQ2MDk0IFogTSAzMjYuNTM1MTU2IDI4Ni42MjUgIiBzdHlsZT0iIHN0cm9rZTpub25lO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6cmdiKDAlLDAlLDAlKTtmaWxsLW9wYWNpdHk6MTsiIC8+CjwvZz4KPC9zdmc+",
+      "module": "uploadFiles",
       "module_name": "webpro",
       "visible": true,
       "options": false,

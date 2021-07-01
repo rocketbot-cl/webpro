@@ -62,7 +62,7 @@ def makeTmpDir(name):
 
 
 def getBoundingClientRect(type_element, selector):
-    webdriver = GetGlobals("web")
+    
     driver = webdriver.driver_list[webdriver.driver_actual_id]
 
     if type_element == "xpath":
@@ -157,14 +157,18 @@ special_keys = {
     "UP":u'\ue013'
 }
 
+webdriver = GetGlobals("web")
+if webdriver.driver_actual_id in webdriver.driver_list:
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
 if module == "webelementlist":
-    webdriver = GetGlobals("web")
+    
     el_ = GetParams("el_")
     type_ = GetParams("type_")
     data_ = GetParams("data_")
     var_ = GetParams("result")
 
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
     global getChild
 
 
@@ -200,8 +204,8 @@ if module == "webelementlist":
     SetVar(var_, str(re))
 
 if module == "CleanInputs":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
     search = GetParams('search_data')
     texto = GetParams('texto')
     search_type = GetParams("tipo")
@@ -225,8 +229,8 @@ if module == "CleanInputs":
 if module == "LoadCookies":
     import pickle
 
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
     file_ = GetParams('file_')
     with open(file_, 'rb') as cookiesfile:
         cookies = pickle.load(cookiesfile)
@@ -237,13 +241,13 @@ if module == "LoadCookies":
 if module == "SaveCookies":
     import pickle
 
-    webdriver = GetGlobals("web")
+    
 
     file_ = GetParams('file_')
     result = GetParams('result')
 
     try:
-        driver = webdriver.driver_list[webdriver.driver_actual_id]
+        
         cookies = driver.get_cookies()
         print("--*", cookies)
         with open(file_, 'wb') as filehandler:
@@ -256,18 +260,18 @@ if module == "SaveCookies":
         raise e
 
 if module == "reloadPage":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
     driver.refresh()
 
 if module == "back":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
     driver.back()
 
 if module == "DoubleClick":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
 
     data_ = GetParams("data")
     data_type = GetParams("data_type")
@@ -278,8 +282,8 @@ if module == "DoubleClick":
     actionChains.double_click(elementLocator).perform()
 
 if module == "Scroll":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
 
     position = GetParams("position")
 
@@ -291,8 +295,8 @@ if module == "Scroll":
 
 if module == "length_":
 
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
     search = GetParams('search_data')
     var_ = GetParams("var_")
 
@@ -306,8 +310,8 @@ if module == "length_":
 
 if module == "selectElement":
 
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
     option_ = GetParams('option_')
     search = GetParams('search_data')
     index_ = GetParams("index_")
@@ -333,8 +337,8 @@ if module == "selectElement":
 
 if module == "clickElement":
 
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
     option_ = GetParams('option_')
     search = GetParams('search_data')
     index_ = GetParams("index_")
@@ -371,8 +375,8 @@ if module == "clickElement":
 
 if module == "html2pdf":
 
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
     name_ = GetParams("name_")
     var_ = GetParams("var_")
 
@@ -454,8 +458,8 @@ if module == "screenshot":
     location = GetParams("location")
     size = GetParams("size")
 
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
 
     tmp_path = "tmp/webpro/screenshot.png"
     try:
@@ -499,8 +503,8 @@ if module == "getBoundingClientRect":
     type_ = GetParams("data_type")
     result = GetParams("result")
 
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
 
     try:
         rect = getBoundingClientRect(type_, data)
@@ -516,8 +520,8 @@ if module == "getLocation":
     type_ = GetParams("data_type")
     result = GetParams("result")
 
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
 
     try:
         rect = getBoundingClientRect(type_, data)
@@ -534,8 +538,8 @@ if module == "getSize":
     type_ = GetParams("data_type")
     result = GetParams("result")
 
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
 
     try:
         rect = getBoundingClientRect(type_, data)
@@ -635,8 +639,8 @@ if module == "fullScreenshot":
         raise e
 
 if module == "Hover":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
 
     data_ = GetParams("data")
     data_type = GetParams("data_type")
@@ -646,8 +650,8 @@ if module == "Hover":
     actionChains.move_to_element(elementLocator).perform()
 
 if module == "clickPro":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
 
     data_ = GetParams("data")
     wait_ = GetParams("wait")
@@ -671,9 +675,7 @@ if module == "clickPro":
         raise e
 
 if module == "getText":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
-
+    
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
@@ -695,9 +697,7 @@ if module == "getText":
         raise e
 
 if module == "selectPro":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
-
+    
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
@@ -719,8 +719,8 @@ if module == "selectPro":
         raise e
 
 if module == "changeIframePro":
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    
+    
 
     data_ = GetParams("data")
     wait_ = GetParams("wait")
@@ -812,15 +812,12 @@ if module == "forceDownload":
 
 if module == "new_tab":
     url_ = GetParams("url_")
-    webdriver = GetGlobals("web")
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
-
     # open tab
     driver.execute_script(f'''window.open("{url_}","_blank");''')
     driver.switch_to.window(driver.window_handles[-1])
 
 if module == "open_browser":
-    webdriver = GetGlobals("web")
+    
     timeout = GetParams("timeout")
     url_ = GetParams("url_")
     try:
@@ -831,24 +828,34 @@ if module == "open_browser":
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
         browser_driver = Chrome(executable_path=chrome_driver)
         webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
-        driver = webdriver.driver_list[webdriver.driver_actual_id]
+        
         driver.set_page_load_timeout(int(timeout))
         driver.get(url_)        
     except Exception as e:
         PrintException()
         raise e
-
-if module == "drag_and_drop":
-    webdriver = GetGlobals("web")
-    source = GetParams("source")
-    target = GetParams("target")
-    tipo = GetParams("tipo")
-    try:
-        driver = webdriver.driver_list[webdriver.driver_actual_id]
+try:
+    if module == "drag_and_drop":
+        source = GetParams("source")
+        target = GetParams("target")
+        tipo = GetParams("tipo")
+    
         script_js = """
             path1="{path1}",path2="{path2}",option="{tipo}","xpath"==option&&(source=document.evaluate(path1,document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue,target=document.evaluate(path2,document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue),"id"==option&&(source=document.querySelector("#"+path1),target=document.querySelector("#"+path2)),"class"==option&&(source=document.querySelector("."+path1),target=document.querySelector("."+path2)),"tag"==option&&(source=document.querySelector(path1),target=document.querySelector(path2)),target.appendChild(source);
         """.format(path1=source, path2=target, tipo=tipo)
         driver.execute_script(script_js)
-    except Exception as e:
-        PrintException()
-        raise e
+
+    if module == "uploadFiles":
+        data_ = GetParams("data")
+        data_type = GetParams("data_type")
+        files = GetParams("files")
+        element = driver.find_element(data_type, data_)
+        if files.startswith("["):
+            files = eval(files)
+            files = " \n ".join(files)
+        element.send_keys(files)
+
+
+except Exception as e:
+    PrintException()
+    raise e
