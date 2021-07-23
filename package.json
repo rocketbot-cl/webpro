@@ -2224,6 +2224,16 @@
             },
             "id": "timeout",
             "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "4",
+            "title": {
+              "es": "Id:",
+              "en": "Id:"
+            },
+            "id": "newId",
+            "css": "col-md-12"
           }
         ]
       },

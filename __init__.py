@@ -820,6 +820,7 @@ if module == "open_browser":
     
     timeout = GetParams("timeout")
     url_ = GetParams("url_")
+    newId = GetParams("newId")
     try:
         platform_ = platform.system()
         if platform_.endswith('dows'):
@@ -827,7 +828,9 @@ if module == "open_browser":
         else:
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
         browser_driver = Chrome(executable_path=chrome_driver)
-        webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
+        webdriver.driver_list[newId] = browser_driver
+
+        driver = webdriver.driver_list[newId]
         
         driver.set_page_load_timeout(int(timeout))
         driver.get(url_)        
