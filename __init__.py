@@ -828,9 +828,13 @@ if module == "open_browser":
         else:
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
         browser_driver = Chrome(executable_path=chrome_driver)
-        webdriver.driver_list[newId] = browser_driver
+        if (newId != "" or newId != None):
+            webdriver.driver_actual_id = newId
+        else:
+            webdriver.driver_actual_id = 'default'
+        webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
 
-        driver = webdriver.driver_list[newId]
+        driver = webdriver.driver_list[webdriver.driver_actual_id]
         
         driver.set_page_load_timeout(int(timeout))
         driver.get(url_)        
