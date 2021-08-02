@@ -47,6 +47,8 @@ Module to work with web pages more easily.
 ## Updates
 ### 01-Jul-2021
 - Upload Files: New command to upload files to file type input
+### 02-Aug-2021
+- Fix print to pdf
 
 <h2>License</h2>
 
