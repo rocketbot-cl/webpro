@@ -766,8 +766,8 @@ if module == "sendkeys":
 
 if module == "printPDF":
     import json
-
-    chrome_options = webdriver.ChromeOptions()
+    from selenium import webdriver as wd
+    chrome_options = wd.ChromeOptions()
     settings = {
        "recentDestinations": [{
             "id": "Save as PDF",
@@ -781,8 +781,6 @@ if module == "printPDF":
     chrome_options.add_experimental_option('prefs', prefs)
     chrome_options.add_argument('--kiosk-printing')
 
-    web_driver = GetGlobals("web")
-    driver = web_driver.driver_list[web_driver.driver_actual_id]
     driver.execute_script('window.print();')
 
 
