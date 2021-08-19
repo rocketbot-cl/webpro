@@ -828,16 +828,15 @@ if module == "open_browser":
         else:
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
         browser_driver = Chrome(executable_path=chrome_driver)
-        if (newId != "" or newId != None):
-            webdriver.driver_actual_id = newId
-        else:
-            webdriver.driver_actual_id = 'default'
-        webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
 
-        driver = webdriver.driver_list[webdriver.driver_actual_id]
+        if not (newId):
+            newId = "default"
+        webdriver.driver_actual_id = newId
+
+        webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
         
-        driver.set_page_load_timeout(int(timeout))
-        driver.get(url_)        
+        webdriver.driver_list[webdriver.driver_actual_id].set_page_load_timeout(int(timeout))
+        webdriver.driver_list[webdriver.driver_actual_id].get(url_)        
     except Exception as e:
         PrintException()
         raise e
