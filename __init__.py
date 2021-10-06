@@ -62,8 +62,11 @@ def makeTmpDir(name):
 
 
 def getBoundingClientRect(type_element, selector):
+    web_driver = GetGlobals("web")
+    if web_driver.driver_actual_id in web_driver.driver_list:
+        driver = web_driver.driver_list[web_driver.driver_actual_id]
     
-    driver = webdriver.driver_list[webdriver.driver_actual_id]
+    # driver = webdriver.driver_list[webdriver.driver_actual_id]
 
     if type_element == "xpath":
         rect = driver.execute_script("""element = document.evaluate('{}', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; 
