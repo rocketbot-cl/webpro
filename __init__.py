@@ -23,6 +23,10 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
    sudo pip install <package> -t .
 
 """
+
+__version__ = '11.1.1'
+__author__ = 'Rocketbot <contacto@rocketbot.com>'
+
 import base64
 import os
 import sys
@@ -624,7 +628,7 @@ if module == "fullScreenshot":
         driver.execute_script(read_)
 
         driver.execute_script("""
-        html2canvas(document.body, {
+        html2canvas(document.body, { allowTaint : false, useCORS: true,
             onrendered: function(canvas) {
                 img = canvas.toDataURL(); 
                 a = document.createElement("a")
