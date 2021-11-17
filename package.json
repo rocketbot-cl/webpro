@@ -10,6 +10,7 @@
   "windows": true,
   "mac": true,
   "docker": true,
+  "type": "module",
   "dependencies": {
     "beautifulsoup4": "4.7.1",
     "requests": "2.21.0"
@@ -52,6 +53,10 @@
               "en": "Can be class, name, data-*, etc.",
               "pr": "Pode ser classe, nome, dados*, etc."
             },
+            "description": {
+              "es": "En este campo debemos poner el tipo de clase o atributo que usaremos.",
+              "en": "In this field we should put the type of class or attribute we will use."
+            },
             "id": "type_",
             "css": "col-md-6"
           },
@@ -72,6 +77,10 @@
               "en": "You can set one or all attributes of the element",
               "pr": "Pode definir um ou todos os atributos do elemento"
             },
+            "description": {
+              "es": "En este campo debemos poner el nombre de la clase o atributo que usaremos.",
+              "en": "In this field we should put the name of the class or attribute we will use."
+            },
             "id": "data_",
             "css": "col-md-6"
           },
@@ -87,6 +96,10 @@
               "en": "DIV, SPAN, INPUT, etc*",
               "pr": "DIV, SPAN, INPUT, etc*"
             },
+            "description": {
+              "es": "En este campo debemos poner el tipo de elemento que usaremos.",
+              "en": "In this field we should put the type of element we will use."
+            },
             "id": "el_",
             "css": "col-md-6"
           },
@@ -97,11 +110,11 @@
               "en": "Variable where to store the result",
               "pr": "Variável onde armazenar o resultado"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}",
-              "pr": "Nome da variável sem {}"
+            "description": {
+              "es": "En este campo debemos poner el nombre de la variable donde almacenaremos el resultado.",
+              "en": "In this field we should put the name of the variable where we will store the result."
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-6"
           }
@@ -145,6 +158,10 @@
               "en": "Text to send or variable",
               "pr": "Texto para enviar ou variável"
             },
+            "description": {
+              "es": "Colocamos el texto o la variable a enviar.",
+              "en": "We put the text or the variable to send."
+            },
             "id": "texto",
             "css": "col-md-12"
           },
@@ -159,6 +176,10 @@
               "es": "Dato a buscar",
               "en": "Data to search",
               "pr": "Dado a buscar"
+            },
+            "description": {
+              "es": "Colocamos el dato a buscar.",
+              "en": "We put the data to search."
             },
             "id": "search_data",
             "css": "col-md-12"
@@ -197,6 +218,10 @@
                 "value": "id"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el tipo de dato a buscar. Ya sea xpath, class, name, tag o id.",
+              "en": "We select the type of data to search. Either xpath, class, name, tag or id."
+            },
             "id": "tipo",
             "css": "col-md-12"
           }
@@ -240,6 +265,10 @@
               "en": "Path to file where cookies will be saved",
               "pr": "Caminho para o arquivo onde os cookies serão salvos"
             },
+            "description": {
+              "es": "En este campo indicamos la ruta al archivo donde se guardarán las cookies",
+              "en": "In this field we indicate the path to the file where the cookies will be saved"
+            },
             "id": "file_",
             "css": "col-md-12"
           },
@@ -255,11 +284,12 @@
               "en": "Variable where cookies will be stored",
               "pr": "Variável onde os cookies serão salvos"
             },
-            "help": {
-              "es": "Nombre de variable sin llaves {}",
-              "en": "Variable name without {}",
-              "pr": "Nome da variável sem {}"
+            "description": {
+              "es": "En este campo indicamos el nombre de la variable donde se guardarán las cookies",
+              "en": "In this field we indicate the name of the variable where the cookies will be stored",
+              "pr": "Neste campo indicamos o nome da variável onde os cookies serão salvos"
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-12"
           }
@@ -302,6 +332,10 @@
               "es": "Ruta al archivo donde están guardadas las cookies",
               "en": "Path to the file where cookies are stored",
               "pr": "Caminho para o arquivo onde os cookies são armazenados"
+            },
+            "description": {
+              "es": "Seleccionamos la ruta del archivo donde están guardadas las cookies",
+              "en": "Select the path to the file where cookies are stored"
             },
             "id": "file_",
             "css": "col-md-12"
@@ -396,6 +430,10 @@
               "en": "Data to search",
               "pr": "Dado a buscar"
             },
+            "description": {
+              "es": "Colocamos el selector a buscar",
+              "en": "We put the selector to search"
+            },
             "id": "data",
             "css": "col-md-12"
           },
@@ -433,6 +471,10 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Colocamos el tipo de dato a buscar",
+              "en": "We put the type of data to search"
+            },
             "id": "data_type",
             "css": "col-md-12"
           }
@@ -477,6 +519,10 @@
               "en": "Position",
               "pr": "Posição"
             },
+            "description": {
+              "es": "Elegimos la posición en píxeles",
+              "en": "Choose the position in pixels"
+            },
             "id": "position",
             "css": "col-md-12"
           }
@@ -516,7 +562,7 @@
               "en": "Class Name:",
               "pr": "Nome da classe:"
             },
-            "help": {
+            "description": {
               "es": "Nombre de la clase del elemento",
               "en": "Class name of element",
               "pr": "Nome da classe do elemento"
@@ -537,6 +583,12 @@
               "en": "Variable name without {}",
               "pr": "Nome da variável sem {}"
             },
+            "description": {
+              "es": "Nombre de la variable donde se guardará el resultado",
+              "en": "Name of the variable where the result will be stored",
+              "pr": "Nome da variável onde o resultado será guardado"
+            },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-12"
           }
@@ -576,6 +628,10 @@
               "en": "Data to Search:",
               "pr": "Dado a Buscar:"
             },
+            "description": {
+              "es": "Colocamos el selector a buscar",
+              "en": "We put the selector to search"
+            },
             "id": "search_data",
             "css": "col-md-12"
           },
@@ -586,6 +642,10 @@
               "es": "Index:",
               "en": "Index:",
               "pr": "Índice:"
+            },
+            "description": {
+              "es": "Colocamos el index a buscar",
+              "en": "We put the index to search"
             },
             "id": "index_",
             "css": "col-md-12"
@@ -611,6 +671,10 @@
                 "value": "class"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el tipo de dato a buscar",
+              "en": "We select the type of data to search"
+            },
             "id": "option_",
             "css": "col-md-12"
           }
@@ -650,6 +714,10 @@
               "en": "Data to Search:",
               "pr": "Dado a Buscar:"
             },
+            "description": {
+              "es": "Colocamos el selector del dato a clickear.",
+              "en": "We put the selector of the data to click."
+            },
             "id": "search_data",
             "css": "col-md-12"
           },
@@ -660,6 +728,10 @@
               "es": "Index:",
               "en": "Index:",
               "pr": "Índice:"
+            },
+            "description": {
+              "es": "Colocamos el index del dato a clickear.",
+              "en": "We put the index of the data to click."
             },
             "id": "index_",
             "css": "col-md-12"
@@ -685,6 +757,10 @@
                 "value": "class"
               }
             ],
+            "description": {
+              "es": "Colocamos el tipo de dato a clickear.",
+              "en": "We put the type of the data to click."
+            },
             "id": "option_",
             "css": "col-md-12"
           }
@@ -729,6 +805,10 @@
               "en": "Name without extension",
               "pr": "Nome sem extensão"
             },
+            "description": {
+              "es": "Seleccionamos el nombre del archivo a guardar, sin la extension .pdf",
+              "en": "Select the name of the file to save, without the extension .pdf"
+            },
             "id": "name_",
             "css": "col-md-12"
           },
@@ -740,11 +820,11 @@
               "en": "Assign result to variable",
               "pr": "Atribuir resultado à variável"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}",
-              "pr": "Nome da variável sem {}"
+            "description": {
+              "es": "Seleccionamos el nombre de la variable a la que queremos asignar el resultado",
+              "en": "Select the name of the variable to which we want to assign the result"
             },
+            "remove_vars": true,
             "id": "var_",
             "css": "col-md-12"
           }
@@ -787,6 +867,10 @@
               "es": "Url de Servidor",
               "en": "Server URL",
               "pr": "URL do Servidor"
+            },
+            "description": {
+              "es": "Escribimos la URL de la pagina a abrir.",
+              "en": "Write the URL of the page to open."
             },
             "id": "url",
             "css": "col-md-12"
@@ -831,6 +915,11 @@
               "en": "Position",
               "pr": "Posição"
             },
+            "description": {
+              "es": "Coordenadas de la sección de la página",
+              "en": "Page section coordinates",
+              "pr": "Coordenadas da seção da página"
+            },
             "id": "location",
             "css": "col-md-6"
           },
@@ -846,6 +935,11 @@
               "en": "size",
               "pr": "Dimensões"
             },
+            "description": {
+              "es": "Dimensiones de la sección de la página",
+              "en": "Page section dimensions",
+              "pr": "Dimensões da seção da página"
+            },
             "id": "size",
             "css": "col-md-6"
           },
@@ -857,6 +951,11 @@
               "pr": "/Users/User/folder/image.jpg"
             },
             "title": {
+              "es": "Ruta y nombre donde se guardará la imagen",
+              "en": "Path and name where the image will be saved",
+              "pr": "Caminho e nome onde a imagem será salva"
+            },
+            "description": {
               "es": "Ruta y nombre donde se guardará la imagen",
               "en": "Path and name where the image will be saved",
               "pr": "Caminho e nome onde a imagem será salva"
@@ -900,6 +999,10 @@
               "en": "Data to search",
               "pr": "Dado a Buscar"
             },
+            "description": {
+              "es": "Colocamos el selector del elemento a obtener.",
+              "en": "We put the selector of the element to get."
+            },
             "id": "data",
             "css": "col-md-6"
           },
@@ -937,6 +1040,10 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el tipo de dato a buscar.",
+              "en": "We select the type of data to search."
+            },
             "id": "data_type",
             "css": "col-md-6"
           },
@@ -947,11 +1054,12 @@
               "en": "Variable where to store result",
               "pr": "Variável onde armazenar o resultadoo"
             },
-            "help": {
+            "description": {
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}",
               "pr": "Nome da variável sem {}"
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-6"
           }
@@ -991,6 +1099,10 @@
               "en": "Data to search",
               "pr": "Dado a buscar"
             },
+            "description": {
+              "es": "Colocamos el selector del elemento a seleccionar",
+              "en": "Put the selector of the element to select"
+            },
             "id": "data",
             "css": "col-md-6"
           },
@@ -1028,6 +1140,10 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el tipo de dato a buscar",
+              "en": "Select the type of data to search"
+            },
             "id": "data_type",
             "css": "col-md-6"
           },
@@ -1038,11 +1154,12 @@
               "en": "Variable where to store result",
               "pr": "Variável onde armazenar o resultado"
             },
-            "help": {
+            "description": {
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}",
               "pr": "Nome da variável sem {}"
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-6"
           }
@@ -1082,6 +1199,10 @@
               "en": "Data to search",
               "pr": "Dado a buscar"
             },
+            "description": {
+              "es": "Colocamos el selector del elemento a seleccionar",
+              "en": "Put the selector of the element to select"
+            },
             "id": "data",
             "css": "col-md-6"
           },
@@ -1119,6 +1240,10 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el tipo de dato a buscar",
+              "en": "Select the type of data to search"
+            },
             "id": "data_type",
             "css": "col-md-6"
           },
@@ -1129,11 +1254,12 @@
               "en": "Variable where to store result",
               "pr": "Variável onde armazenar o resultado"
             },
-            "help": {
+            "description": {
               "es": "Nombre de variable sin {}",
               "en": "Variable name without {}",
               "pr": "Nome da variável sem {}"
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-6"
           }
@@ -1177,6 +1303,11 @@
               "en": "Server URL",
               "pr": "URL do Servidor"
             },
+            "description": {
+              "es": "Url de la pagina a abrir",
+              "en": "Server URL to open",
+              "pr": "URL do servidor a abrir"
+            },
             "id": "url",
             "css": "col-md-8"
           },
@@ -1202,6 +1333,10 @@
                 "value": "debugger"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el modo en que se va abrir el navegador.",
+              "en": "Select the mode in which the browser will be opened."
+            },
             "id": "mode",
             "css": "col-md-4"
           }
@@ -1240,11 +1375,12 @@
               "en": "Variable where to store result",
               "pr": "Variável onde armazenar o resultado"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}",
-              "pr": "Nome da variável sem {}"
+            "description": {
+              "es": "Nombre de la variable donde almacenar el resultado",
+              "en": "Variable name where to store the result",
+              "pr": "Nome da variável onde armazenar o resultado"
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-8"
           },
@@ -1274,6 +1410,11 @@
                 "value": "INFO"
               }
             ],
+            "description": {
+              "es": "Nivel de información a mostrar",
+              "en": "Level of information to show",
+              "pr": "Nível de informação a mostrar"
+            },
             "id": "level",
             "css": "col-md-4"
           }
@@ -1322,6 +1463,11 @@
               "en": "Name:",
               "pr": "Nome:"
             },
+            "description": {
+              "es": "Nombre de la imagen a guardar",
+              "en": "Name of the image to save",
+              "pr": "Nome da imagem"
+            },
             "id": "name",
             "css": "col-md-12"
           }
@@ -1361,6 +1507,10 @@
               "en": "Data to search",
               "pr": "Dado a buscar"
             },
+            "description": {
+              "es": "Colocamos el selecto del elemento al cual le haremos hover.",
+              "en": "We put the selector of the element to which we will make hover."
+            },
             "id": "data",
             "css": "col-md-12"
           },
@@ -1398,6 +1548,10 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Colocamos el tipo de dato que queremos buscar.",
+              "en": "We put the type of data we want to search."
+            },
             "id": "data_type",
             "css": "col-md-12"
           }
@@ -1441,6 +1595,10 @@
               "en": "Server URL",
               "pr": "URL do Servidor"
             },
+            "description": {
+              "es": "Url de la pagina a abrir en Edge",
+              "en": "Url of the page to open in Edge"
+            },
             "id": "url",
             "css": "col-md-12"
           }
@@ -1480,6 +1638,10 @@
               "en": "Data to search",
               "pr": "Dado a buscar"
             },
+            "description": {
+              "es": "Colocamos el selector del elemento a hacer click.",
+              "en": "Put the selector of the element to click."
+            },
             "id": "data",
             "css": "col-md-12"
           },
@@ -1517,6 +1679,10 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el tipo de dato a buscar.",
+              "en": "Select the type of data to search."
+            },
             "id": "data_type",
             "css": "col-md-6"
           },
@@ -1527,6 +1693,10 @@
               "es": "Esperar",
               "en": "Wait",
               "pr": "Esperar"
+            },
+            "description": {
+              "es": "Colocamos el tiempo en segundos que esperaremos a que el elemento se encuentre clickeable.",
+              "en": "Put the time in seconds that we will wait for the element to be clickeable."
             },
             "id": "wait",
             "css": "col-md-6"
@@ -1567,6 +1737,10 @@
               "en": "Data to search",
               "pr": "Dado a buscar"
             },
+            "description": {
+              "es": "Colocamos el selector del elemento a extraer text.",
+              "en": "Put the selector of the element to extract text."
+            },
             "id": "data",
             "css": "col-md-12"
           },
@@ -1604,6 +1778,10 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el tipo de dato a buscar.",
+              "en": "Select the type of data to search."
+            },
             "id": "data_type",
             "css": "col-md-3"
           },
@@ -1615,6 +1793,10 @@
               "en": "Wait",
               "pr": "Esperar"
             },
+            "description": {
+              "es": "Colocamos el tiempo en segundos que esperaremos a que el elemento este disponible.",
+              "en": "Put the time in seconds that we will wait for the element to be available."
+            },
             "id": "wait",
             "css": "col-md-3"
           },
@@ -1625,11 +1807,11 @@
               "en": "Variable where to store result",
               "pr": "Variável onde armazenar o resultado"
             },
-            "help": {
-              "es": "Nombre de variable sin {}",
-              "en": "Variable name without {}",
-              "pr": "Nome da variável sem {}"
+            "description": {
+              "es": "Colocamos el nombre de la variable donde almacenaremos el resultado.",
+              "en": "Put the name of the variable where we will store the result."
             },
+            "remove_vars": true,
             "id": "result",
             "css": "col-md-6"
           }
@@ -1647,7 +1829,7 @@
       "father": "module",
       "group": "scripts"
     },
-        {
+    {
       "title": {
         "es": "Seleccionar objeto Pro",
         "en": "Select object Pro",
@@ -1669,6 +1851,10 @@
               "en": "Data to search",
               "pr": "Dado a buscar"
             },
+            "description": {
+              "es": "Colocamos el selector del elemento a seleccionar.",
+              "en": "Put the selector of the element to select."
+            },
             "id": "data",
             "css": "col-md-12"
           },
@@ -1706,6 +1892,10 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el tipo de dato a buscar.",
+              "en": "Select the type of data to search."
+            },
             "id": "data_type",
             "css": "col-md-6"
           },
@@ -1716,6 +1906,10 @@
               "es": "Esperar",
               "en": "Wait",
               "pr": "Esperar"
+            },
+            "description": {
+              "es": "Colocamos el tiempo en segundos que esperaremos a que el elemento aparezca.",
+              "en": "Put the time in seconds that we will wait for the element to appear."
             },
             "id": "wait",
             "css": "col-md-6"
@@ -1756,6 +1950,10 @@
               "en": "Data to search",
               "pr": "Dado a buscar"
             },
+            "description": {
+              "es": "Colocamos el selector del iframe",
+              "en": "Put the selector of the iframe"
+            },
             "id": "data",
             "css": "col-md-12"
           },
@@ -1793,6 +1991,11 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Seleccionamos el tipo de dato",
+              "en": "Select the type of data",
+              "pr": "Selecionamos o tipo de dado"
+            },
             "id": "data_type",
             "css": "col-md-6"
           },
@@ -1803,6 +2006,11 @@
               "es": "Esperar",
               "en": "Wait",
               "pr": "Esperar"
+            },
+            "description": {
+              "es": "Colocamos el tiempo de espera",
+              "en": "Put the time of wait",
+              "pr": "Colocamos o tempo de espera"
             },
             "id": "wait",
             "css": "col-md-6"
@@ -1842,6 +2050,11 @@
               "es": "Texto",
               "en": "Text",
               "pr": "Texto"
+            },
+            "description": {
+              "es": "Texto a enviar",
+              "en": "Text to send",
+              "pr": "Texto a enviar"
             },
             "id": "text",
             "css": "col-md-12"
@@ -2048,6 +2261,11 @@
                 "value": "UP"
               }
             ],
+            "description": {
+              "es": "Tecla especial a enviar",
+              "en": "Special key to send",
+              "pr": "Tecla especial a enviar"
+            },
             "id": "special",
             "css": "col-md-12"
           }
@@ -2078,9 +2296,7 @@
       },
       "form": {
         "css": "modal-lg",
-        "inputs": [
-
-        ]
+        "inputs": []
       },
       "linux": true,
       "windows": true,
@@ -2106,10 +2322,9 @@
         "pr": "Forçando um download"
       },
       "form": {
-
         "css": "modal-lg",
         "inputs": [
-           {
+          {
             "type": "input",
             "placeholder": "http://www.web.test/file.csv",
             "title": {
@@ -2117,11 +2332,14 @@
               "en": "Download URL:",
               "pr": "URL de Download:"
             },
+            "description": {
+              "es": "Colocamos la URL de descarga a forzar",
+              "en": "Put the URL of the download to force"
+            },
             "id": "url_file",
             "css": "col-md-12"
           },
-
-           {
+          {
             "type": "input",
             "placeholder": "file.csv",
             "title": {
@@ -2129,10 +2347,14 @@
               "en": "File Name:",
               "pr": "Nome do arquivo:"
             },
-             "help": {
+            "help": {
               "es": "Vacío para nombre original",
               "en": "Empty for original name",
               "pr": "Vazio para o nome original"
+            },
+            "description": {
+              "es": "Colocamos el nombre del archivo a forzar",
+              "en": "Put the name of the file to force"
             },
             "id": "name_file",
             "css": "col-md-12"
@@ -2163,7 +2385,6 @@
         "pr": "Abre uma nova aba com a URL"
       },
       "form": {
-
         "css": "modal-lg",
         "inputs": [
           {
@@ -2173,6 +2394,10 @@
               "es": "URL:",
               "en": "URL:",
               "pr": "URL:"
+            },
+            "description": {
+              "es": "URL a abrir en una nueva pestaña",
+              "en": "URL to open in a new tab"
             },
             "id": "url_",
             "css": "col-md-12"
@@ -2201,7 +2426,6 @@
         "en": "Open a browser the URL"
       },
       "form": {
-
         "css": "modal-lg",
         "inputs": [
           {
@@ -2211,6 +2435,11 @@
               "es": "URL:",
               "en": "URL:",
               "pr": "URL:"
+            },
+            "description": {
+              "es": "URL a abrir",
+              "en": "URL to open",
+              "pr": "URL para abrir"
             },
             "id": "url_",
             "css": "col-md-12"
@@ -2222,6 +2451,10 @@
               "es": "Tiempo de espera:",
               "en": "Timeout:"
             },
+            "description": {
+              "es": "Tiempo de espera en segundos",
+              "en": "Timeout in seconds"
+            },
             "id": "timeout",
             "css": "col-md-12"
           },
@@ -2231,6 +2464,10 @@
             "title": {
               "es": "Id:",
               "en": "Id:"
+            },
+            "description": {
+              "es": "Id del navegador",
+              "en": "Id of the browser"
             },
             "id": "newId",
             "css": "col-md-12"
@@ -2259,7 +2496,6 @@
         "en": "Do a drag and drop"
       },
       "form": {
-
         "css": "modal-lg",
         "inputs": [
           {
@@ -2270,6 +2506,11 @@
               "en": "Source",
               "pr": "Source"
             },
+            "description": {
+              "es": "Origen del elemento",
+              "en": "Source element",
+              "pr": "Source element"
+            },
             "id": "source",
             "css": "col-md-12"
           },
@@ -2279,6 +2520,11 @@
             "title": {
               "es": "Destino",
               "en": "Target"
+            },
+            "description": {
+              "es": "Destino del elemento",
+              "en": "Target element",
+              "pr": "Target element"
             },
             "id": "target",
             "css": "col-md-12"
@@ -2313,6 +2559,11 @@
                 "value": "id"
               }
             ],
+            "description": {
+              "es": "Tipo de dato a buscar",
+              "en": "Data type to search",
+              "pr": "Tipo de dado a buscar"
+            },
             "id": "tipo",
             "css": "col-md-12"
           }
@@ -2352,6 +2603,10 @@
               "en": "Data to search",
               "pr": "Dado a buscar"
             },
+            "description":{
+              "es": "Colocamos el selector del elemento donde se subira el archivo",
+              "en": "We put the selector of the element where the file will be uploaded"
+            },
             "id": "data",
             "css": "col-md-12"
           },
@@ -2389,6 +2644,11 @@
                 "value": "tag name"
               }
             ],
+            "description": {
+              "es": "Tipo de dato a buscar",
+              "en": "Data type to search",
+              "pr": "Tipo de dado a buscar"
+            },
             "id": "data_type",
             "css": "col-md-12"
           },
@@ -2402,6 +2662,10 @@
               "en": "File(s)",
               "pr": "Arquivo(s)"
             },
+            "description":{
+              "es": "Seleccionamos el archivo a subir",
+              "en": "Select the file to upload"
+            },
             "id": "files",
             "css": "col-md-12"
           }
@@ -2413,6 +2677,470 @@
       "video_youtube": "",
       "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iLTIzIDAgNTEyIDUxMi4wMDA3MiIgd2lkdGg9IjUxMnB0Ij4KPGcgaWQ9InN1cmZhY2UxIj4KPHBhdGggZD0iTSAzNDguOTQ1MzEyIDIyMS42NDA2MjUgTCAzNDguOTQ1MzEyIDEyNC43NDYwOTQgQyAzNDguOTQ1MzEyIDEyMS45NzI2NTYgMzQ3LjY2NDA2MiAxMTkuNDEwMTU2IDM0NS44NTE1NjIgMTE3LjM4MjgxMiBMIDIzNy4yMTg3NSAzLjMwODU5NCBDIDIzNS4xOTE0MDYgMS4xNzU3ODEgMjMyLjMwODU5NCAwIDIyOS40Mjk2ODggMCBMIDU3LjE5NTMxMiAwIEMgMjUuMzk4NDM4IDAgMCAyNS45Mjk2ODggMCA1Ny43MzA0NjkgTCAwIDM4My40MTQwNjIgQyAwIDQxNS4yMTQ4NDQgMjUuMzk4NDM4IDQ0MC43MTg3NSA1Ny4xOTUzMTIgNDQwLjcxODc1IEwgMTkzLjE0ODQzOCA0NDAuNzE4NzUgQyAyMTguODYzMjgxIDQ4My40MDIzNDQgMjY1LjYwNTQ2OSA1MTIgMzE4Ljg1MTU2MiA1MTIgQyAzOTkuNzM4MjgxIDUxMiA0NjUuNzkyOTY5IDQ0Ni4yNjU2MjUgNDY1Ljc5Mjk2OSAzNjUuMjczNDM4IEMgNDY1LjkwMjM0NCAyOTQuNTIzNDM4IDQxNS4xMDU0NjkgMjM1LjQwNjI1IDM0OC45NDUzMTIgMjIxLjY0MDYyNSBaIE0gMjQwLjEwMTU2MiAzNy40NTcwMzEgTCAzMTIuOTg0Mzc1IDExNC4xNzk2ODggTCAyNjUuNzEwOTM4IDExNC4xNzk2ODggQyAyNTEuNjI1IDExNC4xNzk2ODggMjQwLjEwMTU2MiAxMDIuNTUwNzgxIDI0MC4xMDE1NjIgODguNDY0ODQ0IFogTSA1Ny4xOTUzMTIgNDE5LjM3NSBDIDM3LjI0MjE4OCA0MTkuMzc1IDIxLjM0Mzc1IDQwMy4zNjcxODggMjEuMzQzNzUgMzgzLjQxNDA2MiBMIDIxLjM0Mzc1IDU3LjczMDQ2OSBDIDIxLjM0Mzc1IDM3LjY2Nzk2OSAzNy4yNDIxODggMjEuMzQzNzUgNTcuMTk1MzEyIDIxLjM0Mzc1IEwgMjE4Ljc1NzgxMiAyMS4zNDM3NSBMIDIxOC43NTc4MTIgODguNDY0ODQ0IEMgMjE4Ljc1NzgxMiAxMTQuMzk0NTMxIDIzOS43ODEyNSAxMzUuNTIzNDM4IDI2NS43MTA5MzggMTM1LjUyMzQzOCBMIDMyNy42MDE1NjIgMTM1LjUyMzQzOCBMIDMyNy42MDE1NjIgMjE4Ljg2MzI4MSBDIDMyNC40MDIzNDQgMjE4Ljc1NzgxMiAzMjEuODM5ODQ0IDIxOC40Mzc1IDMxOS4wNjY0MDYgMjE4LjQzNzUgQyAyODEuODI0MjE5IDIxOC40Mzc1IDI0Ny41NzAzMTIgMjMyLjczODI4MSAyMjEuNzQ2MDk0IDI1NS4xNDg0MzggTCA4Ni4yMjI2NTYgMjU1LjE0ODQzOCBDIDgwLjM1MTU2MiAyNTUuMTQ4NDM4IDc1LjU1MDc4MSAyNTkuOTQ5MjE5IDc1LjU1MDc4MSAyNjUuODE2NDA2IEMgNzUuNTUwNzgxIDI3MS42ODc1IDgwLjM1MTU2MiAyNzYuNDg4MjgxIDg2LjIyMjY1NiAyNzYuNDg4MjgxIEwgMjAxLjg5ODQzOCAyNzYuNDg4MjgxIEMgMTk0LjMyMDMxMiAyODcuMTYwMTU2IDE4OC4wMjM0MzggMjk3LjgzMjAzMSAxODMuMTE3MTg4IDMwOS41NzAzMTIgTCA4Ni4yMjI2NTYgMzA5LjU3MDMxMiBDIDgwLjM1MTU2MiAzMDkuNTcwMzEyIDc1LjU1MDc4MSAzMTQuMzcxMDk0IDc1LjU1MDc4MSAzMjAuMjQyMTg4IEMgNzUuNTUwNzgxIDMyNi4xMDkzNzUgODAuMzUxNTYyIDMzMC45MTQwNjIgODYuMjIyNjU2IDMzMC45MTQwNjIgTCAxNzYuMTc5Njg4IDMzMC45MTQwNjIgQyAxNzMuNTExNzE5IDM0MS41ODU5MzggMTcyLjEyNSAzNTMuNDI5Njg4IDE3Mi4xMjUgMzY1LjI3MzQzOCBDIDE3Mi4xMjUgMzg0LjQ4MDQ2OSAxNzUuODU5Mzc1IDQwMy40NzY1NjIgMTgyLjU4MjAzMSA0MTkuNDg0Mzc1IEwgNTcuMTk1MzEyIDQxOS40ODQzNzUgWiBNIDMxOC45NjA5MzggNDkwLjc2NTYyNSBDIDI0OS44MTI1IDQ5MC43NjU2MjUgMTkzLjU3NDIxOSA0MzQuNTI3MzQ0IDE5My41NzQyMTkgMzY1LjM3ODkwNiBDIDE5My41NzQyMTkgMjk2LjIzMDQ2OSAyNDkuNzAzMTI1IDIzOS45OTIxODggMzE4Ljk2MDkzOCAyMzkuOTkyMTg4IEMgMzg4LjIxNDg0NCAyMzkuOTkyMTg4IDQ0NC4zNDM3NSAyOTYuMjMwNDY5IDQ0NC4zNDM3NSAzNjUuMzc4OTA2IEMgNDQ0LjM0Mzc1IDQzNC41MjczNDQgMzg4LjEwOTM3NSA0OTAuNzY1NjI1IDMxOC45NjA5MzggNDkwLjc2NTYyNSBaIE0gMzE4Ljk2MDkzOCA0OTAuNzY1NjI1ICIgc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYigwJSwwJSwwJSk7ZmlsbC1vcGFjaXR5OjE7IiAvPgo8cGF0aCBkPSJNIDg2LjIyMjY1NiAyMjMuMDI3MzQ0IEwgMTk0LjMyMDMxMiAyMjMuMDI3MzQ0IEMgMjAwLjE5MTQwNiAyMjMuMDI3MzQ0IDIwNC45OTIxODggMjE4LjIyMjY1NiAyMDQuOTkyMTg4IDIxMi4zNTU0NjkgQyAyMDQuOTkyMTg4IDIwNi40ODQzNzUgMjAwLjE5MTQwNiAyMDEuNjgzNTk0IDE5NC4zMjAzMTIgMjAxLjY4MzU5NCBMIDg2LjIyMjY1NiAyMDEuNjgzNTk0IEMgODAuMzUxNTYyIDIwMS42ODM1OTQgNzUuNTUwNzgxIDIwNi40ODQzNzUgNzUuNTUwNzgxIDIxMi4zNTU0NjkgQyA3NS41NTA3ODEgMjE4LjIyMjY1NiA4MC4zNTE1NjIgMjIzLjAyNzM0NCA4Ni4yMjI2NTYgMjIzLjAyNzM0NCBaIE0gODYuMjIyNjU2IDIyMy4wMjczNDQgIiBzdHlsZT0iIHN0cm9rZTpub25lO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6cmdiKDAlLDAlLDAlKTtmaWxsLW9wYWNpdHk6MTsiIC8+CjxwYXRoIGQ9Ik0gMzI2LjUzNTE1NiAyODYuNjI1IEMgMzI0LjUwNzgxMiAyODQuNDkyMTg4IDMyMS43MzQzNzUgMjgzLjIxMDkzOCAzMTguNzQ2MDk0IDI4My4yMTA5MzggQyAzMTUuNzU3ODEyIDI4My4yMTA5MzggMzEyLjk4NDM3NSAyODQuNDkyMTg4IDMxMC45NTcwMzEgMjg2LjYyNSBMIDI0OC40MjE4NzUgMzUzLjc0NjA5NCBDIDI0NC4zNjcxODggMzU4LjAxNTYyNSAyNDQuNjg3NSAzNjQuODQzNzUgMjQ4Ljk1NzAzMSAzNjguNzkyOTY5IEMgMjUzLjIyNjU2MiAzNzIuODQ3NjU2IDI2MC4xNjAxNTYgMzcyLjUyNzM0NCAyNjQuMjE0ODQ0IDM2OC4yNjE3MTkgTCAzMDguMzk0NTMxIDMyMC45ODgyODEgTCAzMDguMzk0NTMxIDQzNy41MTU2MjUgQyAzMDguMzk0NTMxIDQ0My4zODY3MTkgMzEzLjE5NTMxMiA0NDguMTg3NSAzMTkuMDY2NDA2IDQ0OC4xODc1IEMgMzI0LjkzMzU5NCA0NDguMTg3NSAzMjkuNzM4MjgxIDQ0My4zODY3MTkgMzI5LjczODI4MSA0MzcuNTE1NjI1IEwgMzI5LjczODI4MSAzMjAuOTg4MjgxIEwgMzczLjU5Mzc1IDM2OC4yNjE3MTkgQyAzNzUuNzMwNDY5IDM3MC41IDM3OC41MDM5MDYgMzcxLjY3NTc4MSAzODEuMzg2NzE5IDM3MS42NzU3ODEgQyAzODMuOTQ1MzEyIDM3MS42NzU3ODEgMzg2LjUwNzgxMiAzNzAuNzE0ODQ0IDM4OC42NDA2MjUgMzY4Ljc5Mjk2OSBDIDM5Mi45MTAxNTYgMzY0LjczODI4MSAzOTMuMjMwNDY5IDM1OC4wMTU2MjUgMzg5LjE3NTc4MSAzNTMuNzQ2MDk0IFogTSAzMjYuNTM1MTU2IDI4Ni42MjUgIiBzdHlsZT0iIHN0cm9rZTpub25lO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6cmdiKDAlLDAlLDAlKTtmaWxsLW9wYWNpdHk6MTsiIC8+CjwvZz4KPC9zdmc+",
       "module": "uploadFiles",
+      "module_name": "webpro",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts"
+    },
+    {
+      "title": {
+        "es": "Enviar combinacion de teclas",
+        "en": "Send key combination",
+        "pr": "Enviar combinação de teclas"
+      },
+      "description": {
+        "es": "Comando para enviar combinacion de dos teclas",
+        "en": "Command to send key combination",
+        "pr": "Comando para enviar combinação de teclas"
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": "",
+            "title": {
+              "es": "Texto",
+              "en": "Text",
+              "pr": "Texto"
+            },
+            "description": {
+              "es": "Texto a enviar",
+              "en": "Text to send",
+              "pr": "Texto a enviar"
+            },
+            "id": "text",
+            "css": "col-md-12"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "",
+              "en": "",
+              "pr": ""
+            },
+            "title": {
+              "es": "Tecla especial",
+              "en": "Special Key",
+              "pr": "Tecla especial"
+            },
+            "options": [
+              {
+                "title": "ADD",
+                "value": "ADD"
+              },
+              {
+                "title": "ALT",
+                "value": "ALT"
+              },
+              {
+                "title": "BACKSPACE",
+                "value": "BACKSPACE"
+              },
+              {
+                "title": "CANCEL",
+                "value": "CANCEL"
+              },
+              {
+                "title": "CLEAR",
+                "value": "CLEAR"
+              },
+              {
+                "title": "CONTROL",
+                "value": "CONTROL"
+              },
+              {
+                "title": "DECIMAL",
+                "value": "DECIMAL"
+              },
+              {
+                "title": "DELETE",
+                "value": "DELETE"
+              },
+              {
+                "title": "DIVIDE",
+                "value": "DIVIDE"
+              },
+              {
+                "title": "DOWN",
+                "value": "DOWN"
+              },
+              {
+                "title": "END",
+                "value": "END"
+              },
+              {
+                "title": "ENTER",
+                "value": "ENTER"
+              },
+              {
+                "title": "ESCAPE",
+                "value": "ESCAPE"
+              },
+              {
+                "title": "F1",
+                "value": "F1"
+              },
+              {
+                "title": "F2",
+                "value": "F2"
+              },
+              {
+                "title": "F3",
+                "value": "F3"
+              },
+              {
+                "title": "F4",
+                "value": "F4"
+              },
+              {
+                "title": "F5",
+                "value": "F5"
+              },
+              {
+                "title": "F6",
+                "value": "F6"
+              },
+              {
+                "title": "F7",
+                "value": "F7"
+              },
+              {
+                "title": "F8",
+                "value": "F8"
+              },
+              {
+                "title": "F9",
+                "value": "F9"
+              },
+              {
+                "title": "HELP",
+                "value": "HELP"
+              },
+              {
+                "title": "HOME",
+                "value": "HOME"
+              },
+              {
+                "title": "INSERT",
+                "value": "INSERT"
+              },
+              {
+                "title": "LEFT",
+                "value": "LEFT"
+              },
+              {
+                "title": "LEFT_CONTROL",
+                "value": "LEFT_CONTROL"
+              },
+              {
+                "title": "LEFT_SHIFT",
+                "value": "LEFT_SHIFT"
+              },
+              {
+                "title": "NUMPAD0",
+                "value": "NUMPAD0"
+              },
+              {
+                "title": "NUMPAD1",
+                "value": "NUMPAD1"
+              },
+              {
+                "title": "NUMPAD2",
+                "value": "NUMPAD2"
+              },
+              {
+                "title": "NUMPAD3",
+                "value": "NUMPAD3"
+              },
+              {
+                "title": "NUMPAD4",
+                "value": "NUMPAD4"
+              },
+              {
+                "title": "NUMPAD5",
+                "value": "NUMPAD5"
+              },
+              {
+                "title": "NUMPAD6",
+                "value": "NUMPAD6"
+              },
+              {
+                "title": "NUMPAD7",
+                "value": "NUMPAD7"
+              },
+              {
+                "title": "NUMPAD8",
+                "value": "NUMPAD8"
+              },
+              {
+                "title": "NUMPAD9",
+                "value": "NUMPAD9"
+              },
+              {
+                "title": "PAUSE",
+                "value": "PAUSE"
+              },
+              {
+                "title": "RETURN",
+                "value": "RETURN"
+              },
+              {
+                "title": "RIGHT",
+                "value": "RIGHT"
+              },
+              {
+                "title": "SEPARATOR",
+                "value": "SEPARATOR"
+              },
+              {
+                "title": "SHIFT",
+                "value": "SHIFT"
+              },
+              {
+                "title": "SPACE",
+                "value": "SPACE"
+              },
+              {
+                "title": "SUBTRACT",
+                "value": "SUBTRACT"
+              },
+              {
+                "title": "TAB",
+                "value": "TAB"
+              },
+              {
+                "title": "UP",
+                "value": "UP"
+              }
+            ],
+            "description": {
+              "es": "Tecla especial",
+              "en": "Special Key",
+              "pr": "Tecla especial"
+            },
+            "id": "first_special_key",
+            "css": "col-md-12"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "",
+              "en": "",
+              "pr": ""
+            },
+            "title": {
+              "es": "Tecla especial",
+              "en": "Special Key",
+              "pr": "Tecla especial"
+            },
+            "options": [
+              {
+                "title": "ADD",
+                "value": "ADD"
+              },
+              {
+                "title": "ALT",
+                "value": "ALT"
+              },
+              {
+                "title": "BACKSPACE",
+                "value": "BACKSPACE"
+              },
+              {
+                "title": "CANCEL",
+                "value": "CANCEL"
+              },
+              {
+                "title": "CLEAR",
+                "value": "CLEAR"
+              },
+              {
+                "title": "CONTROL",
+                "value": "CONTROL"
+              },
+              {
+                "title": "DECIMAL",
+                "value": "DECIMAL"
+              },
+              {
+                "title": "DELETE",
+                "value": "DELETE"
+              },
+              {
+                "title": "DIVIDE",
+                "value": "DIVIDE"
+              },
+              {
+                "title": "DOWN",
+                "value": "DOWN"
+              },
+              {
+                "title": "END",
+                "value": "END"
+              },
+              {
+                "title": "ENTER",
+                "value": "ENTER"
+              },
+              {
+                "title": "ESCAPE",
+                "value": "ESCAPE"
+              },
+              {
+                "title": "F1",
+                "value": "F1"
+              },
+              {
+                "title": "F2",
+                "value": "F2"
+              },
+              {
+                "title": "F3",
+                "value": "F3"
+              },
+              {
+                "title": "F4",
+                "value": "F4"
+              },
+              {
+                "title": "F5",
+                "value": "F5"
+              },
+              {
+                "title": "F6",
+                "value": "F6"
+              },
+              {
+                "title": "F7",
+                "value": "F7"
+              },
+              {
+                "title": "F8",
+                "value": "F8"
+              },
+              {
+                "title": "F9",
+                "value": "F9"
+              },
+              {
+                "title": "HELP",
+                "value": "HELP"
+              },
+              {
+                "title": "HOME",
+                "value": "HOME"
+              },
+              {
+                "title": "INSERT",
+                "value": "INSERT"
+              },
+              {
+                "title": "LEFT",
+                "value": "LEFT"
+              },
+              {
+                "title": "LEFT_CONTROL",
+                "value": "LEFT_CONTROL"
+              },
+              {
+                "title": "LEFT_SHIFT",
+                "value": "LEFT_SHIFT"
+              },
+              {
+                "title": "NUMPAD0",
+                "value": "NUMPAD0"
+              },
+              {
+                "title": "NUMPAD1",
+                "value": "NUMPAD1"
+              },
+              {
+                "title": "NUMPAD2",
+                "value": "NUMPAD2"
+              },
+              {
+                "title": "NUMPAD3",
+                "value": "NUMPAD3"
+              },
+              {
+                "title": "NUMPAD4",
+                "value": "NUMPAD4"
+              },
+              {
+                "title": "NUMPAD5",
+                "value": "NUMPAD5"
+              },
+              {
+                "title": "NUMPAD6",
+                "value": "NUMPAD6"
+              },
+              {
+                "title": "NUMPAD7",
+                "value": "NUMPAD7"
+              },
+              {
+                "title": "NUMPAD8",
+                "value": "NUMPAD8"
+              },
+              {
+                "title": "NUMPAD9",
+                "value": "NUMPAD9"
+              },
+              {
+                "title": "PAUSE",
+                "value": "PAUSE"
+              },
+              {
+                "title": "RETURN",
+                "value": "RETURN"
+              },
+              {
+                "title": "RIGHT",
+                "value": "RIGHT"
+              },
+              {
+                "title": "SEPARATOR",
+                "value": "SEPARATOR"
+              },
+              {
+                "title": "SHIFT",
+                "value": "SHIFT"
+              },
+              {
+                "title": "SPACE",
+                "value": "SPACE"
+              },
+              {
+                "title": "SUBTRACT",
+                "value": "SUBTRACT"
+              },
+              {
+                "title": "TAB",
+                "value": "TAB"
+              },
+              {
+                "title": "UP",
+                "value": "UP"
+              }
+            ],
+            "description": {
+              "es": "Tecla especial",
+              "en": "Special Key",
+              "pr": "Tecla especial"
+            },
+            "id": "second_special_key",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "video_youtube": "",
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iLTIzIDAgNTEyIDUxMi4wMDA3MiIgd2lkdGg9IjUxMnB0Ij4KPGcgaWQ9InN1cmZhY2UxIj4KPHBhdGggZD0iTSAzNDguOTQ1MzEyIDIyMS42NDA2MjUgTCAzNDguOTQ1MzEyIDEyNC43NDYwOTQgQyAzNDguOTQ1MzEyIDEyMS45NzI2NTYgMzQ3LjY2NDA2MiAxMTkuNDEwMTU2IDM0NS44NTE1NjIgMTE3LjM4MjgxMiBMIDIzNy4yMTg3NSAzLjMwODU5NCBDIDIzNS4xOTE0MDYgMS4xNzU3ODEgMjMyLjMwODU5NCAwIDIyOS40Mjk2ODggMCBMIDU3LjE5NTMxMiAwIEMgMjUuMzk4NDM4IDAgMCAyNS45Mjk2ODggMCA1Ny43MzA0NjkgTCAwIDM4My40MTQwNjIgQyAwIDQxNS4yMTQ4NDQgMjUuMzk4NDM4IDQ0MC43MTg3NSA1Ny4xOTUzMTIgNDQwLjcxODc1IEwgMTkzLjE0ODQzOCA0NDAuNzE4NzUgQyAyMTguODYzMjgxIDQ4My40MDIzNDQgMjY1LjYwNTQ2OSA1MTIgMzE4Ljg1MTU2MiA1MTIgQyAzOTkuNzM4MjgxIDUxMiA0NjUuNzkyOTY5IDQ0Ni4yNjU2MjUgNDY1Ljc5Mjk2OSAzNjUuMjczNDM4IEMgNDY1LjkwMjM0NCAyOTQuNTIzNDM4IDQxNS4xMDU0NjkgMjM1LjQwNjI1IDM0OC45NDUzMTIgMjIxLjY0MDYyNSBaIE0gMjQwLjEwMTU2MiAzNy40NTcwMzEgTCAzMTIuOTg0Mzc1IDExNC4xNzk2ODggTCAyNjUuNzEwOTM4IDExNC4xNzk2ODggQyAyNTEuNjI1IDExNC4xNzk2ODggMjQwLjEwMTU2MiAxMDIuNTUwNzgxIDI0MC4xMDE1NjIgODguNDY0ODQ0IFogTSA1Ny4xOTUzMTIgNDE5LjM3NSBDIDM3LjI0MjE4OCA0MTkuMzc1IDIxLjM0Mzc1IDQwMy4zNjcxODggMjEuMzQzNzUgMzgzLjQxNDA2MiBMIDIxLjM0Mzc1IDU3LjczMDQ2OSBDIDIxLjM0Mzc1IDM3LjY2Nzk2OSAzNy4yNDIxODggMjEuMzQzNzUgNTcuMTk1MzEyIDIxLjM0Mzc1IEwgMjE4Ljc1NzgxMiAyMS4zNDM3NSBMIDIxOC43NTc4MTIgODguNDY0ODQ0IEMgMjE4Ljc1NzgxMiAxMTQuMzk0NTMxIDIzOS43ODEyNSAxMzUuNTIzNDM4IDI2NS43MTA5MzggMTM1LjUyMzQzOCBMIDMyNy42MDE1NjIgMTM1LjUyMzQzOCBMIDMyNy42MDE1NjIgMjE4Ljg2MzI4MSBDIDMyNC40MDIzNDQgMjE4Ljc1NzgxMiAzMjEuODM5ODQ0IDIxOC40Mzc1IDMxOS4wNjY0MDYgMjE4LjQzNzUgQyAyODEuODI0MjE5IDIxOC40Mzc1IDI0Ny41NzAzMTIgMjMyLjczODI4MSAyMjEuNzQ2MDk0IDI1NS4xNDg0MzggTCA4Ni4yMjI2NTYgMjU1LjE0ODQzOCBDIDgwLjM1MTU2MiAyNTUuMTQ4NDM4IDc1LjU1MDc4MSAyNTkuOTQ5MjE5IDc1LjU1MDc4MSAyNjUuODE2NDA2IEMgNzUuNTUwNzgxIDI3MS42ODc1IDgwLjM1MTU2MiAyNzYuNDg4MjgxIDg2LjIyMjY1NiAyNzYuNDg4MjgxIEwgMjAxLjg5ODQzOCAyNzYuNDg4MjgxIEMgMTk0LjMyMDMxMiAyODcuMTYwMTU2IDE4OC4wMjM0MzggMjk3LjgzMjAzMSAxODMuMTE3MTg4IDMwOS41NzAzMTIgTCA4Ni4yMjI2NTYgMzA5LjU3MDMxMiBDIDgwLjM1MTU2MiAzMDkuNTcwMzEyIDc1LjU1MDc4MSAzMTQuMzcxMDk0IDc1LjU1MDc4MSAzMjAuMjQyMTg4IEMgNzUuNTUwNzgxIDMyNi4xMDkzNzUgODAuMzUxNTYyIDMzMC45MTQwNjIgODYuMjIyNjU2IDMzMC45MTQwNjIgTCAxNzYuMTc5Njg4IDMzMC45MTQwNjIgQyAxNzMuNTExNzE5IDM0MS41ODU5MzggMTcyLjEyNSAzNTMuNDI5Njg4IDE3Mi4xMjUgMzY1LjI3MzQzOCBDIDE3Mi4xMjUgMzg0LjQ4MDQ2OSAxNzUuODU5Mzc1IDQwMy40NzY1NjIgMTgyLjU4MjAzMSA0MTkuNDg0Mzc1IEwgNTcuMTk1MzEyIDQxOS40ODQzNzUgWiBNIDMxOC45NjA5MzggNDkwLjc2NTYyNSBDIDI0OS44MTI1IDQ5MC43NjU2MjUgMTkzLjU3NDIxOSA0MzQuNTI3MzQ0IDE5My41NzQyMTkgMzY1LjM3ODkwNiBDIDE5My41NzQyMTkgMjk2LjIzMDQ2OSAyNDkuNzAzMTI1IDIzOS45OTIxODggMzE4Ljk2MDkzOCAyMzkuOTkyMTg4IEMgMzg4LjIxNDg0NCAyMzkuOTkyMTg4IDQ0NC4zNDM3NSAyOTYuMjMwNDY5IDQ0NC4zNDM3NSAzNjUuMzc4OTA2IEMgNDQ0LjM0Mzc1IDQzNC41MjczNDQgMzg4LjEwOTM3NSA0OTAuNzY1NjI1IDMxOC45NjA5MzggNDkwLjc2NTYyNSBaIE0gMzE4Ljk2MDkzOCA0OTAuNzY1NjI1ICIgc3R5bGU9IiBzdHJva2U6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztmaWxsOnJnYigwJSwwJSwwJSk7ZmlsbC1vcGFjaXR5OjE7IiAvPgo8cGF0aCBkPSJNIDg2LjIyMjY1NiAyMjMuMDI3MzQ0IEwgMTk0LjMyMDMxMiAyMjMuMDI3MzQ0IEMgMjAwLjE5MTQwNiAyMjMuMDI3MzQ0IDIwNC45OTIxODggMjE4LjIyMjY1NiAyMDQuOTkyMTg4IDIxMi4zNTU0NjkgQyAyMDQuOTkyMTg4IDIwNi40ODQzNzUgMjAwLjE5MTQwNiAyMDEuNjgzNTk0IDE5NC4zMjAzMTIgMjAxLjY4MzU5NCBMIDg2LjIyMjY1NiAyMDEuNjgzNTk0IEMgODAuMzUxNTYyIDIwMS42ODM1OTQgNzUuNTUwNzgxIDIwNi40ODQzNzUgNzUuNTUwNzgxIDIxMi4zNTU0NjkgQyA3NS41NTA3ODEgMjE4LjIyMjY1NiA4MC4zNTE1NjIgMjIzLjAyNzM0NCA4Ni4yMjI2NTYgMjIzLjAyNzM0NCBaIE0gODYuMjIyNjU2IDIyMy4wMjczNDQgIiBzdHlsZT0iIHN0cm9rZTpub25lO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6cmdiKDAlLDAlLDAlKTtmaWxsLW9wYWNpdHk6MTsiIC8+CjxwYXRoIGQ9Ik0gMzI2LjUzNTE1NiAyODYuNjI1IEMgMzI0LjUwNzgxMiAyODQuNDkyMTg4IDMyMS43MzQzNzUgMjgzLjIxMDkzOCAzMTguNzQ2MDk0IDI4My4yMTA5MzggQyAzMTUuNzU3ODEyIDI4My4yMTA5MzggMzEyLjk4NDM3NSAyODQuNDkyMTg4IDMxMC45NTcwMzEgMjg2LjYyNSBMIDI0OC40MjE4NzUgMzUzLjc0NjA5NCBDIDI0NC4zNjcxODggMzU4LjAxNTYyNSAyNDQuNjg3NSAzNjQuODQzNzUgMjQ4Ljk1NzAzMSAzNjguNzkyOTY5IEMgMjUzLjIyNjU2MiAzNzIuODQ3NjU2IDI2MC4xNjAxNTYgMzcyLjUyNzM0NCAyNjQuMjE0ODQ0IDM2OC4yNjE3MTkgTCAzMDguMzk0NTMxIDMyMC45ODgyODEgTCAzMDguMzk0NTMxIDQzNy41MTU2MjUgQyAzMDguMzk0NTMxIDQ0My4zODY3MTkgMzEzLjE5NTMxMiA0NDguMTg3NSAzMTkuMDY2NDA2IDQ0OC4xODc1IEMgMzI0LjkzMzU5NCA0NDguMTg3NSAzMjkuNzM4MjgxIDQ0My4zODY3MTkgMzI5LjczODI4MSA0MzcuNTE1NjI1IEwgMzI5LjczODI4MSAzMjAuOTg4MjgxIEwgMzczLjU5Mzc1IDM2OC4yNjE3MTkgQyAzNzUuNzMwNDY5IDM3MC41IDM3OC41MDM5MDYgMzcxLjY3NTc4MSAzODEuMzg2NzE5IDM3MS42NzU3ODEgQyAzODMuOTQ1MzEyIDM3MS42NzU3ODEgMzg2LjUwNzgxMiAzNzAuNzE0ODQ0IDM4OC42NDA2MjUgMzY4Ljc5Mjk2OSBDIDM5Mi45MTAxNTYgMzY0LjczODI4MSAzOTMuMjMwNDY5IDM1OC4wMTU2MjUgMzg5LjE3NTc4MSAzNTMuNzQ2MDk0IFogTSAzMjYuNTM1MTU2IDI4Ni42MjUgIiBzdHlsZT0iIHN0cm9rZTpub25lO2ZpbGwtcnVsZTpub256ZXJvO2ZpbGw6cmdiKDAlLDAlLDAlKTtmaWxsLW9wYWNpdHk6MTsiIC8+CjwvZz4KPC9zdmc+",
+      "module": "sendKeyCombination",
       "module_name": "webpro",
       "visible": true,
       "options": false,

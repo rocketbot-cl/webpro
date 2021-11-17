@@ -865,6 +865,23 @@ try:
             files = " \n ".join(files)
         element.send_keys(files)
 
+    if module == "sendKeyCombination":
+        first_special_key = GetParams("first_special_key")    
+        text = GetParams("text")
+        second_special_key = GetParams("second_special_key")    
+        try:
+            web_driver = GetGlobals("web")
+            driver = web_driver.driver_list[web_driver.driver_actual_id]
+            from selenium.webdriver import ActionChains
+            actions = ActionChains(driver)
+            if not text:
+                actions.key_down(special_keys[first_special_key]).send_keys(special_keys[second_special_key]).key_up(special_keys[first_special_key]).perform()
+            if text:
+                actions.key_down(special_keys[first_special_key]).send_keys(text).key_up(special_keys[first_special_key]).perform()
+        except Exception as e:
+            print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+            PrintException()
+            raise e
 
 except Exception as e:
     PrintException()
