@@ -6,7 +6,7 @@
   
 Módulos para manejo extendido de navegador  
   
-![banner](/docs/imgs/Banner_webpro.png)
+![banner](https://i.imgur.com/chdTKrD.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  

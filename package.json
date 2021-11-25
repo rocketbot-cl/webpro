@@ -2727,6 +2727,10 @@
             },
             "options": [
               {
+                "title": "LEFT_ALT",
+                "value": "LEFT_ALT"
+              },
+              {
                 "title": "ADD",
                 "value": "ADD"
               },
