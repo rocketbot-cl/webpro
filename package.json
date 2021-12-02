@@ -2698,22 +2698,6 @@
         "css": "modal-lg",
         "inputs": [
           {
-            "type": "input",
-            "placeholder": "",
-            "title": {
-              "es": "Texto",
-              "en": "Text",
-              "pr": "Texto"
-            },
-            "description": {
-              "es": "Texto a enviar",
-              "en": "Text to send",
-              "pr": "Texto a enviar"
-            },
-            "id": "text",
-            "css": "col-md-12"
-          },
-          {
             "type": "select",
             "placeholder": {
               "es": "",
@@ -2721,9 +2705,9 @@
               "pr": ""
             },
             "title": {
-              "es": "Tecla especial",
-              "en": "Special Key",
-              "pr": "Tecla especial"
+              "es": "Primera tecla especial",
+              "en": "First special Key",
+              "pr": "Primeira tecla especial"
             },
             "options": [
               {
@@ -2920,11 +2904,32 @@
               }
             ],
             "description": {
-              "es": "Tecla especial",
-              "en": "Special Key",
-              "pr": "Tecla especial"
+              "es": "Primer tecla especial a combinar con una letra/numero o con una segunda tecla especial",
+              "en": "First special key to combine with a letter/number or with a second special key",
+              "pr": "Primeira tecla especial a combinar com uma letra/numero ou com uma segunda tecla especial"
+            },
+            "help": {
+              "es": "Unicamente podemos combinar la primera tecla especial con una letra/numero o con la segunda tecla esepcial. Unicamente elegir una de las opciones",
+              "en": "Only we can combine the first special key with a letter/number or with the second special key. Only choose one of the options",
+              "pr": "Sólo podemos combinar a primeira tecla especial com uma letra/numero o com a segunda tecla especial. Sólo escolher uma das opções"
             },
             "id": "first_special_key",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "",
+            "title": {
+              "es": "Letra o numero",
+              "en": "Letter or number",
+              "pr": "Letra ou número"
+            },
+            "description": {
+              "es": "Letra o numero a combinar con la primera tecla de ser necesario.",
+              "en": "Letter or number to combine with the first key if necessary.",
+              "pr": "Letra ou número para combinar com a primeira tecla se necessário."
+            },
+            "id": "text",
             "css": "col-md-12"
           },
           {
@@ -2935,9 +2940,9 @@
               "pr": ""
             },
             "title": {
-              "es": "Tecla especial",
-              "en": "Special Key",
-              "pr": "Tecla especial"
+              "es": "Segunda tecla especial",
+              "en": "Second special key",
+              "pr": "Segunda tecla especial"
             },
             "options": [
               {
@@ -3130,9 +3135,9 @@
               }
             ],
             "description": {
-              "es": "Tecla especial",
-              "en": "Special Key",
-              "pr": "Tecla especial"
+              "es": "Segunda tecla especial a combinar con la primera tecla de ser necesario.",
+              "en": "Second special key to combine with the first key if necessary.",
+              "pr": "Segunda tecla especial para combinar com a primeira tecla se necessário."
             },
             "id": "second_special_key",
             "css": "col-md-12"
