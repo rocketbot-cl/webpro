@@ -6,7 +6,7 @@
   
 Módulos para manejo extendido de navegador  
 
-## Howto install this module
+## How to install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
@@ -125,8 +125,8 @@ Command to send key combination
 
 
 ### Changes
-Thu Aug 19 13:24:01 2021  Merge branch master of github.com:rocketbot-cl/webpro
-Fri Apr 24 16:28:55 2020  Merge branch 
+Thu Aug 19 12:24:01 2021  Merge branch master of github.com:rocketbot-cl/webpro
+Fri Apr 24 15:28:55 2020  Merge branch 
 master of https://github.com/rocketbot-cl/webpro
 Wed Mar 11 14:24:59 2020  Merge branch master of 
 https://github.com/rocketbot-cl/webpro

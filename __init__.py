@@ -214,6 +214,12 @@ if module == "CleanInputs":
     texto = GetParams('texto')
     search_type = GetParams("tipo")
     element = None
+
+    try:
+        simulationKey = eval(GetParams("simulationKey"))
+    except:
+        simulationKey = False
+
     print(search_type)
     if search_type == 'name':
         element = driver.find_element_by_name(search)
@@ -228,6 +234,9 @@ if module == "CleanInputs":
 
     if element is not None and texto is not None:
         element.clear()
+        if simulationKey:
+            element.send_keys(Keys.SHIFT, Keys.ARROW_UP)
+            element.send_keys(Keys.DELETE)
         element.send_keys(texto)
 
 if module == "LoadCookies":

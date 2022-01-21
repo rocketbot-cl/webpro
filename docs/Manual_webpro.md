@@ -6,7 +6,7 @@
   
 Módulos para manejo extendido de navegador  
   
-![banner](https://i.imgur.com/chdTKrD.png)
+![banner](/docs/imgs/Banner_webpro.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
@@ -33,6 +33,7 @@ Borra el contenido de un objeto tipo input y envia el texto
 |Texto a enviar o variable|Colocamos el texto o la variable a enviar.|Texto o Variable|
 |Dato a buscar|Colocamos el dato a buscar.|Dato a buscar|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar. Ya sea xpath, class, name, tag o id.|Dato a buscar|
+|Enviar con teclas|Borra y escribe con teclas directamente.|Texto o Variable|
 
 ### Guardar Cookies
   
@@ -289,6 +290,6 @@ Comando para subir uno o más archivos a un input de tipo file
 Comando para enviar combinacion de dos teclas
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Texto|Texto a enviar||
-|Tecla especial|Tecla especial||
-|Tecla especial|Tecla especial||
+|Primera tecla especial|Primer tecla especial a combinar con una letra/numero o con una segunda tecla especial||
+|Letra o numero|Letra o numero a combinar con la primera tecla de ser necesario.||
+|Segunda tecla especial|Segunda tecla especial a combinar con la primera tecla de ser necesario.||
