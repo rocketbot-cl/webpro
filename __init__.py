@@ -94,7 +94,10 @@ types = {
         "id": By.ID,
         "class name": By.CLASS_NAME,
         "xpath": By.XPATH,
-        "tag name": By.TAG_NAME
+        "tag name": By.TAG_NAME,
+        "link text": By.LINK_TEXT,
+        "partial link text": By.PARTIAL_LINK_TEXT,
+        "css selector": By.CSS_SELECTOR
     }
 
 special_keys = {
@@ -353,12 +356,9 @@ if module == "selectElement":
 
 if module == "clickElement":
 
-    
-    
     option_ = GetParams('option_')
     search = GetParams('search_data')
     index_ = GetParams("index_")
-    print(option_,index_)
     element = None
     index_ = eval(index_)
     res = False
@@ -667,8 +667,6 @@ if module == "Hover":
 
 if module == "clickPro":
     
-    
-
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
@@ -683,10 +681,10 @@ if module == "clickPro":
             webdriver._object_selected = elementLocator
             actionChains.click(elementLocator).perform()
         except TimeoutException:
+            PrintException()
             raise Exception("The item is not available to be clicked")
 
     except Exception as e:
-        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
         PrintException()
         raise e
 
@@ -835,18 +833,25 @@ if module == "open_browser":
     timeout = GetParams("timeout")
     url_ = GetParams("url_")
     newId = GetParams("newId")
+    download_path = GetParams("download_path")
     try:
         platform_ = platform.system()
         if platform_.endswith('dows'):
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
         else:
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
-        browser_driver = Chrome(executable_path=chrome_driver)
+        
+        caps = selenium.webdriver.ChromeOptions()
+        prefs = {"download.default_directory": download_path}
+        caps.add_experimental_option("prefs", prefs)
+        browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
+
+        if not timeout:
+            timeout = 100
 
         if not (newId):
             newId = "default"
         webdriver.driver_actual_id = newId
-
         webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
         
         webdriver.driver_list[webdriver.driver_actual_id].set_page_load_timeout(int(timeout))
