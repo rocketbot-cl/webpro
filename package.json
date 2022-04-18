@@ -55,7 +55,8 @@
             },
             "description": {
               "es": "En este campo debemos poner el tipo de clase o atributo que usaremos.",
-              "en": "In this field we should put the type of class or attribute we will use."
+              "en": "In this field we should put the type of class or attribute we will use.",
+              "pr": "Neste campo devemos colocar o tipo de classe ou atributo que usaremos."
             },
             "id": "type_",
             "css": "col-md-6"
@@ -79,7 +80,8 @@
             },
             "description": {
               "es": "En este campo debemos poner el nombre de la clase o atributo que usaremos.",
-              "en": "In this field we should put the name of the class or attribute we will use."
+              "en": "In this field we should put the name of the class or attribute we will use.",
+              "pr": "Neste campo devemos colocar o nome da classe ou atributo que usaremos."
             },
             "id": "data_",
             "css": "col-md-6"
@@ -98,7 +100,8 @@
             },
             "description": {
               "es": "En este campo debemos poner el tipo de elemento que usaremos.",
-              "en": "In this field we should put the type of element we will use."
+              "en": "In this field we should put the type of element we will use.",
+              "pr": "Neste campo devemos colocar o tipo de elemento que usaremos."
             },
             "id": "el_",
             "css": "col-md-6"
@@ -112,7 +115,8 @@
             },
             "description": {
               "es": "En este campo debemos poner el nombre de la variable donde almacenaremos el resultado.",
-              "en": "In this field we should put the name of the variable where we will store the result."
+              "en": "In this field we should put the name of the variable where we will store the result.",
+              "pr": "Neste campo devemos colocar o nome da variável onde armazenaremos o resultado."
             },
             "remove_vars": true,
             "id": "result",
@@ -160,7 +164,8 @@
             },
             "description": {
               "es": "Colocamos el texto o la variable a enviar.",
-              "en": "We put the text or the variable to send."
+              "en": "We put the text or the variable to send.",
+              "pr": "Colocamos o texto ou a variável para enviar."
             },
             "id": "texto",
             "css": "col-md-12"
@@ -179,7 +184,8 @@
             },
             "description": {
               "es": "Colocamos el dato a buscar.",
-              "en": "We put the data to search."
+              "en": "We put the data to search.",
+              "pr": "Colocamos o dado a buscar."
             },
             "id": "search_data",
             "css": "col-md-12"
@@ -220,7 +226,8 @@
             ],
             "description": {
               "es": "Seleccionamos el tipo de dato a buscar. Ya sea xpath, class, name, tag o id.",
-              "en": "We select the type of data to search. Either xpath, class, name, tag or id."
+              "en": "We select the type of data to search. Either xpath, class, name, tag or id.",
+              "pr": "Selecionamos o tipo de dado a buscar. Xpath, class, name, tag o id."
             },
             "id": "tipo",
             "css": "col-md-12"
@@ -229,19 +236,23 @@
             "type": "checkbox",
             "placeholder": {
                 "es": "Texto o Variable",
-                "en": "Texto o Variable"
+                "en": "Texto o Variable",
+                "pr": "Texto ou Variável"
             },
             "description": {
                 "es": "Borra y escribe con teclas directamente.",
-                "en": "Erase and write with keys."
+                "en": "Erase and write with keys.",
+                "pr": "Apaga e escreve com teclas diretamente."
             },
             "title": {
                 "es": "Enviar con teclas:",
-                "en": "Send with keys:"
+                "en": "Send with keys:",
+                "pr": "Enviar com teclas:"
             },
             "help": {
                 "es": "Usar en caso de que no borre correctamente.",
-                "en": "Use it when do not erase the input."
+                "en": "Use it when do not erase the input.",
+                "pr": "Usar em caso de que não apague corretamente."
             },
             "id": "simulationKey",
             "css": "col-md-6"
@@ -288,7 +299,8 @@
             },
             "description": {
               "es": "En este campo indicamos la ruta al archivo donde se guardarán las cookies",
-              "en": "In this field we indicate the path to the file where the cookies will be saved"
+              "en": "In this field we indicate the path to the file where the cookies will be saved",
+              "pr": "Neste campo indicamos o caminho para o arquivo onde os cookies serão salvos"
             },
             "id": "file_",
             "css": "col-md-12"
@@ -356,7 +368,8 @@
             },
             "description": {
               "es": "Seleccionamos la ruta del archivo donde están guardadas las cookies",
-              "en": "Select the path to the file where cookies are stored"
+              "en": "Select the path to the file where cookies are stored",
+              "pr": "Selecione o caminho para o arquivo onde os cookies são armazenados"
             },
             "id": "file_",
             "css": "col-md-12"
@@ -453,7 +466,8 @@
             },
             "description": {
               "es": "Colocamos el selector a buscar",
-              "en": "We put the selector to search"
+              "en": "We put the selector to search",
+              "pr": "Colocamos o seletor a buscar"
             },
             "id": "data",
             "css": "col-md-12"
@@ -494,7 +508,8 @@
             ],
             "description": {
               "es": "Colocamos el tipo de dato a buscar",
-              "en": "We put the type of data to search"
+              "en": "We put the type of data to search",
+              "pr": "Colocamos o tipo de dado a buscar"
             },
             "id": "data_type",
             "css": "col-md-12"
@@ -542,7 +557,8 @@
             },
             "description": {
               "es": "Elegimos la posición en píxeles",
-              "en": "Choose the position in pixels"
+              "en": "Choose the position in pixels",
+              "pr": "Escolhemos a posição em pixels"
             },
             "id": "position",
             "css": "col-md-12"
@@ -651,7 +667,8 @@
             },
             "description": {
               "es": "Colocamos el selector a buscar",
-              "en": "We put the selector to search"
+              "en": "We put the selector to search",
+              "pr": "Colocamos o seletor a buscar"
             },
             "id": "search_data",
             "css": "col-md-12"
@@ -666,7 +683,8 @@
             },
             "description": {
               "es": "Colocamos el index a buscar",
-              "en": "We put the index to search"
+              "en": "We put the index to search",
+              "pr": "Colocamos o índice a buscar"
             },
             "id": "index_",
             "css": "col-md-12"
@@ -694,7 +712,8 @@
             ],
             "description": {
               "es": "Seleccionamos el tipo de dato a buscar",
-              "en": "We select the type of data to search"
+              "en": "We select the type of data to search",
+              "pr": "Selecionamos o tipo de dado a buscar"
             },
             "id": "option_",
             "css": "col-md-12"
@@ -737,7 +756,8 @@
             },
             "description": {
               "es": "Colocamos el selector del dato a clickear.",
-              "en": "We put the selector of the data to click."
+              "en": "We put the selector of the data to click.",
+              "pr": "Colocamos o seletor do dado a clicar."
             },
             "id": "search_data",
             "css": "col-md-12"
@@ -752,7 +772,8 @@
             },
             "description": {
               "es": "Colocamos el index del dato a clickear.",
-              "en": "We put the index of the data to click."
+              "en": "We put the index of the data to click.",
+              "pr": "Colocamos o índice do dado a clicar."
             },
             "id": "index_",
             "css": "col-md-12"
@@ -780,7 +801,8 @@
             ],
             "description": {
               "es": "Colocamos el tipo de dato a clickear.",
-              "en": "We put the type of the data to click."
+              "en": "We put the type of the data to click.",
+              "pr": "Colocamos o tipo do dado a clicar."
             },
             "id": "option_",
             "css": "col-md-12"
@@ -828,7 +850,8 @@
             },
             "description": {
               "es": "Seleccionamos el nombre del archivo a guardar, sin la extension .pdf",
-              "en": "Select the name of the file to save, without the extension .pdf"
+              "en": "Select the name of the file to save, without the extension .pdf",
+              "pr": "Selecione o nome do arquivo a salvar, sem a extensão .pdf"
             },
             "id": "name_",
             "css": "col-md-12"
@@ -843,7 +866,8 @@
             },
             "description": {
               "es": "Seleccionamos el nombre de la variable a la que queremos asignar el resultado",
-              "en": "Select the name of the variable to which we want to assign the result"
+              "en": "Select the name of the variable to which we want to assign the result",
+              "pr": "Selecione o nome da variável para a qual queremos atribuir o resultado"
             },
             "remove_vars": true,
             "id": "var_",
@@ -891,7 +915,8 @@
             },
             "description": {
               "es": "Escribimos la URL de la pagina a abrir.",
-              "en": "Write the URL of the page to open."
+              "en": "Write the URL of the page to open.",
+              "pr": "Escreva a URL da página a abrir."
             },
             "id": "url",
             "css": "col-md-12"
@@ -1022,7 +1047,8 @@
             },
             "description": {
               "es": "Colocamos el selector del elemento a obtener.",
-              "en": "We put the selector of the element to get."
+              "en": "We put the selector of the element to get.",
+              "pr": "Colocamos o seletor do elemento a obter."
             },
             "id": "data",
             "css": "col-md-6"
@@ -1063,7 +1089,8 @@
             ],
             "description": {
               "es": "Seleccionamos el tipo de dato a buscar.",
-              "en": "We select the type of data to search."
+              "en": "We select the type of data to search.",
+              "pr": "Selecionamos o tipo de dado a buscar."
             },
             "id": "data_type",
             "css": "col-md-6"
@@ -1122,7 +1149,8 @@
             },
             "description": {
               "es": "Colocamos el selector del elemento a seleccionar",
-              "en": "Put the selector of the element to select"
+              "en": "Put the selector of the element to select",
+              "pr": "Colocamos o seletor do elemento a selecionar"
             },
             "id": "data",
             "css": "col-md-6"
@@ -1163,7 +1191,8 @@
             ],
             "description": {
               "es": "Seleccionamos el tipo de dato a buscar",
-              "en": "Select the type of data to search"
+              "en": "Select the type of data to search",
+              "pr": "Selecionamos o tipo de dado a buscar"
             },
             "id": "data_type",
             "css": "col-md-6"
@@ -1222,7 +1251,8 @@
             },
             "description": {
               "es": "Colocamos el selector del elemento a seleccionar",
-              "en": "Put the selector of the element to select"
+              "en": "Put the selector of the element to select",
+              "pr": "Colocamos o seletor do elemento a selecionar"
             },
             "id": "data",
             "css": "col-md-6"
@@ -1263,7 +1293,8 @@
             ],
             "description": {
               "es": "Seleccionamos el tipo de dato a buscar",
-              "en": "Select the type of data to search"
+              "en": "Select the type of data to search",
+              "pr": "Selecionamos o tipo de dado a buscar"
             },
             "id": "data_type",
             "css": "col-md-6"
@@ -1356,7 +1387,8 @@
             ],
             "description": {
               "es": "Seleccionamos el modo en que se va abrir el navegador.",
-              "en": "Select the mode in which the browser will be opened."
+              "en": "Select the mode in which the browser will be opened.",
+              "pr": "Selecionamos o modo em que o navegador será aberto."
             },
             "id": "mode",
             "css": "col-md-4"
@@ -1515,7 +1547,7 @@
       "description": {
         "es": "Mueve el mouse encima de un elemento",
         "en": "Move mouse over the element",
-        "cn": "Passar o mouse sobre o elemento"
+        "pr": "Passar o mouse sobre o elemento"
       },
       "form": {
         "css": "modal-lg",
@@ -1530,7 +1562,8 @@
             },
             "description": {
               "es": "Colocamos el selecto del elemento al cual le haremos hover.",
-              "en": "We put the selector of the element to which we will make hover."
+              "en": "We put the selector of the element to which we will make hover.",
+              "pr": "Colocamos o selecionador do elemento ao qual fazermos hover."
             },
             "id": "data",
             "css": "col-md-12"
@@ -1571,7 +1604,8 @@
             ],
             "description": {
               "es": "Colocamos el tipo de dato que queremos buscar.",
-              "en": "We put the type of data we want to search."
+              "en": "We put the type of data we want to search.",
+              "pr": "Colocamos o tipo de dado que queremos buscar."
             },
             "id": "data_type",
             "css": "col-md-12"
@@ -1618,7 +1652,8 @@
             },
             "description": {
               "es": "Url de la pagina a abrir en Edge",
-              "en": "Url of the page to open in Edge"
+              "en": "Url of the page to open in Edge",
+              "pr": "Url da páxina a abrir no Edge"
             },
             "id": "url",
             "css": "col-md-12"
@@ -1661,7 +1696,8 @@
             },
             "description": {
               "es": "Colocamos el selector del elemento a hacer click.",
-              "en": "Put the selector of the element to click."
+              "en": "Put the selector of the element to click.",
+              "pr": "Colocamos o seletor do elemento a clicar."
             },
             "id": "data",
             "css": "col-md-12"
@@ -1714,7 +1750,8 @@
             ],
             "description": {
               "es": "Seleccionamos el tipo de dato a buscar.",
-              "en": "Select the type of data to search."
+              "en": "Select the type of data to search.",
+              "pr": "Selecionamos o tipo de dado a buscar."
             },
             "id": "data_type",
             "css": "col-md-6"
@@ -1729,7 +1766,8 @@
             },
             "description": {
               "es": "Colocamos el tiempo en segundos que esperaremos a que el elemento se encuentre clickeable.",
-              "en": "Put the time in seconds that we will wait for the element to be clickeable."
+              "en": "Put the time in seconds that we will wait for the element to be clickeable.",
+              "pr": "Colocamos o tempo em segundos que esperaremos a que o elemento se torne clicável."
             },
             "id": "wait",
             "css": "col-md-6"
@@ -1772,7 +1810,8 @@
             },
             "description": {
               "es": "Colocamos el selector del elemento a extraer text.",
-              "en": "Put the selector of the element to extract text."
+              "en": "Put the selector of the element to extract text.",
+              "pr": "Colocamos o seletor do elemento a extrair texto."
             },
             "id": "data",
             "css": "col-md-12"
@@ -1825,7 +1864,8 @@
             ],
             "description": {
               "es": "Seleccionamos el tipo de dato a buscar.",
-              "en": "Select the type of data to search."
+              "en": "Select the type of data to search.",
+              "pr": "Selecionamos o tipo de dado a buscar."
             },
             "id": "data_type",
             "css": "col-md-3"
@@ -1840,7 +1880,8 @@
             },
             "description": {
               "es": "Colocamos el tiempo en segundos que esperaremos a que el elemento este disponible.",
-              "en": "Put the time in seconds that we will wait for the element to be available."
+              "en": "Put the time in seconds that we will wait for the element to be available.",
+              "pr": "Colocamos o tempo em segundos que esperaremos a que o elemento este disponível."
             },
             "id": "wait",
             "css": "col-md-3"
@@ -1854,7 +1895,8 @@
             },
             "description": {
               "es": "Colocamos el nombre de la variable donde almacenaremos el resultado.",
-              "en": "Put the name of the variable where we will store the result."
+              "en": "Put the name of the variable where we will store the result.",
+              "pr": "Colocamos o nome da variável onde armazenaremos o resultado."
             },
             "remove_vars": true,
             "id": "result",
@@ -1898,7 +1940,8 @@
             },
             "description": {
               "es": "Colocamos el selector del elemento a seleccionar.",
-              "en": "Put the selector of the element to select."
+              "en": "Put the selector of the element to select.",
+              "pr": "Colocamos o seletor do elemento a selecionar."
             },
             "id": "data",
             "css": "col-md-12"
@@ -1951,7 +1994,8 @@
             ],
             "description": {
               "es": "Seleccionamos el tipo de dato a buscar.",
-              "en": "Select the type of data to search."
+              "en": "Select the type of data to search.",
+              "pr": "Selecionamos o tipo de dado a buscar."
             },
             "id": "data_type",
             "css": "col-md-6"
@@ -1966,7 +2010,8 @@
             },
             "description": {
               "es": "Colocamos el tiempo en segundos que esperaremos a que el elemento aparezca.",
-              "en": "Put the time in seconds that we will wait for the element to appear."
+              "en": "Put the time in seconds that we will wait for the element to appear.",
+              "pr": "Colocamos o tempo em segundos que esperaremos a que o elemento apareça."
             },
             "id": "wait",
             "css": "col-md-6"
@@ -2009,7 +2054,8 @@
             },
             "description": {
               "es": "Colocamos el selector del iframe",
-              "en": "Put the selector of the iframe"
+              "en": "Put the selector of the iframe",
+              "pr": "Colocamos o seletor do iframe"
             },
             "id": "data",
             "css": "col-md-12"
@@ -2403,7 +2449,8 @@
             },
             "description": {
               "es": "Colocamos la URL de descarga a forzar",
-              "en": "Put the URL of the download to force"
+              "en": "Put the URL of the download to force",
+              "pr": "Colocamos a URL de download a forçar"
             },
             "id": "url_file",
             "css": "col-md-12"
@@ -2423,7 +2470,8 @@
             },
             "description": {
               "es": "Colocamos el nombre del archivo a forzar",
-              "en": "Put the name of the file to force"
+              "en": "Put the name of the file to force",
+              "pr": "Colocamos o nome do arquivo a forçar"
             },
             "id": "name_file",
             "css": "col-md-12"
@@ -2466,7 +2514,8 @@
             },
             "description": {
               "es": "URL a abrir en una nueva pestaña",
-              "en": "URL to open in a new tab"
+              "en": "URL to open in a new tab",
+              "pr": "URL para abrir em uma nova aba"
             },
             "id": "url_",
             "css": "col-md-12"
@@ -2488,11 +2537,13 @@
     {
       "title": {
         "es": "Abrir navegador",
-        "en": "Open Browser"
+        "en": "Open Browser",
+        "pr": "Abrir navegador"
       },
       "description": {
         "es": "Abre el navegador indicando la URL",
-        "en": "Open a browser the URL"
+        "en": "Open a browser the URL",
+        "pr": "Abre o navegador indicando a URL"
       },
       "form": {
         "css": "modal-lg",
@@ -2518,11 +2569,13 @@
             "placeholder": "5",
             "title": {
               "es": "Tiempo de espera:",
-              "en": "Timeout:"
+              "en": "Timeout:",
+              "pr": "Tempo de espera:"
             },
             "description": {
               "es": "Tiempo de espera en segundos",
-              "en": "Timeout in seconds"
+              "en": "Timeout in seconds",
+              "pr": "Tiempo de espera en segundos"
             },
             "id": "timeout",
             "css": "col-md-6"
@@ -2532,11 +2585,13 @@
             "placeholder": "4",
             "title": {
               "es": "Id:",
-              "en": "Id:"
+              "en": "Id:",
+              "pr": "Id:"
             },
             "description": {
               "es": "Id del navegador",
-              "en": "Id of the browser"
+              "en": "Id of the browser",
+              "pr": "Id do navegador"
             },
             "id": "newId",
             "css": "col-md-6"
@@ -2546,11 +2601,13 @@
             "placeholder": "C:/folder",
             "title": {
               "es": "Carpeta de descargas:",
-              "en": "Download Folder:"
+              "en": "Download Folder:",
+              "pr": "Pasta de download:"
             },
             "description": {
               "es": "Ruta de la carpeta de descargas para el navegador abierto",
-              "en": "Download folder for the opened browser"
+              "en": "Download folder for the opened browser",
+              "pr": "Rota da pasta de download para o navegador aberto"
             },
             "id": "download_path",
             "css": "col-md-12"
@@ -2572,11 +2629,13 @@
     {
       "title": {
         "es": "Drag and drop",
-        "en": "Drag and drop"
+        "en": "Drag and drop",
+        "pr": "Drag and drop"
       },
       "description": {
         "es": "Realiza un drag and drop",
-        "en": "Do a drag and drop"
+        "en": "Do a drag and drop",
+        "pr": "Fazer um drag and drop"
       },
       "form": {
         "css": "modal-lg",
@@ -2602,7 +2661,8 @@
             "placeholder": "target",
             "title": {
               "es": "Destino",
-              "en": "Target"
+              "en": "Target",
+              "pr": "Destino"
             },
             "description": {
               "es": "Destino del elemento",
@@ -2688,7 +2748,8 @@
             },
             "description":{
               "es": "Colocamos el selector del elemento donde se subira el archivo",
-              "en": "We put the selector of the element where the file will be uploaded"
+              "en": "We put the selector of the element where the file will be uploaded",
+              "pr": "Colocamos o seletor do elemento onde o arquivo será subido"
             },
             "id": "data",
             "css": "col-md-12"
@@ -2747,7 +2808,8 @@
             },
             "description":{
               "es": "Seleccionamos el archivo a subir",
-              "en": "Select the file to upload"
+              "en": "Select the file to upload",
+              "pr": "Selecionamos o arquivo a subir"
             },
             "id": "files",
             "css": "col-md-12"
