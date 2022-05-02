@@ -24,7 +24,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 
-__version__ = '11.1.1'
+__version__ = '11.2.1'
 __author__ = 'Rocketbot <contacto@rocketbot.com>'
 
 import base64
@@ -897,6 +897,16 @@ try:
             print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
             PrintException()
             raise e
+
+    if module == "RightClick":
+
+        data_ = GetParams("data")
+        data_type = GetParams("data_type")
+    
+        actionChains = ActionChains(driver)
+        elementLocator = driver.find_element(data_type, data_)
+    
+        actionChains.context_click(elementLocator).perform()
 
 except Exception as e:
     PrintException()
