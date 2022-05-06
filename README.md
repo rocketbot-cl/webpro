@@ -1,18 +1,20 @@
 
 
+
+
 # WEB Pro
-  
-Módulos para manejo extendido de navegador  
+
+Modules for extended browser management 
 
 ## How to install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
-## Como usar este modulo
-Este modulo se complementa con los modulos y comandos nativos Web que ya vienen por defecto en 
-Rocketbot. Para poder usar el modulo debes tener un navegador ya abierto desde Rocketbot con el comando de "Abrir 
-Navegador". Luego de esto ya podremos utilizar los comandos con normalidad.
+## How to use this module
+This module is complemented by the native Web modules and commands that already come by default in
+Rocketbot. In order to use the module you must have a browser already open from Rocketbot with the "Open
+Browser". After this we can use the commands normally.
 
 
 ## Overview
@@ -121,14 +123,9 @@ Command to upload one or more files to an input of type file
 Command to send key combination  
 
 
-
-### Changes
-Thu Aug 19 12:24:01 2021  Merge branch master of github.com:rocketbot-cl/webpro
-Fri Apr 24 15:28:55 2020  Merge branch 
-master of https://github.com/rocketbot-cl/webpro
-Wed Mar 11 14:24:59 2020  Merge branch master of 
-https://github.com/rocketbot-cl/webpro
-
+### Updates
+#### 18-Apr-2022
+- Open Browser: Added selector for folder that will be the downloads folder
 ----
 ### OS
 
