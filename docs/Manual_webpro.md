@@ -4,7 +4,7 @@
 
 # WEB Pro
   
-Módulos para manejo extendido de navegador  
+Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
   
 ![banner](imgs/Banner_webpro.png)
 ## Como instalar este módulo
@@ -20,9 +20,9 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de ro
 Obtiene una lista de todos los elementos y sus hijos a partir de una clase o nombre para poder iterar sobre ella.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Tipo Clases o atributo|En este campo debemos poner el tipo de clase o atributo que usaremos.|Tipo de clase o atributo|
-|Clases o atributo|En este campo debemos poner el nombre de la clase o atributo que usaremos.|Clases o atributo|
-|Tipo de Elemento/Objeto web|En este campo debemos poner el tipo de elemento que usaremos.||
+|Tipo Clases o atributo|En este campo debemos poner el tipo de clase o atributo que usaremos.|Name|
+|Clases o atributo|En este campo debemos poner el nombre de la clase o atributo que usaremos.|Class|
+|Tipo de Elemento/Objeto web|En este campo debemos poner el tipo de elemento que usaremos.|DIV|
 |Variable donde almacenar resultado|En este campo debemos poner el nombre de la variable donde almacenaremos el resultado.||
 
 ### Limpia un input y envia el texto
@@ -67,7 +67,7 @@ Volver a la página anterior
 Hace doble click sobre un objeto seleccionado
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector a buscar||
+|Dato a buscar|Colocamos el selector a buscar|Dato|
 |Tipo de dato|Colocamos el tipo de dato a buscar||
 
 ### Scroll
@@ -75,14 +75,14 @@ Hace doble click sobre un objeto seleccionado
 Hace scroll hasta una posición determinada
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Posición|Elegimos la posición en píxeles||
+|Posición|Elegimos la posición en píxeles|1500|
 
 ### Contar Eelementos
   
 Entrega el total de elementos
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de la clase|Nombre de la clase del elemento||
+|Nombre de la clase|Nombre de la clase del elemento|Name class|
 |Asignar resultado a variable|Nombre de la variable donde se guardará el resultado|Variable|
 
 ### Seleccionar Objeto por Index
@@ -108,7 +108,7 @@ Clickea un objeto pasándole el index
 Exporta la página a un archivo PDF
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre de Archivo|Seleccionamos el nombre del archivo a guardar, sin la extension .pdf||
+|Nombre de Archivo|Seleccionamos el nombre del archivo a guardar, sin la extension .pdf|name_file|
 |Asignar resultado a variable|Seleccionamos el nombre de la variable a la que queremos asignar el resultado|Variable|
 
 ### Abrir Chrome en modo headless
@@ -132,27 +132,27 @@ Toma una captura de pantalla a una sección de la página mediante coordenadas
 Obtiene coordenadas x e y, y dimensiones de un objeto
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a obtener.||
+|Dato a buscar|Colocamos el selector del elemento a obtener.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.||
-|Variable donde almacenar resultado|Nombre de variable sin {}||
+|Variable donde almacenar resultado|Nombre de variable sin {}|Variable|
 
 ### Obtener coordenadas de un objeto
   
 Obtiene coordenadas x e y de un objeto
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a seleccionar||
+|Dato a buscar|Colocamos el selector del elemento a seleccionar|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar||
-|Variable donde almacenar resultado|Nombre de variable sin {}||
+|Variable donde almacenar resultado|Nombre de variable sin {}|Variable|
 
 ### Obtener dimensiones de un objeto
   
 Obtiene dimensiones de un objeto
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a seleccionar||
+|Dato a buscar|Colocamos el selector del elemento a seleccionar|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar||
-|Variable donde almacenar resultado|Nombre de variable sin {}||
+|Variable donde almacenar resultado|Nombre de variable sin {}|Variable|
 
 ### Abrir Chrome modo desarrollador 
   
@@ -167,7 +167,7 @@ Abre Google Chrome en modo seguro o modo debugger
 Obtiene información desde la consola
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Variable donde almacenar resultado|Nombre de la variable donde almacenar el resultado||
+|Variable donde almacenar resultado|Nombre de la variable donde almacenar el resultado|Variable|
 |Nivel |Nivel de información a mostrar||
 
 ### Convertir página a PNG
@@ -182,7 +182,7 @@ Toma una captura a la página web completa
 Mueve el mouse encima de un elemento
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selecto del elemento al cual le haremos hover.||
+|Dato a buscar|Colocamos el selecto del elemento al cual le haremos hover.|Data|
 |Tipo de dato|Colocamos el tipo de dato que queremos buscar.||
 
 ### Abrir Edge (Chromium)
@@ -197,7 +197,7 @@ Abre el nuevo Edge basado en Chromium
 Hace click sobre un objeto seleccionado esperando que se encuentre cliqueable
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a hacer click.||
+|Dato a buscar|Colocamos el selector del elemento a hacer click.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.||
 |Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento se encuentre clickeable.|5|
 
@@ -206,17 +206,17 @@ Hace click sobre un objeto seleccionado esperando que se encuentre cliqueable
 Obtiene el texto de un objeto esperando que este se encuentre disponible
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a extraer text.||
+|Dato a buscar|Colocamos el selector del elemento a extraer text.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.||
 |Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento este disponible.|5|
-|Variable donde almacenar resultado|Colocamos el nombre de la variable donde almacenaremos el resultado.||
+|Variable donde almacenar resultado|Colocamos el nombre de la variable donde almacenaremos el resultado.|Variable|
 
 ### Seleccionar objeto Pro
   
 Selecciona un objeto esperando que se encuentre presente
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a seleccionar.||
+|Dato a buscar|Colocamos el selector del elemento a seleccionar.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.||
 |Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento aparezca.|5|
 
@@ -225,7 +225,7 @@ Selecciona un objeto esperando que se encuentre presente
 Cambia a un iframe esperando que se encuentre presente
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del iframe||
+|Dato a buscar|Colocamos el selector del iframe|Data|
 |Tipo de dato|Seleccionamos el tipo de dato||
 |Esperar|Colocamos el tiempo de espera|5|
 
@@ -234,7 +234,7 @@ Cambia a un iframe esperando que se encuentre presente
 Similar a Enviar texto web, pero a más bajo nivel
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Texto|Texto a enviar||
+|Texto|Texto a enviar|Text|
 |Tecla especial|Tecla especial a enviar||
 
 ### Imprimir como PDF (Chrome)
@@ -282,7 +282,7 @@ Realiza un drag and drop
 Comando para subir uno o más archivos a un input de tipo file
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento donde se subira el archivo||
+|Dato a buscar|Colocamos el selector del elemento donde se subira el archivo|Data|
 |Tipo de dato|Tipo de dato a buscar||
 |Archivo(s)|Seleccionamos el archivo a subir|['C:/Users/user/file.pdf']|
 
@@ -292,5 +292,5 @@ Comando para enviar combinacion de dos teclas
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Primera tecla especial|Primer tecla especial a combinar con una letra/numero o con una segunda tecla especial||
-|Letra o numero|Letra o numero a combinar con la primera tecla de ser necesario.||
+|Letra o numero|Letra o numero a combinar con la primera tecla de ser necesario.|A|
 |Segunda tecla especial|Segunda tecla especial a combinar con la primera tecla de ser necesario.||

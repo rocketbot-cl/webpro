@@ -3,18 +3,18 @@
 
 
 # WEB Pro
-
-Modules for extended browser management 
+  
+Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
 
 ## How to install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
-## How to use this module
-This module is complemented by the native Web modules and commands that already come by default in
-Rocketbot. In order to use the module you must have a browser already open from Rocketbot with the "Open
-Browser". After this we can use the commands normally.
+## Como usar este modulo
+Este modulo se complementa con los modulos y comandos nativos Web que ya vienen por defecto en 
+Rocketbot. Para poder usar el modulo debes tener un navegador ya abierto desde Rocketbot con el comando de "Abrir 
+Navegador". Luego de esto ya podremos utilizar los comandos con normalidad.
 
 
 ## Overview
@@ -121,7 +121,6 @@ Command to upload one or more files to an input of type file
 
 34. Send key combination  
 Command to send key combination  
-
 
 ### Updates
 #### 18-Apr-2022

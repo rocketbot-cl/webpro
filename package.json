@@ -1,6 +1,6 @@
 {
   "author": "David Cuello - José González - Marcela Vergara - Danilo Toro>",
-  "description": "Módulos para manejo extendido de navegador",
+  "description": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
   "version": "11.5.0",
   "license": "MIT",
@@ -39,14 +39,14 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Tipo de clase o atributo",
-              "en": "Class",
-              "pr": "Classe"
+              "es": "Name",
+              "en": "Name",
+              "pr": "Name"
             },
             "title": {
               "es": "Tipo Clases o atributo",
-              "en": "Class",
-              "pr": "Classe"
+              "en": "Type Classes or attribute",
+              "pr": "Tipo de classes ou atributo"
             },
             "help": {
               "es": "Puede ser class, name, data-*, etc.",
@@ -64,14 +64,14 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Clases o atributo",
+              "es": "Class",
               "en": "Class",
-              "pr": "Classe"
+              "pr": "Class"
             },
             "title": {
               "es": "Clases o atributo",
-              "en": "Class",
-              "pr": "Classe"
+              "en": "Classes or attribute",
+              "pr": "Classes ou atributo"
             },
             "help": {
               "es": "Puede poner uno o todos los atributos del elemento",
@@ -92,6 +92,11 @@
               "es": "Tipo de Elemento/Objeto web",
               "en": "Element Type",
               "pr": "Tipo do Elemento"
+            },
+            "placeholder": {
+              "es": "DIV",
+              "en": "DIV",
+              "pr": "DIV"
             },
             "help": {
               "es": "DIV, SPAN, INPUT, etc*",
@@ -458,7 +463,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": {
+              "es": "Dato",
+              "en": "Data",
+              "pr": "Dado"
+            },
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -549,7 +558,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "1500",
             "title": {
               "es": "Posición",
               "en": "Position",
@@ -593,7 +602,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Name class",
             "title": {
               "es": "Nombre de la clase:",
               "en": "Class Name:",
@@ -837,7 +846,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "name_file",
             "title": {
               "es": "Nombre de Archivo:",
               "en": "File Name:",
@@ -1039,7 +1048,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Data",
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1055,11 +1064,7 @@
           },
           {
             "type": "select",
-            "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
-            },
+            "placeholder": "",
             "title": {
               "es": "Tipo de dato",
               "en": "Data type",
@@ -1097,6 +1102,7 @@
           },
           {
             "type": "input",
+            "placeholder": "Variable",
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1141,7 +1147,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Data",
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1199,6 +1205,7 @@
           },
           {
             "type": "input",
+            "placeholder": "Variable",
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1243,7 +1250,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Data",
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1301,6 +1308,7 @@
           },
           {
             "type": "input",
+            "placeholder": "Variable",
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1423,6 +1431,7 @@
         "inputs": [
           {
             "type": "input",
+            "placeholder": "Variable",
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1554,7 +1563,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Data",
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1688,7 +1697,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Data",
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1802,7 +1811,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Data",
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1888,6 +1897,7 @@
           },
           {
             "type": "input",
+            "placeholder": "Variable",
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1932,7 +1942,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Data",
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -2046,7 +2056,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Data",
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -2160,7 +2170,7 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "Text",
             "title": {
               "es": "Texto",
               "en": "Text",
@@ -2740,8 +2750,8 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "",
-            "title": {
+            "placeholder": "Data",
+            "title": { 
               "es": "Dato a buscar",
               "en": "Data to search",
               "pr": "Dado a buscar"
@@ -3063,7 +3073,7 @@
           },
           {
             "type": "input",
-            "placeholder": "",
+            "placeholder": "A",
             "title": {
               "es": "Letra o numero",
               "en": "Letter or number",
