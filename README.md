@@ -1,8 +1,10 @@
 
 
+
+
 # WEB Pro
   
-Módulos para manejo extendido de navegador  
+Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
 
 ## How to install this module
   
@@ -120,15 +122,9 @@ Command to upload one or more files to an input of type file
 34. Send key combination  
 Command to send key combination  
 
-
-
-### Changes
-Thu Aug 19 12:24:01 2021  Merge branch master of github.com:rocketbot-cl/webpro
-Fri Apr 24 15:28:55 2020  Merge branch 
-master of https://github.com/rocketbot-cl/webpro
-Wed Mar 11 14:24:59 2020  Merge branch master of 
-https://github.com/rocketbot-cl/webpro
-
+### Updates
+#### 18-Apr-2022
+- Open Browser: Added selector for folder that will be the downloads folder
 ----
 ### OS
 
