@@ -834,6 +834,16 @@ if module == "open_browser":
     url_ = GetParams("url_")
     newId = GetParams("newId")
     download_path = GetParams("download_path")
+    if download_path:
+        download_path = download_path.replace("/", os.sep)
+    force_downloads = GetParams("force_downloads")
+
+    custom_options = GetParams("custom_options")
+    try:
+        custom_options = eval(custom_options)
+    except:
+        pass
+
     try:
         platform_ = platform.system()
         if platform_.endswith('dows'):
@@ -842,7 +852,18 @@ if module == "open_browser":
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
         
         caps = selenium.webdriver.ChromeOptions()
+        caps.add_argument("--safebrowsing-disable-download-protection")
         prefs = {"download.default_directory": download_path}
+
+        if force_downloads == "True":
+            force_download_params = {
+            'download.prompt_for_download': 'false',
+            'safebrowsing.enabled': 'false'
+            }
+            prefs.update(force_download_params)
+        if custom_options:
+            prefs.update(custom_options)
+
         caps.add_experimental_option("prefs", prefs)
         browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
 
