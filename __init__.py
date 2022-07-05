@@ -43,6 +43,7 @@ cur_path = base_path + 'modules' + os.sep + 'webpro' + os.sep + 'libs' + os.sep
 sys.path.append(cur_path)
 print(cur_path)
 
+
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -52,7 +53,9 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import TimeoutException
 from PIL import Image
 
+
 module = GetParams("module")
+
 
 def makeTmpDir(name):
     try:
@@ -69,7 +72,7 @@ def getBoundingClientRect(type_element, selector):
     web_driver = GetGlobals("web")
     if web_driver.driver_actual_id in web_driver.driver_list:
         driver = web_driver.driver_list[web_driver.driver_actual_id]
-    
+
     # driver = webdriver.driver_list[webdriver.driver_actual_id]
 
     if type_element == "xpath":
@@ -172,13 +175,13 @@ if webdriver.driver_actual_id in webdriver.driver_list:
     driver = webdriver.driver_list[webdriver.driver_actual_id]
 
 if module == "webelementlist":
-    
+
     el_ = GetParams("el_")
     type_ = GetParams("type_")
     data_ = GetParams("data_")
     var_ = GetParams("result")
 
-    
+
     global getChild
 
 
@@ -214,8 +217,8 @@ if module == "webelementlist":
     SetVar(var_, str(re))
 
 if module == "CleanInputs":
-    
-    
+
+
     search = GetParams('search_data')
     texto = GetParams('texto')
     search_type = GetParams("tipo")
@@ -248,8 +251,8 @@ if module == "CleanInputs":
 if module == "LoadCookies":
     import pickle
 
-    
-    
+
+
     file_ = GetParams('file_')
     with open(file_, 'rb') as cookiesfile:
         cookies = pickle.load(cookiesfile)
@@ -260,13 +263,13 @@ if module == "LoadCookies":
 if module == "SaveCookies":
     import pickle
 
-    
+
 
     file_ = GetParams('file_')
     result = GetParams('result')
 
     try:
-        
+
         cookies = driver.get_cookies()
         print("--*", cookies)
         with open(file_, 'wb') as filehandler:
@@ -279,18 +282,18 @@ if module == "SaveCookies":
         raise e
 
 if module == "reloadPage":
-    
-    
+
+
     driver.refresh()
 
 if module == "back":
-    
-    
+
+
     driver.back()
 
 if module == "DoubleClick":
-    
-    
+
+
 
     data_ = GetParams("data")
     data_type = GetParams("data_type")
@@ -301,8 +304,8 @@ if module == "DoubleClick":
     actionChains.double_click(elementLocator).perform()
 
 if module == "Scroll":
-    
-    
+
+
 
     position = GetParams("position")
 
@@ -314,8 +317,8 @@ if module == "Scroll":
 
 if module == "length_":
 
-    
-    
+
+
     search = GetParams('search_data')
     var_ = GetParams("var_")
 
@@ -329,8 +332,8 @@ if module == "length_":
 
 if module == "selectElement":
 
-    
-    
+
+
     option_ = GetParams('option_')
     search = GetParams('search_data')
     index_ = GetParams("index_")
@@ -391,8 +394,8 @@ if module == "clickElement":
 
 if module == "html2pdf":
 
-    
-    
+
+
     name_ = GetParams("name_")
     var_ = GetParams("var_")
 
@@ -474,8 +477,8 @@ if module == "screenshot":
     location = GetParams("location")
     size = GetParams("size")
 
-    
-    
+
+
 
     tmp_path = "tmp/webpro/screenshot.png"
     try:
@@ -519,8 +522,8 @@ if module == "getBoundingClientRect":
     type_ = GetParams("data_type")
     result = GetParams("result")
 
-    
-    
+
+
 
     try:
         rect = getBoundingClientRect(type_, data)
@@ -536,8 +539,8 @@ if module == "getLocation":
     type_ = GetParams("data_type")
     result = GetParams("result")
 
-    
-    
+
+
 
     try:
         rect = getBoundingClientRect(type_, data)
@@ -554,8 +557,8 @@ if module == "getSize":
     type_ = GetParams("data_type")
     result = GetParams("result")
 
-    
-    
+
+
 
     try:
         rect = getBoundingClientRect(type_, data)
@@ -655,8 +658,8 @@ if module == "fullScreenshot":
         raise e
 
 if module == "Hover":
-    
-    
+
+
 
     data_ = GetParams("data")
     data_type = GetParams("data_type")
@@ -666,7 +669,7 @@ if module == "Hover":
     actionChains.move_to_element(elementLocator).perform()
 
 if module == "clickPro":
-    
+
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
@@ -689,7 +692,7 @@ if module == "clickPro":
         raise e
 
 if module == "getText":
-    
+
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
@@ -711,7 +714,7 @@ if module == "getText":
         raise e
 
 if module == "selectPro":
-    
+
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
@@ -733,8 +736,8 @@ if module == "selectPro":
         raise e
 
 if module == "changeIframePro":
-    
-    
+
+
 
     data_ = GetParams("data")
     wait_ = GetParams("wait")
@@ -829,20 +832,15 @@ if module == "new_tab":
     driver.switch_to.window(driver.window_handles[-1])
 
 if module == "open_browser":
-    
+
     timeout = GetParams("timeout")
     url_ = GetParams("url_")
     newId = GetParams("newId")
     download_path = GetParams("download_path")
-    if download_path:
-        download_path = download_path.replace("/", os.sep)
-    force_downloads = GetParams("force_downloads")
+    profile_path = GetParams("profile_path")
 
-    custom_options = GetParams("custom_options")
-    try:
-        custom_options = eval(custom_options)
-    except:
-        pass
+    if profile_path == None or profile_path == "":
+        profile_path = ""
 
     try:
         platform_ = platform.system()
@@ -850,21 +848,11 @@ if module == "open_browser":
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
         else:
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
-        
+
         caps = selenium.webdriver.ChromeOptions()
-        caps.add_argument("--safebrowsing-disable-download-protection")
         prefs = {"download.default_directory": download_path}
-
-        if force_downloads == "True":
-            force_download_params = {
-            'download.prompt_for_download': 'false',
-            'safebrowsing.enabled': 'false'
-            }
-            prefs.update(force_download_params)
-        if custom_options:
-            prefs.update(custom_options)
-
         caps.add_experimental_option("prefs", prefs)
+        caps.add_argument("--user-data-dir=" + profile_path)
         browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
 
         if not timeout:
@@ -874,9 +862,9 @@ if module == "open_browser":
             newId = "default"
         webdriver.driver_actual_id = newId
         webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
-        
+
         webdriver.driver_list[webdriver.driver_actual_id].set_page_load_timeout(int(timeout))
-        webdriver.driver_list[webdriver.driver_actual_id].get(url_)        
+        webdriver.driver_list[webdriver.driver_actual_id].get(url_)
     except Exception as e:
         PrintException()
         raise e
@@ -885,7 +873,7 @@ try:
         source = GetParams("source")
         target = GetParams("target")
         tipo = GetParams("tipo")
-    
+
         script_js = """
             path1="{path1}",path2="{path2}",option="{tipo}","xpath"==option&&(source=document.evaluate(path1,document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue,target=document.evaluate(path2,document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue),"id"==option&&(source=document.querySelector("#"+path1),target=document.querySelector("#"+path2)),"class"==option&&(source=document.querySelector("."+path1),target=document.querySelector("."+path2)),"tag"==option&&(source=document.querySelector(path1),target=document.querySelector(path2)),target.appendChild(source);
         """.format(path1=source, path2=target, tipo=tipo)
@@ -902,9 +890,9 @@ try:
         element.send_keys(files)
 
     if module == "sendKeyCombination":
-        first_special_key = GetParams("first_special_key")    
+        first_special_key = GetParams("first_special_key")
         text = GetParams("text")
-        second_special_key = GetParams("second_special_key")    
+        second_special_key = GetParams("second_special_key")
         try:
             web_driver = GetGlobals("web")
             driver = web_driver.driver_list[web_driver.driver_actual_id]
@@ -923,10 +911,10 @@ try:
 
         data_ = GetParams("data")
         data_type = GetParams("data_type")
-    
+
         actionChains = ActionChains(driver)
         elementLocator = driver.find_element(data_type, data_)
-    
+
         actionChains.context_click(elementLocator).perform()
 
 except Exception as e:
