@@ -852,7 +852,10 @@ if module == "open_browser":
         caps = selenium.webdriver.ChromeOptions()
         prefs = {"download.default_directory": download_path}
         caps.add_experimental_option("prefs", prefs)
-        caps.add_argument("--user-data-dir=" + profile_path)
+        if profile_path == "":
+            pass
+        else:
+            caps.add_argument("--user-data-dir=" + profile_path)
         browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
 
         if not timeout:
