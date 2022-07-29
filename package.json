@@ -378,6 +378,31 @@
             },
             "id": "file_",
             "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado à variável"
+            },
+            "description": {
+              "es": "Variable donde se almacenará True o False dependiendo si se pudieron cargar las cookies",
+              "en": "Variable where True or False will be stored depending on whether the cookies could be loaded",
+              "pr": "Variável onde True ou False será armazenado dependendo se os cookies podem ser carregados"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "id": "var_",
+            "css": "col-md-12"
           }
         ]
       },

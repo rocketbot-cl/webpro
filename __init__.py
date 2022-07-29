@@ -24,7 +24,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 
-__version__ = '11.2.1'
+__version__ = '11.1.2'
 __author__ = 'Rocketbot <contacto@rocketbot.com>'
 
 import base64
@@ -36,6 +36,7 @@ from io import BytesIO
 
 import time
 from bs4 import BeautifulSoup
+from selenium import webdriver as ws
 from selenium.webdriver import ActionChains
 from selenium.webdriver import Chrome
 base_path = tmp_global_obj["basepath"]
@@ -248,14 +249,22 @@ if module == "CleanInputs":
 if module == "LoadCookies":
     import pickle
 
-    
-    
     file_ = GetParams('file_')
-    with open(file_, 'rb') as cookiesfile:
-        cookies = pickle.load(cookiesfile)
-        print(cookies)
-        for cookie in cookies:
-            driver.add_cookie(cookie)
+    var_ = GetParams('var_')
+    
+    
+    try:
+        with open(file_, 'rb') as cookiesfile:
+            cookies = pickle.load(cookiesfile)
+            print(cookies)
+            for cookie in cookies:
+                driver.add_cookie(cookie)
+        SetVar(var_, "True")
+    except Exception as e:
+        PrintException()
+        SetVar(var_, "False")
+        raise e
+        
 
 if module == "SaveCookies":
     import pickle
@@ -273,7 +282,8 @@ if module == "SaveCookies":
             pickle.dump(cookies, filehandler)
 
         if result:
-            SetVar(result, str(cookies))
+            SetVar(result, str(cookies))  
+            
     except Exception as e:
         PrintException()
         raise e
@@ -405,9 +415,8 @@ if module == "html2pdf":
         driver.execute_script(read_)
         driver.execute_script(read2_)
 
-        element = driver.execute_script("let doc = new jsPDF('p','pt','a4'); doc.addHTML(document.body,function() {"
+        element = driver.execute_script("let doc = new jsPDF('p','pt','a4'); doc.addHTML(document.body, function() {"
                                        "doc.save('"+name_+".pdf');});")
-
         res = True
 
     except Exception as e:
@@ -458,7 +467,7 @@ if module == "Edge_":
         else:
             edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
 
-        driver = webdriver.Edge(edge_driver, {})
+        driver = ws.Edge(edge_driver, {})
 
         web.driver_list[web.driver_actual_id] = driver
         if url:
@@ -918,16 +927,6 @@ try:
             print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
             PrintException()
             raise e
-
-    if module == "RightClick":
-
-        data_ = GetParams("data")
-        data_type = GetParams("data_type")
-    
-        actionChains = ActionChains(driver)
-        elementLocator = driver.find_element(data_type, data_)
-    
-        actionChains.context_click(elementLocator).perform()
 
 except Exception as e:
     PrintException()
