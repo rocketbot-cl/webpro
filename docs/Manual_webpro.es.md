@@ -273,6 +273,7 @@ Abre el navegador indicando la URL
 |URL|URL a abrir|http://www.google.com|
 |Tiempo de espera|Tiempo de espera en segundos|5|
 |Id|Id del navegador|4|
+|Carpeta de perfil|Ruta de la carpeta de perfil de usuario para abrir el navegador|C:/folder|
 |Carpeta de descargas|Ruta de la carpeta de descargas para el navegador abierto|C:/folder|
 |Forzar descargas|Fuerza las descargas para hacerlas automaticas|True|
 |Opciones para Chrome|Opciones para el navegador|{'download.default_directory': download_path}|

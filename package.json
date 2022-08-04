@@ -2823,6 +2823,26 @@
                 "pr": "C:/folder"
               },
               "title": {
+                "es": "Carpeta de perfil:",
+                "en": "Profile folder:",
+                "pr": "Pasta de perfil:"
+              },
+              "description": {
+                "es": "Ruta de la carpeta de perfil de usuario para abrir el navegador",
+                "en": "Profile folder to open the opened browser",
+                "pr": "Rota da pasta do perfil do usuário para abrir o navegador"
+              },
+              "id": "profile_path",
+              "css": "col-md-12"
+            },
+            {
+              "type": "folder_select",
+              "placeholder": {
+                "es": "C:/folder",
+                "en": "C:/folder",
+                "pr": "C:/folder"
+              },
+              "title": {
                 "es": "Carpeta de descargas:",
                 "en": "Download Folder:",
                 "pr": "Pasta de download:"
@@ -2833,7 +2853,7 @@
                 "pr": "Caminho da pasta de downloads para o navegador aberto"
               },
               "id": "download_path",
-              "css": "col-md-8"
+              "css": "col-md-12"
             },
             {
               "type": "checkbox",

@@ -938,6 +938,12 @@ if module == "open_browser":
     if download_path:
         download_path = download_path.replace("/", os.sep)
     force_downloads = GetParams("force_downloads")
+    profile_path = GetParams("profile_path")
+    
+    if profile_path == None or profile_path == "":
+        profile_path = ""
+    
+    
 
     custom_options = GetParams("custom_options")
     try:
@@ -966,6 +972,12 @@ if module == "open_browser":
             prefs.update(custom_options)
 
         caps.add_experimental_option("prefs", prefs)
+        
+        if profile_path == "":
+            pass
+        else:
+            caps.add_argument("--user-data-dir=" + profile_path)
+        
         browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
 
         if not timeout:
