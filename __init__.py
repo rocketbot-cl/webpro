@@ -24,7 +24,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 
-__version__ = '11.1.2'
+__version__ = '11.6.0'
 __author__ = 'Rocketbot <contacto@rocketbot.com>'
 
 import base64
@@ -52,6 +52,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import TimeoutException
 from PIL import Image
+from pathlib import Path
+downloads_path = str(Path.home() / "Downloads")
 
 module = GetParams("module")
 
@@ -403,21 +405,72 @@ if module == "html2pdf":
 
     
     
-    name_ = GetParams("name_")
+    path_ = GetParams("path_")
+    if path_:
+        path_ = path_.replace("/", os.sep)
     var_ = GetParams("var_")
+    del_header = GetParams("del_header")
 
-    lk1 = cur_path+'html2canvas.js'
-    lk2 = cur_path+'jspdf.debug.js'
+    # lk1 = cur_path+'html2canvas.js'
+    # lk2 = cur_path+'jspdf.debug.js'
 
     try:
-        read_ = open(lk1, "r").read()
-        read2_ = open(lk2, "r").read()
-        driver.execute_script(read_)
-        driver.execute_script(read2_)
+        # read_ = open(lk1, "r").read()
+        # read2_ = open(lk2, "r").read()
+        # driver.execute_script(read_)
+        # driver.execute_script(read2_)
 
-        element = driver.execute_script("let doc = new jsPDF('p','pt','a4'); doc.addHTML(document.body, function() {"
-                                       "doc.save('"+name_+".pdf');});")
-        res = True
+        # element = driver.execute_script("let doc = new jsPDF('p','pt','a4'); doc.addHTML(document.body, function() {"
+        #                                "doc.save('"+name_+".pdf');});")
+        # res = True
+        
+        tmp_path = "tmp/webpro/screenshot"
+        images = []
+        
+        
+        total_height = driver.execute_script("return document.body.scrollHeight")
+        actual_height = 0
+        image_count = 1
+        driver.execute_script("window.scrollTo(0, 0)")
+        
+        while int(actual_height) < int(total_height):
+            driver.get_screenshot_as_file(f"{tmp_path}-{image_count}.png")
+            
+
+            if image_count == 1:
+                
+                image = Image.open(f"{tmp_path}-{image_count}.png")
+                width, height = image.size
+                im_1 = image.convert('RGB')
+                
+                image.close()
+                if del_header == "True":
+                    driver.execute_script("""var header = document.querySelector('header');
+                                            header.style.visibility = 'hidden'
+                                          """)
+            else:
+                image_ = Image.open(f"{tmp_path}-{image_count}.png")
+                im_ = image_.convert('RGB')
+                images.append(im_)
+                image_.close()
+            
+            
+            # Scrolleo hasta la proxima screen
+            driver.execute_script("window.scrollTo(0, {})".format((height * image_count)))
+            time.sleep(1)
+            # actual_height = driver.execute_script("return window.pageYOffset")
+            actual_height += height
+            image_count += 1
+
+        im_1.save(path_, save_all=True, append_images=images)
+            
+        if del_header == "True":
+            driver.execute_script("""var header = document.querySelector('header');
+                                    header.style.visibility = 'inherit'
+                                  """)
+        
+
+
 
     except Exception as e:
         PrintException()
@@ -444,7 +497,7 @@ if module == "chromeHeadless":
         chrome_options = Options()
 
         chrome_options.add_argument('headless')
-        web.driver_list[web.driver_actual_id] = Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
+        web.driver_list[web.driver_actual_id] = Chrome(options=chrome_options, executable_path=chrome_driver)
         if url:
             web.driver_list[web.driver_actual_id].get(url)
 
@@ -633,31 +686,126 @@ if module == "debugger":
 if module == "fullScreenshot":
     name = GetParams("name")
     web = GetGlobals('web')
+    path_ = GetParams("path_")
+    if path_:
+        path_ = path_.replace("/", os.sep)
 
     try:
-        time.sleep(2)
-        name += ".png"
-        driver = web.driver_list[web.driver_actual_id]
+        # # # # # # # # time.sleep(2)
+        # # # # # # # # name += ".png"
+        # # # # # # # # driver = web.driver_list[web.driver_actual_id]
 
-        lk1 = cur_path + 'html2canvas.js'
+        # # # # # # # # lk1 = cur_path + 'html2canvas.js'
 
-        read_ = open(lk1, "r", encoding="utf-8").read()
-        print(len(read_))
-        driver.execute_script(read_)
+        # # # # # # # # read_ = open(lk1, "r", encoding="utf-8").read()
+        # # # # # # # # print(len(read_))
+        # # # # # # # # driver.execute_script(read_)
 
-        driver.execute_script("""
-        html2canvas(document.body, { allowTaint : false, useCORS: true,
-            onrendered: function(canvas) {
-                img = canvas.toDataURL(); 
-                a = document.createElement("a")
-                a.href = img
-                a.download = "%s"
-                a.click()
-                console.log(img)
-            }
-        })"""  % name)
+        # # # # # # # # driver.execute_script("""
+        # # # # # # # # html2canvas(document.body, { allowTaint : false, useCORS: true,
+        # # # # # # # #     onrendered: function(canvas) {
+        # # # # # # # #         img = canvas.toDataURL(); 
+        # # # # # # # #         a = document.createElement("a")
+        # # # # # # # #         a.href = img
+        # # # # # # # #         a.download = "%s"
+        # # # # # # # #         a.click()
+        # # # # # # # #         console.log(img)
+        # # # # # # # #     }
+        # # # # # # # # })"""  % name)
+        
+        # full_width  = driver.execute_script('return document.body.parentNode.scrollWidth')
+        # full_height = driver.execute_script('return document.body.parentNode.scrollHeight')
+        # driver.set_window_size(full_width, full_height)
+        # if path_:
+        #     driver.save_screenshot(f"{path_}{os.sep}{name}")
+        # else:
+        #     driver.save_screenshot(f"{downloads_path}{os.sep}{name}")
+        
+        # driver.save_screenshot('C:/Users/nicog/Downloads/screenhtml.png')
 
-        time.sleep(6)
+        # # # # # # # # time.sleep(6)
+        
+        tmp_path = "tmp/webpro/screenshot"
+        images = []
+        
+        
+        total_height = driver.execute_script("return document.body.scrollHeight")
+        actual_height = 0
+        image_count = 1
+        driver.execute_script("window.scrollTo(0, 0)")
+        
+        while int(actual_height) < int(total_height):
+            driver.get_screenshot_as_file(f"{tmp_path}-{image_count}.png")
+            
+
+            if image_count == 1:
+                
+                image = Image.open(f"{tmp_path}-{image_count}.png")
+                width, height = image.size
+                im_1 = image.convert('RGB')
+                images.append(image)
+                
+                
+                
+                driver.execute_script("""var header = document.querySelector('header');
+                                         if (header != null) {header.style.visibility = 'hidden'};
+                                      """)
+            else:
+                image_ = Image.open(f"{tmp_path}-{image_count}.png")
+                im_ = image_.convert('RGB')
+                images.append(im_)
+                
+            
+            
+            # Scrolleo hasta la proxima screen
+            driver.execute_script("window.scrollTo(0, {})".format((height * image_count)))
+            time.sleep(1)
+            # actual_height = driver.execute_script("return window.pageYOffset")
+            actual_height += height
+            image_count += 1
+        
+        
+        driver.execute_script("""var header = document.querySelector('header');
+                                 if (header != null) {header.style.visibility = 'inherit'};
+                              """)
+        
+        img = Image.new('RGB', (width, actual_height))
+        
+        
+        height_ = 0
+        
+        for image in images:
+            img.paste(image, (0, height_))
+            
+            height_ += height
+        
+        if path_:
+            img.save(f'{path_}/{name}.png')
+        else:
+            img.save(f'{downloads_path}/{name}.png')
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
     except Exception as e:
         PrintException()
@@ -804,7 +952,7 @@ if module == "printPDF":
     chrome_options.add_experimental_option('prefs', prefs)
     chrome_options.add_argument('--kiosk-printing')
 
-    driver.execute_script('window.print();')
+    driver.execute_script('return window.print();')
 
 
 if module == "forceDownload":
