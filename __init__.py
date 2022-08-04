@@ -691,39 +691,6 @@ if module == "fullScreenshot":
         path_ = path_.replace("/", os.sep)
 
     try:
-        # # # # # # # # time.sleep(2)
-        # # # # # # # # name += ".png"
-        # # # # # # # # driver = web.driver_list[web.driver_actual_id]
-
-        # # # # # # # # lk1 = cur_path + 'html2canvas.js'
-
-        # # # # # # # # read_ = open(lk1, "r", encoding="utf-8").read()
-        # # # # # # # # print(len(read_))
-        # # # # # # # # driver.execute_script(read_)
-
-        # # # # # # # # driver.execute_script("""
-        # # # # # # # # html2canvas(document.body, { allowTaint : false, useCORS: true,
-        # # # # # # # #     onrendered: function(canvas) {
-        # # # # # # # #         img = canvas.toDataURL(); 
-        # # # # # # # #         a = document.createElement("a")
-        # # # # # # # #         a.href = img
-        # # # # # # # #         a.download = "%s"
-        # # # # # # # #         a.click()
-        # # # # # # # #         console.log(img)
-        # # # # # # # #     }
-        # # # # # # # # })"""  % name)
-        
-        # full_width  = driver.execute_script('return document.body.parentNode.scrollWidth')
-        # full_height = driver.execute_script('return document.body.parentNode.scrollHeight')
-        # driver.set_window_size(full_width, full_height)
-        # if path_:
-        #     driver.save_screenshot(f"{path_}{os.sep}{name}")
-        # else:
-        #     driver.save_screenshot(f"{downloads_path}{os.sep}{name}")
-        
-        # driver.save_screenshot('C:/Users/nicog/Downloads/screenhtml.png')
-
-        # # # # # # # # time.sleep(6)
         
         tmp_path = "tmp/webpro/screenshot"
         images = []
@@ -784,29 +751,6 @@ if module == "fullScreenshot":
         else:
             img.save(f'{downloads_path}/{name}.png')
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
     except Exception as e:
         PrintException()
         raise e
