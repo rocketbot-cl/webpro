@@ -270,6 +270,7 @@ Open a browser the URL
 |URL|URL to open|http://www.google.com|
 |Timeout|Timeout in seconds|5|
 |Id|Id of the browser|4|
+|Profile folder|Profile folder to open the opened browser|C:/folder|
 |Download Folder|Download folder for the opened browser|C:/folder|
 |Force downloads|Force the downloads to make them automatically|True|
 |Options for Chrome|Options for the browser|{'download.default_directory': download_path}|
