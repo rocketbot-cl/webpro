@@ -1,8 +1,8 @@
 {
-  "author": "David Cuello - José González - Marcela Vergara - Danilo Toro>",
+  "author": "David Cuello - José González - Marcela Vergara - Danilo Toro",
   "description": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "11.5.0",
+  "version": "11.6.0",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
   "name": "webpro",
@@ -117,6 +117,11 @@
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store the result",
               "pr": "Variável onde armazenar o resultado"
+            },
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
             },
             "description": {
               "es": "En este campo debemos poner el nombre de la variable donde almacenaremos el resultado.",
@@ -241,7 +246,7 @@
             "type": "checkbox",
             "placeholder": {
                 "es": "Texto o Variable",
-                "en": "Texto o Variable",
+                "en": "Text or Variable",
                 "pr": "Texto ou Variável"
             },
             "description": {
@@ -378,6 +383,31 @@
             },
             "id": "file_",
             "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado à variável"
+            },
+            "description": {
+              "es": "Variable donde se almacenará True o False dependiendo si se pudieron cargar las cookies",
+              "en": "Variable where True or False will be stored depending on whether the cookies could be loaded",
+              "pr": "Variável onde True ou False será armazenado dependendo se os cookies podem ser carregados"
+            },
+            "help": {
+              "es": "Nombre de variable sin {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem {}"
+            },
+            "id": "var_",
+            "css": "col-md-12"
           }
         ]
       },
@@ -484,9 +514,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
             },
             "title": {
               "es": "Tipo de dato",
@@ -558,7 +588,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "1500",
+            "placeholder": {
+              "es": "1500",
+              "en": "1500",
+              "pr": "1500"
+            },
             "title": {
               "es": "Posición",
               "en": "Position",
@@ -588,7 +622,7 @@
     },
     {
       "title": {
-        "es": "Contar Eelementos",
+        "es": "Contar Elementos",
         "en": "Count Elements",
         "pr": "Contar iten"
       },
@@ -602,7 +636,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Name class",
+            "placeholder": {
+              "es": "Name class",
+              "en": "Name class",
+              "pr": "Name class"
+            },
             "title": {
               "es": "Nombre de la clase:",
               "en": "Class Name:",
@@ -705,6 +743,11 @@
               "en": "Data type:",
               "pr": "Tipo de dado:"
             },
+            "placeholder": {
+              "es": "name",
+              "en": "name",
+              "pr": "name"
+            },
             "options": [
               {
                 "title": "--Select--",
@@ -757,7 +800,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "form-control",
+            "placeholder": {
+              "es": "form-control",
+              "en": "form-control",
+              "pr": "form-control"
+            },
             "title": {
               "es": "Dato a Buscar:",
               "en": "Data to Search:",
@@ -773,7 +820,11 @@
           },
           {
             "type": "input",
-            "placeholder": "1",
+            "placeholder": {
+              "es": "1",
+              "en": "1",
+              "pr": "1"
+            },
             "title": {
               "es": "Index:",
               "en": "Index:",
@@ -793,6 +844,11 @@
               "es": "Tipo de dato:",
               "en": "Data type:",
               "pr": "Tipo de dado:"
+            },
+            "placeholder": {
+              "es": "class",
+              "en": "class",
+              "pr": "class"
             },
             "options": [
               {
@@ -837,37 +893,65 @@
         "pr": "Exportar página para PDF"
       },
       "description": {
-        "es": "Exporta la página a un archivo PDF",
-        "en": "Export page to a PDF file",
-        "pr": "Exporta a página para um arquivo PDF"
+        "es": "Exporta la página a un archivo PDF. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación. Según el largo de la página puede que el final de la imagen se vea repetido.",
+        "en": "Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export. Depending on the length of the page, the end of the image may be repeated.",
+        "pr": "Exporte a página para um arquivo PDF. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação adequada. Dependendo do comprimento da página, o final da imagem pode se repetir."
       },
       "form": {
         "css": "modal-lg",
         "inputs": [
           {
-            "type": "input",
-            "placeholder": "name_file",
-            "title": {
-              "es": "Nombre de Archivo:",
-              "en": "File Name:",
-              "pr": "Nome do arquivo:"
+            "type": "file_new",
+            "placeholder": {
+              "es": "path/to/file.pdf",
+              "en": "path/to/file.pdf",
+              "pr": "path/to/file.pdf"
             },
-            "help": {
-              "es": "Nombre sin extensión",
-              "en": "Name without extension",
-              "pr": "Nome sem extensão"
+            "title": {
+              "es": "Ruta y nombre del Archivo:",
+              "en": "File path and name:",
+              "pr": "Caminho e nome do arquivo:"
             },
             "description": {
-              "es": "Seleccionamos el nombre del archivo a guardar, sin la extension .pdf",
-              "en": "Select the name of the file to save, without the extension .pdf",
-              "pr": "Selecione o nome do arquivo a salvar, sem a extensão .pdf"
+              "es": "Seleccionamos la ruta y el nombre del archivo a guardar, sin la extension .pdf",
+              "en": "Select the path and name of the file to save, without the extension .pdf",
+              "pr": "Selecione o caminho e nome do arquivo a salvar, sem a extensão .pdf"
             },
-            "id": "name_",
+            "id": "path_",
             "css": "col-md-12"
           },
           {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+            },
+            "title": {
+              "es": "Borrar cabecera fija",
+              "en": "Delete sticky header",
+              "pr": "Excluir cabeçalho fixo"
+            },
+            "description": {
+              "es": "Si el sitio web contiene una cabecera fija, marca la casilla para eliminarla y que no se repita en cada captura. El comando busca la etiqueta header, si no la encuentra arrojará un error, en caso de que no funcione hay que desmarcarla.",
+              "en": "If the website contains a fixed header, check the box to remove it so it doesn't repeat itself on each capture. The command looks for the header tag, if it doesn't find it it will throw an error, if this doesn't work you have to uncheck it.",
+              "pr": "Se o site contiver um cabeçalho fixo, marque a caixa para removê-lo para que não se repita em cada captura. O comando procura a tag 'header', se não encontrá-la, dará um erro, se não funcionar, você deve desmarcá-la."
+            },
+            "help": {
+              "es": "Busca la etiqueta header y oculta el contenido para evitar la duplicidad",
+              "en": "Look for the header tag and hide the content to avoid duplication",
+              "pr": "Procure a tag header e oculte o conteúdo para evitar duplicação"
+            },
+            "id": "del_header",
+            "css": "col-md-6"
+          },
+          {
             "type": "input",
-            "placeholder": "Variable",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
             "title": {
               "es": "Asignar resultado a variable",
               "en": "Assign result to variable",
@@ -1048,7 +1132,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Data",
+            "placeholder": {
+              "es": "Data",
+              "en": "Data",
+              "pr": "Data"
+            },
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1064,7 +1152,11 @@
           },
           {
             "type": "select",
-            "placeholder": "",
+            "placeholder": {
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
+            },
             "title": {
               "es": "Tipo de dato",
               "en": "Data type",
@@ -1102,7 +1194,11 @@
           },
           {
             "type": "input",
-            "placeholder": "Variable",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1147,7 +1243,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Data",
+            "placeholder": {
+              "es": "Data",
+              "en": "Data",
+              "pr": "Data"
+            },
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1164,9 +1264,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
             },
             "title": {
               "es": "Tipo de dato",
@@ -1205,7 +1305,11 @@
           },
           {
             "type": "input",
-            "placeholder": "Variable",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1250,7 +1354,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Data",
+            "placeholder": {
+              "es": "Data",
+              "en": "Data",
+              "pr": "Data"
+            },
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1267,9 +1375,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
             },
             "title": {
               "es": "Tipo de dato",
@@ -1308,7 +1416,11 @@
           },
           {
             "type": "input",
-            "placeholder": "Variable",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1374,9 +1486,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "Debugger",
+              "en": "Debugger",
+              "pr": "Debugger"
             },
             "title": {
               "es": "Modo",
@@ -1431,7 +1543,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Variable",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1449,9 +1565,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "Severe",
+              "en": "Severe",
+              "pr": "Severe"
             },
             "title": {
               "es": "Nivel: ",
@@ -1498,12 +1614,12 @@
       "title": {
         "es": "Convertir página a PNG",
         "en": "WebPage to PNG",
-        "pr": "Converter página para PNGG"
+        "pr": "Converter página para PNG"
       },
       "description": {
-        "es": "Toma una captura a la página web completa",
-        "en": "Take screenshot to full webpage",
-        "pr": "Tira uma foto de tela para a página web completa"
+        "es": "Toma multiples capturas de la página web y las concatena en una sola. Tiene ciertas limitaciones como los elementos fijos. Según el largo de la página puede que el final de la imagen se vea repetido.",
+        "en": "It takes multiple snapshots of the web page and concatenates them into one. It has certain limitations like the fixed elements. Depending on the length of the page, the end of the image may be repeated.",
+        "pr": "Ele tira vários instantâneos da página da Web e os concatena em um. Tem certas limitações como os elementos fixos. Dependendo do comprimento da página, o final da imagem pode se repetir."
       },
       "form": {
         "css": "modal-lg",
@@ -1511,19 +1627,19 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "web",
-              "en": "web",
-              "pr": "web"
-            },
-            "help": {
-              "es": "Por defecto, se descargará en la carpeta descargas",
-              "en": "By default, it is downloaded in the downloads folder",
-              "pr": "Por padrão, será baixado na pasta de downloads"
+              "es": "web.png",
+              "en": "web.png",
+              "pr": "web.png"
             },
             "title": {
               "es": "Nombre:",
               "en": "Name:",
               "pr": "Nome:"
+            },
+            "help": {
+              "es": "Nombre sin la extensión",
+              "en": "Name without the extension",
+              "pr": "Nome sem a extensão"
             },
             "description": {
               "es": "Nombre de la imagen a guardar",
@@ -1531,6 +1647,31 @@
               "pr": "Nome da imagem"
             },
             "id": "name",
+            "css": "col-md-12"
+          },
+          {
+            "type": "folder_select",
+            "placeholder": {
+              "es": "C:/Users/user/Desktop",
+              "en": "C:/Users/user/Desktop",
+              "pr": "C:/Users/user/Desktop"
+            },
+            "help": {
+              "es": "Ruta donde se descargará la imagen",
+              "en": "Path where the image will be downloaded",
+              "pr": "Caminho onde a imagem será baixada"
+            },
+            "title": {
+              "es": "Carpeta de descarga:",
+              "en": "Download folder:",
+              "pr": "Pasta de download:"
+            },
+            "description": {
+              "es": "Ruta donde se descargará la imagen generada",
+              "en": "Path where the generated image will be downloaded",
+              "pr": "Caminho onde a imagem gerada será baixada"
+            },
+            "id": "path_",
             "css": "col-md-12"
           }
         ]
@@ -1563,7 +1704,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Data",
+            "placeholder": {
+              "es": "Data",
+              "en": "Data",
+              "pr": "Data"
+            },
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1580,9 +1725,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
             },
             "title": {
               "es": "Tipo de dato",
@@ -1697,7 +1842,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Data",
+            "placeholder": {
+              "es": "Data",
+              "en": "Data",
+              "pr": "Data"
+            },
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1714,9 +1863,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
             },
             "title": {
               "es": "Tipo de dato",
@@ -1767,7 +1916,11 @@
           },
           {
             "type": "input",
-            "placeholder": "5",
+            "placeholder": {
+              "es": "5",
+              "en": "5",
+              "pr": "5"
+            },
             "title": {
               "es": "Esperar",
               "en": "Wait",
@@ -1811,7 +1964,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Data",
+            "placeholder": {
+              "es": "Data",
+              "en": "Data",
+              "pr": "Data"
+            },
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1828,9 +1985,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
             },
             "title": {
               "es": "Tipo de dato",
@@ -1881,7 +2038,11 @@
           },
           {
             "type": "input",
-            "placeholder": "5",
+            "placeholder": {
+              "es": "5",
+              "en": "5",
+              "pr": "5"
+            },
             "title": {
               "es": "Esperar",
               "en": "Wait",
@@ -1897,7 +2058,11 @@
           },
           {
             "type": "input",
-            "placeholder": "Variable",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
             "title": {
               "es": "Variable donde almacenar resultado",
               "en": "Variable where to store result",
@@ -1942,7 +2107,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Data",
+            "placeholder": {
+              "es": "Data",
+              "en": "Data",
+              "pr": "Data"
+            },
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -1959,9 +2128,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
             },
             "title": {
               "es": "Tipo de dato",
@@ -2012,7 +2181,11 @@
           },
           {
             "type": "input",
-            "placeholder": "5",
+            "placeholder": {
+              "es": "5",
+              "en": "5",
+              "pr": "5"
+            },
             "title": {
               "es": "Esperar",
               "en": "Wait",
@@ -2056,7 +2229,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Data",
+            "placeholder": {
+              "es": "Data",
+              "en": "Data",
+              "pr": "Data"
+            },
             "title": {
               "es": "Dato a buscar",
               "en": "Data to search",
@@ -2073,9 +2250,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
             },
             "title": {
               "es": "Tipo de dato",
@@ -2126,7 +2303,11 @@
           },
           {
             "type": "input",
-            "placeholder": "5",
+            "placeholder": {
+              "es": "5",
+              "en": "5",
+              "pr": "5"
+            },
             "title": {
               "es": "Esperar",
               "en": "Wait",
@@ -2170,7 +2351,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "Text",
+            "placeholder": {
+              "es": "Texto",
+              "en": "Text",
+              "pr": "Texto"
+            },
             "title": {
               "es": "Texto",
               "en": "Text",
@@ -2187,9 +2372,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "SPACE",
+              "en": "SPACE",
+              "pr": "SPACE"
             },
             "title": {
               "es": "Tecla especial",
@@ -2415,9 +2600,9 @@
         "pr": "Imprimir como PDF (Chrome)"
       },
       "description": {
-        "es": "Imprimir la página como PDF en Chrome",
-        "en": "Print webpage to PDF in Chrome",
-        "pr": "Imprimir página como PDF em Chrome"
+        "es": "Imprimir la página como PDF en Chrome. El PDF se genera en base al contenido disponible de la página. No representa una copia fiel del sitio.",
+        "en": "Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.",
+        "pr": "Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disponível da página. Não representa uma cópia verdadeira do site."
       },
       "form": {
         "css": "modal-lg",
@@ -2451,7 +2636,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "http://www.web.test/file.csv",
+            "placeholder": {
+              "es": "http://www.web.test/file.csv",
+              "en": "http://www.web.test/file.csv",
+              "pr": "http://www.web.test/file.csv"
+            },
             "title": {
               "es": "URL Descarga:",
               "en": "Download URL:",
@@ -2467,7 +2656,11 @@
           },
           {
             "type": "input",
-            "placeholder": "file.csv",
+            "placeholder": {
+              "es": "file.csv",
+              "en": "file.csv",
+              "pr": "file.csv"
+            },
             "title": {
               "es": "Nombre de archivo:",
               "en": "File Name:",
@@ -2516,7 +2709,11 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "http://www.google.com",
+            "placeholder": {
+              "es": "http://www.google.com",
+              "en": "http://www.google.com",
+              "pr": "http://www.google.com"
+            },
             "title": {
               "es": "URL:",
               "en": "URL:",
@@ -2560,7 +2757,11 @@
           "inputs": [
             {
               "type": "input",
-              "placeholder": "http://www.google.com",
+              "placeholder": {
+                "es": "http://www.google.com",
+                "en": "http://www.google.com",
+                "pr": "http://www.google.com"
+              },
               "title": {
                 "es": "URL:",
                 "en": "URL:",
@@ -2576,7 +2777,11 @@
             },
             {
               "type": "input",
-              "placeholder": "5",
+              "placeholder": {
+                "es": "5",
+                "en": "5",
+                "pr": "5"
+              },
               "title": {
                 "es": "Tiempo de espera:",
                 "en": "Timeout:",
@@ -2592,7 +2797,11 @@
             },
             {
               "type": "input",
-              "placeholder": "4",
+              "placeholder": {
+                "es": "4",
+                "en": "4",
+                "pr": "4"
+              },
               "title": {
                 "es": "Id:",
                 "en": "Id:",
@@ -2608,14 +2817,20 @@
             },
             {
               "type": "folder_select",
-              "placeholder": "C:/folder",
+              "placeholder": {
+                "es": "C:/folder",
+                "en": "C:/folder",
+                "pr": "C:/folder"
+              },
               "title": {
                 "es": "Carpeta de descargas:",
-                "en": "Download Folder:"
+                "en": "Download Folder:",
+                "pr": "Pasta de download:"
               },
               "description": {
                 "es": "Ruta de la carpeta de descargas para el navegador abierto",
-                "en": "Download folder for the opened browser"
+                "en": "Download folder for the opened browser",
+                "pr": "Caminho da pasta de downloads para o navegador aberto"
               },
               "id": "download_path",
               "css": "col-md-8"
@@ -2624,25 +2839,38 @@
               "type": "checkbox",
               "title": {
                   "es": "Forzar descargas:",
-                  "en": "Force downloads:"
+                  "en": "Force downloads:",
+                  "pr": "Forçar downloads:"
+              },
+              "placeholder": {
+                "es": "True",
+                "en": "True",
+                "pr": "True"
               },
               "description": {
                   "es": "Fuerza las descargas para hacerlas automaticas",
-                  "en": "Force the downloads to make them automatically"
+                  "en": "Force the downloads to make them automatically",
+                  "pr": "Forçar downloads para torná-los automáticos"
               },
               "id": "force_downloads",
               "css": "col-md-4"
               },
             {
               "type": "textarea",
-              "placeholder": "{'download.default_directory': download_path}",
+              "placeholder": {
+                "es": "{'download.default_directory': download_path}",
+                "en": "{'download.default_directory': download_path}",
+                "pr": "{'download.default_directory': download_path}"
+              },
               "title": {
                 "es": "Opciones para Chrome:",
-                "en": "Options for Chrome:"
+                "en": "Options for Chrome:",
+                "pr": "Opções para o Chrome"
               },
               "description": {
                 "es": "Opciones para el navegador",
-                "en": "Options for the browser"
+                "en": "Options for the browser",
+                "pr": "Opções do navegador"
               },
               "id": "custom_options",
               "css": "col-md-12"
@@ -2677,23 +2905,31 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "source",
+            "placeholder": {
+              "es": "source",
+              "en": "source",
+              "pr": "source"
+            },
             "title": {
               "es": "Origen",
               "en": "Source",
-              "pr": "Source"
+              "pr": "Origem"
             },
             "description": {
               "es": "Origen del elemento",
               "en": "Source element",
-              "pr": "Source element"
+              "pr": "Origem do elemento"
             },
             "id": "source",
             "css": "col-md-12"
           },
           {
             "type": "input",
-            "placeholder": "target",
+            "placeholder": {
+              "es": "target",
+              "en": "target",
+              "pr": "target"
+            },
             "title": {
               "es": "Destino",
               "en": "Target",
@@ -2702,7 +2938,7 @@
             "description": {
               "es": "Destino del elemento",
               "en": "Target element",
-              "pr": "Target element"
+              "pr": "Destino do elemento"
             },
             "id": "target",
             "css": "col-md-12"
@@ -2792,9 +3028,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "xpath",
+              "en": "xpath",
+              "pr": "xpath"
             },
             "title": {
               "es": "Tipo de dato",
@@ -2834,7 +3070,9 @@
           {
             "type": "input",
             "placeholder": {
-              "en": "['C:/Users/user/file.pdf']"
+              "en": "['C:/Users/user/file.pdf']",
+              "es": "['C:/Users/user/file.pdf']",
+              "pr": "['C:/Users/user/file.pdf']"
             },
             "title": {
               "es": "Archivo(s)",
@@ -2880,9 +3118,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "SPACE",
+              "en": "SPACE",
+              "pr": "SPACE"
             },
             "title": {
               "es": "Primera tecla especial",
@@ -3115,9 +3353,9 @@
           {
             "type": "select",
             "placeholder": {
-              "es": "",
-              "en": "",
-              "pr": ""
+              "es": "SPACE",
+              "en": "SPACE",
+              "pr": "SPACE"
             },
             "title": {
               "es": "Segunda tecla especial",
@@ -3352,7 +3590,11 @@
           "inputs": [
             {
               "type": "input",
-              "placeholder": "",
+              "placeholder": {
+                "es": "Dato",
+                "en": "Data",
+                "pr": "Dado"
+              },
               "title": {
                 "es": "Dato a buscar",
                 "en": "Data to search",
@@ -3360,7 +3602,8 @@
               },
               "description": {
                 "es": "Colocamos el selector a buscar",
-                "en": "We put the selector to search"
+                "en": "We put the selector to search",
+                "pr": "Colocamos o seletor para pesquisar"
               },
               "id": "data",
               "css": "col-md-12"
@@ -3368,9 +3611,9 @@
             {
               "type": "select",
               "placeholder": {
-                "es": "",
-                "en": "",
-                "pr": ""
+                "es": "xpath",
+                "en": "xpath",
+                "pr": "xpath"
               },
               "title": {
                 "es": "Tipo de dato",
@@ -3401,7 +3644,8 @@
               ],
               "description": {
                 "es": "Colocamos el tipo de dato a buscar",
-                "en": "We put the type of data to search"
+                "en": "We put the type of data to search",
+                "pr": "Colocamos o tipo de dados para procurar"
               },
               "id": "data_type",
               "css": "col-md-12"
