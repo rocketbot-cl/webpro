@@ -2,7 +2,7 @@
   "author": "David Cuello - José González - Marcela Vergara - Danilo Toro",
   "description": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "11.6.0",
+  "version": "11.6.1",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
   "name": "webpro",
@@ -39,9 +39,9 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Name",
-              "en": "Name",
-              "pr": "Name"
+              "es": "name",
+              "en": "name",
+              "pr": "name"
             },
             "title": {
               "es": "Tipo Clases o atributo",
@@ -64,9 +64,9 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "Class",
-              "en": "Class",
-              "pr": "Class"
+              "es": "class",
+              "en": "class",
+              "pr": "class"
             },
             "title": {
               "es": "Clases o atributo",
@@ -94,14 +94,14 @@
               "pr": "Tipo do Elemento"
             },
             "placeholder": {
-              "es": "DIV",
-              "en": "DIV",
-              "pr": "DIV"
+              "es": "div",
+              "en": "div",
+              "pr": "div"
             },
             "help": {
-              "es": "DIV, SPAN, INPUT, etc*",
-              "en": "DIV, SPAN, INPUT, etc*",
-              "pr": "DIV, SPAN, INPUT, etc*"
+              "es": "div, span, input, etc*",
+              "en": "div, span, input, etc*",
+              "pr": "div, span, input, etc*"
             },
             "description": {
               "es": "En este campo debemos poner el tipo de elemento que usaremos.",
@@ -1627,9 +1627,9 @@
           {
             "type": "input",
             "placeholder": {
-              "es": "web.png",
-              "en": "web.png",
-              "pr": "web.png"
+              "es": "imagenWeb",
+              "en": "WebImage",
+              "pr": "ImagemWeb"
             },
             "title": {
               "es": "Nombre:",
@@ -2606,7 +2606,18 @@
       },
       "form": {
         "css": "modal-lg",
-        "inputs": []
+        "inputs": [
+          {
+          "type": "label",
+          "title": {
+            "es": "El pdf se descargará en la carpeta de descargas por defecto del navegador.",
+            "en": "The pdf will be downloaded to the browser's default downloads folder.",
+            "pr": "O pdf será baixado para a pasta de downloads padrão do navegador."
+          },
+          "id": "url_file",
+          "css": "col-md-12"
+          }
+        ]
       },
       "linux": true,
       "windows": true,
@@ -3022,9 +3033,9 @@
         "pr": "Subir arquivo"
       },
       "description": {
-        "es": "Comando para subir uno o más archivos a un input de tipo file",
-        "en": "Command to upload one or more files to an input of type file",
-        "pr": "Comando para fazer upload um ou mais arquivos para um input do tipo file"
+        "es": "Comando para subir uno o más archivos a un input de tipo file. Solo completar un unico valor según cuántos archivos se deseen subir.",
+        "en": "Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.",
+        "pr": "Comando para fazer upload um ou mais arquivos para um input do tipo file. Basta preencher um único valor, dependendo de quantos arquivos você deseja enviar."
       },
       "form": {
         "css": "modal-lg",
@@ -3088,19 +3099,53 @@
             "css": "col-md-12"
           },
           {
-            "type": "input",
+            "type": "label",
+            "title": {
+              "es": "Cargar solo un único campo de los siguientes. Si se desea subir un solo archivo, utilizar el primer selector, si se desean cargar más de uno, cargar el segundo selector con el formato indicado.",
+              "en": "Load only a single field of the following. If you want to upload a single file, use the first selector, if you want to upload more than one, load the second selector with the indicated format.",
+              "pr": "Carregue apenas um único campo do seguinte. Se quiser fazer upload de um único arquivo, use o primeiro seletor, se quiser fazer upload de mais de um, carregue o segundo seletor com o formato indicado."
+            },
+            "css": "col-md-12"
+          },
+          {
+            "type": "file_select",
             "placeholder": {
-              "en": "['C:/Users/user/file.pdf']",
-              "es": "['C:/Users/user/file.pdf']",
-              "pr": "['C:/Users/user/file.pdf']"
+              "en": "C:/Users/user/file1.pdf",
+              "es": "C:/Users/user/file1.pdf",
+              "pr": "C:/Users/user/file1.pdf'"
             },
             "title": {
-              "es": "Archivo(s)",
-              "en": "File(s)",
-              "pr": "Arquivo(s)"
+              "es": "Cargar un solo archivo",
+              "en": "Load a single file",
+              "pr": "Carregar um único arquivo"
             },
             "description":{
-              "es": "Seleccionamos el archivo a subir",
+              "es": "Seleccionamos los archivos a subir",
+              "en": "Select the file to upload",
+              "pr": "Selecionamos o arquivo a subir"
+            },
+            "help":{
+              "es": "Seleccionamos un unico archivo a subir ",
+              "en": "Select the file to upload",
+              "pr": "Selecionamos o arquivo a subir"
+            },
+            "id": "single_file",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "en": "['C:/Users/user/file1.pdf', 'C:/Users/user/file2.pdf']",
+              "es": "['C:/Users/user/file1.pdf', 'C:/Users/user/file2.pdf']",
+              "pr": "['C:/Users/user/file1.pdf', 'C:/Users/user/file2.pdf']"
+            },
+            "title": {
+              "es": "Cargar múltiples archivos",
+              "en": "Load multiple files",
+              "pr": "Carregar vários arquivos"
+            },
+            "description":{
+              "es": "Seleccionamos los archivos a subir",
               "en": "Select the file to upload",
               "pr": "Selecionamos o arquivo a subir"
             },
@@ -3347,7 +3392,7 @@
               "pr": "Primeira tecla especial a combinar com uma letra/numero ou com uma segunda tecla especial"
             },
             "help": {
-              "es": "Unicamente podemos combinar la primera tecla especial con una letra/numero o con la segunda tecla esepcial. Unicamente elegir una de las opciones",
+              "es": "Unicamente podemos combinar la primera tecla especial con una letra/numero o con la segunda tecla especial. Unicamente elegir una de las opciones",
               "en": "Only we can combine the first special key with a letter/number or with the second special key. Only choose one of the options",
               "pr": "Sólo podemos combinar a primeira tecla especial com uma letra/numero o com a segunda tecla especial. Sólo escolher uma das opções"
             },
@@ -3383,6 +3428,10 @@
               "pr": "Segunda tecla especial"
             },
             "options": [
+              {
+                "title": " ",
+                "value": "None"
+              },
               {
                 "title": "ADD",
                 "value": "ADD"
