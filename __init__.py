@@ -423,8 +423,8 @@ if module == "html2pdf":
         # element = driver.execute_script("let doc = new jsPDF('p','pt','a4'); doc.addHTML(document.body, function() {"
         #                                "doc.save('"+name_+".pdf');});")
         # res = True
-        
-        tmp_path = "tmp/webpro/screenshot"
+
+        tmp_path = "tmp/webpro/screenshot.png"
         images = []
         
         
@@ -433,23 +433,24 @@ if module == "html2pdf":
         image_count = 1
         driver.execute_script("window.scrollTo(0, 0)")
         
+        
         while int(actual_height) < int(total_height):
-            driver.get_screenshot_as_file(f"{tmp_path}-{image_count}.png")
+            driver.get_screenshot_as_file(tmp_path)
             
 
             if image_count == 1:
                 
-                image = Image.open(f"{tmp_path}-{image_count}.png")
+                image = Image.open(tmp_path)
                 width, height = image.size
                 im_1 = image.convert('RGB')
                 
                 image.close()
                 if del_header == "True":
                     driver.execute_script("""var header = document.querySelector('header');
-                                            header.style.visibility = 'hidden'
+                                             header.style.visibility = 'hidden'
                                           """)
             else:
-                image_ = Image.open(f"{tmp_path}-{image_count}.png")
+                image_ = Image.open(tmp_path)
                 im_ = image_.convert('RGB')
                 images.append(im_)
                 image_.close()
@@ -468,9 +469,9 @@ if module == "html2pdf":
             driver.execute_script("""var header = document.querySelector('header');
                                     header.style.visibility = 'inherit'
                                   """)
-        
 
 
+        driver.maximize_window()
 
     except Exception as e:
         PrintException()
@@ -692,7 +693,7 @@ if module == "fullScreenshot":
 
     try:
         
-        tmp_path = "tmp/webpro/screenshot"
+        tmp_path = "tmp/webpro/screenshot.png"
         images = []
         
         
@@ -702,12 +703,12 @@ if module == "fullScreenshot":
         driver.execute_script("window.scrollTo(0, 0)")
         
         while int(actual_height) < int(total_height):
-            driver.get_screenshot_as_file(f"{tmp_path}-{image_count}.png")
+            driver.get_screenshot_as_file(tmp_path)
             
 
             if image_count == 1:
                 
-                image = Image.open(f"{tmp_path}-{image_count}.png")
+                image = Image.open(tmp_path)
                 width, height = image.size
                 im_1 = image.convert('RGB')
                 images.append(image)
@@ -718,7 +719,7 @@ if module == "fullScreenshot":
                                          if (header != null) {header.style.visibility = 'hidden'};
                                       """)
             else:
-                image_ = Image.open(f"{tmp_path}-{image_count}.png")
+                image_ = Image.open(tmp_path)
                 im_ = image_.convert('RGB')
                 images.append(im_)
                 
@@ -1008,11 +1009,22 @@ try:
         data_ = GetParams("data")
         data_type = GetParams("data_type")
         files = GetParams("files")
+        single_file = GetParams("single_file")
+        
+        if single_file == "":
+            single_file = None
+        
         element = driver.find_element(data_type, data_)
-        if files.startswith("["):
-            files = eval(files)
-            files = " \n ".join(files)
-        element.send_keys(files)
+        print('path:', single_file)
+        if single_file != None:
+            element.send_keys(single_file)
+        else:
+            files = files.replace("\\", "/")
+            
+            if files.startswith("["):
+                files = eval(files)
+                files = " \n ".join(files)
+                element.send_keys(files)
 
     if module == "sendKeyCombination":
         first_special_key = GetParams("first_special_key")    
