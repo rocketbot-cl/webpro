@@ -9,6 +9,9 @@ Modulo con funcionalidades extendidas para el navegador que funciona como comple
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Rocketbot.  
 
 
+## Como usar este modulo
+Este modulo se complementa con los modulos y comandos nativos Web que ya vienen por defecto en Rocketbot. Para poder usar el modulo debes tener un navegador ya abierto desde Rocketbot con el comando de "Abrir Navegador". Luego de esto ya podremos utilizar los comandos con normalidad.
+
 
 ## Overview
 
@@ -47,7 +50,7 @@ Selecciona un objeto pasándole el index
 Clickea un objeto pasándole el index
 
 12. Exportar página a PDF  
-Exporta la página a un archivo PDF. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación. Según el largo de la página puede que el final de la imagen se vea repetido.
+Exporta la página a un archivo PDF. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación.
 
 13. Abrir Chrome en modo headless  
 Abre Chrome en modo Headless
@@ -71,7 +74,7 @@ Abre Google Chrome en modo seguro o modo debugger
 Obtiene información desde la consola
 
 20. Convertir página a PNG  
-Toma multiples capturas de la página web y las concatena en una sola. Tiene ciertas limitaciones como los elementos fijos. Según el largo de la página puede que el final de la imagen se vea repetido.
+Toma multiples capturas de la página web y las concatena en una sola. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación.
 
 21. Mover encima  
 Mueve el mouse encima de un elemento
@@ -110,7 +113,7 @@ Abre el navegador indicando la URL
 Realiza un drag and drop
 
 33. Subir Archivo  
-Comando para subir uno o más archivos a un input de tipo file
+Comando para subir uno o más archivos a un input de tipo file. Solo completar un unico valor según cuántos archivos se deseen subir.
 
 34. Enviar combinacion de teclas  
 Comando para enviar combinacion de dos teclas

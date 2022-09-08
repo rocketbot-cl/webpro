@@ -2,7 +2,7 @@
   "author": "David Cuello - José González - Marcela Vergara - Danilo Toro",
   "description": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "11.6.1",
+  "version": "11.6.2",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
   "name": "webpro",
@@ -893,9 +893,9 @@
         "pr": "Exportar página para PDF"
       },
       "description": {
-        "es": "Exporta la página a un archivo PDF. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación. Según el largo de la página puede que el final de la imagen se vea repetido.",
-        "en": "Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export. Depending on the length of the page, the end of the image may be repeated.",
-        "pr": "Exporte a página para um arquivo PDF. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação adequada. Dependendo do comprimento da página, o final da imagem pode se repetir."
+        "es": "Exporta la página a un archivo PDF. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación.",
+        "en": "Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export.",
+        "pr": "Exporte a página para um arquivo PDF. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação adequada."
       },
       "form": {
         "css": "modal-lg",
@@ -1617,9 +1617,9 @@
         "pr": "Converter página para PNG"
       },
       "description": {
-        "es": "Toma multiples capturas de la página web y las concatena en una sola. Tiene ciertas limitaciones como los elementos fijos. Según el largo de la página puede que el final de la imagen se vea repetido.",
-        "en": "It takes multiple snapshots of the web page and concatenates them into one. It has certain limitations like the fixed elements. Depending on the length of the page, the end of the image may be repeated.",
-        "pr": "Ele tira vários instantâneos da página da Web e os concatena em um. Tem certas limitações como os elementos fixos. Dependendo do comprimento da página, o final da imagem pode se repetir."
+        "es": "Toma multiples capturas de la página web y las concatena en una sola. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación.",
+        "en": "It takes multiple snapshots of the web page and concatenates them into one. If the page contains fixed elements, they can be removed with Javascript to obtain a correct export.",
+        "pr": "Ele tira vários instantâneos da página da Web e os concatena em um. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação correta."
       },
       "form": {
         "css": "modal-lg",

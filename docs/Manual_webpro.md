@@ -4,11 +4,14 @@ Module with extended functionalities for the browser that works as a complement 
 
 *Read this in other languages: [English](Manual_webpro.md), [Portugues](Manual_webpro.pr.md), [Español](Manual_webpro.es.md).*
   
-![banner](/docs/imgs/Banner_webpro.png)
+![banner](imgs/Banner_webpro.png)
 ## How to install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
+
+## How to use this module
+This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
 
 
 ## Description of the commands
@@ -18,9 +21,9 @@ __Download__ and __install__ the content in 'modules' folder in Rocketbot path
 Gets a list of all elements and their children from a class or name in order to iterate over it.
 |Parameters|Description|example|
 | --- | --- | --- |
-|Type Classes or attribute|In this field we should put the type of class or attribute we will use.|Name|
-|Classes or attribute|In this field we should put the name of the class or attribute we will use.|Class|
-|Element Type|In this field we should put the type of element we will use.|DIV|
+|Type Classes or attribute|In this field we should put the type of class or attribute we will use.|name|
+|Classes or attribute|In this field we should put the name of the class or attribute we will use.|class|
+|Element Type|In this field we should put the type of element we will use.|div|
 |Variable where to store the result|In this field we should put the name of the variable where we will store the result.|Variable|
 
 ### Clean input and send text
@@ -106,7 +109,7 @@ Click an object by passing it the index
 
 ### Export page to PDF
   
-Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export. Depending on the length of the page, the end of the image may be repeated.
+Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export.
 |Parameters|Description|example|
 | --- | --- | --- |
 |File path and name|Select the path and name of the file to save, without the extension .pdf|path/to/file.pdf|
@@ -174,10 +177,10 @@ Get info from console
 
 ### WebPage to PNG
   
-It takes multiple snapshots of the web page and concatenates them into one. It has certain limitations like the fixed elements. Depending on the length of the page, the end of the image may be repeated.
+It takes multiple snapshots of the web page and concatenates them into one. If the page contains fixed elements, they can be removed with Javascript to obtain a correct export.
 |Parameters|Description|example|
 | --- | --- | --- |
-|Name|Name of the image to save|web.png|
+|Name|Name of the image to save|WebImage|
 |Download folder|Path where the generated image will be downloaded|C:/Users/user/Desktop|
 
 ### Hover Element
@@ -245,7 +248,7 @@ Similar to Send keys web, but low level
 Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 |Parameters|Description|example|
 | --- | --- | --- |
-| --- | --- | --- |
+|The pdf will be downloaded to the browser's default downloads folder.|||
 
 ### Force Download
   
@@ -286,12 +289,14 @@ Do a drag and drop
 
 ### Upload files
   
-Command to upload one or more files to an input of type file
+Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
 |Parameters|Description|example|
 | --- | --- | --- |
 |Data to search|We put the selector of the element where the file will be uploaded|Data|
 |Data type|Data type to search|xpath|
-|File(s)|Select the file to upload|['C:/Users/user/file.pdf']|
+|Load only a single field of the following. If you want to upload a single file, use the first selector, if you want to upload more than one, load the second selector with the indicated format.|||
+|Load a single file|Select the file to upload|C:/Users/user/file1.pdf|
+|Load multiple files|Select the file to upload|['C:/Users/user/file1.pdf', 'C:/Users/user/file2.pdf']|
 
 ### Send key combination
   

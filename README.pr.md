@@ -1,6 +1,6 @@
 # WEB Pro
   
-Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web  
+Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web
 
 *Read this in other languages: [English](README.md), [Portugues](README.pr.md), [Español](README.es.md).*
 
@@ -8,6 +8,9 @@ Módulo com funcionalidades estendidas para o navegador que funciona como comple
   
 __Baixe__ e __instale__ o conteúdo na pasta 'modules' no caminho do Rocketbot  
 
+
+## Como usar este módulo
+Este módulo é complementado pelos módulos e comandos nativos da Web que vêm por padrão no Rocketbot. Para usar o módulo você deve ter um navegador já aberto do Rocketbot com o comando "Open Browser". Depois disso, podemos usar os comandos normalmente.
 
 
 ## Overview
@@ -47,7 +50,7 @@ Seleciona um objeto passando-lhe o índice
 Clique em um objeto passando o índice
 
 12. Exportar página para PDF  
-Exporte a página para um arquivo PDF. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação adequada. Dependendo do comprimento da página, o final da imagem pode se repetir.
+Exporte a página para um arquivo PDF. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação adequada.
 
 13. Abrir Chrome em modo headless  
 Abre Chrome em modo headless
@@ -71,7 +74,7 @@ Abre o Google Chrome em modo seguro ou debugger
 Obtém informações do console
 
 20. Converter página para PNG  
-Ele tira vários instantâneos da página da Web e os concatena em um. Tem certas limitações como os elementos fixos. Dependendo do comprimento da página, o final da imagem pode se repetir.
+Ele tira vários instantâneos da página da Web e os concatena em um. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação correta.
 
 21. Hover Element  
 Passar o mouse sobre o elemento
@@ -110,7 +113,7 @@ Abre o navegador indicando a URL
 Fazer um drag and drop
 
 33. Subir arquivo  
-Comando para fazer upload um ou mais arquivos para um input do tipo file
+Comando para fazer upload um ou mais arquivos para um input do tipo file. Basta preencher um único valor, dependendo de quantos arquivos você deseja enviar.
 
 34. Enviar combinação de teclas  
 Comando para enviar combinação de teclas
