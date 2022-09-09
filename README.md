@@ -1,6 +1,6 @@
 # WEB Pro
   
-Module with extended functionalities for the browser that works as a complement to the commands of the web section  
+Module with extended functionalities for the browser that works as a complement to the commands of the web section
 
 *Read this in other languages: [English](README.md), [Portugues](README.pr.md), [Español](README.es.md).*
 
@@ -8,6 +8,9 @@ Module with extended functionalities for the browser that works as a complement 
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
+
+## How to use this module
+This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
 
 
 ## Overview
@@ -47,7 +50,7 @@ Select an object by passing it the index
 Click an object by passing it the index
 
 12. Export page to PDF  
-Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export. Depending on the length of the page, the end of the image may be repeated.
+Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export.
 
 13. Open Chrome headless  
 Open Chrome in headless mode
@@ -71,7 +74,7 @@ Open Google Chrome with unsafe mode or debugger mode
 Get info from console
 
 20. WebPage to PNG  
-It takes multiple snapshots of the web page and concatenates them into one. It has certain limitations like the fixed elements. Depending on the length of the page, the end of the image may be repeated.
+It takes multiple snapshots of the web page and concatenates them into one. If the page contains fixed elements, they can be removed with Javascript to obtain a correct export.
 
 21. Hover Element  
 Move mouse over the element
@@ -110,7 +113,7 @@ Open a browser the URL
 Do a drag and drop
 
 33. Upload files  
-Command to upload one or more files to an input of type file
+Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
 
 34. Send key combination  
 Command to send key combination

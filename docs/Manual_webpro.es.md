@@ -4,11 +4,14 @@ Modulo con funcionalidades extendidas para el navegador que funciona como comple
 
 *Read this in other languages: [English](Manual_webpro.md), [Portugues](Manual_webpro.pr.md), [Español](Manual_webpro.es.md).*
   
-![banner](/docs/imgs/Banner_webpro.png)
+![banner](imgs/Banner_webpro.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Rocketbot.  
 
+
+## Como usar este modulo
+Este modulo se complementa con los modulos y comandos nativos Web que ya vienen por defecto en Rocketbot. Para poder usar el modulo debes tener un navegador ya abierto desde Rocketbot con el comando de "Abrir Navegador". Luego de esto ya podremos utilizar los comandos con normalidad.
 
 
 ## Descripción de los comandos
@@ -18,9 +21,9 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Ro
 Obtiene una lista de todos los elementos y sus hijos a partir de una clase o nombre para poder iterar sobre ella.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Tipo Clases o atributo|En este campo debemos poner el tipo de clase o atributo que usaremos.|Name|
-|Clases o atributo|En este campo debemos poner el nombre de la clase o atributo que usaremos.|Class|
-|Tipo de Elemento/Objeto web|En este campo debemos poner el tipo de elemento que usaremos.|DIV|
+|Tipo Clases o atributo|En este campo debemos poner el tipo de clase o atributo que usaremos.|name|
+|Clases o atributo|En este campo debemos poner el nombre de la clase o atributo que usaremos.|class|
+|Tipo de Elemento/Objeto web|En este campo debemos poner el tipo de elemento que usaremos.|div|
 |Variable donde almacenar resultado|En este campo debemos poner el nombre de la variable donde almacenaremos el resultado.|Variable|
 
 ### Limpia un input y envia el texto
@@ -52,7 +55,6 @@ Carga un archivo con las cookies
 ### Recargar Página
   
 Recarga una página
-
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 | --- | --- | --- |
@@ -60,7 +62,6 @@ Recarga una página
 ### Volver atrás
   
 Volver a la página anterior
-
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 | --- | --- | --- |
@@ -108,7 +109,7 @@ Clickea un objeto pasándole el index
 
 ### Exportar página a PDF
   
-Exporta la página a un archivo PDF. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación. Según el largo de la página puede que el final de la imagen se vea repetido.
+Exporta la página a un archivo PDF. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta y nombre del Archivo|Seleccionamos la ruta y el nombre del archivo a guardar, sin la extension .pdf|path/to/file.pdf|
@@ -176,10 +177,10 @@ Obtiene información desde la consola
 
 ### Convertir página a PNG
   
-Toma multiples capturas de la página web y las concatena en una sola. Tiene ciertas limitaciones como los elementos fijos. Según el largo de la página puede que el final de la imagen se vea repetido.
+Toma multiples capturas de la página web y las concatena en una sola. Si la página contiene elementos fijos, pueden eliminarse con Javascript para obtener una correcta exportación.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Nombre|Nombre de la imagen a guardar|web.png|
+|Nombre|Nombre de la imagen a guardar|imagenWeb|
 |Carpeta de descarga|Ruta donde se descargará la imagen generada|C:/Users/user/Desktop|
 
 ### Mover encima
@@ -245,10 +246,9 @@ Similar a Enviar texto web, pero a más bajo nivel
 ### Imprimir como PDF (Chrome)
   
 Imprimir la página como PDF en Chrome. El PDF se genera en base al contenido disponible de la página. No representa una copia fiel del sitio.
-
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-| --- | --- | --- |
+|El pdf se descargará en la carpeta de descargas por defecto del navegador.|||
 
 ### Forzar Descarga
   
@@ -289,12 +289,14 @@ Realiza un drag and drop
 
 ### Subir Archivo
   
-Comando para subir uno o más archivos a un input de tipo file
+Comando para subir uno o más archivos a un input de tipo file. Solo completar un unico valor según cuántos archivos se deseen subir.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Dato a buscar|Colocamos el selector del elemento donde se subira el archivo|Data|
 |Tipo de dato|Tipo de dato a buscar|xpath|
-|Archivo(s)|Seleccionamos el archivo a subir|['C:/Users/user/file.pdf']|
+|Cargar solo un único campo de los siguientes. Si se desea subir un solo archivo, utilizar el primer selector, si se desean cargar más de uno, cargar el segundo selector con el formato indicado.|||
+|Cargar un solo archivo|Seleccionamos los archivos a subir|C:/Users/user/file1.pdf|
+|Cargar múltiples archivos|Seleccionamos los archivos a subir|['C:/Users/user/file1.pdf', 'C:/Users/user/file2.pdf']|
 
 ### Enviar combinacion de teclas
   

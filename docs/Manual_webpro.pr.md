@@ -4,11 +4,14 @@ Módulo com funcionalidades estendidas para o navegador que funciona como comple
 
 *Read this in other languages: [English](Manual_webpro.md), [Portugues](Manual_webpro.pr.md), [Español](Manual_webpro.es.md).*
   
-![banner](/docs/imgs/Banner_webpro.png)
+![banner](imgs/Banner_webpro.png)
 ## Como instalar este módulo
   
 __Baixe__ e __instale__ o conteúdo na pasta 'modules' no caminho do Rocketbot  
 
+
+## Como usar este módulo
+Este módulo é complementado pelos módulos e comandos nativos da Web que vêm por padrão no Rocketbot. Para usar o módulo você deve ter um navegador já aberto do Rocketbot com o comando "Open Browser". Depois disso, podemos usar os comandos normalmente.
 
 
 ## Descrição do comando
@@ -18,9 +21,9 @@ __Baixe__ e __instale__ o conteúdo na pasta 'modules' no caminho do Rocketbot
 Obtém uma lista de todos os elementos e seus filhos de uma classe ou nome, para poder iterar sobre ela.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-|Tipo de classes ou atributo|Neste campo devemos colocar o tipo de classe ou atributo que usaremos.|Name|
-|Classes ou atributo|Neste campo devemos colocar o nome da classe ou atributo que usaremos.|Class|
-|Tipo do Elemento|Neste campo devemos colocar o tipo de elemento que usaremos.|DIV|
+|Tipo de classes ou atributo|Neste campo devemos colocar o tipo de classe ou atributo que usaremos.|name|
+|Classes ou atributo|Neste campo devemos colocar o nome da classe ou atributo que usaremos.|class|
+|Tipo do Elemento|Neste campo devemos colocar o tipo de elemento que usaremos.|div|
 |Variável onde armazenar o resultado|Neste campo devemos colocar o nome da variável onde armazenaremos o resultado.|Variável|
 
 ### Limpa uma entrada e envia o texto
@@ -106,7 +109,7 @@ Clique em um objeto passando o índice
 
 ### Exportar página para PDF
   
-Exporte a página para um arquivo PDF. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação adequada. Dependendo do comprimento da página, o final da imagem pode se repetir.
+Exporte a página para um arquivo PDF. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação adequada.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Caminho e nome do arquivo|Selecione o caminho e nome do arquivo a salvar, sem a extensão .pdf|path/to/file.pdf|
@@ -174,10 +177,10 @@ Obtém informações do console
 
 ### Converter página para PNG
   
-Ele tira vários instantâneos da página da Web e os concatena em um. Tem certas limitações como os elementos fixos. Dependendo do comprimento da página, o final da imagem pode se repetir.
+Ele tira vários instantâneos da página da Web e os concatena em um. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação correta.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-|Nome|Nome da imagem|web.png|
+|Nome|Nome da imagem|ImagemWeb|
 |Pasta de download|Caminho onde a imagem gerada será baixada|C:/Users/user/Desktop|
 
 ### Hover Element
@@ -245,7 +248,7 @@ Similar ao Send Web Text, mas em um nível inferior
 Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disponível da página. Não representa uma cópia verdadeira do site.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-| --- | --- | --- |
+|O pdf será baixado para a pasta de downloads padrão do navegador.|||
 
 ### Forçar o download
   
@@ -286,12 +289,14 @@ Fazer um drag and drop
 
 ### Subir arquivo
   
-Comando para fazer upload um ou mais arquivos para um input do tipo file
+Comando para fazer upload um ou mais arquivos para um input do tipo file. Basta preencher um único valor, dependendo de quantos arquivos você deseja enviar.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Dado a buscar|Colocamos o seletor do elemento onde o arquivo será subido|Data|
 |Tipo de dado|Tipo de dado a buscar|xpath|
-|Arquivo(s)|Selecionamos o arquivo a subir|['C:/Users/user/file.pdf']|
+|Carregue apenas um único campo do seguinte. Se quiser fazer upload de um único arquivo, use o primeiro seletor, se quiser fazer upload de mais de um, carregue o segundo seletor com o formato indicado.|||
+|Carregar um único arquivo|Selecionamos o arquivo a subir|C:/Users/user/file1.pdf'|
+|Carregar vários arquivos|Selecionamos o arquivo a subir|['C:/Users/user/file1.pdf', 'C:/Users/user/file2.pdf']|
 
 ### Enviar combinação de teclas
   

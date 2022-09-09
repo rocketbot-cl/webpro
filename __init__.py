@@ -402,29 +402,17 @@ if module == "clickElement":
         raise e
 
 if module == "html2pdf":
-
-    
-    
     path_ = GetParams("path_")
     if path_:
         path_ = path_.replace("/", os.sep)
     var_ = GetParams("var_")
     del_header = GetParams("del_header")
 
-    # lk1 = cur_path+'html2canvas.js'
-    # lk2 = cur_path+'jspdf.debug.js'
-
     try:
-        # read_ = open(lk1, "r").read()
-        # read2_ = open(lk2, "r").read()
-        # driver.execute_script(read_)
-        # driver.execute_script(read2_)
 
-        # element = driver.execute_script("let doc = new jsPDF('p','pt','a4'); doc.addHTML(document.body, function() {"
-        #                                "doc.save('"+name_+".pdf');});")
-        # res = True
 
         tmp_path = "tmp/webpro/screenshot.png"
+        makeTmpDir("webpro")
         images = []
         
         
@@ -452,6 +440,13 @@ if module == "html2pdf":
             else:
                 image_ = Image.open(tmp_path)
                 im_ = image_.convert('RGB')
+                
+                if total_height - actual_height <= height:
+                    last_height = total_height - actual_height
+                    y = height - last_height
+                    
+                    im_ = im_.crop((0, y, width, height))
+                    
                 images.append(im_)
                 image_.close()
             
@@ -459,7 +454,6 @@ if module == "html2pdf":
             # Scrolleo hasta la proxima screen
             driver.execute_script("window.scrollTo(0, {})".format((height * image_count)))
             time.sleep(1)
-            # actual_height = driver.execute_script("return window.pageYOffset")
             actual_height += height
             image_count += 1
 
@@ -469,12 +463,12 @@ if module == "html2pdf":
             driver.execute_script("""var header = document.querySelector('header');
                                     header.style.visibility = 'inherit'
                                   """)
-
-
-        driver.maximize_window()
+        res = True
+        
 
     except Exception as e:
         PrintException()
+        res = False
         raise e
 
     SetVar(var_,res)
@@ -695,7 +689,7 @@ if module == "fullScreenshot":
         
         tmp_path = "tmp/webpro/screenshot.png"
         images = []
-        
+        makeTmpDir("webpro")
         
         total_height = driver.execute_script("return document.body.scrollHeight")
         actual_height = 0
@@ -713,14 +707,23 @@ if module == "fullScreenshot":
                 im_1 = image.convert('RGB')
                 images.append(image)
                 
+                try:
+                    driver.execute_script("""var header = document.querySelector('header');
+                                            if (header != null) {header.style.visibility = 'hidden'};
+                                        """)
+                except:
+                    pass
                 
-                
-                driver.execute_script("""var header = document.querySelector('header');
-                                         if (header != null) {header.style.visibility = 'hidden'};
-                                      """)
             else:
                 image_ = Image.open(tmp_path)
                 im_ = image_.convert('RGB')
+                
+                if total_height - actual_height <= height:
+                    last_height = total_height - actual_height
+                    y = height - last_height
+                    
+                    im_ = im_.crop((0, y, width, height))
+                    
                 images.append(im_)
                 
             
@@ -732,12 +735,14 @@ if module == "fullScreenshot":
             actual_height += height
             image_count += 1
         
+        try:
+            driver.execute_script("""var header = document.querySelector('header');
+                                    if (header != null) {header.style.visibility = 'inherit'};
+                                """)
+        except:
+            pass
         
-        driver.execute_script("""var header = document.querySelector('header');
-                                 if (header != null) {header.style.visibility = 'inherit'};
-                              """)
-        
-        img = Image.new('RGB', (width, actual_height))
+        img = Image.new('RGB', (width, total_height))
         
         
         height_ = 0
