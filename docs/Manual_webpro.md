@@ -1,296 +1,316 @@
-
-
-
-
 # WEB Pro
   
-Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
+Module with extended functionalities for the browser that works as a complement to the commands of the web section  
+
+*Read this in other languages: [English](Manual_webpro.md), [Portugues](Manual_webpro.pr.md), [Español](Manual_webpro.es.md).*
   
 ![banner](imgs/Banner_webpro.png)
-## Como instalar este módulo
+## How to install this module
   
-__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
+__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
+## How to use this module
+This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
 
-## Descripción de los comandos
 
-### Lista de elementos
+## Description of the commands
+
+### List of items
   
-Obtiene una lista de todos los elementos y sus hijos a partir de una clase o nombre para poder iterar sobre ella.
-|Parámetros|Descripción|ejemplo|
+Gets a list of all elements and their children from a class or name in order to iterate over it.
+|Parameters|Description|example|
 | --- | --- | --- |
-|Tipo Clases o atributo|En este campo debemos poner el tipo de clase o atributo que usaremos.|Name|
-|Clases o atributo|En este campo debemos poner el nombre de la clase o atributo que usaremos.|Class|
-|Tipo de Elemento/Objeto web|En este campo debemos poner el tipo de elemento que usaremos.|DIV|
-|Variable donde almacenar resultado|En este campo debemos poner el nombre de la variable donde almacenaremos el resultado.||
+|Type Classes or attribute|In this field we should put the type of class or attribute we will use.|name|
+|Classes or attribute|In this field we should put the name of the class or attribute we will use.|class|
+|Element Type|In this field we should put the type of element we will use.|div|
+|Variable where to store the result|In this field we should put the name of the variable where we will store the result.|Variable|
 
-### Limpia un input y envia el texto
+### Clean input and send text
   
-Borra el contenido de un objeto tipo input y envia el texto
-|Parámetros|Descripción|ejemplo|
+Deletes the contents of an input object and sends the text
+|Parameters|Description|example|
 | --- | --- | --- |
-|Texto a enviar o variable|Colocamos el texto o la variable a enviar.|Texto o Variable|
-|Dato a buscar|Colocamos el dato a buscar.|Dato a buscar|
-|Tipo de dato|Seleccionamos el tipo de dato a buscar. Ya sea xpath, class, name, tag o id.|Dato a buscar|
-|Enviar con teclas|Borra y escribe con teclas directamente.|Texto o Variable|
+|Text to send or variable|We put the text or the variable to send.|Text or Variable|
+|Data to search|We put the data to search.|Data to search|
+|Data type|We select the type of data to search. Either xpath, class, name, tag or id.|Data to search|
+|Send with keys|Erase and write with keys.|Text or Variable|
 
-### Guardar Cookies
+### Save Cookies
   
-Guarda las cookies de una página para poder ser cargada en otra instancia
-|Parámetros|Descripción|ejemplo|
+Saves the cookies of a page so that it can be loaded in another instance
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta al archivo donde se guardarán las cookies|En este campo indicamos la ruta al archivo donde se guardarán las cookies|C:/tmp/etc|
-|Variable donde se guardará las cookies|En este campo indicamos el nombre de la variable donde se guardarán las cookies|cookies|
+|Path to file where cookies will be saved|In this field we indicate the path to the file where the cookies will be saved|C:/tmp/etc|
+|Variable where cookies will be stored|In this field we indicate the name of the variable where the cookies will be stored|cookies|
 
-### Cargar Cookies
+### Load Cookies
   
-Carga un archivo con las cookies
-|Parámetros|Descripción|ejemplo|
+Loads a file with cookies
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta al archivo donde están guardadas las cookies|Seleccionamos la ruta del archivo donde están guardadas las cookies|C:/tmp/etc|
+|Path to the file where cookies are stored|Select the path to the file where cookies are stored|C:/tmp/etc|
+|Assign result to variable|Variable where True or False will be stored depending on whether the cookies could be loaded|Variable|
 
-### Recargar Página
+### Reload Page
   
-Recarga una página
-|Parámetros|Descripción|ejemplo|
+Reload Page
+|Parameters|Description|example|
 | --- | --- | --- |
-
-### Volver atrás
-  
-Volver a la página anterior
-|Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 
-### Doble Click
+### Back
   
-Hace doble click sobre un objeto seleccionado
-|Parámetros|Descripción|ejemplo|
+Back to previous page
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector a buscar|Dato|
-|Tipo de dato|Colocamos el tipo de dato a buscar||
+| --- | --- | --- |
+
+### Double Click
+  
+Double click on a selected object
+|Parameters|Description|example|
+| --- | --- | --- |
+|Data to search|We put the selector to search|Data|
+|Data type|We put the type of data to search|xpath|
 
 ### Scroll
   
-Hace scroll hasta una posición determinada
-|Parámetros|Descripción|ejemplo|
+Scroll to a specific position
+|Parameters|Description|example|
 | --- | --- | --- |
-|Posición|Elegimos la posición en píxeles|1500|
+|Position|Choose the position in pixels|1500|
 
-### Contar Eelementos
+### Count Elements
   
-Entrega el total de elementos
-|Parámetros|Descripción|ejemplo|
+Delivers the total number of elements
+|Parameters|Description|example|
 | --- | --- | --- |
-|Nombre de la clase|Nombre de la clase del elemento|Name class|
-|Asignar resultado a variable|Nombre de la variable donde se guardará el resultado|Variable|
+|Class Name|Class name of element|Name class|
+|Assign result to variable|Name of the variable where the result will be stored|Variable|
 
-### Seleccionar Objeto por Index
+### Select Object by Index
   
-Selecciona un objeto pasándole el index
-|Parámetros|Descripción|ejemplo|
+Select an object by passing it the index
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a Buscar|Colocamos el selector a buscar|form-control|
-|Index|Colocamos el index a buscar|1|
-|Tipo de dato|Seleccionamos el tipo de dato a buscar||
+|Data to Search|We put the selector to search|form-control|
+|Index|We put the index to search|1|
+|Data type|We select the type of data to search|name|
 
-### Clickear Objeto por Index
+### Click Object by Index
   
-Clickea un objeto pasándole el index
-|Parámetros|Descripción|ejemplo|
+Click an object by passing it the index
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a Buscar|Colocamos el selector del dato a clickear.|form-control|
-|Index|Colocamos el index del dato a clickear.|1|
-|Tipo de dato|Colocamos el tipo de dato a clickear.||
+|Data to Search|We put the selector of the data to click.|form-control|
+|Index|We put the index of the data to click.|1|
+|Data type|We put the type of the data to click.|class|
 
-### Exportar página a PDF
+### Export page to PDF
   
-Exporta la página a un archivo PDF
-|Parámetros|Descripción|ejemplo|
+Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export.
+|Parameters|Description|example|
 | --- | --- | --- |
-|Nombre de Archivo|Seleccionamos el nombre del archivo a guardar, sin la extension .pdf|name_file|
-|Asignar resultado a variable|Seleccionamos el nombre de la variable a la que queremos asignar el resultado|Variable|
+|File path and name|Select the path and name of the file to save, without the extension .pdf|path/to/file.pdf|
+|Delete sticky header|If the website contains a fixed header, check the box to remove it so it doesn't repeat itself on each capture. The command looks for the header tag, if it doesn't find it it will throw an error, if this doesn't work you have to uncheck it.|True|
+|Assign result to variable|Select the name of the variable to which we want to assign the result|Variable|
 
-### Abrir Chrome en modo headless
+### Open Chrome headless
   
-Abre Chrome en modo Headless
-|Parámetros|Descripción|ejemplo|
+Open Chrome in headless mode
+|Parameters|Description|example|
 | --- | --- | --- |
-|Url de Servidor|Escribimos la URL de la pagina a abrir.|http://www.rocketbot.co|
+|Server URL|Write the URL of the page to open.|http://www.rocketbot.co|
 
-### Tomar captura por coordenadas
+### Take screenshot from coordinates
   
-Toma una captura de pantalla a una sección de la página mediante coordenadas
-|Parámetros|Descripción|ejemplo|
+Take a screenshot to a section of the page by coordinates
+|Parameters|Description|example|
 | --- | --- | --- |
-|Posición|Coordenadas de la sección de la página|x,y|
-|Dimensiones|Dimensiones de la sección de la página|ancho, alto|
-|Ruta y nombre donde se guardará la imagen|Ruta y nombre donde se guardará la imagen|/Users/User/folder/image.jpg|
+|Position|Page section coordinates|x,y|
+|size|Page section dimensions|width, height|
+|Path and name where the image will be saved|Path and name where the image will be saved|/Users/User/folder/image.jpg|
 
-### Obtener rectangulo delimitador
+### Get bounding rectangle
   
-Obtiene coordenadas x e y, y dimensiones de un objeto
-|Parámetros|Descripción|ejemplo|
+Obtains x and y coordinates and dimensions of an object
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a obtener.|Data|
-|Tipo de dato|Seleccionamos el tipo de dato a buscar.||
-|Variable donde almacenar resultado|Nombre de variable sin {}|Variable|
+|Data to search|We put the selector of the element to get.|Data|
+|Data type|We select the type of data to search.|xpath|
+|Variable where to store result|Variable name without {}|Variable|
 
-### Obtener coordenadas de un objeto
+### Get location of an object
   
-Obtiene coordenadas x e y de un objeto
-|Parámetros|Descripción|ejemplo|
+Get x and y coordinates of an object
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a seleccionar|Data|
-|Tipo de dato|Seleccionamos el tipo de dato a buscar||
-|Variable donde almacenar resultado|Nombre de variable sin {}|Variable|
+|Data to search|Put the selector of the element to select|Data|
+|Data type|Select the type of data to search|xpath|
+|Variable where to store result|Variable name without {}|Variable|
 
-### Obtener dimensiones de un objeto
+### Get size of an object
   
-Obtiene dimensiones de un objeto
-|Parámetros|Descripción|ejemplo|
+Get size of an object
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a seleccionar|Data|
-|Tipo de dato|Seleccionamos el tipo de dato a buscar||
-|Variable donde almacenar resultado|Nombre de variable sin {}|Variable|
+|Data to search|Put the selector of the element to select|Data|
+|Data type|Select the type of data to search|xpath|
+|Variable where to store result|Variable name without {}|Variable|
 
-### Abrir Chrome modo desarrollador 
+### Open Chrome developer mode
   
-Abre Google Chrome en modo seguro o modo debugger
-|Parámetros|Descripción|ejemplo|
+Open Google Chrome with unsafe mode or debugger mode
+|Parameters|Description|example|
 | --- | --- | --- |
-|Url de Servidor|Url de la pagina a abrir|http://www.rocketbot.co|
-|Modo|Seleccionamos el modo en que se va abrir el navegador.||
+|Server URL|Server URL to open|http://www.rocketbot.co|
+|Mode|Select the mode in which the browser will be opened.|Debugger|
 
-### Ver Consola
+### See Console
   
-Obtiene información desde la consola
-|Parámetros|Descripción|ejemplo|
+Get info from console
+|Parameters|Description|example|
 | --- | --- | --- |
-|Variable donde almacenar resultado|Nombre de la variable donde almacenar el resultado|Variable|
-|Nivel |Nivel de información a mostrar||
+|Variable where to store result|Variable name where to store the result|Variable|
+|Level |Level of information to show|Severe|
 
-### Convertir página a PNG
+### WebPage to PNG
   
-Toma una captura a la página web completa
-|Parámetros|Descripción|ejemplo|
+It takes multiple snapshots of the web page and concatenates them into one. If the page contains fixed elements, they can be removed with Javascript to obtain a correct export.
+|Parameters|Description|example|
 | --- | --- | --- |
-|Nombre|Nombre de la imagen a guardar|web|
+|Name|Name of the image to save|WebImage|
+|Download folder|Path where the generated image will be downloaded|C:/Users/user/Desktop|
 
-### Mover encima
+### Hover Element
   
-Mueve el mouse encima de un elemento
-|Parámetros|Descripción|ejemplo|
+Move mouse over the element
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selecto del elemento al cual le haremos hover.|Data|
-|Tipo de dato|Colocamos el tipo de dato que queremos buscar.||
+|Data to search|We put the selector of the element to which we will make hover.|Data|
+|Data type|We put the type of data we want to search.|xpath|
 
-### Abrir Edge (Chromium)
+### Open Edge (Chromium)
   
-Abre el nuevo Edge basado en Chromium
-|Parámetros|Descripción|ejemplo|
+Open the new Edge based on Chromium
+|Parameters|Description|example|
 | --- | --- | --- |
-|Url de Servidor|Url de la pagina a abrir en Edge|http://www.rocketbot.co|
+|Server URL|Url of the page to open in Edge|http://www.rocketbot.co|
 
 ### Click Pro
   
-Hace click sobre un objeto seleccionado esperando que se encuentre cliqueable
-|Parámetros|Descripción|ejemplo|
+Click on a selected object waiting that it's clickeable
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a hacer click.|Data|
-|Tipo de dato|Seleccionamos el tipo de dato a buscar.||
-|Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento se encuentre clickeable.|5|
+|Data to search|Put the selector of the element to click.|Data|
+|Data type|Select the type of data to search.|xpath|
+|Wait|Put the time in seconds that we will wait for the element to be clickeable.|5|
 
-### Extraer texto Pro
+### Extract text Pro
   
-Obtiene el texto de un objeto esperando que este se encuentre disponible
-|Parámetros|Descripción|ejemplo|
+Get a text object waiting that it's present
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a extraer text.|Data|
-|Tipo de dato|Seleccionamos el tipo de dato a buscar.||
-|Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento este disponible.|5|
-|Variable donde almacenar resultado|Colocamos el nombre de la variable donde almacenaremos el resultado.|Variable|
+|Data to search|Put the selector of the element to extract text.|Data|
+|Data type|Select the type of data to search.|xpath|
+|Wait|Put the time in seconds that we will wait for the element to be available.|5|
+|Variable where to store result|Put the name of the variable where we will store the result.|Variable|
 
-### Seleccionar objeto Pro
+### Select object Pro
   
-Selecciona un objeto esperando que se encuentre presente
-|Parámetros|Descripción|ejemplo|
+Select an object waiting that it's present
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento a seleccionar.|Data|
-|Tipo de dato|Seleccionamos el tipo de dato a buscar.||
-|Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento aparezca.|5|
+|Data to search|Put the selector of the element to select.|Data|
+|Data type|Select the type of data to search.|xpath|
+|Wait|Put the time in seconds that we will wait for the element to appear.|5|
 
-### Cambiar a iframe Pro
+### Change to iframe Pro
   
-Cambia a un iframe esperando que se encuentre presente
-|Parámetros|Descripción|ejemplo|
+Change to iframe waiting that it's present
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del iframe|Data|
-|Tipo de dato|Seleccionamos el tipo de dato||
-|Esperar|Colocamos el tiempo de espera|5|
+|Data to search|Put the selector of the iframe|Data|
+|Data type|Select the type of data|xpath|
+|Wait|Put the time of wait|5|
 
-### Enviar Teclas
+### Send Keys
   
-Similar a Enviar texto web, pero a más bajo nivel
-|Parámetros|Descripción|ejemplo|
+Similar to Send keys web, but low level
+|Parameters|Description|example|
 | --- | --- | --- |
-|Texto|Texto a enviar|Text|
-|Tecla especial|Tecla especial a enviar||
+|Text|Text to send|Text|
+|Special Key|Special key to send|SPACE|
 
-### Imprimir como PDF (Chrome)
+### Print to PDF (Chrome)
   
-Imprimir la página como PDF en Chrome
-|Parámetros|Descripción|ejemplo|
+Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
+|Parameters|Description|example|
 | --- | --- | --- |
+|The pdf will be downloaded to the browser's default downloads folder.|||
 
-### Forzar Descarga
+### Force Download
   
-Forzar una descarga
-|Parámetros|Descripción|ejemplo|
+Force Download
+|Parameters|Description|example|
 | --- | --- | --- |
-|URL Descarga|Colocamos la URL de descarga a forzar|http://www.web.test/file.csv|
-|Nombre de archivo|Colocamos el nombre del archivo a forzar|file.csv|
+|Download URL|Put the URL of the download to force|http://www.web.test/file.csv|
+|File Name|Put the name of the file to force|file.csv|
 
-### Abrir Nueva Pestaña
+### Open New Tab
   
-Abre una nueva pestaña indicando la URL
-|Parámetros|Descripción|ejemplo|
+Open new tab with the URL
+|Parameters|Description|example|
 | --- | --- | --- |
-|URL|URL a abrir en una nueva pestaña|http://www.google.com|
+|URL|URL to open in a new tab|http://www.google.com|
 
-### Abrir navegador
+### Open Browser
   
-Abre el navegador indicando la URL
-|Parámetros|Descripción|ejemplo|
+Open a browser the URL
+|Parameters|Description|example|
 | --- | --- | --- |
-|URL|URL a abrir|http://www.google.com|
-|Tiempo de espera|Tiempo de espera en segundos|5|
-|Id|Id del navegador|4|
-|Carpeta de descargas|Ruta de la carpeta de descargas para el navegador abierto|C:/folder|
+|URL|URL to open|http://www.google.com|
+|Timeout|Timeout in seconds|5|
+|Id|Id of the browser|4|
+|Profile folder|Profile folder to open the opened browser|C:/folder|
+|Download Folder|Download folder for the opened browser|C:/folder|
+|Force downloads|Force the downloads to make them automatically|True|
+|Options for Chrome|Options for the browser|{'download.default_directory': download_path}|
 
 ### Drag and drop
   
-Realiza un drag and drop
-|Parámetros|Descripción|ejemplo|
+Do a drag and drop
+|Parameters|Description|example|
 | --- | --- | --- |
-|Origen|Origen del elemento|source|
-|Destino|Destino del elemento|target|
-|Tipo de dato|Tipo de dato a buscar|Dato a buscar|
+|Source|Source element|source|
+|Target|Target element|target|
+|Data type|Data type to search|Data to search|
 
-### Subir Archivo
+### Upload files
   
-Comando para subir uno o más archivos a un input de tipo file
-|Parámetros|Descripción|ejemplo|
+Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
+|Parameters|Description|example|
 | --- | --- | --- |
-|Dato a buscar|Colocamos el selector del elemento donde se subira el archivo|Data|
-|Tipo de dato|Tipo de dato a buscar||
-|Archivo(s)|Seleccionamos el archivo a subir|['C:/Users/user/file.pdf']|
+|Data to search|We put the selector of the element where the file will be uploaded|Data|
+|Data type|Data type to search|xpath|
+|Load only a single field of the following. If you want to upload a single file, use the first selector, if you want to upload more than one, load the second selector with the indicated format.|||
+|Load a single file|Select the file to upload|C:/Users/user/file1.pdf|
+|Load multiple files|Select the file to upload|['C:/Users/user/file1.pdf', 'C:/Users/user/file2.pdf']|
 
-### Enviar combinacion de teclas
+### Send key combination
   
-Comando para enviar combinacion de dos teclas
-|Parámetros|Descripción|ejemplo|
+Command to send key combination
+|Parameters|Description|example|
 | --- | --- | --- |
-|Primera tecla especial|Primer tecla especial a combinar con una letra/numero o con una segunda tecla especial||
-|Letra o numero|Letra o numero a combinar con la primera tecla de ser necesario.|A|
-|Segunda tecla especial|Segunda tecla especial a combinar con la primera tecla de ser necesario.||
+|First special Key|First special key to combine with a letter/number or with a second special key|SPACE|
+|Letter or number|Letter or number to combine with the first key if necessary.|A|
+|Second special key|Second special key to combine with the first key if necessary.|SPACE|
+
+### Right Click
+  
+Right click on a selected object
+|Parameters|Description|example|
+| --- | --- | --- |
+|Data to search|We put the selector to search|Data|
+|Data type|We put the type of data to search|xpath|

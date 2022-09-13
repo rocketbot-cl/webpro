@@ -24,7 +24,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 
-__version__ = '11.2.1'
+__version__ = '11.6.0'
 __author__ = 'Rocketbot <contacto@rocketbot.com>'
 
 import base64
@@ -36,6 +36,7 @@ from io import BytesIO
 
 import time
 from bs4 import BeautifulSoup
+from selenium import webdriver as ws
 from selenium.webdriver import ActionChains
 from selenium.webdriver import Chrome
 base_path = tmp_global_obj["basepath"]
@@ -51,6 +52,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import TimeoutException
 from PIL import Image
+from pathlib import Path
+downloads_path = str(Path.home() / "Downloads")
 
 module = GetParams("module")
 
@@ -248,14 +251,22 @@ if module == "CleanInputs":
 if module == "LoadCookies":
     import pickle
 
-    
-    
     file_ = GetParams('file_')
-    with open(file_, 'rb') as cookiesfile:
-        cookies = pickle.load(cookiesfile)
-        print(cookies)
-        for cookie in cookies:
-            driver.add_cookie(cookie)
+    var_ = GetParams('var_')
+    
+    
+    try:
+        with open(file_, 'rb') as cookiesfile:
+            cookies = pickle.load(cookiesfile)
+            print(cookies)
+            for cookie in cookies:
+                driver.add_cookie(cookie)
+        SetVar(var_, "True")
+    except Exception as e:
+        PrintException()
+        SetVar(var_, "False")
+        raise e
+        
 
 if module == "SaveCookies":
     import pickle
@@ -273,7 +284,8 @@ if module == "SaveCookies":
             pickle.dump(cookies, filehandler)
 
         if result:
-            SetVar(result, str(cookies))
+            SetVar(result, str(cookies))  
+            
     except Exception as e:
         PrintException()
         raise e
@@ -390,28 +402,73 @@ if module == "clickElement":
         raise e
 
 if module == "html2pdf":
-
-    
-    
-    name_ = GetParams("name_")
+    path_ = GetParams("path_")
+    if path_:
+        path_ = path_.replace("/", os.sep)
     var_ = GetParams("var_")
-
-    lk1 = cur_path+'html2canvas.js'
-    lk2 = cur_path+'jspdf.debug.js'
+    del_header = GetParams("del_header")
 
     try:
-        read_ = open(lk1, "r").read()
-        read2_ = open(lk2, "r").read()
-        driver.execute_script(read_)
-        driver.execute_script(read2_)
 
-        element = driver.execute_script("let doc = new jsPDF('p','pt','a4'); doc.addHTML(document.body,function() {"
-                                       "doc.save('"+name_+".pdf');});")
 
+        tmp_path = "tmp/webpro/screenshot.png"
+        makeTmpDir("webpro")
+        images = []
+        
+        
+        total_height = driver.execute_script("return document.body.scrollHeight")
+        actual_height = 0
+        image_count = 1
+        driver.execute_script("window.scrollTo(0, 0)")
+        
+        
+        while int(actual_height) < int(total_height):
+            driver.get_screenshot_as_file(tmp_path)
+            
+
+            if image_count == 1:
+                
+                image = Image.open(tmp_path)
+                width, height = image.size
+                im_1 = image.convert('RGB')
+                
+                image.close()
+                if del_header == "True":
+                    driver.execute_script("""var header = document.querySelector('header');
+                                             header.style.visibility = 'hidden'
+                                          """)
+            else:
+                image_ = Image.open(tmp_path)
+                im_ = image_.convert('RGB')
+                
+                if total_height - actual_height <= height:
+                    last_height = total_height - actual_height
+                    y = height - last_height
+                    
+                    im_ = im_.crop((0, y, width, height))
+                    
+                images.append(im_)
+                image_.close()
+            
+            
+            # Scrolleo hasta la proxima screen
+            driver.execute_script("window.scrollTo(0, {})".format((height * image_count)))
+            time.sleep(1)
+            actual_height += height
+            image_count += 1
+
+        im_1.save(path_, save_all=True, append_images=images)
+            
+        if del_header == "True":
+            driver.execute_script("""var header = document.querySelector('header');
+                                    header.style.visibility = 'inherit'
+                                  """)
         res = True
+        
 
     except Exception as e:
         PrintException()
+        res = False
         raise e
 
     SetVar(var_,res)
@@ -435,7 +492,7 @@ if module == "chromeHeadless":
         chrome_options = Options()
 
         chrome_options.add_argument('headless')
-        web.driver_list[web.driver_actual_id] = Chrome(chrome_options=chrome_options, executable_path=chrome_driver)
+        web.driver_list[web.driver_actual_id] = Chrome(options=chrome_options, executable_path=chrome_driver)
         if url:
             web.driver_list[web.driver_actual_id].get(url)
 
@@ -458,7 +515,7 @@ if module == "Edge_":
         else:
             edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
 
-        driver = webdriver.Edge(edge_driver, {})
+        driver = ws.Edge(edge_driver, {})
 
         web.driver_list[web.driver_actual_id] = driver
         if url:
@@ -624,32 +681,82 @@ if module == "debugger":
 if module == "fullScreenshot":
     name = GetParams("name")
     web = GetGlobals('web')
+    path_ = GetParams("path_")
+    if path_:
+        path_ = path_.replace("/", os.sep)
 
     try:
-        time.sleep(2)
-        name += ".png"
-        driver = web.driver_list[web.driver_actual_id]
+        
+        tmp_path = "tmp/webpro/screenshot.png"
+        images = []
+        makeTmpDir("webpro")
+        
+        total_height = driver.execute_script("return document.body.scrollHeight")
+        actual_height = 0
+        image_count = 1
+        driver.execute_script("window.scrollTo(0, 0)")
+        
+        while int(actual_height) < int(total_height):
+            driver.get_screenshot_as_file(tmp_path)
+            
 
-        lk1 = cur_path + 'html2canvas.js'
-
-        read_ = open(lk1, "r", encoding="utf-8").read()
-        print(len(read_))
-        driver.execute_script(read_)
-
-        driver.execute_script("""
-        html2canvas(document.body, { allowTaint : false, useCORS: true,
-            onrendered: function(canvas) {
-                img = canvas.toDataURL(); 
-                a = document.createElement("a")
-                a.href = img
-                a.download = "%s"
-                a.click()
-                console.log(img)
-            }
-        })"""  % name)
-
-        time.sleep(6)
-
+            if image_count == 1:
+                
+                image = Image.open(tmp_path)
+                width, height = image.size
+                im_1 = image.convert('RGB')
+                images.append(image)
+                
+                try:
+                    driver.execute_script("""var header = document.querySelector('header');
+                                            if (header != null) {header.style.visibility = 'hidden'};
+                                        """)
+                except:
+                    pass
+                
+            else:
+                image_ = Image.open(tmp_path)
+                im_ = image_.convert('RGB')
+                
+                if total_height - actual_height <= height:
+                    last_height = total_height - actual_height
+                    y = height - last_height
+                    
+                    im_ = im_.crop((0, y, width, height))
+                    
+                images.append(im_)
+                
+            
+            
+            # Scrolleo hasta la proxima screen
+            driver.execute_script("window.scrollTo(0, {})".format((height * image_count)))
+            time.sleep(1)
+            # actual_height = driver.execute_script("return window.pageYOffset")
+            actual_height += height
+            image_count += 1
+        
+        try:
+            driver.execute_script("""var header = document.querySelector('header');
+                                    if (header != null) {header.style.visibility = 'inherit'};
+                                """)
+        except:
+            pass
+        
+        img = Image.new('RGB', (width, total_height))
+        
+        
+        height_ = 0
+        
+        for image in images:
+            img.paste(image, (0, height_))
+            
+            height_ += height
+        
+        if path_:
+            img.save(f'{path_}/{name}.png')
+        else:
+            img.save(f'{downloads_path}/{name}.png')
+        
     except Exception as e:
         PrintException()
         raise e
@@ -795,7 +902,7 @@ if module == "printPDF":
     chrome_options.add_experimental_option('prefs', prefs)
     chrome_options.add_argument('--kiosk-printing')
 
-    driver.execute_script('window.print();')
+    driver.execute_script('return window.print();')
 
 
 if module == "forceDownload":
@@ -834,6 +941,22 @@ if module == "open_browser":
     url_ = GetParams("url_")
     newId = GetParams("newId")
     download_path = GetParams("download_path")
+    if download_path:
+        download_path = download_path.replace("/", os.sep)
+    force_downloads = GetParams("force_downloads")
+    profile_path = GetParams("profile_path")
+    
+    if profile_path == None or profile_path == "":
+        profile_path = ""
+    
+    
+
+    custom_options = GetParams("custom_options")
+    try:
+        custom_options = eval(custom_options)
+    except:
+        pass
+
     try:
         platform_ = platform.system()
         if platform_.endswith('dows'):
@@ -842,8 +965,25 @@ if module == "open_browser":
             chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
         
         caps = selenium.webdriver.ChromeOptions()
+        caps.add_argument("--safebrowsing-disable-download-protection")
         prefs = {"download.default_directory": download_path}
+
+        if force_downloads == "True":
+            force_download_params = {
+            'download.prompt_for_download': 'false',
+            'safebrowsing.enabled': 'false'
+            }
+            prefs.update(force_download_params)
+        if custom_options:
+            prefs.update(custom_options)
+
         caps.add_experimental_option("prefs", prefs)
+        
+        if profile_path == "":
+            pass
+        else:
+            caps.add_argument("--user-data-dir=" + profile_path)
+        
         browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
 
         if not timeout:
@@ -874,11 +1014,22 @@ try:
         data_ = GetParams("data")
         data_type = GetParams("data_type")
         files = GetParams("files")
+        single_file = GetParams("single_file")
+        
+        if single_file == "":
+            single_file = None
+        
         element = driver.find_element(data_type, data_)
-        if files.startswith("["):
-            files = eval(files)
-            files = " \n ".join(files)
-        element.send_keys(files)
+        print('path:', single_file)
+        if single_file != None:
+            element.send_keys(single_file)
+        else:
+            files = files.replace("\\", "/")
+            
+            if files.startswith("["):
+                files = eval(files)
+                files = " \n ".join(files)
+                element.send_keys(files)
 
     if module == "sendKeyCombination":
         first_special_key = GetParams("first_special_key")    
@@ -897,16 +1048,6 @@ try:
             print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
             PrintException()
             raise e
-
-    if module == "RightClick":
-
-        data_ = GetParams("data")
-        data_type = GetParams("data_type")
-    
-        actionChains = ActionChains(driver)
-        elementLocator = driver.find_element(data_type, data_)
-    
-        actionChains.context_click(elementLocator).perform()
 
 except Exception as e:
     PrintException()

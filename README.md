@@ -1,20 +1,16 @@
-
-
-
-
 # WEB Pro
   
-Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
+Module with extended functionalities for the browser that works as a complement to the commands of the web section
+
+*Read this in other languages: [English](README.md), [Portugues](README.pr.md), [Español](README.es.md).*
 
 ## How to install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
-## Como usar este modulo
-Este modulo se complementa con los modulos y comandos nativos Web que ya vienen por defecto en 
-Rocketbot. Para poder usar el modulo debes tener un navegador ya abierto desde Rocketbot con el comando de "Abrir 
-Navegador". Luego de esto ya podremos utilizar los comandos con normalidad.
+## How to use this module
+This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
 
 
 ## Overview
@@ -54,7 +50,7 @@ Select an object by passing it the index
 Click an object by passing it the index
 
 12. Export page to PDF  
-Export page to a PDF file
+Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export.
 
 13. Open Chrome headless  
 Open Chrome in headless mode
@@ -78,7 +74,7 @@ Open Google Chrome with unsafe mode or debugger mode
 Get info from console
 
 20. WebPage to PNG  
-Take screenshot to full webpage
+It takes multiple snapshots of the web page and concatenates them into one. If the page contains fixed elements, they can be removed with Javascript to obtain a correct export.
 
 21. Hover Element  
 Move mouse over the element
@@ -102,7 +98,7 @@ Change to iframe waiting that it's present
 Similar to Send keys web, but low level
 
 28. Print to PDF (Chrome)  
-Print webpage to PDF in Chrome
+Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 
 29. Force Download  
 Force Download
@@ -117,14 +113,22 @@ Open a browser the URL
 Do a drag and drop
 
 33. Upload files  
-Command to upload one or more files to an input of type file
+Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
 
 34. Send key combination  
-Command to send key combination  
+Command to send key combination
 
-### Updates
-#### 18-Apr-2022
-- Open Browser: Added selector for folder that will be the downloads folder
+35. Right Click  
+Right click on a selected object  
+
+
+
+### Changes
+Mon May 2 16:53:22 2022  Merge from QA - Merge pull request from rocketbot-cl
+Thu Aug 19 13:24:01 2021  Merge branch master of github.com:rocketbot-cl/webpro
+Fri Apr 24 16:28:55 2020  Merge branch master of https://github.com/rocketbot-cl/webpro
+Wed Mar 11 14:24:59 2020  Merge branch master of https://github.com/rocketbot-cl/webpro
+
 ----
 ### OS
 
