@@ -2,7 +2,7 @@
   "author": "David Cuello - José González - Marcela Vergara - Danilo Toro",
   "description": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "11.6.2",
+  "version": "11.7.0",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
   "name": "webpro",
@@ -1810,6 +1810,51 @@
               "pr": "Url da páxina a abrir no Edge"
             },
             "id": "url",
+            "css": "col-md-6"
+          },
+          {
+            "type": "checkbox",
+            "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+            },
+            "title": {
+              "es": "Iniciar en modo Internet Explorer",
+              "en": "Start in Internet Explorer mode",
+              "pr": "Comezar no modo Internet Explorer"
+            },
+            "description": {
+              "es": "Inicia el navegador en modo Internet Explorer",
+              "en": "Starts the browser in Internet Explorer mode",
+              "pr": "Comeza o navegador no modo Internet Explorer"
+            },
+            "id": "ie_mode",
+            "css": "col-md-6"
+          },
+          {
+            "type": "file_select",
+            "placeholder": {
+              "es": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+              "en": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+              "pr": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+            },
+            "title": {
+              "es": "Seleccionar ejecutable de Edge",
+              "en": "Select Edge executable",
+              "pr": "Seleccionar executábel de Edge"
+            },
+            "description": {
+              "es": "Selecciona el ejecutable de Edge para abrir en modo IE",
+              "en": "Select the Edge executable to open in IE mode",
+              "pr": "Selecciona o executábel de Edge para abrir no modo IE"
+            },
+            "help": {
+              "es": "Seleccionar únicamente si se desea abrir en modo IE",
+              "en": "Select only if you want to open in IE mode",
+              "pr": "Seleccionar só se quere abrir no modo IE"
+            },
+            "id": "edge_exe",
             "css": "col-md-12"
           }
         ]
