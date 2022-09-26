@@ -232,16 +232,9 @@ if module == "CleanInputs":
         simulationKey = False
 
     print(search_type)
-    if search_type == 'name':
-        element = driver.find_element_by_name(search)
-    if search_type == 'xpath':
-        element = driver.find_element_by_xpath(search)
-    if search_type == 'class':
-        element = driver.find_element_by_class_name(search)
-    if search_type == 'id':
-        element = driver.find_element_by_id(search)
-    if search_type == 'tag':
-        element = driver.find_element_by_tag(search)
+    search_type = {"tag": "tag name", "class": "class name"}.get(search_type, search_type)
+    
+    element = driver.find_element(search_type, search)
 
     if element is not None and texto is not None:
         element.clear()
