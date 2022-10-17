@@ -53,6 +53,8 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import TimeoutException
 from PIL import Image
 from pathlib import Path
+import logging
+from selenium.webdriver.remote.remote_connection import LOGGER
 downloads_path = str(Path.home() / "Downloads")
 
 module = GetParams("module")
@@ -230,16 +232,9 @@ if module == "CleanInputs":
         simulationKey = False
 
     print(search_type)
-    if search_type == 'name':
-        element = driver.find_element_by_name(search)
-    if search_type == 'xpath':
-        element = driver.find_element_by_xpath(search)
-    if search_type == 'class':
-        element = driver.find_element_by_class_name(search)
-    if search_type == 'id':
-        element = driver.find_element_by_id(search)
-    if search_type == 'tag':
-        element = driver.find_element_by_tag(search)
+    search_type = {"tag": "tag name", "class": "class name"}.get(search_type, search_type)
+    
+    element = driver.find_element(search_type, search)
 
     if element is not None and texto is not None:
         element.clear()
@@ -503,6 +498,10 @@ if module == "chromeHeadless":
 if module == "Edge_":
 
     url = GetParams("url")
+    ie_mode = GetParams("ie_mode")
+    edge_exe = GetParams("edge_exe")
+    if edge_exe != None or edge_exe != "":
+        edge_exe = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
     platform_ = platform.system()
 
     try:
@@ -510,16 +509,43 @@ if module == "Edge_":
 
         web = GetGlobals("web")
 
-        if platform_.lower() == "windows":
-            edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
+        if ie_mode == "True":
+            if not edge_exe:
+                raise Exception("Debe seleccionar el ejecutable de Edge")
+            else:
+                caps = DesiredCapabilities.INTERNETEXPLORER
+                caps['ignoreProtectedModeSettings'] = True
+                caps['ENABLE_PERSISTENT_HOVERING'] = False
+                caps['REQUIRE_WINDOW_FOCUS'] = False
+                caps['UNEXPECTED_ALERT_BEHAVIOR'] = True
+                caps['ACCEPT_SSL_CERTS'] = True
+                caps['INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS'] = True
+                
+                # Se debe tener instalado el driver de Edge en la version de Edge que se esta usando y el driver de IE de https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.3.0/IEDriverServer_Win32_4.3.0.zip
+                ieOptions = ws.IeOptions()
+                ieOptions.add_additional_option("ie.edgechromium", True)
+                ieOptions.add_additional_option("ie.edgepath", edge_exe)
+
+                driver = ws.Ie(executable_path=f'{base_path}/drivers/win/ie/x86/IEDriverServer.exe', options=ieOptions, capabilities=caps)
+            
+                driver.maximize_window()
+                web.driver_list[web.driver_actual_id] = driver
+
+                driver.get(url)
+
         else:
-            edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
+            if platform_.lower() == "windows":
+                edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
+            else:
+                edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
 
-        driver = ws.Edge(edge_driver, {})
+            driver = ws.Edge(edge_driver, {})
+            
+            web.driver_list[web.driver_actual_id] = driver
+            if url:
+                web.driver_list[web.driver_actual_id].get(url)
+        
 
-        web.driver_list[web.driver_actual_id] = driver
-        if url:
-            web.driver_list[web.driver_actual_id].get(url)
 
     except Exception as e:
         PrintException()
