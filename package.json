@@ -266,7 +266,32 @@
             },
             "id": "simulationKey",
             "css": "col-md-6"
-        }
+        },
+        {
+          "type": "checkbox",
+          "placeholder": {
+              "es": "True",
+              "en": "True",
+              "pr": "True"
+          },
+          "description": {
+              "es": "Asigna una espera de 1 segundo entre el borrar y el enviar elemento",
+              "en": "Assigns a 1 second wait between the erase and the send element",
+              "pr": "Atribui uma espera de 1 segundo entre o apagar e o enviar elemento"
+          },
+          "title": {
+              "es": "Espera de 1 segundo",
+              "en": "Wait 1 second",
+              "pr": "Espera de 1 segundo"
+          },
+          "help": {
+              "es": "Usar en caso de que no se escriba el contenido.",
+              "en": "Use it when do not write the content.",
+              "pr": "Usar em caso de que não escreva o conteúdo."
+          },
+          "id": "sleep_",
+          "css": "col-md-6"
+      }
         ]
       },
       "linux": true,
@@ -2812,6 +2837,36 @@
           "css": "modal-lg",
           "inputs": [
             {
+              "type": "select",
+              "placeholder": {
+                "es": "Google Chrome",
+                "en": "Google Chrome",
+                "pr": "Google Chrome"
+              },
+              "title": {
+                "es": "Navegador: ",
+                "en": "Browser: ",
+                "pr": "Navegador: "
+              },
+              "options": [
+                {
+                  "title": "Google Chrome",
+                  "value": "chrome"
+                },
+                {
+                  "title": "Mozilla Firefox",
+                  "value": "firefox"
+                }
+              ],
+              "description": {
+                "es": "Navegador a abrir",
+                "en": "Browser to open",
+                "pr": "Navegador para abrir"
+              },
+              "id": "browser",
+              "css": "col-md-6"
+            },
+            {
               "type": "input",
               "placeholder": {
                 "es": "http://www.google.com",
@@ -2829,7 +2884,7 @@
                 "pr": "URL para abrir"
               },
               "id": "url_",
-              "css": "col-md-12"
+              "css": "col-md-6"
             },
             {
               "type": "input",

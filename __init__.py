@@ -39,6 +39,8 @@ from bs4 import BeautifulSoup
 from selenium import webdriver as ws
 from selenium.webdriver import ActionChains
 from selenium.webdriver import Chrome
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + 'webpro' + os.sep + 'libs' + os.sep
 sys.path.append(cur_path)
@@ -231,6 +233,11 @@ if module == "CleanInputs":
     except:
         simulationKey = False
 
+    try:
+        sleep_ = eval(GetParams('sleep_'))
+    except:
+        sleep_ = False
+
     print(search_type)
     search_type = {"tag": "tag name", "class": "class name"}.get(search_type, search_type)
     
@@ -238,6 +245,8 @@ if module == "CleanInputs":
 
     if element is not None and texto is not None:
         element.clear()
+        if sleep_:
+            time.sleep(1)
         if simulationKey:
             element.send_keys(Keys.SHIFT, Keys.ARROW_UP)
             element.send_keys(Keys.DELETE)
@@ -963,6 +972,7 @@ if module == "new_tab":
 
 if module == "open_browser":
     
+    browser_ = GetParams("browser")
     timeout = GetParams("timeout")
     url_ = GetParams("url_")
     newId = GetParams("newId")
@@ -975,6 +985,8 @@ if module == "open_browser":
     if profile_path == None or profile_path == "":
         profile_path = ""
     
+    if not browser_:
+        browser_ = "chrome"
     
 
     custom_options = GetParams("custom_options")
@@ -984,34 +996,79 @@ if module == "open_browser":
         pass
 
     try:
-        platform_ = platform.system()
-        if platform_.endswith('dows'):
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
-        else:
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
-        
-        caps = selenium.webdriver.ChromeOptions()
-        caps.add_argument("--safebrowsing-disable-download-protection")
-        prefs = {"download.default_directory": download_path}
+        if browser_ == "chrome":
+            platform_ = platform.system()
+            if platform_.endswith('dows'):
+                chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+            else:
+                chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+            
+            caps = selenium.webdriver.ChromeOptions()
+            caps.add_argument("--safebrowsing-disable-download-protection")
+            prefs = {"download.default_directory": download_path}
 
-        if force_downloads == "True":
-            force_download_params = {
-            'download.prompt_for_download': 'false',
-            'safebrowsing.enabled': 'false'
-            }
-            prefs.update(force_download_params)
-        if custom_options:
-            prefs.update(custom_options)
+            if force_downloads == "True":
+                force_download_params = {
+                'download.prompt_for_download': 'false',
+                'safebrowsing.enabled': 'false'
+                }
+                prefs.update(force_download_params)
+            if custom_options:
+                prefs.update(custom_options)
 
-        caps.add_experimental_option("prefs", prefs)
-        
-        if profile_path == "":
-            pass
-        else:
-            caps.add_argument("--user-data-dir=" + profile_path)
-        
-        browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
+            caps.add_experimental_option("prefs", prefs)
+            
+            if profile_path == "":
+                pass
+            else:
+                caps.add_argument("--user-data-dir=" + profile_path)
+            
+            browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
 
+        elif browser_ == "firefox":
+            platform_ = platform.system()
+            if platform_.endswith('dows'):
+                firefox_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\firefox\x64"), "geckodriver.exe")
+            else:
+                firefox_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "geckodriver")
+                
+            
+            firefox_options = FirefoxOptions()
+            
+            if profile_path == "":
+                fp = None
+            else:
+                fp = ws.FirefoxProfile(profile_path)
+            
+            if download_path:
+                firefox_options.set_preference("browser.download.folderList", 2)
+                firefox_options.set_preference("browser.download.dir", download_path)
+                
+            if force_downloads == "True":
+                firefox_options.set_preference("browser.helperApps.neverAsk.saveToDisk", "*")
+            
+            if fp:
+                print('entra aca')
+                browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=fp)
+            else:
+                browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if not timeout:
             timeout = 100
 
