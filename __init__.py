@@ -1035,10 +1035,9 @@ if module == "open_browser":
             
             firefox_options = FirefoxOptions()
             
-            if profile_path == "":
-                fp = None
-            else:
-                fp = ws.FirefoxProfile(profile_path)
+            if profile_path != "":
+                firefox_options.add_argument("-profile ")
+                firefox_options.add_argument(profile_path)
             
             if download_path:
                 firefox_options.set_preference("browser.download.folderList", 2)
@@ -1047,11 +1046,7 @@ if module == "open_browser":
             if force_downloads == "True":
                 firefox_options.set_preference("browser.helperApps.neverAsk.saveToDisk", "*")
             
-            if fp:
-                print('entra aca')
-                browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=fp)
-            else:
-                browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options)
+            browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options)
         
         
         
