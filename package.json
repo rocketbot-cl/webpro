@@ -2994,14 +2994,19 @@
                 "pr": "{'download.default_directory': download_path}"
               },
               "title": {
-                "es": "Opciones para Chrome:",
-                "en": "Options for Chrome:",
-                "pr": "Opções para o Chrome"
+                "es": "Opciones personalizadas para el navegador:",
+                "en": "Custom options for the browser:",
+                "pr": "Opções personalizadas para o navegador:"
               },
               "description": {
-                "es": "Opciones para el navegador",
-                "en": "Options for the browser",
-                "pr": "Opções do navegador"
+                "es": "Opciones personalizadas en formato dict",
+                "en": "Custom options in dict format",
+                "pr": "Opções personalizadas no formato dict"
+              },
+              "help": {
+                "es": "Posibles valores de Firefox: http://kb.mozillazine.org/About:config_entries - Posibles valores de Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc",
+                "en": "Possible values of Firefox: http://kb.mozillazine.org/About:config_entries - Possible values of Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc",
+                "pr": "Valores possíveis do Firefox: http://kb.mozillazine.org/About:config_entries - Valores possíveis do Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc"
               },
               "id": "custom_options",
               "css": "col-md-12"

@@ -41,6 +41,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver import Chrome
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + 'webpro' + os.sep + 'libs' + os.sep
 sys.path.append(cur_path)
@@ -1036,8 +1037,9 @@ if module == "open_browser":
             firefox_options = FirefoxOptions()
             
             if profile_path != "":
-                firefox_options.add_argument("-profile ")
-                firefox_options.add_argument(profile_path)
+                profile = FirefoxProfile(profile_path)
+            else:
+                profile = FirefoxProfile()
             
             if download_path:
                 firefox_options.set_preference("browser.download.folderList", 2)
@@ -1046,8 +1048,12 @@ if module == "open_browser":
             if force_downloads == "True":
                 firefox_options.set_preference("browser.helperApps.neverAsk.saveToDisk", "*")
             
-            browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options)
-        
+            if custom_options:
+                for key, value in custom_options.items():
+                    firefox_options.set_preference(key, value)
+            
+            
+            browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=profile)
         
         
         
