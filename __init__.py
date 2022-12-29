@@ -1,4 +1,5 @@
 # coding: utf-8
+# pylint: disable=undefined-variable,trailing-whitespace,wrong-import-position,invalid-name
 """
 Base para desarrollo de modulos externos.
 Para obtener el modulo/Funcion que se esta llamando:
@@ -19,7 +20,7 @@ Para obtener la Opcion seleccionada:
 
 
 Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
-    
+
    sudo pip install <package> -t .
 
 """
@@ -54,10 +55,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import TimeoutException
-from PIL import Image
+from selenium.common import exceptions as selenium_exceptions
+from PIL import Image, UnidentifiedImageError
+
 from pathlib import Path
 import logging
 from selenium.webdriver.remote.remote_connection import LOGGER
+
 downloads_path = str(Path.home() / "Downloads")
 
 module = GetParams("module")
@@ -258,8 +262,8 @@ if module == "LoadCookies":
 
     file_ = GetParams('file_')
     var_ = GetParams('var_')
-    
-    
+
+
     try:
         with open(file_, 'rb') as cookiesfile:
             cookies = pickle.load(cookiesfile)
@@ -267,11 +271,11 @@ if module == "LoadCookies":
             for cookie in cookies:
                 driver.add_cookie(cookie)
         SetVar(var_, "True")
-    except Exception as e:
+    except (FileNotFoundError, EOFError) as e:
         PrintException()
         SetVar(var_, "False")
         raise e
-        
+
 
 if module == "SaveCookies":
     import pickle
@@ -291,13 +295,12 @@ if module == "SaveCookies":
         if result:
             SetVar(result, str(cookies))  
             
-    except Exception as e:
+    except (FileNotFoundError, EOFError, pickle.PickleError, ValueError, IOError, TypeError ) as e:
         PrintException()
         raise e
 
 if module == "reloadPage":
-    
-    
+
     driver.refresh()
 
 if module == "back":
@@ -335,19 +338,22 @@ if module == "length_":
     
     search = GetParams('search_data')
     var_ = GetParams("var_")
-
     try:
         element = driver.execute_script(" return document.getElementsByClassName('"+search+"').length")
         print(element)
-    except:
-        PrintException()
+        SetVar(var_, element)
+    except (
+        selenium_exceptions.WebDriverException,
+        selenium_exceptions.NoSuchElementException,
+        selenium_exception.JavascriptException 
+        ) as e:
 
-    SetVar(var_, element)
+        PrintException()
+        raise e
 
 if module == "selectElement":
 
-    
-    
+
     option_ = GetParams('option_')
     search = GetParams('search_data')
     index_ = GetParams("index_")
@@ -367,7 +373,11 @@ if module == "selectElement":
             elements = driver.find_elements_by_xpath(f'//*[contains(@class,"{search}")]')[index_]
             webdriver._object_selected = elements
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.NoSuchElementException,
+        IndexError
+        ) as e:
         PrintException()
         raise e
 
@@ -402,7 +412,12 @@ if module == "clickElement":
             elements.click()
             webdriver._object_selected = elements
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.NoSuchElementException,
+        IndexError,
+        selenium_exceptions.ElementNotInteractableException
+    ) as e:
         PrintException()
         raise e
 
@@ -471,7 +486,17 @@ if module == "html2pdf":
         res = True
         
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.NoSuchElementException,
+        selenium_exceptions.JavascriptException,
+        FileNotFoundError,
+        IOError,
+        TypeError,
+        UnidentifiedImageError,
+        Image.DecompressionBombError
+
+    ) as e:
         PrintException()
         res = False
         raise e
@@ -501,7 +526,10 @@ if module == "chromeHeadless":
         if url:
             web.driver_list[web.driver_actual_id].get(url)
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        FileNotFoundError 
+    ) as e:
         PrintException()
         raise e
 
@@ -557,7 +585,12 @@ if module == "Edge_":
         
 
 
-    except Exception as e:
+    except (
+        FileNotFoundError,
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.TimeoutException,
+        Exception
+    ) as e:
         PrintException()
         raise e
 
@@ -603,7 +636,17 @@ if module == "screenshot":
         im = im.convert("RGB")
         im.save(path)
 
-    except Exception as e:
+    except (
+        selenium_exceptions.WebDriverException, 
+        selenium_exceptions.NoSuchElementException,
+        selenium_exceptions.JavascriptException,
+        FileNotFoundError,
+        IOError,
+        TypeError,
+        UnidentifiedImageError,
+        Image.DecompressionBombError
+
+    ) as e:
         PrintException()
         raise e
 
@@ -1115,24 +1158,24 @@ try:
                 files = " \n ".join(files)
                 element.send_keys(files)
 
-    if module == "sendKeyCombination":
-        first_special_key = GetParams("first_special_key")    
-        text = GetParams("text")
-        second_special_key = GetParams("second_special_key")    
-        try:
-            web_driver = GetGlobals("web")
-            driver = web_driver.driver_list[web_driver.driver_actual_id]
-            from selenium.webdriver import ActionChains
-            actions = ActionChains(driver)
-            if not text:
-                actions.key_down(special_keys[first_special_key]).send_keys(special_keys[second_special_key]).key_up(special_keys[first_special_key]).perform()
-            if text:
-                actions.key_down(special_keys[first_special_key]).send_keys(text).key_up(special_keys[first_special_key]).perform()
-        except Exception as e:
-            print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
-            PrintException()
-            raise e
-
 except Exception as e:
     PrintException()
     raise e
+
+if module == "sendKeyCombination":
+    first_special_key = GetParams("first_special_key")    
+    text = GetParams("text")
+    second_special_key = GetParams("second_special_key")    
+    try:
+        web_driver = GetGlobals("web")
+        driver = web_driver.driver_list[web_driver.driver_actual_id]
+        from selenium.webdriver import ActionChains
+        actions = ActionChains(driver)
+        if not text:
+            actions.key_down(special_keys[first_special_key]).send_keys(special_keys[second_special_key]).key_up(special_keys[first_special_key]).perform()
+        if text:
+            actions.key_down(special_keys[first_special_key]).send_keys(text).key_up(special_keys[first_special_key]).perform()
+    except Exception as e:
+        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        PrintException()
+        raise e
