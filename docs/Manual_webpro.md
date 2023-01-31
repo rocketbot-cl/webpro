@@ -39,6 +39,7 @@ Deletes the contents of an input object and sends the text
 |Data to search|We put the data to search.|Data to search|
 |Data type|We select the type of data to search. Either xpath, class, name, tag or id.|Data to search|
 |Send with keys|Erase and write with keys.|Text or Variable|
+|Wait 1 second|Assigns a 1 second wait between the erase and the send element|True|
 
 ### Save Cookies
   
@@ -204,6 +205,13 @@ Open the new Edge based on Chromium
 |Start in Internet Explorer mode|Starts the browser in Internet Explorer mode|True|
 |Select Edge executable|Select the Edge executable to open in IE mode|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
+### Access Shadow DOM
+  
+Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Data to search|We put the selector to search|Data|
+
 ### Click Pro
   
 Click on a selected object waiting that it's clickeable
@@ -212,6 +220,7 @@ Click on a selected object waiting that it's clickeable
 |Data to search|Put the selector of the element to click.|Data|
 |Data type|Select the type of data to search.|xpath|
 |Wait|Put the time in seconds that we will wait for the element to be clickeable.|5|
+|Click on element inside Shadow DOM|Select if the element is inside a Shadow DOM.|True|
 
 ### Extract text Pro
   
@@ -221,6 +230,7 @@ Get a text object waiting that it's present
 |Data to search|Put the selector of the element to extract text.|Data|
 |Data type|Select the type of data to search.|xpath|
 |Wait|Put the time in seconds that we will wait for the element to be available.|5|
+|Element inside Shadow DOM|Select if the element is inside a Shadow DOM.|True|
 |Variable where to store result|Put the name of the variable where we will store the result.|Variable|
 
 ### Select object Pro
@@ -231,6 +241,7 @@ Select an object waiting that it's present
 |Data to search|Put the selector of the element to select.|Data|
 |Data type|Select the type of data to search.|xpath|
 |Wait|Put the time in seconds that we will wait for the element to appear.|5|
+|Element inside Shadow DOM|Select if the element is inside a Shadow DOM.|True|
 
 ### Change to iframe Pro
   
@@ -276,13 +287,14 @@ Open new tab with the URL
 Open a browser the URL
 |Parameters|Description|example|
 | --- | --- | --- |
+|Browser |Browser to open|Google Chrome|
 |URL|URL to open|http://www.google.com|
 |Timeout|Timeout in seconds|5|
 |Id|Id of the browser|4|
 |Profile folder|Profile folder to open the opened browser|C:/folder|
 |Download Folder|Download folder for the opened browser|C:/folder|
 |Force downloads|Force the downloads to make them automatically|True|
-|Options for Chrome|Options for the browser|{'download.default_directory': download_path}|
+|Custom options for the browser|Custom options in dict format|{'download.default_directory': download_path}|
 
 ### Drag and drop
   
