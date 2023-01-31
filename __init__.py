@@ -1,5 +1,4 @@
 # coding: utf-8
-# pylint: disable=undefined-variable,trailing-whitespace,wrong-import-position,invalid-name
 """
 Base para desarrollo de modulos externos.
 Para obtener el modulo/Funcion que se esta llamando:
@@ -20,7 +19,7 @@ Para obtener la Opcion seleccionada:
 
 
 Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
-
+    
    sudo pip install <package> -t .
 
 """
@@ -55,12 +54,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import TimeoutException
-from selenium.common import exceptions as selenium_exceptions
-from PIL import Image, UnidentifiedImageError
-
+from PIL import Image
 from pathlib import Path
+from pyshadow.main import Shadow
 import logging
 from selenium.webdriver.remote.remote_connection import LOGGER
+
+global shadow_root
+global element_root
 
 downloads_path = str(Path.home() / "Downloads")
 
@@ -262,8 +263,8 @@ if module == "LoadCookies":
 
     file_ = GetParams('file_')
     var_ = GetParams('var_')
-
-
+    
+    
     try:
         with open(file_, 'rb') as cookiesfile:
             cookies = pickle.load(cookiesfile)
@@ -271,11 +272,11 @@ if module == "LoadCookies":
             for cookie in cookies:
                 driver.add_cookie(cookie)
         SetVar(var_, "True")
-    except (FileNotFoundError, EOFError) as e:
+    except Exception as e:
         PrintException()
         SetVar(var_, "False")
         raise e
-
+        
 
 if module == "SaveCookies":
     import pickle
@@ -295,12 +296,13 @@ if module == "SaveCookies":
         if result:
             SetVar(result, str(cookies))  
             
-    except (FileNotFoundError, EOFError, pickle.PickleError, ValueError, IOError, TypeError ) as e:
+    except Exception as e:
         PrintException()
         raise e
 
 if module == "reloadPage":
-
+    
+    
     driver.refresh()
 
 if module == "back":
@@ -338,22 +340,19 @@ if module == "length_":
     
     search = GetParams('search_data')
     var_ = GetParams("var_")
+
     try:
         element = driver.execute_script(" return document.getElementsByClassName('"+search+"').length")
         print(element)
-        SetVar(var_, element)
-    except (
-        selenium_exceptions.WebDriverException,
-        selenium_exceptions.NoSuchElementException,
-        selenium_exception.JavascriptException 
-        ) as e:
-
+    except:
         PrintException()
-        raise e
+
+    SetVar(var_, element)
 
 if module == "selectElement":
 
-
+    
+    
     option_ = GetParams('option_')
     search = GetParams('search_data')
     index_ = GetParams("index_")
@@ -373,11 +372,7 @@ if module == "selectElement":
             elements = driver.find_elements_by_xpath(f'//*[contains(@class,"{search}")]')[index_]
             webdriver._object_selected = elements
 
-    except (
-        selenium_exceptions.WebDriverException, 
-        selenium_exceptions.NoSuchElementException,
-        IndexError
-        ) as e:
+    except Exception as e:
         PrintException()
         raise e
 
@@ -412,12 +407,7 @@ if module == "clickElement":
             elements.click()
             webdriver._object_selected = elements
 
-    except (
-        selenium_exceptions.WebDriverException, 
-        selenium_exceptions.NoSuchElementException,
-        IndexError,
-        selenium_exceptions.ElementNotInteractableException
-    ) as e:
+    except Exception as e:
         PrintException()
         raise e
 
@@ -486,17 +476,7 @@ if module == "html2pdf":
         res = True
         
 
-    except (
-        selenium_exceptions.WebDriverException, 
-        selenium_exceptions.NoSuchElementException,
-        selenium_exceptions.JavascriptException,
-        FileNotFoundError,
-        IOError,
-        TypeError,
-        UnidentifiedImageError,
-        Image.DecompressionBombError
-
-    ) as e:
+    except Exception as e:
         PrintException()
         res = False
         raise e
@@ -526,10 +506,7 @@ if module == "chromeHeadless":
         if url:
             web.driver_list[web.driver_actual_id].get(url)
 
-    except (
-        selenium_exceptions.WebDriverException, 
-        FileNotFoundError 
-    ) as e:
+    except Exception as e:
         PrintException()
         raise e
 
@@ -585,12 +562,7 @@ if module == "Edge_":
         
 
 
-    except (
-        FileNotFoundError,
-        selenium_exceptions.WebDriverException, 
-        selenium_exceptions.TimeoutException,
-        Exception
-    ) as e:
+    except Exception as e:
         PrintException()
         raise e
 
@@ -636,17 +608,7 @@ if module == "screenshot":
         im = im.convert("RGB")
         im.save(path)
 
-    except (
-        selenium_exceptions.WebDriverException, 
-        selenium_exceptions.NoSuchElementException,
-        selenium_exceptions.JavascriptException,
-        FileNotFoundError,
-        IOError,
-        TypeError,
-        UnidentifiedImageError,
-        Image.DecompressionBombError
-
-    ) as e:
+    except Exception as e:
         PrintException()
         raise e
 
@@ -856,19 +818,32 @@ if module == "clickPro":
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
+    shadow_element = GetParams("shadow_element")
+    if shadow_element == None or shadow_element == False:
+        shadow_element = False
+    else:
+        shadow_element = True
 
     try:
         if not wait_:
             wait_ = 5
-        actionChains = ActionChains(driver)
-        wait = WebDriverWait(driver, int(wait_))
-        try:
-            elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
-            webdriver._object_selected = elementLocator
-            actionChains.click(elementLocator).perform()
-        except TimeoutException:
-            PrintException()
-            raise Exception("The item is not available to be clicked")
+        if not shadow_element:
+            actionChains = ActionChains(driver)
+            wait = WebDriverWait(driver, int(wait_))
+            try:
+                elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
+                webdriver._object_selected = elementLocator
+                actionChains.click(elementLocator).perform()
+            except TimeoutException:
+                PrintException()
+                raise Exception("The item is not available to be clicked")
+        else:
+            try:
+                shadow_root.find_element(element_root, data_).click()
+            except:
+                PrintException()
+                raise Exception("The item is not available to be clicked")
+
 
     except Exception as e:
         PrintException()
@@ -880,16 +855,29 @@ if module == "getText":
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
     result = GetParams("result")
+    shadow_element = GetParams("shadow_element")
+    if shadow_element == None or shadow_element == False:
+        shadow_element = False
+    else:
+        shadow_element = True
     try:
-        if not wait_:
-            wait_ = 5
-        actionChains = ActionChains(driver)
-        wait = WebDriverWait(driver, int(wait_))
-        try:
-            elementLocator = wait.until(EC.visibility_of_element_located((types[data_type], data_)))
-            SetVar(result, elementLocator.text)
-        except TimeoutException:
-            raise Exception("The item is not available to be selected")
+        if not shadow_element:
+            if not wait_:
+                wait_ = 5
+            actionChains = ActionChains(driver)
+            wait = WebDriverWait(driver, int(wait_))
+            try:
+                elementLocator = wait.until(EC.visibility_of_element_located((types[data_type], data_)))
+                SetVar(result, elementLocator.text)
+            except TimeoutException:
+                raise Exception("The item is not available to be selected")
+        else:
+            try:
+                texto = shadow_root.find_element(element_root, data_).text
+                SetVar(result, texto)
+            except:
+                PrintException()
+                raise Exception("The item is not available to be selected")
 
     except Exception as e:
         print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
@@ -901,17 +889,29 @@ if module == "selectPro":
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
+    shadow_element = GetParams("shadow_element")
+    if shadow_element == None or shadow_element == False:
+        shadow_element = False
+    else:
+        shadow_element = True
 
     try:
-        if not wait_:
-            wait_ = 5
-        actionChains = ActionChains(driver)
-        wait = WebDriverWait(driver, int(wait_))
-        try:
-            elementLocator = wait.until(EC.visibility_of_element_located((types[data_type], data_)))
-            webdriver._object_selected = elementLocator
-        except TimeoutException:
-            raise Exception("The item is not available to be selected")
+        if not shadow_element:
+            if not wait_:
+                wait_ = 5
+            actionChains = ActionChains(driver)
+            wait = WebDriverWait(driver, int(wait_))
+            try:
+                elementLocator = wait.until(EC.visibility_of_element_located((types[data_type], data_)))
+                webdriver._object_selected = elementLocator
+            except TimeoutException:
+                raise Exception("The item is not available to be selected")
+        else:
+            try:
+                webdriver._object_selected = shadow_root.find_element(element_root, data_)
+            except:
+                PrintException()
+                raise Exception("The item is not available to be selected")
 
     except Exception as e:
         print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
@@ -1097,22 +1097,7 @@ if module == "open_browser":
             
             
             browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=profile)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         if not timeout:
             timeout = 100
 
@@ -1158,24 +1143,31 @@ try:
                 files = " \n ".join(files)
                 element.send_keys(files)
 
+    if module == "sendKeyCombination":
+        first_special_key = GetParams("first_special_key")    
+        text = GetParams("text")
+        second_special_key = GetParams("second_special_key")    
+        try:
+            web_driver = GetGlobals("web")
+            driver = web_driver.driver_list[web_driver.driver_actual_id]
+            from selenium.webdriver import ActionChains
+            actions = ActionChains(driver)
+            if not text:
+                actions.key_down(special_keys[first_special_key]).send_keys(special_keys[second_special_key]).key_up(special_keys[first_special_key]).perform()
+            if text:
+                actions.key_down(special_keys[first_special_key]).send_keys(text).key_up(special_keys[first_special_key]).perform()
+        except Exception as e:
+            print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+            PrintException()
+            raise e
+      
+    if module == "shadow_dom":
+        data = GetParams("data")
+        
+        shadow_root = Shadow(driver)
+        element_root = shadow_root.find_element(data)
+
+
 except Exception as e:
     PrintException()
     raise e
-
-if module == "sendKeyCombination":
-    first_special_key = GetParams("first_special_key")    
-    text = GetParams("text")
-    second_special_key = GetParams("second_special_key")    
-    try:
-        web_driver = GetGlobals("web")
-        driver = web_driver.driver_list[web_driver.driver_actual_id]
-        from selenium.webdriver import ActionChains
-        actions = ActionChains(driver)
-        if not text:
-            actions.key_down(special_keys[first_special_key]).send_keys(special_keys[second_special_key]).key_up(special_keys[first_special_key]).perform()
-        if text:
-            actions.key_down(special_keys[first_special_key]).send_keys(text).key_up(special_keys[first_special_key]).perform()
-    except Exception as e:
-        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
-        PrintException()
-        raise e
