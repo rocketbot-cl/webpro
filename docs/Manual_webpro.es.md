@@ -2,8 +2,6 @@
   
 Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
 
-*Read this in other languages: [English](Manual_webpro.md), [Portugues](Manual_webpro.pr.md), [Español](Manual_webpro.es.md).*
-  
 ![banner](imgs/Banner_webpro.png)
 ## Como instalar este módulo
   
@@ -39,6 +37,7 @@ Borra el contenido de un objeto tipo input y envia el texto
 |Dato a buscar|Colocamos el dato a buscar.|Dato a buscar|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar. Ya sea xpath, class, name, tag o id.|Dato a buscar|
 |Enviar con teclas|Borra y escribe con teclas directamente.|Texto o Variable|
+|Espera de 1 segundo|Asigna una espera de 1 segundo entre el borrar y el enviar elemento|True|
 
 ### Guardar Cookies
   
@@ -204,6 +203,13 @@ Abre el nuevo Edge basado en Chromium
 |Iniciar en modo Internet Explorer|Inicia el navegador en modo Internet Explorer|True|
 |Seleccionar ejecutable de Edge|Selecciona el ejecutable de Edge para abrir en modo IE|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
+### Acceder a Shadow DOM
+  
+Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Dato a buscar|Colocamos el selector a buscar|Dato|
+
 ### Click Pro
   
 Hace click sobre un objeto seleccionado esperando que se encuentre cliqueable
@@ -212,6 +218,7 @@ Hace click sobre un objeto seleccionado esperando que se encuentre cliqueable
 |Dato a buscar|Colocamos el selector del elemento a hacer click.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.|xpath|
 |Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento se encuentre clickeable.|5|
+|Click en elemento dentro de Shadow DOM|Seleccionamos si el elemento se encuentra dentro de un Shadow DOM.|True|
 
 ### Extraer texto Pro
   
@@ -221,6 +228,7 @@ Obtiene el texto de un objeto esperando que este se encuentre disponible
 |Dato a buscar|Colocamos el selector del elemento a extraer text.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.|xpath|
 |Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento este disponible.|5|
+|Elemento dentro de Shadow DOM|Seleccionamos si el elemento se encuentra dentro de un Shadow DOM.|True|
 |Variable donde almacenar resultado|Colocamos el nombre de la variable donde almacenaremos el resultado.|Variable|
 
 ### Seleccionar objeto Pro
@@ -231,6 +239,7 @@ Selecciona un objeto esperando que se encuentre presente
 |Dato a buscar|Colocamos el selector del elemento a seleccionar.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.|xpath|
 |Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento aparezca.|5|
+|Elemento dentro de Shadow DOM|Seleccionamos si el elemento se encuentra dentro de un Shadow DOM.|True|
 
 ### Cambiar a iframe Pro
   
@@ -276,13 +285,14 @@ Abre una nueva pestaña indicando la URL
 Abre el navegador indicando la URL
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
+|Navegador |Navegador a abrir|Google Chrome|
 |URL|URL a abrir|http://www.google.com|
 |Tiempo de espera|Tiempo de espera en segundos|5|
 |Id|Id del navegador|4|
 |Carpeta de perfil|Ruta de la carpeta de perfil de usuario para abrir el navegador|C:/folder|
 |Carpeta de descargas|Ruta de la carpeta de descargas para el navegador abierto|C:/folder|
 |Forzar descargas|Fuerza las descargas para hacerlas automaticas|True|
-|Opciones para Chrome|Opciones para el navegador|{'download.default_directory': download_path}|
+|Opciones personalizadas para el navegador|Opciones personalizadas en formato dict|{'download.default_directory': download_path}|
 
 ### Drag and drop
   

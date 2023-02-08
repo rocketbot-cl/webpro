@@ -1,0 +1,16 @@
+pyshadow-0.0.5.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+pyshadow-0.0.5.dist-info/LICENSE,sha256=HrhfyXIkWY2tGFK11kg7vPCqhgh5DcxleloqdhrpyMY,11558
+pyshadow-0.0.5.dist-info/METADATA,sha256=qmki9LLpBULlyRzToe-Vt3ewA1be92szaATxtu799yE,7673
+pyshadow-0.0.5.dist-info/RECORD,,
+pyshadow-0.0.5.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyshadow-0.0.5.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+pyshadow-0.0.5.dist-info/top_level.txt,sha256=rnIxeqWVKix10J9oFms_1ZNaSKRzyEoulE6qNpZ1aeQ,9
+pyshadow/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyshadow/__pycache__/__init__.cpython-310.pyc,,
+pyshadow/__pycache__/main.cpython-310.pyc,,
+pyshadow/main.py,sha256=wPNiqpXKEmbW1mG9Q6CETluq7VRRoFTXVf3T-2TMtMc,23477
+pyshadow/resources/querySelector.js,sha256=R2mTl16FW-QMDYZ3wIYcTwfWjFCeDF6tXMRAupyVQQ8,14315
+pyshadow/resources/test/button.html,sha256=o_VvD-cXeUbiviOnBXE0mzb6WrNhmggKbSHXycB1fp0,948
+pyshadow/resources/test/index.html,sha256=dTqgDQmrEtZ2_j54gC6bkUWDyd1_PD1nku6LBvqv42k,388
+pyshadow/resources/test/script.js,sha256=xMJmsJOdV6nV1iPSZlCnh7zOvv9n2MvO_Bwn9ySEWO4,1946
+pyshadow/resources/test/style.css,sha256=nGoRcCQoYlt9d7TWHm1EuPpahphklR741hpGaYkiKWg,33

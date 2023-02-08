@@ -11,6 +11,10 @@ __Baixe__ e __instale__ o conteúdo na pasta 'modules' no caminho do Rocketbot
 
 ## Como usar este módulo
 Este módulo é complementado pelos módulos e comandos nativos da Web que vêm por padrão no Rocketbot. Para usar o módulo você deve ter um navegador já aberto do Rocketbot com o comando "Open Browser". Depois disso, podemos usar os comandos normalmente.
+Para usar o Edge no modo Internet Explorer, as seguintes configurações devem ser feitas:
+1. Configure o navegador com base na seguinte documentação: https://docs.rocketbot.com/?p=169
+2. Baixe o driver do Internet Explorer a partir do link abaixo: https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.3.0/IEDriverServer_Win32_4.3.0.zip e colocá-lo em Rocketbot/drivers/win/ie/x86/
+3. Para acessar as ferramentas de desenvolvimento, você deve abrir o IEChooser.exe. Para fazer isso, pressione a tecla Windows + R e digite o seguinte: %systemroot%\system32\f12\IEChooser.exe e depois clique em "accept". Selecione sua janela do navegador, e você poderá explorar os elementos da página
 
 
 ## Overview
@@ -82,48 +86,53 @@ Passar o mouse sobre o elemento
 22. Abrir Edge (Chromium)  
 Abrir o novo Chromium-based Edge
 
-23. Clique Pro  
+23. Acessar ao Shadow DOM  
+Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root.
+
+24. Clique Pro  
 Clica em um objeto selecionado, esperando que ele se torne clicável.
 
-24. Extrair Texto Pro  
+25. Extrair Texto Pro  
 Obtém o texto de um objeto esperando que ele esteja disponível.
 
-25. Selecionar objeto Pro  
+26. Selecionar objeto Pro  
 Seleciona um objeto esperando que ele esteja presente
 
-26. Mudar para iframe Pro  
+27. Mudar para iframe Pro  
 Troca para um iframe esperando que ele esteja presente
 
-27. Enviar Teclas  
+28. Enviar Teclas  
 Similar ao Send Web Text, mas em um nível inferior
 
-28. Imprimir como PDF (Chrome)  
+29. Imprimir como PDF (Chrome)  
 Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disponível da página. Não representa uma cópia verdadeira do site.
 
-29. Forçar o download  
+30. Forçar o download  
 Forçando um download
 
-30. Abrir Nova Aba  
+31. Abrir Nova Aba  
 Abre uma nova aba com a URL
 
-31. Abrir navegador  
+32. Abrir navegador  
 Abre o navegador indicando a URL
 
-32. Drag and drop  
+33. Drag and drop  
 Fazer um drag and drop
 
-33. Subir arquivo  
+34. Subir arquivo  
 Comando para fazer upload um ou mais arquivos para um input do tipo file. Basta preencher um único valor, dependendo de quantos arquivos você deseja enviar.
 
-34. Enviar combinação de teclas  
+35. Enviar combinação de teclas  
 Comando para enviar combinação de teclas
 
-35. Clique direito  
+36. Clique direito  
 Clique direito sobre um objeto selecionado  
 
 
 
 ### Changes
+Tue Sep 13 19:15:44 2022  Merge branch qa of https://github.com/rocketbot-cl/webpro
+Thu Aug 4 13:00:30 2022  [Merge] added Open browser with or without profile by jmsiro
 Mon May 2 16:53:22 2022  Merge from QA - Merge pull request from rocketbot-cl
 Thu Aug 19 13:24:01 2021  Merge branch master of github.com:rocketbot-cl/webpro
 Fri Apr 24 16:28:55 2020  Merge branch master of https://github.com/rocketbot-cl/webpro
@@ -138,7 +147,7 @@ Wed Mar 11 14:24:59 2020  Merge branch master of https://github.com/rocketbot-cl
 - docker
 
 ### Dependencies
-- [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)- [**requests**](https://pypi.org/project/requests/)
+- [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)- [**requests**](https://pypi.org/project/requests/)- [**pyshadow**](https://pypi.org/project/pyshadow/)
 ### License
   
 ![MIT](https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265)  
