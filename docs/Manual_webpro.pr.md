@@ -39,6 +39,7 @@ Deleta o conteúdo de um objeto tipo input e envia o texto
 |Dado a buscar|Colocamos o dado a buscar.|Dado a buscar|
 |Tipo de dado|Selecionamos o tipo de dado a buscar. Xpath, class, name, tag o id.|Dado a buscar|
 |Enviar com teclas|Apaga e escreve com teclas diretamente.|Texto ou Variável|
+|Espera de 1 segundo|Atribui uma espera de 1 segundo entre o apagar e o enviar elemento|True|
 
 ### Salvar Cookies
   
@@ -204,6 +205,13 @@ Abrir o novo Chromium-based Edge
 |Comezar no modo Internet Explorer|Comeza o navegador no modo Internet Explorer|True|
 |Seleccionar executábel de Edge|Selecciona o executábel de Edge para abrir no modo IE|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
+### Acessar ao Shadow DOM
+  
+Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root.
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Dado a buscar|Colocamos o seletor para pesquisar|Dado|
+
 ### Clique Pro
   
 Clica em um objeto selecionado, esperando que ele se torne clicável.
@@ -212,6 +220,7 @@ Clica em um objeto selecionado, esperando que ele se torne clicável.
 |Dado a buscar|Colocamos o seletor do elemento a clicar.|Data|
 |Tipo de dado|Selecionamos o tipo de dado a buscar.|xpath|
 |Esperar|Colocamos o tempo em segundos que esperaremos a que o elemento se torne clicável.|5|
+|Clicar em elemento dentro de Shadow DOM|Selecionamos se o elemento está dentro de um Shadow DOM.|True|
 
 ### Extrair Texto Pro
   
@@ -221,6 +230,7 @@ Obtém o texto de um objeto esperando que ele esteja disponível.
 |Dado a buscar|Colocamos o seletor do elemento a extrair texto.|Data|
 |Tipo de dado|Selecionamos o tipo de dado a buscar.|xpath|
 |Esperar|Colocamos o tempo em segundos que esperaremos a que o elemento este disponível.|5|
+|Elemento dentro de Shadow DOM|Selecionamos se o elemento está dentro de um Shadow DOM.|True|
 |Variável onde armazenar o resultado|Colocamos o nome da variável onde armazenaremos o resultado.|Variável|
 
 ### Selecionar objeto Pro
@@ -231,6 +241,7 @@ Seleciona um objeto esperando que ele esteja presente
 |Dado a buscar|Colocamos o seletor do elemento a selecionar.|Data|
 |Tipo de dado|Selecionamos o tipo de dado a buscar.|xpath|
 |Esperar|Colocamos o tempo em segundos que esperaremos a que o elemento apareça.|5|
+|Elemento dentro de Shadow DOM|Selecionamos se o elemento está dentro de um Shadow DOM.|True|
 
 ### Mudar para iframe Pro
   
@@ -276,13 +287,14 @@ Abre uma nova aba com a URL
 Abre o navegador indicando a URL
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
+|Navegador |Navegador para abrir|Google Chrome|
 |URL|URL para abrir|http://www.google.com|
 |Tempo de espera|Tiempo de espera en segundos|5|
 |Id|Id do navegador|4|
 |Pasta de perfil|Rota da pasta do perfil do usuário para abrir o navegador|C:/folder|
 |Pasta de download|Caminho da pasta de downloads para o navegador aberto|C:/folder|
 |Forçar downloads|Forçar downloads para torná-los automáticos|True|
-|Opções para o Chrome|Opções do navegador|{'download.default_directory': download_path}|
+|Opções personalizadas para o navegador|Opções personalizadas no formato dict|{'download.default_directory': download_path}|
 
 ### Drag and drop
   

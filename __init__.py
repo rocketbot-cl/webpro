@@ -39,6 +39,9 @@ from bs4 import BeautifulSoup
 from selenium import webdriver as ws
 from selenium.webdriver import ActionChains
 from selenium.webdriver import Chrome
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + 'webpro' + os.sep + 'libs' + os.sep
 sys.path.append(cur_path)
@@ -53,8 +56,13 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import TimeoutException
 from PIL import Image
 from pathlib import Path
+from pyshadow.main import Shadow
 import logging
 from selenium.webdriver.remote.remote_connection import LOGGER
+
+global shadow_root
+global element_root
+
 downloads_path = str(Path.home() / "Downloads")
 
 module = GetParams("module")
@@ -231,6 +239,11 @@ if module == "CleanInputs":
     except:
         simulationKey = False
 
+    try:
+        sleep_ = eval(GetParams('sleep_'))
+    except:
+        sleep_ = False
+
     print(search_type)
     search_type = {"tag": "tag name", "class": "class name"}.get(search_type, search_type)
     
@@ -238,6 +251,8 @@ if module == "CleanInputs":
 
     if element is not None and texto is not None:
         element.clear()
+        if sleep_:
+            time.sleep(1)
         if simulationKey:
             element.send_keys(Keys.SHIFT, Keys.ARROW_UP)
             element.send_keys(Keys.DELETE)
@@ -803,19 +818,32 @@ if module == "clickPro":
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
+    shadow_element = GetParams("shadow_element")
+    if shadow_element == None or shadow_element == False:
+        shadow_element = False
+    else:
+        shadow_element = True
 
     try:
         if not wait_:
             wait_ = 5
-        actionChains = ActionChains(driver)
-        wait = WebDriverWait(driver, int(wait_))
-        try:
-            elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
-            webdriver._object_selected = elementLocator
-            actionChains.click(elementLocator).perform()
-        except TimeoutException:
-            PrintException()
-            raise Exception("The item is not available to be clicked")
+        if not shadow_element:
+            actionChains = ActionChains(driver)
+            wait = WebDriverWait(driver, int(wait_))
+            try:
+                elementLocator = wait.until(EC.element_to_be_clickable((types[data_type], data_)))
+                webdriver._object_selected = elementLocator
+                actionChains.click(elementLocator).perform()
+            except TimeoutException:
+                PrintException()
+                raise Exception("The item is not available to be clicked")
+        else:
+            try:
+                shadow_root.find_element(element_root, data_).click()
+            except:
+                PrintException()
+                raise Exception("The item is not available to be clicked")
+
 
     except Exception as e:
         PrintException()
@@ -827,16 +855,29 @@ if module == "getText":
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
     result = GetParams("result")
+    shadow_element = GetParams("shadow_element")
+    if shadow_element == None or shadow_element == False:
+        shadow_element = False
+    else:
+        shadow_element = True
     try:
-        if not wait_:
-            wait_ = 5
-        actionChains = ActionChains(driver)
-        wait = WebDriverWait(driver, int(wait_))
-        try:
-            elementLocator = wait.until(EC.visibility_of_element_located((types[data_type], data_)))
-            SetVar(result, elementLocator.text)
-        except TimeoutException:
-            raise Exception("The item is not available to be selected")
+        if not shadow_element:
+            if not wait_:
+                wait_ = 5
+            actionChains = ActionChains(driver)
+            wait = WebDriverWait(driver, int(wait_))
+            try:
+                elementLocator = wait.until(EC.visibility_of_element_located((types[data_type], data_)))
+                SetVar(result, elementLocator.text)
+            except TimeoutException:
+                raise Exception("The item is not available to be selected")
+        else:
+            try:
+                texto = shadow_root.find_element(element_root, data_).text
+                SetVar(result, texto)
+            except:
+                PrintException()
+                raise Exception("The item is not available to be selected")
 
     except Exception as e:
         print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
@@ -848,17 +889,29 @@ if module == "selectPro":
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
+    shadow_element = GetParams("shadow_element")
+    if shadow_element == None or shadow_element == False:
+        shadow_element = False
+    else:
+        shadow_element = True
 
     try:
-        if not wait_:
-            wait_ = 5
-        actionChains = ActionChains(driver)
-        wait = WebDriverWait(driver, int(wait_))
-        try:
-            elementLocator = wait.until(EC.visibility_of_element_located((types[data_type], data_)))
-            webdriver._object_selected = elementLocator
-        except TimeoutException:
-            raise Exception("The item is not available to be selected")
+        if not shadow_element:
+            if not wait_:
+                wait_ = 5
+            actionChains = ActionChains(driver)
+            wait = WebDriverWait(driver, int(wait_))
+            try:
+                elementLocator = wait.until(EC.visibility_of_element_located((types[data_type], data_)))
+                webdriver._object_selected = elementLocator
+            except TimeoutException:
+                raise Exception("The item is not available to be selected")
+        else:
+            try:
+                webdriver._object_selected = shadow_root.find_element(element_root, data_)
+            except:
+                PrintException()
+                raise Exception("The item is not available to be selected")
 
     except Exception as e:
         print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
@@ -963,6 +1016,7 @@ if module == "new_tab":
 
 if module == "open_browser":
     
+    browser_ = GetParams("browser")
     timeout = GetParams("timeout")
     url_ = GetParams("url_")
     newId = GetParams("newId")
@@ -975,6 +1029,8 @@ if module == "open_browser":
     if profile_path == None or profile_path == "":
         profile_path = ""
     
+    if not browser_:
+        browser_ = "chrome"
     
 
     custom_options = GetParams("custom_options")
@@ -984,33 +1040,63 @@ if module == "open_browser":
         pass
 
     try:
-        platform_ = platform.system()
-        if platform_.endswith('dows'):
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
-        else:
-            chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
-        
-        caps = selenium.webdriver.ChromeOptions()
-        caps.add_argument("--safebrowsing-disable-download-protection")
-        prefs = {"download.default_directory": download_path}
+        if browser_ == "chrome":
+            platform_ = platform.system()
+            if platform_.endswith('dows'):
+                chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+            else:
+                chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+            
+            caps = selenium.webdriver.ChromeOptions()
+            caps.add_argument("--safebrowsing-disable-download-protection")
+            prefs = {"download.default_directory": download_path}
 
-        if force_downloads == "True":
-            force_download_params = {
-            'download.prompt_for_download': 'false',
-            'safebrowsing.enabled': 'false'
-            }
-            prefs.update(force_download_params)
-        if custom_options:
-            prefs.update(custom_options)
+            if force_downloads == "True":
+                force_download_params = {
+                'download.prompt_for_download': 'false',
+                'safebrowsing.enabled': 'false'
+                }
+                prefs.update(force_download_params)
+            if custom_options:
+                prefs.update(custom_options)
 
-        caps.add_experimental_option("prefs", prefs)
-        
-        if profile_path == "":
-            pass
-        else:
-            caps.add_argument("--user-data-dir=" + profile_path)
-        
-        browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
+            caps.add_experimental_option("prefs", prefs)
+            
+            if profile_path == "":
+                pass
+            else:
+                caps.add_argument("--user-data-dir=" + profile_path)
+            
+            browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
+
+        elif browser_ == "firefox":
+            platform_ = platform.system()
+            if platform_.endswith('dows'):
+                firefox_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\firefox\x64"), "geckodriver.exe")
+            else:
+                firefox_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "geckodriver")
+                
+            
+            firefox_options = FirefoxOptions()
+            
+            if profile_path != "":
+                profile = FirefoxProfile(profile_path)
+            else:
+                profile = FirefoxProfile()
+            
+            if download_path:
+                firefox_options.set_preference("browser.download.folderList", 2)
+                firefox_options.set_preference("browser.download.dir", download_path)
+                
+            if force_downloads == "True":
+                firefox_options.set_preference("browser.helperApps.neverAsk.saveToDisk", "*")
+            
+            if custom_options:
+                for key, value in custom_options.items():
+                    firefox_options.set_preference(key, value)
+            
+            
+            browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=profile)
 
         if not timeout:
             timeout = 100
@@ -1074,6 +1160,13 @@ try:
             print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
             PrintException()
             raise e
+      
+    if module == "shadow_dom":
+        data = GetParams("data")
+        
+        shadow_root = Shadow(driver)
+        element_root = shadow_root.find_element(data)
+
 
 except Exception as e:
     PrintException()

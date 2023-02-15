@@ -11,6 +11,10 @@ __Download__ and __install__ the content in 'modules' folder in Rocketbot path
 
 ## How to use this module
 This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
+In order to use Edge in Internet Explorer mode, the following settings must be made:
+1. Configure the browser based on the following documentation: https://docs.rocketbot.com/?p=169
+2. Download the Internet Explorer driver from the link below: https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.3.0/IEDriverServer_Win32_4.3.0.zip and place it in Rocketbot/drivers/win/ie/x86/
+3. To be able to access the developer tools, IEChooser.exe must be opened. To do so, press the Windows key + R and type the following: %systemroot%\system32\f12\IEChooser.exe and then press accept. Select the window of your browser, and you will be able to explore the elements of the page.
 
 
 ## Overview
@@ -82,48 +86,53 @@ Move mouse over the element
 22. Open Edge (Chromium)  
 Open the new Edge based on Chromium
 
-23. Click Pro  
+23. Access Shadow DOM  
+Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
+
+24. Click Pro  
 Click on a selected object waiting that it's clickeable
 
-24. Extract text Pro  
+25. Extract text Pro  
 Get a text object waiting that it's present
 
-25. Select object Pro  
+26. Select object Pro  
 Select an object waiting that it's present
 
-26. Change to iframe Pro  
+27. Change to iframe Pro  
 Change to iframe waiting that it's present
 
-27. Send Keys  
+28. Send Keys  
 Similar to Send keys web, but low level
 
-28. Print to PDF (Chrome)  
+29. Print to PDF (Chrome)  
 Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 
-29. Force Download  
+30. Force Download  
 Force Download
 
-30. Open New Tab  
+31. Open New Tab  
 Open new tab with the URL
 
-31. Open Browser  
+32. Open Browser  
 Open a browser the URL
 
-32. Drag and drop  
+33. Drag and drop  
 Do a drag and drop
 
-33. Upload files  
+34. Upload files  
 Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
 
-34. Send key combination  
+35. Send key combination  
 Command to send key combination
 
-35. Right Click  
+36. Right Click  
 Right click on a selected object  
 
 
 
 ### Changes
+Tue Sep 13 19:15:44 2022  Merge branch qa of https://github.com/rocketbot-cl/webpro
+Thu Aug 4 13:00:30 2022  [Merge] added Open browser with or without profile by jmsiro
 Mon May 2 16:53:22 2022  Merge from QA - Merge pull request from rocketbot-cl
 Thu Aug 19 13:24:01 2021  Merge branch master of github.com:rocketbot-cl/webpro
 Fri Apr 24 16:28:55 2020  Merge branch master of https://github.com/rocketbot-cl/webpro
@@ -138,7 +147,7 @@ Wed Mar 11 14:24:59 2020  Merge branch master of https://github.com/rocketbot-cl
 - docker
 
 ### Dependencies
-- [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)- [**requests**](https://pypi.org/project/requests/)
+- [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)- [**requests**](https://pypi.org/project/requests/)- [**pyshadow**](https://pypi.org/project/pyshadow/)
 ### License
   
 ![MIT](https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265)  
