@@ -933,7 +933,10 @@ if module == "changeIframePro":
         wait = WebDriverWait(driver, int(wait_))
         try:
             elementLocator = wait.until(EC.presence_of_element_located((types[data_type], data_)))
-            driver.switch_to_frame(elementLocator)
+            if sys.maxsize > 2**32:
+                driver.switch_to.frame(elementLocator) # For Rocketbot v2023
+            else:
+                driver.switch_to_frame(elementLocator) # For Rocketbot v2020
         except TimeoutException:
             raise Exception("The item is not available to be clicked")
 
