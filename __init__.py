@@ -392,7 +392,7 @@ if module == "clickElement":
             raise Exception('Debe seleccionar una opcion')
 
         if option_ == 'name':
-            element = driver.find_elements_by_name(search)
+            element = driver.find_elements("name", search)
 
             for ele in element:
                 if cont_ == index_:
@@ -403,7 +403,7 @@ if module == "clickElement":
                     cont_ += 1
 
         if option_ == 'class':
-            elements = driver.find_elements_by_xpath(f'//*[contains(@class,"{search}")]')[index_]
+            elements = driver.find_elements("xpath", f'//*[contains(@class,"{search}")]')[index_]
             elements.click()
             webdriver._object_selected = elements
 
