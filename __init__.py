@@ -33,6 +33,7 @@ import sys
 import shutil
 import platform
 from io import BytesIO
+import traceback
 
 import time
 from bs4 import BeautifulSoup
@@ -60,8 +61,14 @@ from pyshadow.main import Shadow
 import logging
 from selenium.webdriver.remote.remote_connection import LOGGER
 
-global shadow_root
-global element_root
+global shadow_root # pylint: disable=global-at-module-level
+global element_root # pylint: disable=global-at-module-level
+
+GetGlobals = GetGlobals #pylint: disable=undefined-variable,self-assigning-variable
+GetParams = GetParams #pylint: disable=undefined-variable,self-assigning-variable
+SetVar = SetVar #pylint: disable=undefined-variable,self-assigning-variable
+PrintException = PrintException #pylint: disable=undefined-variable,self-assigning-variable
+tmp_global_obj = tmp_global_obj #pylint: disable=undefined-variable,self-assigning-variable
 
 downloads_path = str(Path.home() / "Downloads")
 
@@ -542,10 +549,10 @@ if module == "Edge_":
                 ieOptions.add_additional_option("ie.edgepath", edge_exe)
 
                 driver = ws.Ie(executable_path=f'{base_path}/drivers/win/ie/x86/IEDriverServer.exe', options=ieOptions, capabilities=caps)
-            
+
                 driver.maximize_window()
                 web.driver_list[web.driver_actual_id] = driver
-
+                time.sleep(1)
                 driver.get(url)
 
         else:
@@ -572,8 +579,6 @@ if module == "screenshot":
     location = GetParams("location")
     size = GetParams("size")
 
-    
-    
 
     tmp_path = "tmp/webpro/screenshot.png"
     try:
@@ -841,6 +846,7 @@ if module == "clickPro":
             try:
                 shadow_root.find_element(element_root, data_).click()
             except:
+                traceback.print_exc()
                 PrintException()
                 raise Exception("The item is not available to be clicked")
 
@@ -933,7 +939,10 @@ if module == "changeIframePro":
         wait = WebDriverWait(driver, int(wait_))
         try:
             elementLocator = wait.until(EC.presence_of_element_located((types[data_type], data_)))
-            driver.switch_to_frame(elementLocator)
+            if sys.maxsize > 2**32:
+                driver.switch_to.frame(elementLocator) # For Rocketbot v2023
+            else:
+                driver.switch_to_frame(elementLocator) # For Rocketbot v2020
         except TimeoutException:
             raise Exception("The item is not available to be clicked")
 
@@ -1053,14 +1062,29 @@ if module == "open_browser":
 
             if force_downloads == "True":
                 force_download_params = {
-                'download.prompt_for_download': 'false',
-                'safebrowsing.enabled': 'false'
+                'download.prompt_for_download': False,
+                'safebrowsing.enabled': False,
+                'plugins.always_open_pdf_externally': True
                 }
                 prefs.update(force_download_params)
             if custom_options:
                 prefs.update(custom_options)
+                
+            settings = {"recentDestinations": [{
+                    "id": "Save as PDF",
+                    "origin": "local",
+                    "account": "",
+                }],
+                "selectedDestinationId": "Save as PDF",
+                "version": 2
+            }
+            
+            prefs.update({'printing.print_preview_sticky_settings.appState': json.dumps(settings)})
 
             caps.add_experimental_option("prefs", prefs)
+            caps.add_argument('--kiosk-printing')
+            
+
             
             if profile_path == "":
                 pass
