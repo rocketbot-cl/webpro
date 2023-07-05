@@ -1,6 +1,6 @@
 # WEB Pro
   
-Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
+Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la sección web  
 
 ![banner](imgs/Banner_webpro.png)
 ## Como instalar este módulo
@@ -248,6 +248,8 @@ Cambia a un iframe esperando que se encuentre presente
 | --- | --- | --- |
 |Dato a buscar|Colocamos el selector del iframe|Data|
 |Tipo de dato|Seleccionamos el tipo de dato|xpath|
+|Seleccionar por índice|Casilla para elegir iframe por índice|True|
+|Índice|Indice del frame dentro del codigo HTML de la pagina web|0|
 |Esperar|Colocamos el tiempo de espera|5|
 
 ### Enviar Teclas
