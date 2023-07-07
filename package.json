@@ -2454,7 +2454,7 @@
                 "pr": "Colocamos o seletor do iframe"
               },
               "id": "data",
-              "css": "col-md-12"
+              "css": "col-md-6"
             },
             {
               "type": "select",
@@ -2511,6 +2511,46 @@
               "css": "col-md-6"
             },
             {
+              "type": "checkbox",
+              "placeholder": {
+                "es": "True",
+                "en": "True",
+                "pr": "True"
+              },
+              "title": {
+                "es": "Seleccionar por índice",
+                "en": "Select by index",
+                "pr": "Selecionar por índice"
+              },
+              "description": {
+                "es": "Casilla para elegir iframe por índice",
+                "en": "Checkbox to choose iframe by index",
+                "pr": "Caixa de seleção para escolher iframe por índice"
+              },
+              "id": "index_check",
+              "css": "col-md-4"
+            },
+            {
+              "type": "input",
+              "placeholder": {
+                "es": "0",
+                "en": "0",
+                "pr": "0"
+              },
+              "title": {
+                "es": "Índice",
+                "en": "Index",
+                "pr": "Índice"
+              },
+              "description": {
+                "es": "Indice del frame dentro del codigo HTML de la pagina web",
+                "en": "Frame index within the HTML code of the web page",
+                "pr": "Índice do frame dentro do código HTML da página da web"
+              },
+              "id": "index",
+              "css": "col-md-4"
+            },
+            {
               "type": "input",
               "placeholder": {
                 "es": "5",
@@ -2528,7 +2568,7 @@
                 "pr": "Colocamos o tempo de espera"
               },
               "id": "wait",
-              "css": "col-md-6"
+              "css": "col-md-4"
             }
           ]
         },
