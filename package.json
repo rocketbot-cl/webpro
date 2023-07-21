@@ -2,7 +2,7 @@
     "author": "David Cuello - José González - Marcela Vergara - Danilo Toro - Nicolas Garcia",
     "description": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "11.10.0",
+    "version": "11.10.1",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "name": "webpro",
@@ -888,6 +888,10 @@
                 {
                   "title": "class",
                   "value": "class"
+                },
+                {
+                  "title": "xpath",
+                  "value": "xpath"
                 }
               ],
               "description": {
