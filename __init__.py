@@ -389,7 +389,10 @@ if module == "clickElement":
     search = GetParams('search_data')
     index_ = GetParams("index_")
     element = None
-    index_ = eval(index_)
+    if index_:
+        index_ = eval(index_)
+    else:
+        raise Exception("Debe ingresar un indice")
     res = False
     cont_ = 0
 
@@ -413,6 +416,12 @@ if module == "clickElement":
             elements = driver.find_elements("xpath", f'//*[contains(@class,"{search}")]')[index_]
             elements.click()
             webdriver._object_selected = elements
+
+        if option_ == 'xpath':
+            elements = driver.find_elements("xpath", search)[index_]
+            elements.click()
+            webdriver._object_selected = elements
+            
 
     except Exception as e:
         PrintException()
