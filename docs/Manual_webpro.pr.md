@@ -250,6 +250,8 @@ Troca para um iframe esperando que ele esteja presente
 | --- | --- | --- |
 |Dado a buscar|Colocamos o seletor do iframe|Data|
 |Tipo de dado|Selecionamos o tipo de dado|xpath|
+|Selecionar por índice|Caixa de seleção para escolher iframe por índice|True|
+|Índice|Índice do frame dentro do código HTML da página da web|0|
 |Esperar|Colocamos o tempo de espera|5|
 
 ### Enviar Teclas

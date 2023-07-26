@@ -389,7 +389,10 @@ if module == "clickElement":
     search = GetParams('search_data')
     index_ = GetParams("index_")
     element = None
-    index_ = eval(index_)
+    if index_:
+        index_ = eval(index_)
+    else:
+        raise Exception("Debe ingresar un indice")
     res = False
     cont_ = 0
 
@@ -413,6 +416,12 @@ if module == "clickElement":
             elements = driver.find_elements("xpath", f'//*[contains(@class,"{search}")]')[index_]
             elements.click()
             webdriver._object_selected = elements
+
+        if option_ == 'xpath':
+            elements = driver.find_elements("xpath", search)[index_]
+            elements.click()
+            webdriver._object_selected = elements
+            
 
     except Exception as e:
         PrintException()
@@ -925,24 +934,27 @@ if module == "selectPro":
         raise e
 
 if module == "changeIframePro":
-    
-    
-
     data_ = GetParams("data")
     wait_ = GetParams("wait")
     data_type = GetParams("data_type")
-
+    index_check = GetParams("index_check")
+    index = GetParams("index")
     try:
         if not wait_:
             wait_ = 5
         actionChains = ActionChains(driver)
         wait = WebDriverWait(driver, int(wait_))
         try:
-            elementLocator = wait.until(EC.presence_of_element_located((types[data_type], data_)))
-            try:
-                driver.switch_to.frame(elementLocator) # For Rocketbot v2023
-            except:
-                driver.switch_to_frame(elementLocator) # For Rocketbot v2020
+
+            if index_check and eval(index_check):
+                driver.switch_to.frame(int(index))
+            else:
+                elementLocator = wait.until(EC.presence_of_element_located((types[data_type], data_)))
+                if sys.maxsize > 2**32:
+                    driver.switch_to.frame(elementLocator)
+                else:
+                    driver.switch_to_frame(elementLocator)
+
         except TimeoutException:
             raise Exception("The item is not available to be clicked")
 

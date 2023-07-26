@@ -250,6 +250,8 @@ Change to iframe waiting that it's present
 | --- | --- | --- |
 |Data to search|Put the selector of the iframe|Data|
 |Data type|Select the type of data|xpath|
+|Select by index|Checkbox to choose iframe by index|True|
+|Index|Frame index within the HTML code of the web page|0|
 |Wait|Put the time of wait|5|
 
 ### Send Keys

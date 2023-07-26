@@ -2,7 +2,7 @@
     "author": "David Cuello - José González - Marcela Vergara - Danilo Toro - Nicolas Garcia",
     "description": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "11.10.0",
+    "version": "11.10.1",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "name": "webpro",
@@ -888,6 +888,10 @@
                 {
                   "title": "class",
                   "value": "class"
+                },
+                {
+                  "title": "xpath",
+                  "value": "xpath"
                 }
               ],
               "description": {
@@ -2454,7 +2458,7 @@
                 "pr": "Colocamos o seletor do iframe"
               },
               "id": "data",
-              "css": "col-md-12"
+              "css": "col-md-6"
             },
             {
               "type": "select",
@@ -2511,6 +2515,46 @@
               "css": "col-md-6"
             },
             {
+              "type": "checkbox",
+              "placeholder": {
+                "es": "True",
+                "en": "True",
+                "pr": "True"
+              },
+              "title": {
+                "es": "Seleccionar por índice",
+                "en": "Select by index",
+                "pr": "Selecionar por índice"
+              },
+              "description": {
+                "es": "Casilla para elegir iframe por índice",
+                "en": "Checkbox to choose iframe by index",
+                "pr": "Caixa de seleção para escolher iframe por índice"
+              },
+              "id": "index_check",
+              "css": "col-md-4"
+            },
+            {
+              "type": "input",
+              "placeholder": {
+                "es": "0",
+                "en": "0",
+                "pr": "0"
+              },
+              "title": {
+                "es": "Índice",
+                "en": "Index",
+                "pr": "Índice"
+              },
+              "description": {
+                "es": "Indice del frame dentro del codigo HTML de la pagina web",
+                "en": "Frame index within the HTML code of the web page",
+                "pr": "Índice do frame dentro do código HTML da página da web"
+              },
+              "id": "index",
+              "css": "col-md-4"
+            },
+            {
               "type": "input",
               "placeholder": {
                 "es": "5",
@@ -2528,7 +2572,7 @@
                 "pr": "Colocamos o tempo de espera"
               },
               "id": "wait",
-              "css": "col-md-6"
+              "css": "col-md-4"
             }
           ]
         },
