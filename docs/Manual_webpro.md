@@ -2,21 +2,116 @@
   
 Module with extended functionalities for the browser that works as a complement to the commands of the web section  
 
-*Read this in other languages: [English](Manual_webpro.md), [Portugues](Manual_webpro.pr.md), [Español](Manual_webpro.es.md).*
+*Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
   
 ![banner](imgs/Banner_webpro.png)
 ## How to install this module
   
-__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
+To install the module in Rocketbot Studio, it can be done in two ways:
+1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
 
 
 ## How to use this module
 This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
-In order to use Edge in Internet Explorer mode, the following settings must be made:
+
+### In order to use Edge in Internet Explorer mode, the following settings must be made:
 1. Configure the browser based on the following documentation: https://docs.rocketbot.com/?p=169
-2. Download the Internet Explorer driver from the link below: https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.3.0/IEDriverServer_Win32_4.3.0.zip and place it in Rocketbot/drivers/win/ie/x86/
+2. Download the Internet Explorer driver from the link below: https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.13.0/IEDriverServer_Win32_3.13.0.zip and place it in Rocketbot/drivers/win/ie/x86/
 3. To be able to access the developer tools, IEChooser.exe must be opened. To do so, press the Windows key + R and type the following: %systemroot%\system32\f12\IEChooser.exe and then press accept. Select the window of your browser, and you will be able to explore the elements of the page.
 
+### Tips for handling elements within a shadow root:
+1. Handling iframes:
+First locate all the shadow-root you need to enter to get to the iframe you need to access. For example if you have this structure:
+
+```html
+<div id="div1">
+  shadow-root(open)
+    <div id="div2">
+      <div id="div3">
+        shadow-root(open)
+          <div id="div4">
+            <iframe id="id_iframe">
+                <div id="div_shadow">
+                  shadow-root(open)
+                    <a id="link1">
+                    <input id="input1">
+                    <p id="paragraph">Text</p>.
+```
+
+You must enter the first shadow-root, and then the second.
+To accomplish this you must use the Run Python command. First you must import everything you need to handle the web elements, and then access each shadow root, and finish by accessing the iframe you need:
+
+```python
+from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+
+webdriver = GetGlobals("web")
+if webdriver.driver_actual_id in webdriver.driver_list:
+    driver = webdriver.driver_list[webdriver.driver_actual_id].
+    
+# First you select the parent of the first shadow-root
+shadow_host = driver.find_element_by_css_selector('#div1') 
+
+# These next three lines are always the same
+shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
+shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
+shadow_root = WebElement(driver, shadow_root_id, w3c=True)
+
+# Here you select the element inside the first shadow-root that is the parent of the second shadow-root.
+shadow_content = shadow_root.find_element_by_css_selector('#div3')
+
+
+shadow_host = shadow_content
+
+# These next three lines are always the same
+shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
+shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
+shadow_root = WebElement(driver, shadow_root_id, w3c=True)
+
+# When you enter the last shadow-root, you should only get the element that corresponds to the iframe that you should enter
+shadow_content = shadow_root.find_element_by_css_selector('#id_iframe')
+
+# Y para finalizar, utilizas el comando que cambia al iframe
+driver.switch_to_frame(shadow_content)
+```
+
+#### Keep in mind that if you need to access more elements to get to the iframe, you only need to follow the same steps as many times as necessary.
+Once you have access to the iframe, you will be able to interact with all elements using javascript, regardless of whether they have shadow-root or not.
+
+2. Handling of elements within a shadow-root:
+To perform a click, copy the js path of the element. Then in Rocketbot use the Run JS command. In this command, paste the js_path and at the end add .click()
+Using the example at the beginning, to click on the \<a> tag inside the iframe, it should look something like this:
+
+```javascript
+document.querySelector("#div_shadow").shadowRoot.querySelector("#link1").click()
+```
+
+If for example you want to complete an input, it may vary depending on the input format of the page.
+Most inputs can be completed using Javascript and the Execute JS command as follows:
+
+```javascript
+document.querySelector("#div_shadow").shadowRoot.querySelector("#input1").value = "your_value"
+```
+
+In other cases, it is necessary that the input has focus to be able to enter a value. For this you must do the following steps:
+In a JS command place the following:
+
+```javascript
+// With this you give focus to the input
+document.querySelector("#div_shadow").shadowRoot.querySelector("#input1").setAttribute('focused', '')
+document.querySelector("#div_shadow").shadowRoot.querySelector("#input1").focus()
+```
+
+When you have it in focus, you can use the Send Keys command of the webpro module and it will write what you need.
+Finally, you can get the text of an element also with javascript, in the following way:
+Run a JS command with the following:
+    
+```javascript
+return document.querySelector("#div_shadow").shadowRoot.querySelector("#paragraph").innerHTML
+```
+To this you assign it to the variable that you want, and in the same one you will have the coded value. To get it clean, run an Assign Variable command with the following: {var}.decode('utf-8')
 
 ## Description of the commands
 
@@ -26,7 +121,7 @@ Gets a list of all elements and their children from a class or name in order to 
 |Parameters|Description|example|
 | --- | --- | --- |
 |Type Classes or attribute|In this field we should put the type of class or attribute we will use.|name|
-|Classes or attribute|In this field we should put the name of the class or attribute we will use.|class|
+|Classes or attribute|In this field we should put the name of the class or attribute we will use.|col-md-6|
 |Element Type|In this field we should put the type of element we will use.|div|
 |Variable where to store the result|In this field we should put the name of the variable where we will store the result.|Variable|
 
@@ -202,6 +297,8 @@ Open the new Edge based on Chromium
 |Parameters|Description|example|
 | --- | --- | --- |
 |Server URL|Url of the page to open in Edge|http://www.rocketbot.co|
+|Profile name|Name of the profile to use|Profile 1|
+|Path of the profile folder|Path of the profile folder to use. Must exist in the path %localappdata%/Microsoft/Edge/User Data/|C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1|
 |Start in Internet Explorer mode|Starts the browser in Internet Explorer mode|True|
 |Select Edge executable|Select the Edge executable to open in IE mode|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 

@@ -1,8 +1,13 @@
 {
     "author": "David Cuello - José González - Marcela Vergara - Danilo Toro - Nicolas Garcia",
     "description": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
+    "description_lang": {
+      "en": "Module with extended functionalities for the browser that works as a complement to the commands of the web section",
+      "es": "Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web",
+      "pr": "Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web"
+    },
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "11.10.1",
+    "version": "11.11.0",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "name": "webpro",
@@ -60,14 +65,17 @@
                 "pr": "Neste campo devemos colocar o tipo de classe ou atributo que usaremos."
               },
               "id": "type_",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
               "placeholder": {
-                "es": "class",
-                "en": "class",
-                "pr": "class"
+                "es": "col-md-6",
+                "en": "col-md-6",
+                "pr": "col-md-6"
               },
               "title": {
                 "es": "Clases o atributo",
@@ -85,7 +93,10 @@
                 "pr": "Neste campo devemos colocar o nome da classe ou atributo que usaremos."
               },
               "id": "data_",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -110,7 +121,10 @@
                 "pr": "Neste campo devemos colocar o tipo de elemento que usaremos."
               },
               "id": "el_",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -131,7 +145,10 @@
               },
               "remove_vars": true,
               "id": "result",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -179,7 +196,10 @@
                 "pr": "Colocamos o texto ou a variável para enviar."
               },
               "id": "texto",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -199,7 +219,10 @@
                 "pr": "Colocamos o dado a buscar."
               },
               "id": "search_data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -241,7 +264,10 @@
                 "pr": "Selecionamos o tipo de dado a buscar. Xpath, class, name, tag o id."
               },
               "id": "tipo",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "checkbox",
@@ -266,7 +292,10 @@
                   "pr": "Usar em caso de que não apague corretamente."
               },
               "id": "simulationKey",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "bool",
+              "default": false,
+              "required": false
           },
           {
             "type": "checkbox",
@@ -291,7 +320,10 @@
                 "pr": "Usar em caso de que não escreva o conteúdo."
             },
             "id": "sleep_",
-            "css": "col-md-6"
+            "css": "col-md-6",
+            "data_type": "bool",
+            "default": false,
+            "required": false
         }
           ]
         },
@@ -339,7 +371,10 @@
                 "pr": "Neste campo indicamos o caminho para o arquivo onde os cookies serão salvos"
               },
               "id": "file_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -360,7 +395,10 @@
               },
               "remove_vars": true,
               "id": "result",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -408,7 +446,10 @@
                 "pr": "Selecione o caminho para o arquivo onde os cookies são armazenados"
               },
               "id": "file_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -433,7 +474,10 @@
                 "pr": "Nome da variável sem {}"
               },
               "id": "var_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": false
             }
           ]
         },
@@ -535,7 +579,10 @@
                 "pr": "Colocamos o seletor a buscar"
               },
               "id": "data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -577,7 +624,10 @@
                 "pr": "Colocamos o tipo de dado a buscar"
               },
               "id": "data_type",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -630,7 +680,10 @@
                 "pr": "Escolhemos a posição em pixels"
               },
               "id": "position",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "int",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -678,7 +731,10 @@
                 "pr": "Nome da classe do elemento"
               },
               "id": "search_data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -700,7 +756,10 @@
               },
               "remove_vars": true,
               "id": "var_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -744,7 +803,10 @@
                 "pr": "Colocamos o seletor a buscar"
               },
               "id": "search_data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -760,7 +822,10 @@
                 "pr": "Colocamos o índice a buscar"
               },
               "id": "index_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "int",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -794,7 +859,10 @@
                 "pr": "Selecionamos o tipo de dado a buscar"
               },
               "id": "option_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -842,7 +910,10 @@
                 "pr": "Colocamos o seletor do dado a clicar."
               },
               "id": "search_data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -862,7 +933,10 @@
                 "pr": "Colocamos o índice do dado a clicar."
               },
               "id": "index_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "int",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -900,7 +974,10 @@
                 "pr": "Colocamos o tipo do dado a clicar."
               },
               "id": "option_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -948,7 +1025,10 @@
                 "pr": "Selecione o caminho e nome do arquivo a salvar, sem a extensão .pdf"
               },
               "id": "path_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "checkbox",
@@ -973,7 +1053,10 @@
                 "pr": "Procure a tag header e oculte o conteúdo para evitar duplicação"
               },
               "id": "del_header",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "bool",
+              "default": false,
+              "required": false
             },
             {
               "type": "input",
@@ -994,7 +1077,10 @@
               },
               "remove_vars": true,
               "id": "var_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1042,7 +1128,10 @@
                 "pr": "Escreva a URL da página a abrir."
               },
               "id": "url",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1090,7 +1179,10 @@
                 "pr": "Coordenadas da seção da página"
               },
               "id": "location",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -1110,7 +1202,10 @@
                 "pr": "Dimensões da seção da página"
               },
               "id": "size",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "file_new",
@@ -1130,7 +1225,10 @@
                 "pr": "Caminho e nome onde a imagem será salva"
               },
               "id": "path",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1178,7 +1276,10 @@
                 "pr": "Colocamos o seletor do elemento a obter."
               },
               "id": "data",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -1220,7 +1321,10 @@
                 "pr": "Selecionamos o tipo de dado a buscar."
               },
               "id": "data_type",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -1241,7 +1345,10 @@
               },
               "remove_vars": true,
               "id": "result",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1289,7 +1396,10 @@
                 "pr": "Colocamos o seletor do elemento a selecionar"
               },
               "id": "data",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -1331,7 +1441,10 @@
                 "pr": "Selecionamos o tipo de dado a buscar"
               },
               "id": "data_type",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -1352,7 +1465,10 @@
               },
               "remove_vars": true,
               "id": "result",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1400,7 +1516,10 @@
                 "pr": "Colocamos o seletor do elemento a selecionar"
               },
               "id": "data",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -1442,7 +1561,10 @@
                 "pr": "Selecionamos o tipo de dado a buscar"
               },
               "id": "data_type",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -1463,7 +1585,10 @@
               },
               "remove_vars": true,
               "id": "result",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1511,7 +1636,10 @@
                 "pr": "URL do servidor a abrir"
               },
               "id": "url",
-              "css": "col-md-8"
+              "css": "col-md-8",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -1541,7 +1669,10 @@
                 "pr": "Selecionamos o modo em que o navegador será aberto."
               },
               "id": "mode",
-              "css": "col-md-4"
+              "css": "col-md-4",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1590,7 +1721,10 @@
               },
               "remove_vars": true,
               "id": "result",
-              "css": "col-md-8"
+              "css": "col-md-8",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -1624,7 +1758,10 @@
                 "pr": "Nível de informação a mostrar"
               },
               "id": "level",
-              "css": "col-md-4"
+              "css": "col-md-4",
+              "data_type": "str",
+              "default": "ALL",
+              "required": true
             }
           ]
         },
@@ -1677,7 +1814,10 @@
                 "pr": "Nome da imagem"
               },
               "id": "name",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "folder_select",
@@ -1702,7 +1842,10 @@
                 "pr": "Caminho onde a imagem gerada será baixada"
               },
               "id": "path_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1750,7 +1893,10 @@
                 "pr": "Colocamos o selecionador do elemento ao qual fazermos hover."
               },
               "id": "data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -1792,7 +1938,10 @@
                 "pr": "Colocamos o tipo de dado que queremos buscar."
               },
               "id": "data_type",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1840,7 +1989,66 @@
                 "pr": "Url da páxina a abrir no Edge"
               },
               "id": "url",
-              "css": "col-md-6"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
+            },
+            {
+              "type": "input",
+              "placeholder": {
+                "es": "Profile 1",
+                "en": "Profile 1",
+                "pr": "Profile 1"
+              },
+              "title": {
+                "es": "Nombre del perfil",
+                "en": "Profile name",
+                "pr": "Nome do perfil"
+              },
+              "description": {
+                "es": "Nombre del perfil a utilizar",
+                "en": "Name of the profile to use",
+                "pr": "Nome do perfil a utilizar"
+              },
+              "help": {
+                "es": "El perfil ingresado debe existir en el navegador. No disponible al utilizar el modo Internet Explorer",
+                "en": "The entered profile must exist in the browser. Not available when using Internet Explorer mode",
+                "pr": "O perfil introducido debe existir no navegador. Non dispoñible ao utilizar o modo Internet Explorer"
+              },
+              "id": "edge_profile",
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": false
+            },
+            {
+              "type": "input",
+              "placeholder": {
+                "es": "C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1",
+                "en": "C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1",
+                "pr": "C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1"
+              },
+              "title": {
+                "es": "Ruta de la carpeta del perfil",
+                "en": "Path of the profile folder",
+                "pr": "Ruta da carpeta do perfil"
+              },
+              "description": {
+                "es": "Ruta de la carpeta del perfil a utilizar. Debe existir en la ruta %localappdata%/Microsoft/Edge/User Data/",
+                "en": "Path of the profile folder to use. Must exist in the path %localappdata%/Microsoft/Edge/User Data/",
+                "pr": "Ruta da carpeta do perfil a utilizar. Debe existir na ruta %localappdata%/Microsoft/Edge/User Data/"
+              },
+              "help": {
+                "es": "Puedes revisar la ruta de la carpeta del perfil ingresando al mismo desde el navegador y luego en la barra de direcciones escribir: edge://version/ y presionar enter. En la sección \"Ruta de acceso al perfil\" aparecerá la ruta de la carpeta del perfil actual",
+                "en": "You can check the path of the profile folder by entering it from the browser and then in the address bar type: edge://version/ and press enter. In the \"Profile path\" section the path of the current profile folder will appear",
+                "pr": "Podes revisar a ruta da carpeta do perfil accedendo a ela desde o navegador e despois na barra de enderezos escribir: edge://version/ e premer enter. Na sección \"Ruta de acceso al perfil\" aparecerá a ruta da carpeta do perfil actual"
+              },
+              "id": "user_data_dir",
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": false
             },
             {
               "type": "checkbox",
@@ -1860,7 +2068,10 @@
                 "pr": "Comeza o navegador no modo Internet Explorer"
               },
               "id": "ie_mode",
-              "css": "col-md-6"
+              "css": "col-md-3",
+              "data_type": "bool",
+              "default": false,
+              "required": false
             },
             {
               "type": "file_select",
@@ -1885,7 +2096,10 @@
                 "pr": "Seleccionar só se quere abrir no modo IE"
               },
               "id": "edge_exe",
-              "css": "col-md-12"
+              "css": "col-md-9",
+              "data_type": "str",
+              "default": null,
+              "required": false
             }
           ]
         },
@@ -1938,7 +2152,10 @@
                 "pr": "Deve ser um seletor css. Por exemplo #id, .class, tag"
               },
               "id": "data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -1949,7 +2166,7 @@
         "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAbrqAAG66gHB8Tn1AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAchQTFRF////REREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREAF92QAAAAJd0Uk5TAAECAwQFBgcJCgsMDQ8QERIUFRcZGhscHh8jJCcoKSwtLi8wMTQ1Njc9P0FCREVISUpLTE1PUFFSU1VXWFlaXGFkZWdpamxtbm9xcnN3e4CBgoaHjI6PkJKUn6CipKapqqusr7CxsrO2ur3Aw8TFx8jKy8zNzs/Q0dbY2drd3t/i4+Tl5unq7O7v8PLz9Pb3+Pn6+/z9/jk7kY4AAAnASURBVHja7d3Zb1XVHsDx3UKBUmZoAeWCTE4EaEElCsoo4INCMVgnhlCMUIY/Bx98EK3EEIwihiAxGFAjiMYhIRKNMTEgGjXRIBEpoPeBcC9Cy1nn7NNhrX6+L9qe39rQ0w89a++enlZmPbwXEq+779/KTL06AAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQ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s50GxtqUrRPzHmLi1ikZANE2uqU+3wHqW0ZnAETcoI0P51n+8MZBGQBxnwyseqLkj7nyiVV9MgBib2Fzib9BfGDzwvTujd74nMBZLbWlLKttmZUBkESTt04qftGkrZMzABKprqWh2CUNLXUZAMlU01zkS/kvba7JAEjpZKCxqYgPvbKpsU8GQFot2Bh8MjBw44Jk74Ze/AIRDVsCH9XrtjRkACRY4L6+pHMGAGKodnPAmf2szbUZAKmeDGwo+JrSyzbUZAD04DbnamvBF/85uDXfnwCAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABoK4A8EIPr6ffwT39/vMVwFcAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAgf0XsEXq36D3gLEAAAAASUVORK5CYII=",
         "module": "shadow_dom",
         "module_name": "webpro",
-        "visible": true,
+        "visible": false,
         "options": false,
         "father": "module",
         "group": "scripts"
@@ -1986,7 +2203,10 @@
                 "pr": "Colocamos o seletor do elemento a clicar."
               },
               "id": "data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -2040,7 +2260,10 @@
                 "pr": "Selecionamos o tipo de dado a buscar."
               },
               "id": "data_type",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -2059,38 +2282,11 @@
                 "en": "Put the time in seconds that we will wait for the element to be clickeable.",
                 "pr": "Colocamos o tempo em segundos que esperaremos a que o elemento se torne clicável."
               },
-              "help": {
-                "es": "Sólo funciona si el elemento no se encuentra en un Shadow DOM.",
-                "en": "Only works if the element is not in a Shadow DOM.",
-                "pr": "Só funciona se o elemento não estiver em um Shadow DOM."
-              },
               "id": "wait",
-              "css": "col-md-6"
-            },
-            {
-              "type": "checkbox",
-              "placeholder": {
-                "es": "True",
-                "en": "True",
-                "pr": "True"
-              },
-              "title": {
-                "es": "Click en elemento dentro de Shadow DOM",
-                "en": "Click on element inside Shadow DOM",
-                "pr": "Clicar em elemento dentro de Shadow DOM"
-              },
-              "description": {
-                "es": "Seleccionamos si el elemento se encuentra dentro de un Shadow DOM.",
-                "en": "Select if the element is inside a Shadow DOM.",
-                "pr": "Selecionamos se o elemento está dentro de um Shadow DOM."
-              },
-              "help": {
-                "es": "En caso de ser un elemento dentro del Shadow DOM, el dato a buscar debe ser un css selector.",
-                "en": "In case of being an element inside the Shadow DOM, the data to search must be a css selector.",
-                "pr": "Em caso de ser um elemento dentro do Shadow DOM, o dado a buscar deve ser um css selector."
-              },
-              "id": "shadow_element",
-              "css": "col-md-12"
+              "css": "col-md-6",
+              "data_type": "int",
+              "default": 0,
+              "required": false
             }
           ]
         },
@@ -2138,7 +2334,10 @@
                 "pr": "Colocamos o seletor do elemento a extrair texto."
               },
               "id": "data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -2192,7 +2391,10 @@
                 "pr": "Selecionamos o tipo de dado a buscar."
               },
               "id": "data_type",
-              "css": "col-md-3"
+              "css": "col-md-3",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -2211,38 +2413,11 @@
                 "en": "Put the time in seconds that we will wait for the element to be available.",
                 "pr": "Colocamos o tempo em segundos que esperaremos a que o elemento este disponível."
               },
-              "help": {
-                  "es": "Sólo funciona si el elemento no se encuentra en un Shadow DOM.",
-                  "en": "Only works if the element is not in a Shadow DOM.",
-                  "pr": "Só funciona se o elemento não estiver em um Shadow DOM."
-              },
               "id": "wait",
-              "css": "col-md-3"
-            },
-            {
-              "type": "checkbox",
-              "placeholder": {
-                "es": "True",
-                "en": "True",
-                "pr": "True"
-              },
-              "title": {
-                "es": "Elemento dentro de Shadow DOM",
-                "en": "Element inside Shadow DOM",
-                "pr": "Elemento dentro de Shadow DOM"
-              },
-              "description": {
-                "es": "Seleccionamos si el elemento se encuentra dentro de un Shadow DOM.",
-                "en": "Select if the element is inside a Shadow DOM.",
-                "pr": "Selecionamos se o elemento está dentro de um Shadow DOM."
-              },
-              "help": {
-                "es": "En caso de ser un elemento dentro del Shadow DOM, el dato a buscar debe ser un css selector.",
-                "en": "In case of being an element inside the Shadow DOM, the data to search must be a css selector.",
-                "pr": "Em caso de ser um elemento dentro do Shadow DOM, o dado a buscar deve ser um css selector."
-              },
-              "id": "shadow_element",
-              "css": "col-md-6"
+              "css": "col-md-3",
+              "data_type": "int",
+              "default": 0,
+              "required": false
             },
             {
               "type": "input",
@@ -2263,7 +2438,10 @@
               },
               "remove_vars": true,
               "id": "result",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -2311,7 +2489,10 @@
                 "pr": "Colocamos o seletor do elemento a selecionar."
               },
               "id": "data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -2365,7 +2546,10 @@
                 "pr": "Selecionamos o tipo de dado a buscar."
               },
               "id": "data_type",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -2385,32 +2569,10 @@
                 "pr": "Colocamos o tempo em segundos que esperaremos a que o elemento apareça."
               },
               "id": "wait",
-              "css": "col-md-6"
-            },
-            {
-              "type": "checkbox",
-              "placeholder": {
-                "es": "True",
-                "en": "True",
-                "pr": "True"
-              },
-              "title": {
-                "es": "Elemento dentro de Shadow DOM",
-                "en": "Element inside Shadow DOM",
-                "pr": "Elemento dentro de Shadow DOM"
-              },
-              "description": {
-                "es": "Seleccionamos si el elemento se encuentra dentro de un Shadow DOM.",
-                "en": "Select if the element is inside a Shadow DOM.",
-                "pr": "Selecionamos se o elemento está dentro de um Shadow DOM."
-              },
-              "help": {
-                "es": "En caso de ser un elemento dentro del Shadow DOM, el dato a buscar debe ser un css selector.",
-                "en": "In case of being an element inside the Shadow DOM, the data to search must be a css selector.",
-                "pr": "Em caso de ser um elemento dentro do Shadow DOM, o dado a buscar deve ser um css selector."
-              },
-              "id": "shadow_element",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "int",
+              "default": 0,
+              "required": false
             }
           ]
         },
@@ -2458,7 +2620,10 @@
                 "pr": "Colocamos o seletor do iframe"
               },
               "id": "data",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -2512,7 +2677,10 @@
                 "pr": "Selecionamos o tipo de dado"
               },
               "id": "data_type",
-              "css": "col-md-6"
+              "css": "col-md-6",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "checkbox",
@@ -2532,7 +2700,10 @@
                 "pr": "Caixa de seleção para escolher iframe por índice"
               },
               "id": "index_check",
-              "css": "col-md-4"
+              "css": "col-md-4",
+              "data_type": "bool",
+              "default": false,
+              "required": false
             },
             {
               "type": "input",
@@ -2552,7 +2723,10 @@
                 "pr": "Índice do frame dentro do código HTML da página da web"
               },
               "id": "index",
-              "css": "col-md-4"
+              "css": "col-md-4",
+              "data_type": "int",
+              "default": 0,
+              "required": false
             },
             {
               "type": "input",
@@ -2572,7 +2746,10 @@
                 "pr": "Colocamos o tempo de espera"
               },
               "id": "wait",
-              "css": "col-md-4"
+              "css": "col-md-4",
+              "data_type": "int",
+              "default": 0,
+              "required": false
             }
           ]
         },
@@ -2620,7 +2797,10 @@
                 "pr": "Texto a enviar"
               },
               "id": "text",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": false
             },
             {
               "type": "select",
@@ -2830,7 +3010,10 @@
                 "pr": "Tecla especial a enviar"
               },
               "id": "special",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": false
             }
           ]
         },
@@ -2868,7 +3051,10 @@
               "pr": "O pdf será baixado para a pasta de downloads padrão do navegador."
             },
             "id": "url_file",
-            "css": "col-md-12"
+            "css": "col-md-12",
+            "data_type": "str",
+            "default": null,
+            "required": true
             }
           ]
         },
@@ -2916,7 +3102,10 @@
                 "pr": "Colocamos a URL de download a forçar"
               },
               "id": "url_file",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -2941,7 +3130,10 @@
                 "pr": "Colocamos o nome do arquivo a forçar"
               },
               "id": "name_file",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": false
             }
           ]
         },
@@ -2989,7 +3181,10 @@
                 "pr": "URL para abrir em uma nova aba"
               },
               "id": "url_",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -3047,7 +3242,10 @@
                   "pr": "Navegador para abrir"
                 },
                 "id": "browser",
-                "css": "col-md-6"
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": true
               },
               {
                 "type": "input",
@@ -3067,7 +3265,10 @@
                   "pr": "URL para abrir"
                 },
                 "id": "url_",
-                "css": "col-md-6"
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": true
               },
               {
                 "type": "input",
@@ -3087,7 +3288,10 @@
                   "pr": "Tiempo de espera en segundos"
                 },
                 "id": "timeout",
-                "css": "col-md-6"
+                "css": "col-md-6",
+                "data_type": "int",
+                "default": 100,
+                "required": false
               },
               {
                 "type": "input",
@@ -3107,7 +3311,10 @@
                   "pr": "Id do navegador"
                 },
                 "id": "newId",
-                "css": "col-md-6"
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": false
               },
               {
                 "type": "folder_select",
@@ -3127,7 +3334,10 @@
                   "pr": "Rota da pasta do perfil do usuário para abrir o navegador"
                 },
                 "id": "profile_path",
-                "css": "col-md-12"
+                "css": "col-md-12",
+                "data_type": "str",
+                "default": null,
+                "required": false
               },
               {
                 "type": "folder_select",
@@ -3147,7 +3357,10 @@
                   "pr": "Caminho da pasta de downloads para o navegador aberto"
                 },
                 "id": "download_path",
-                "css": "col-md-12"
+                "css": "col-md-12",
+                "data_type": "str",
+                "default": null,
+                "required": false
               },
               {
                 "type": "checkbox",
@@ -3167,7 +3380,10 @@
                     "pr": "Forçar downloads para torná-los automáticos"
                 },
                 "id": "force_downloads",
-                "css": "col-md-4"
+                "css": "col-md-4",
+                "data_type": "bool",
+                "default": false,
+                "required": false
                 },
               {
                 "type": "textarea",
@@ -3192,7 +3408,10 @@
                   "pr": "Valores possíveis do Firefox: http://kb.mozillazine.org/About:config_entries - Valores possíveis do Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc"
                 },
                 "id": "custom_options",
-                "css": "col-md-12"
+                "css": "col-md-12",
+                "data_type": "str",
+                "default": null,
+                "required": false
               }
             ]
           },
@@ -3240,7 +3459,10 @@
                 "pr": "Origem do elemento"
               },
               "id": "source",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -3260,7 +3482,10 @@
                 "pr": "Destino do elemento"
               },
               "id": "target",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -3298,7 +3523,10 @@
                 "pr": "Tipo de dado a buscar"
               },
               "id": "tipo",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             }
           ]
         },
@@ -3342,7 +3570,10 @@
                 "pr": "Colocamos o seletor do elemento onde o arquivo será subido"
               },
               "id": "data",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "select",
@@ -3384,7 +3615,10 @@
                 "pr": "Tipo de dado a buscar"
               },
               "id": "data_type",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "label",
@@ -3393,7 +3627,10 @@
                 "en": "Load only a single field of the following. If you want to upload a single file, use the first selector, if you want to upload more than one, load the second selector with the indicated format.",
                 "pr": "Carregue apenas um único campo do seguinte. Se quiser fazer upload de um único arquivo, use o primeiro seletor, se quiser fazer upload de mais de um, carregue o segundo seletor com o formato indicado."
               },
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": null,
+              "default": null,
+              "required": false
             },
             {
               "type": "file_select",
@@ -3418,7 +3655,10 @@
                 "pr": "Selecionamos o arquivo a subir"
               },
               "id": "single_file",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": false
             },
             {
               "type": "input",
@@ -3438,7 +3678,10 @@
                 "pr": "Selecionamos o arquivo a subir"
               },
               "id": "files",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "list",
+              "default": null,
+              "required": false
             }
           ]
         },
@@ -3685,7 +3928,10 @@
                 "pr": "Sólo podemos combinar a primeira tecla especial com uma letra/numero o com a segunda tecla especial. Sólo escolher uma das opções"
               },
               "id": "first_special_key",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": true
             },
             {
               "type": "input",
@@ -3701,7 +3947,10 @@
                 "pr": "Letra ou número para combinar com a primeira tecla se necessário."
               },
               "id": "text",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": false
             },
             {
               "type": "select",
@@ -3915,7 +4164,10 @@
                 "pr": "Segunda tecla especial para combinar com a primeira tecla se necessário."
               },
               "id": "second_special_key",
-              "css": "col-md-12"
+              "css": "col-md-12",
+              "data_type": "str",
+              "default": null,
+              "required": false
             }
           ]
         },
@@ -3963,7 +4215,10 @@
                   "pr": "Colocamos o seletor para pesquisar"
                 },
                 "id": "data",
-                "css": "col-md-12"
+                "css": "col-md-12",
+                "data_type": "str",
+                "default": null,
+                "required": true
               },
               {
                 "type": "select",
@@ -4005,7 +4260,10 @@
                   "pr": "Colocamos o tipo de dados para procurar"
                 },
                 "id": "data_type",
-                "css": "col-md-12"
+                "css": "col-md-12",
+                "data_type": "str",
+                "default": null,
+                "required": true
               }
             ]
           },
