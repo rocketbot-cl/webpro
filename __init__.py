@@ -582,8 +582,9 @@ if module == "Edge_":
                 edge_options.add_argument('--no-sandbox')
                 edge_options.add_argument('user-data-dir={}'.format(user_data_dir))
                 edge_options.add_argument('profile-directory={}'.format(edge_profile))
-            else:
-                raise Exception("Debe seleccionar el perfil de Edge y la carpeta")
+
+            elif (not edge_profile and user_data_dir) or (edge_profile and not user_data_dir):
+                raise Exception("You must select the Edge profile and the user data directory if you want to use profiles")
 
             edge_options.add_argument('start-maximized')
             driver = ws.Edge(edge_driver, options=edge_options, keep_alive=True)
