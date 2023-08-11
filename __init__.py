@@ -536,7 +536,6 @@ if module == "Edge_":
     if edge_exe != None or edge_exe != "":
         edge_exe = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
     platform_ = platform.system()
-    edge_profile = GetParams("edge_profile")
     user_data_dir = GetParams("user_data_dir")
 
     try:
@@ -577,14 +576,15 @@ if module == "Edge_":
             
             edge_options = EdgeOptions()
 
-            if edge_profile and user_data_dir:
+            if user_data_dir:
+                data_dir = os.path.dirname(user_data_dir)
+                edge_profile = os.path.basename(user_data_dir)
+
                 edge_options.use_chromium = True
                 edge_options.add_argument('--no-sandbox')
-                edge_options.add_argument('user-data-dir={}'.format(user_data_dir))
+                edge_options.add_argument('user-data-dir={}'.format(data_dir))
                 edge_options.add_argument('profile-directory={}'.format(edge_profile))
 
-            elif (not edge_profile and user_data_dir) or (edge_profile and not user_data_dir):
-                raise Exception("You must select the Edge profile and the user data directory if you want to use profiles")
 
             edge_options.add_argument('start-maximized')
             driver = ws.Edge(edge_driver, options=edge_options, keep_alive=True)

@@ -18,8 +18,7 @@ Este modulo se complementa con los modulos y comandos nativos Web que ya vienen 
 ### Para poder utilizar Edge en modo Internet Explorer, deben realizarse las siguientes configuraciones:
 1. Configurar el navegador en base a la siguiente documentación: https://docs.rocketbot.com/?p=169
 2. Descargar el driver de Internet Explorer del siguiente link: https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.13.0/IEDriverServer_Win32_3.13.0.zip y ubicarlo en Rocketbot/drivers/win/ie/x86/
-3. Para poder acceder a las herramientas de desarrollador, se debe abrir IEChooser.exe. Para realizarlo presionar la tecla Windows + R y colocar lo siguiente: %systemroot%\system32\f12\IEChooser.exe  luego apretar aceptar. Seleccione la ventana de su navegador, y podrá 
-explorar los elementos de la página
+3. Para poder acceder a las herramientas de desarrollador, se debe abrir IEChooser.exe. Para realizarlo presionar la tecla Windows + R y colocar lo siguiente: %systemroot%\system32\f12\IEChooser.exe  luego apretar aceptar. Seleccione la ventana de su navegador, y podrá explorar los elementos de la página
 
 ### Consejos para manejar elementos dentro de un shadow root:
 1. Manejo de iframes:
@@ -45,8 +44,7 @@ Para lograr esto debes utilizar el comando Ejecutar Python. Primero debes import
 
 ```python
 from selenium.webdriver.remote.webelement import WebElement
-from 
-selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
 webdriver = GetGlobals("web")
@@ -54,7 +52,7 @@ if webdriver.driver_actual_id in webdriver.driver_list:
     driver = webdriver.driver_list[webdriver.driver_actual_id]
     
 # Primero seleccionas el padre del primer shadow-root
-shadow_host = driver.find_element_by_css_selector('#div1') 
+shadow_host = driver.find_element(By.ID, '#div1') 
 
 # Estas siguientes tres líneas son siempre igual
 shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
@@ -62,19 +60,18 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Aca seleccionas el elemento dentro del primer shadow-root que sea el padre del segundo shadow-root
-shadow_content = shadow_root.find_element_by_css_selector('#div3')
+shadow_content = shadow_root.find_element(By.ID, '#div3')
 
 
 shadow_host = shadow_content
 
 # Estas siguientes tres líneas son siempre igual
 shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
-shadow_root_id = 
-shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
+shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Cuando ingresas al ultimo shadow-root, solo debes obtener el elemento que corresponda con el iframe al que debes ingresar
-shadow_content = shadow_root.find_element_by_css_selector('#id_iframe')
+shadow_content = shadow_root.find_element(By.ID, '#id_iframe')
 
 # Y para finalizar, utilizas el comando que cambia al iframe
 driver.switch_to_frame(shadow_content)
@@ -85,8 +82,7 @@ Una vez tengas acceso al iframe, podrás interactuar con todos los elementos uti
 
 2. Manejo de elementos dentro de un shadow-root:
 Para realizar un click, copia el js path del elemento. Luego en Rocketbot utiliza el comando Ejecuta JS. En este comando, pega el js_path y al final agrégale .click()
-Utilizando el ejemplo del comienzo, para darle click a la etiqueta 
-\<a> dentro del iframe, deberia quedarte similar a esto:
+Utilizando el ejemplo del comienzo, para darle click a la etiqueta \<a> dentro del iframe, deberia quedarte similar a esto:
 
 ```javascript
 document.querySelector("#div_shadow").shadowRoot.querySelector("#link1").click()
@@ -117,6 +113,13 @@ Ejecuta un comando JS con lo siguiente:
 return document.querySelector("#div_shadow").shadowRoot.querySelector("#parrafo").innerHTML
 ```
 A esto lo asignas a la variable que quieras, y en la misma tendrás el valor codificado. Para obtenerlo limpio, ejecuta un comando de Asignar variable con lo siguiente: {var}.decode('latin-1')
+
+
+
+### Cómo utilizar perfil de usuario existente en el navegador Edge
+1. Abra el navegador Edge con el perfil que desea utilizar.
+2. En la barra de direcciones, escriba lo siguiente: edge://version
+3. En la sección "Ruta de acceso al perfil" se encuentra la carpeta que contiene el perfil que está utilizando. Copie la ruta de la carpeta y péguela en el campo "Ruta del perfil" del comando "Abrir Edge (Chromium)" del módulo webpro.
 
 
 ## Descripción de los comandos
@@ -303,8 +306,7 @@ Abre el nuevo Edge basado en Chromium
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Url de Servidor|Url de la pagina a abrir en Edge|http://www.rocketbot.co|
-|Nombre del perfil|Nombre del perfil a utilizar|Profile 1|
-|Ruta de la carpeta del perfil|Ruta de la carpeta del perfil a utilizar. Debe existir en la ruta %localappdata%/Microsoft/Edge/User Data/|C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1|
+|Ruta del perfil|Carpeta que contiene el perfil a utilizar.|C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Default|
 |Iniciar en modo Internet Explorer|Inicia el navegador en modo Internet Explorer|True|
 |Seleccionar ejecutable de Edge|Selecciona el ejecutable de Edge para abrir en modo IE|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
@@ -323,7 +325,6 @@ Hace click sobre un objeto seleccionado esperando que se encuentre cliqueable
 |Dato a buscar|Colocamos el selector del elemento a hacer click.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.|xpath|
 |Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento se encuentre clickeable.|5|
-|Click en elemento dentro de Shadow DOM|Seleccionamos si el elemento se encuentra dentro de un Shadow DOM.|True|
 
 ### Extraer texto Pro
   
@@ -333,7 +334,6 @@ Obtiene el texto de un objeto esperando que este se encuentre disponible
 |Dato a buscar|Colocamos el selector del elemento a extraer text.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.|xpath|
 |Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento este disponible.|5|
-|Elemento dentro de Shadow DOM|Seleccionamos si el elemento se encuentra dentro de un Shadow DOM.|True|
 |Variable donde almacenar resultado|Colocamos el nombre de la variable donde almacenaremos el resultado.|Variable|
 
 ### Seleccionar objeto Pro
@@ -344,7 +344,6 @@ Selecciona un objeto esperando que se encuentre presente
 |Dato a buscar|Colocamos el selector del elemento a seleccionar.|Data|
 |Tipo de dato|Seleccionamos el tipo de dato a buscar.|xpath|
 |Esperar|Colocamos el tiempo en segundos que esperaremos a que el elemento aparezca.|5|
-|Elemento dentro de Shadow DOM|Seleccionamos si el elemento se encuentra dentro de un Shadow DOM.|True|
 
 ### Cambiar a iframe Pro
   
