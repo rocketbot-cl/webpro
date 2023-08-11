@@ -52,7 +52,7 @@ if webdriver.driver_actual_id in webdriver.driver_list:
     driver = webdriver.driver_list[webdriver.driver_actual_id].
     
 # First you select the parent of the first shadow-root
-shadow_host = driver.find_element_by_css_selector('#div1') 
+shadow_host = driver.find_element(By.ID, '#div1') 
 
 # These next three lines are always the same
 shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
@@ -60,7 +60,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Here you select the element inside the first shadow-root that is the parent of the second shadow-root.
-shadow_content = shadow_root.find_element_by_css_selector('#div3')
+shadow_content = shadow_root.find_element(By.ID, '#div3')
 
 
 shadow_host = shadow_content
@@ -71,7 +71,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # When you enter the last shadow-root, you should only get the element that corresponds to the iframe that you should enter
-shadow_content = shadow_root.find_element_by_css_selector('#id_iframe')
+shadow_content = shadow_root.find_element(By.ID, '#id_iframe')
 
 # Y para finalizar, utilizas el comando que cambia al iframe
 driver.switch_to_frame(shadow_content)
@@ -112,6 +112,12 @@ Run a JS command with the following:
 return document.querySelector("#div_shadow").shadowRoot.querySelector("#paragraph").innerHTML
 ```
 To this you assign it to the variable that you want, and in the same one you will have the coded value. To get it clean, run an Assign Variable command with the following: {var}.decode('utf-8')
+
+
+### How to use existing user profile in Edge browser
+1. Open the Edge browser with the profile you want to use.
+2. In the address bar, type the following: edge://version
+3. In the "Profile Path" section you will find the folder containing the profile you are using. Copy the path of the folder and paste it in the "Profile Path" field of the "Open Edge (Chromium)" command of the webpro module.
 
 ## Description of the commands
 
@@ -297,8 +303,7 @@ Open the new Edge based on Chromium
 |Parameters|Description|example|
 | --- | --- | --- |
 |Server URL|Url of the page to open in Edge|http://www.rocketbot.co|
-|Profile name|Name of the profile to use|Profile 1|
-|Path of the profile folder|Path of the profile folder to use. Must exist in the path %localappdata%/Microsoft/Edge/User Data/|C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1|
+|Profile path|Folder containing the profile to use.|C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Default|
 |Start in Internet Explorer mode|Starts the browser in Internet Explorer mode|True|
 |Select Edge executable|Select the Edge executable to open in IE mode|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
@@ -317,7 +322,6 @@ Click on a selected object waiting that it's clickeable
 |Data to search|Put the selector of the element to click.|Data|
 |Data type|Select the type of data to search.|xpath|
 |Wait|Put the time in seconds that we will wait for the element to be clickeable.|5|
-|Click on element inside Shadow DOM|Select if the element is inside a Shadow DOM.|True|
 
 ### Extract text Pro
   
@@ -327,7 +331,6 @@ Get a text object waiting that it's present
 |Data to search|Put the selector of the element to extract text.|Data|
 |Data type|Select the type of data to search.|xpath|
 |Wait|Put the time in seconds that we will wait for the element to be available.|5|
-|Element inside Shadow DOM|Select if the element is inside a Shadow DOM.|True|
 |Variable where to store result|Put the name of the variable where we will store the result.|Variable|
 
 ### Select object Pro
@@ -338,7 +341,6 @@ Select an object waiting that it's present
 |Data to search|Put the selector of the element to select.|Data|
 |Data type|Select the type of data to search.|xpath|
 |Wait|Put the time in seconds that we will wait for the element to appear.|5|
-|Element inside Shadow DOM|Select if the element is inside a Shadow DOM.|True|
 
 ### Change to iframe Pro
   

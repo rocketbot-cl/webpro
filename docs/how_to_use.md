@@ -38,7 +38,7 @@ if webdriver.driver_actual_id in webdriver.driver_list:
     driver = webdriver.driver_list[webdriver.driver_actual_id]
     
 # Primero seleccionas el padre del primer shadow-root
-shadow_host = driver.find_element_by_css_selector('#div1') 
+shadow_host = driver.find_element(By.ID, '#div1') 
 
 # Estas siguientes tres líneas son siempre igual
 shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
@@ -46,7 +46,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Aca seleccionas el elemento dentro del primer shadow-root que sea el padre del segundo shadow-root
-shadow_content = shadow_root.find_element_by_css_selector('#div3')
+shadow_content = shadow_root.find_element(By.ID, '#div3')
 
 
 shadow_host = shadow_content
@@ -57,7 +57,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Cuando ingresas al ultimo shadow-root, solo debes obtener el elemento que corresponda con el iframe al que debes ingresar
-shadow_content = shadow_root.find_element_by_css_selector('#id_iframe')
+shadow_content = shadow_root.find_element(By.ID, '#id_iframe')
 
 # Y para finalizar, utilizas el comando que cambia al iframe
 driver.switch_to_frame(shadow_content)
@@ -98,6 +98,13 @@ Ejecuta un comando JS con lo siguiente:
 return document.querySelector("#div_shadow").shadowRoot.querySelector("#parrafo").innerHTML
 ```
 A esto lo asignas a la variable que quieras, y en la misma tendrás el valor codificado. Para obtenerlo limpio, ejecuta un comando de Asignar variable con lo siguiente: {var}.decode('latin-1')
+
+
+
+### Cómo utilizar perfil de usuario existente en el navegador Edge
+1. Abra el navegador Edge con el perfil que desea utilizar.
+2. En la barra de direcciones, escriba lo siguiente: edge://version
+3. En la sección "Ruta de acceso al perfil" se encuentra la carpeta que contiene el perfil que está utilizando. Copie la ruta de la carpeta y péguela en el campo "Ruta del perfil" del comando "Abrir Edge (Chromium)" del módulo webpro.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -141,7 +148,7 @@ if webdriver.driver_actual_id in webdriver.driver_list:
     driver = webdriver.driver_list[webdriver.driver_actual_id].
     
 # First you select the parent of the first shadow-root
-shadow_host = driver.find_element_by_css_selector('#div1') 
+shadow_host = driver.find_element(By.ID, '#div1') 
 
 # These next three lines are always the same
 shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
@@ -149,7 +156,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Here you select the element inside the first shadow-root that is the parent of the second shadow-root.
-shadow_content = shadow_root.find_element_by_css_selector('#div3')
+shadow_content = shadow_root.find_element(By.ID, '#div3')
 
 
 shadow_host = shadow_content
@@ -160,7 +167,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # When you enter the last shadow-root, you should only get the element that corresponds to the iframe that you should enter
-shadow_content = shadow_root.find_element_by_css_selector('#id_iframe')
+shadow_content = shadow_root.find_element(By.ID, '#id_iframe')
 
 # Y para finalizar, utilizas el comando que cambia al iframe
 driver.switch_to_frame(shadow_content)
@@ -203,7 +210,10 @@ return document.querySelector("#div_shadow").shadowRoot.querySelector("#paragrap
 To this you assign it to the variable that you want, and in the same one you will have the coded value. To get it clean, run an Assign Variable command with the following: {var}.decode('utf-8')
 
 
-
+### How to use existing user profile in Edge browser
+1. Open the Edge browser with the profile you want to use.
+2. In the address bar, type the following: edge://version
+3. In the "Profile Path" section you will find the folder containing the profile you are using. Copy the path of the folder and paste it in the "Profile Path" field of the "Open Edge (Chromium)" command of the webpro module.
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -248,7 +258,7 @@ if webdriver.driver_actual_id in webdriver.driver_list:
     driver = webdriver.driver_list[webdriver.driver_actual_id].
     
 # Primeiro seleciona o pai do primeiro shadow-root
-shadow_host = driver.find_element_by_css_selector('#div1') 
+shadow_host = driver.find_element(By.ID, '#div1') 
 
 # As próximas três linhas são sempre as mesmas
 shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
@@ -256,7 +266,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Aqui seleciona o elemento na primer shadow-root que é o pai da segundo shadow-root.
-shadow_content = shadow_root.find_element_by_css_selector('#div3')
+shadow_content = shadow_root.find_element(By.ID, '#div3')
 
 
 shadow_host = shadow_content
@@ -267,7 +277,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Ao inserir o último shadow-root, deve obter apenas o elemento que corresponde ao iframe que deve inserir
-shadow_content = shadow_root.find_element_by_css_selector('#id_iframe')
+shadow_content = shadow_root.find_element(By.ID, '#id_iframe')
 
 # E, finalmente, usa o comando que altera o iframe
 driver.switch_to_frame(shadow_content)
@@ -311,3 +321,7 @@ return document.querySelector("#div_shadow").shadowRoot.querySelector("#paragrap
 Atribua isso à variável de sua escolha e, nessa variável, você terá o valor codificado. Para obter um valor limpo, execute um comando Assign Variable com o seguinte: {var}.decode('latin-1')
 
 
+### Como usar o perfil de usuário existente no navegador Edge
+1. Abra o navegador Edge com o perfil que deseja usar.
+2. Na barra de endereços, digite o seguinte: edge://version
+3. Na seção "Caminho do perfil", você encontrará a pasta que contém o perfil que está usando. Copie o caminho da pasta e cole-o no campo "Caminho do perfil" do comando "Abrir Edge (Chromium)" do módulo webpro.

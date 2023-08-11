@@ -1,7 +1,3 @@
-
-
-
-
 # WEB Pro
   
 Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web  
@@ -56,7 +52,7 @@ if webdriver.driver_actual_id in webdriver.driver_list:
     driver = webdriver.driver_list[webdriver.driver_actual_id].
     
 # Primeiro seleciona o pai do primeiro shadow-root
-shadow_host = driver.find_element_by_css_selector('#div1') 
+shadow_host = driver.find_element(By.ID, '#div1') 
 
 # As próximas três linhas são sempre as mesmas
 shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
@@ -64,7 +60,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Aqui seleciona o elemento na primer shadow-root que é o pai da segundo shadow-root.
-shadow_content = shadow_root.find_element_by_css_selector('#div3')
+shadow_content = shadow_root.find_element(By.ID, '#div3')
 
 
 shadow_host = shadow_content
@@ -75,7 +71,7 @@ shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Ao inserir o último shadow-root, deve obter apenas o elemento que corresponde ao iframe que deve inserir
-shadow_content = shadow_root.find_element_by_css_selector('#id_iframe')
+shadow_content = shadow_root.find_element(By.ID, '#id_iframe')
 
 # E, finalmente, usa o comando que altera o iframe
 driver.switch_to_frame(shadow_content)
@@ -117,6 +113,12 @@ return document.querySelector("#div_shadow").shadowRoot.querySelector("#paragrap
 ```
 
 Atribua isso à variável de sua escolha e, nessa variável, você terá o valor codificado. Para obter um valor limpo, execute um comando Assign Variable com o seguinte: {var}.decode('latin-1')
+
+
+### Como usar o perfil de usuário existente no navegador Edge
+1. Abra o navegador Edge com o perfil que deseja usar.
+2. Na barra de endereços, digite o seguinte: edge://version
+3. Na seção "Caminho do perfil", você encontrará a pasta que contém o perfil que está usando. Copie o caminho da pasta e cole-o no campo "Caminho do perfil" do comando "Abrir Edge (Chromium)" do módulo webpro.
 
 ## Descrição do comando
 
@@ -302,8 +304,7 @@ Abrir o novo Chromium-based Edge
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |URL do Servidor|Url da páxina a abrir no Edge|http://www.rocketbot.co|
-|Nome do perfil|Nome do perfil a utilizar|Profile 1|
-|Ruta da carpeta do perfil|Ruta da carpeta do perfil a utilizar. Debe existir na ruta %localappdata%/Microsoft/Edge/User Data/|C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1|
+|Ruta do perfil|Carpeta que contén o perfil a utilizar.|C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Default|
 |Comezar no modo Internet Explorer|Comeza o navegador no modo Internet Explorer|True|
 |Seleccionar executábel de Edge|Selecciona o executábel de Edge para abrir no modo IE|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
@@ -322,7 +323,6 @@ Clica em um objeto selecionado, esperando que ele se torne clicável.
 |Dado a buscar|Colocamos o seletor do elemento a clicar.|Data|
 |Tipo de dado|Selecionamos o tipo de dado a buscar.|xpath|
 |Esperar|Colocamos o tempo em segundos que esperaremos a que o elemento se torne clicável.|5|
-|Clicar em elemento dentro de Shadow DOM|Selecionamos se o elemento está dentro de um Shadow DOM.|True|
 
 ### Extrair Texto Pro
   
@@ -332,7 +332,6 @@ Obtém o texto de um objeto esperando que ele esteja disponível.
 |Dado a buscar|Colocamos o seletor do elemento a extrair texto.|Data|
 |Tipo de dado|Selecionamos o tipo de dado a buscar.|xpath|
 |Esperar|Colocamos o tempo em segundos que esperaremos a que o elemento este disponível.|5|
-|Elemento dentro de Shadow DOM|Selecionamos se o elemento está dentro de um Shadow DOM.|True|
 |Variável onde armazenar o resultado|Colocamos o nome da variável onde armazenaremos o resultado.|Variável|
 
 ### Selecionar objeto Pro
@@ -343,7 +342,6 @@ Seleciona um objeto esperando que ele esteja presente
 |Dado a buscar|Colocamos o seletor do elemento a selecionar.|Data|
 |Tipo de dado|Selecionamos o tipo de dado a buscar.|xpath|
 |Esperar|Colocamos o tempo em segundos que esperaremos a que o elemento apareça.|5|
-|Elemento dentro de Shadow DOM|Selecionamos se o elemento está dentro de um Shadow DOM.|True|
 
 ### Mudar para iframe Pro
   

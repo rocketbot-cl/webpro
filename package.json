@@ -7,7 +7,7 @@
       "pr": "Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web"
     },
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "12.0.1",
+    "version": "12.1.0",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "name": "webpro",
@@ -1995,57 +1995,29 @@
               "required": true
             },
             {
-              "type": "input",
+              "type": "folder_select",
               "placeholder": {
-                "es": "Profile 1",
-                "en": "Profile 1",
-                "pr": "Profile 1"
+                "es": "C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Default",
+                "en": "C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Default",
+                "pr": "C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Default"
               },
               "title": {
-                "es": "Nombre del perfil",
-                "en": "Profile name",
-                "pr": "Nome do perfil"
+                "es": "Ruta del perfil",
+                "en": "Profile path",
+                "pr": "Ruta do perfil"
               },
               "description": {
-                "es": "Nombre del perfil a utilizar",
-                "en": "Name of the profile to use",
-                "pr": "Nome do perfil a utilizar"
+                "es": "Carpeta que contiene el perfil a utilizar.",
+                "en": "Folder containing the profile to use.",
+                "pr": "Carpeta que contén o perfil a utilizar."
               },
               "help": {
-                "es": "El perfil ingresado debe existir en el navegador. No disponible al utilizar el modo Internet Explorer",
-                "en": "The entered profile must exist in the browser. Not available when using Internet Explorer mode",
-                "pr": "O perfil introducido debe existir no navegador. Non dispoñible ao utilizar o modo Internet Explorer"
-              },
-              "id": "edge_profile",
-              "css": "col-md-6",
-              "data_type": "str",
-              "default": null,
-              "required": false
-            },
-            {
-              "type": "input",
-              "placeholder": {
-                "es": "C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1",
-                "en": "C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1",
-                "pr": "C:/Users/User/AppData/Local/Microsoft/Edge/User Data/Profile 1"
-              },
-              "title": {
-                "es": "Ruta de la carpeta del perfil",
-                "en": "Path of the profile folder",
-                "pr": "Ruta da carpeta do perfil"
-              },
-              "description": {
-                "es": "Ruta de la carpeta del perfil a utilizar. Debe existir en la ruta %localappdata%/Microsoft/Edge/User Data/",
-                "en": "Path of the profile folder to use. Must exist in the path %localappdata%/Microsoft/Edge/User Data/",
-                "pr": "Ruta da carpeta do perfil a utilizar. Debe existir na ruta %localappdata%/Microsoft/Edge/User Data/"
-              },
-              "help": {
-                "es": "Puedes revisar la ruta de la carpeta del perfil ingresando al mismo desde el navegador y luego en la barra de direcciones escribir: edge://version/ y presionar enter. En la sección \"Ruta de acceso al perfil\" aparecerá la ruta de la carpeta del perfil actual",
-                "en": "You can check the path of the profile folder by entering it from the browser and then in the address bar type: edge://version/ and press enter. In the \"Profile path\" section the path of the current profile folder will appear",
-                "pr": "Podes revisar a ruta da carpeta do perfil accedendo a ela desde o navegador e despois na barra de enderezos escribir: edge://version/ e premer enter. Na sección \"Ruta de acceso al perfil\" aparecerá a ruta da carpeta do perfil actual"
+                "es": "Puedes revisar la ruta ingresando al perfil desde el navegador y luego en la barra de direcciones escribir: edge://version/ y presionar enter. En la sección \"Ruta de acceso al perfil\" aparecerá la ruta de la carpeta del perfil actual.",
+                "en": "You can check the path by accessing the profile from the browser and then in the address bar type: edge://version/ and press enter. In the \"Profile path\" section the path of the current profile folder will appear.",
+                "pr": "Podes revisar a ruta ingresando ao perfil dende o navegador e logo na barra de direccións escribir: edge://version/ e premer enter. Na sección \"Ruta de acceso al perfil\" aparecerá a ruta da carpeta do perfil actual."
               },
               "id": "user_data_dir",
-              "css": "col-md-6",
+              "css": "col-md-12",
               "data_type": "str",
               "default": null,
               "required": false
