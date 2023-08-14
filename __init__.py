@@ -527,6 +527,8 @@ if module == "chromeHeadless":
         raise e
 
 if module == "Edge_":
+    
+    from selenium.webdriver.edge.options import Options as EdgeOptions
 
     url = GetParams("url")
     ie_mode = GetParams("ie_mode")
@@ -534,6 +536,7 @@ if module == "Edge_":
     if edge_exe != None or edge_exe != "":
         edge_exe = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
     platform_ = platform.system()
+    user_data_dir = GetParams("user_data_dir")
 
     try:
         base_path = tmp_global_obj["basepath"]
@@ -570,7 +573,21 @@ if module == "Edge_":
             else:
                 edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
 
-            driver = ws.Edge(edge_driver, {})
+            
+            edge_options = EdgeOptions()
+
+            if user_data_dir:
+                data_dir = os.path.dirname(user_data_dir)
+                edge_profile = os.path.basename(user_data_dir)
+
+                edge_options.use_chromium = True
+                edge_options.add_argument('--no-sandbox')
+                edge_options.add_argument('user-data-dir={}'.format(data_dir))
+                edge_options.add_argument('profile-directory={}'.format(edge_profile))
+
+
+            edge_options.add_argument('start-maximized')
+            driver = ws.Edge(edge_driver, options=edge_options, keep_alive=True)
             
             web.driver_list[web.driver_actual_id] = driver
             if url:
