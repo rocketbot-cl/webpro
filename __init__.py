@@ -1220,6 +1220,14 @@ try:
         shadow_root = Shadow(driver)
         element_root = shadow_root.find_element(data)
 
+    if module == "RightClick":
+        data = GetParams("data")
+        data_type = GetParams("data_type")
+
+        actionChains = ActionChains(driver)
+        elementLocator = driver.find_element(data_type, data)
+        actionChains.context_click(elementLocator).perform()
+        
 
 except Exception as e:
     PrintException()
