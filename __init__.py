@@ -198,40 +198,50 @@ if module == "webelementlist":
     data_ = GetParams("data_")
     var_ = GetParams("result")
 
+    try:
     
-    global getChild
+        global getChild
 
 
-    def getChild(el):
-        res = []
-        if len(el) > 0:
-            for c in el:
-                tmp = c.attrs
-                tmp["text"] = c.text
-                tmp["etype"] = c.name
-                tmp['value'] = c.get('value')
+        def getChild(el):
+            import bs4
+            
+            res = []
+            if len(el) > 0:
+                for c in el:
+                    if isinstance(c, bs4.element.NavigableString):
+                        res.append(c)
+                        continue
+                    tmp = c.attrs
+                    tmp["text"] = c.text
+                    tmp["etype"] = c.name
+                    tmp['value'] = c.get('value')
+                    res.append(tmp)
+                    if len(c.findChildren()) > 1:
+                        res.append(getChild(c.findChildren()))
+            else:
+                tmp = el.attrs
+                tmp["text"] = el.text
+                tmp["etype"] = el.name
                 res.append(tmp)
-                if len(c.findChildren()) > 1:
-                    res.append(getChild(c.findChildren()))
-        else:
-            tmp = el.attrs
-            tmp["text"] = el.text
-            tmp["etype"] = el.name
-            res.append(tmp)
 
-        return res
+            return res
 
 
-    html = BeautifulSoup(driver.page_source, 'html.parser')
-    objs = html.find_all(el_, attrs={type_: data_})
-    re = []
-    for element in objs:
-        if element.findChildren():
-            re.append(getChild(element.findChildren()))
-        else:
-            re.append(getChild(element))
+        html = BeautifulSoup(driver.page_source, 'html.parser')
+        objs = html.find_all(el_, attrs={type_: data_})
+        re = []
+        for element in objs:
+            if element.findChildren():
+                re.append(getChild(element.findChildren()))
+            else:
+                re.append(getChild(element))
 
-    SetVar(var_, str(re))
+        SetVar(var_, str(re))
+    
+    except Exception as e:
+        traceback.print_exc()
+        raise e
 
 if module == "CleanInputs":
     
@@ -419,7 +429,13 @@ if module == "clickElement":
 
         if option_ == 'xpath':
             elements = driver.find_elements("xpath", search)[index_]
-            elements.click()
+            
+            wait = WebDriverWait(driver, int(5))
+            elements = wait.until(EC.visibility_of(elements))
+            try:
+                elements.click()
+            except:
+                driver.execute_script("arguments[0].click();", elements)
             webdriver._object_selected = elements
             
 
@@ -1006,6 +1022,19 @@ if module == "printPDF":
     import json
     from selenium import webdriver as wd
     chrome_options = wd.ChromeOptions()
+    landscape = GetParams("landscape")
+
+    if landscape:
+        script = """
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            style.innerHTML = '@page { size: landscape; }';
+            document.head.appendChild(style);
+        """
+
+        driver.execute_script(script)
+
+
     settings = {
        "recentDestinations": [{
             "id": "Save as PDF",
