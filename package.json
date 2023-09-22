@@ -7,7 +7,7 @@
       "pr": "Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web"
     },
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "12.2.0",
+    "version": "12.3.0",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "name": "webpro",
@@ -4252,6 +4252,120 @@
           "video_youtube": "",
           "icon": "data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI5NyAyOTciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5NyAyOTc7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiPgo8Zz4KCTxwYXRoIGQ9Ik0yOTQuMDc3LDI1MS4xOTlsLTU5LjEwNC01OS4xMDZsNDIuMTY2LTI0LjM1N2MzLjI5NS0xLjkwNCw1LjIxMy01LjUyMSw0LjkzOC05LjMxNmMtMC4yNzMtMy43OTYtMi42OS03LjEwMS02LjIyNS04LjUxICAgTDg3LjgyLDc0LjkwNWMtMy42ODctMS40NzItNy44OTUtMC42MDUtMTAuNzAyLDIuMjAxYy0yLjgwNywyLjgwOC0zLjY3NCw3LjAxNi0yLjIwMywxMC43MDJsNzQuOTk0LDE4OC4wNTMgICBjMS40MSwzLjUzNCw0LjcxNSw1Ljk1Miw4LjUxMSw2LjIyNmMzLjc5NiwwLjI3Niw3LjQxMy0xLjY0Myw5LjMxNi00LjkzOWwyNC4zNTMtNDIuMTY2bDU5LjEwMiw1OS4xMDcgICBjMS44NjIsMS44NjQsNC4zODksMi45MSw3LjAyMywyLjkxYzIuNjM0LDAsNS4xNi0xLjA0Niw3LjAyMi0yLjkxbDI4Ljg0MS0yOC44NDRDMjk3Ljk1NiwyNjEuMzY2LDI5Ny45NTYsMjU1LjA3OCwyOTQuMDc3LDI1MS4xOTkgICB6IE0yNTguMjE0LDI3My4wMjJsLTYxLjIyOS02MS4yMzVjLTEuODc2LTEuODc2LTQuNDA3LTIuOTEtNy4wMjMtMi45MWMtMC40MywwLTAuODY0LDAuMDI4LTEuMjk1LDAuMDg1ICAgYy0zLjA2MywwLjQwMi01Ljc2MywyLjIwNi03LjMwNiw0Ljg4MWwtMjAuNTg0LDM1LjY0MmwtNTguODQ5LTE0Ny41NjRsMTQ3LjU0OSw1OC44NTdsLTM1LjY0NSwyMC41ODggICBjLTIuNjc0LDEuNTQzLTQuNDc4LDQuMjQzLTQuODgsNy4zMDZjLTAuNDAzLDMuMDYsMC42NCw2LjEzNCwyLjgyNCw4LjMxOGw2MS4yMzIsNjEuMjM1TDI1OC4yMTQsMjczLjAyMnoiIGZpbGw9IiMwMDAwMDAiLz4KCTxwYXRoIGQ9Ik00My42MTEsMjkuNTUyYy0zLjg4LTMuODc2LTEwLjE2Ni0zLjg3Ni0xNC4wNDgsMGMtMy44NzksMy44OC0zLjg3OSwxMC4xNjgsMCwxNC4wNDhsMjIuMDY5LDIyLjA2OSAgIGMxLjkzOSwxLjkzOCw0LjQ4MiwyLjkwOSw3LjAyNCwyLjkwOWMyLjU0MSwwLDUuMDgyLTAuOTcxLDcuMDIzLTIuOTA5YzMuODc4LTMuODc5LDMuODc4LTEwLjE2OCwwLTE0LjA0N0w0My42MTEsMjkuNTUyeiIgZmlsbD0iIzAwMDAwMCIvPgoJPHBhdGggZD0iTTUxLjA4OSw5OC4yMTVjMC01LjQ4NS00LjQ0OC05LjkzMS05LjkzMy05LjkzMUg5Ljk0NmMtNS40ODQsMC05LjkzMyw0LjQ0NS05LjkzMyw5LjkzMWMwLDUuNDg0LDQuNDQ4LDkuOTMyLDkuOTMzLDkuOTMyICAgaDMxLjIxQzQ2LjY0MSwxMDguMTQ2LDUxLjA4OSwxMDMuNjk5LDUxLjA4OSw5OC4yMTV6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8cGF0aCBkPSJNNDcuMDYzLDEyOC44N2wtMjIuMDcxLDIyLjA3MWMtMy44OCwzLjg3Ny0zLjg4LDEwLjE2NiwwLDE0LjA0NWMxLjkzOSwxLjkzOSw0LjQ3OSwyLjkwOSw3LjAyMywyLjkwOSAgIGMyLjU0MSwwLDUuMDgyLTAuOTcsNy4wMjEtMi45MDlsMjIuMDcyLTIyLjA3YzMuODc5LTMuODc4LDMuODc5LTEwLjE2OCwwLTE0LjA0NkM1Ny4yMzEsMTI0Ljk5Miw1MC45NDMsMTI0Ljk5Miw0Ny4wNjMsMTI4Ljg3eiIgZmlsbD0iIzAwMDAwMCIvPgoJPHBhdGggZD0iTTk4LjIyMiw1MS4wNzhjNS40ODQsMCw5LjkzMi00LjQ0OCw5LjkzMi05LjkzM1Y5LjkzMmMwLTUuNDg0LTQuNDQ3LTkuOTMyLTkuOTMyLTkuOTMyYy01LjQ4NSwwLTkuOTMxLDQuNDQ3LTkuOTMxLDkuOTMyICAgdjMxLjIxNEM4OC4yOTEsNDYuNjMsOTIuNzM2LDUxLjA3OCw5OC4yMjIsNTEuMDc4eiIgZmlsbD0iIzAwMDAwMCIvPgoJPHBhdGggZD0iTTEzNS44OTMsNjQuMDA1YzIuNTQ0LDAsNS4wODUtMC45NjgsNy4wMjQtMi45MDhsMjIuMDY4LTIyLjA2OWMzLjg4LTMuODc5LDMuODgtMTAuMTY4LDAtMTQuMDQ2ICAgYy0zLjg3OC0zLjg3OS0xMC4xNjktMy44NzktMTQuMDQ1LDBsLTIyLjA2OSwyMi4wNjljLTMuODc5LDMuODc4LTMuODc5LDEwLjE2OCwwLDE0LjA0NiAgIEMxMzAuODEsNjMuMDM3LDEzMy4zNTIsNjQuMDA1LDEzNS44OTMsNjQuMDA1eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=",
           "module": "RightClick",
+          "module_name": "webpro",
+          "visible": true,
+          "options": false,
+          "father": "module",
+          "group": "scripts"
+        },
+        {
+          "title": {
+            "es": "Obtener imagen",
+            "en": "Get image",
+            "pr": "Obter imagem"
+          },
+          "description": {
+            "es": "Este comando permite descargar una imagen a partir de una etiqueta <img>",
+            "en": "This command allows you to download an image from an <img> tag",
+            "pr": "Este comando permite baixar uma imagem de uma tag <img>"
+          },
+          "form": {
+            "css": "modal-lg",
+            "inputs": [
+              {
+                "type": "input",
+                "placeholder": {
+                  "es": "Data",
+                  "en": "Data",
+                  "pr": "Data"
+                },
+                "title": {
+                  "es": "Dato a buscar",
+                  "en": "Data to search",
+                  "pr": "Dado a buscar"
+                },
+                "description": {
+                  "es": "Colocamos el selector del elemento a descargar",
+                  "en": "Put the selector of the element to download",
+                  "pr": "Colocamos o seletor do elemento a baixar"
+                },
+                "id": "data",
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": true
+              },
+              {
+                "type": "select",
+                "placeholder": {
+                  "es": "xpath",
+                  "en": "xpath",
+                  "pr": "xpath"
+                },
+                "title": {
+                  "es": "Tipo de dato",
+                  "en": "Data type",
+                  "pr": "Tipo de dado"
+                },
+                "options": [
+                  {
+                    "title": "name",
+                    "value": "name"
+                  },
+                  {
+                    "title": "id",
+                    "value": "id"
+                  },
+                  {
+                    "title": "class",
+                    "value": "class name"
+                  },
+                  {
+                    "title": "xpath",
+                    "value": "xpath"
+                  },
+                  {
+                    "title": "tag",
+                    "value": "tag name"
+                  }
+                ],
+                "description": {
+                  "es": "Seleccionamos el tipo de dato a buscar",
+                  "en": "Select the type of data to search",
+                  "pr": "Selecionamos o tipo de dado a buscar"
+                },
+                "id": "data_type",
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": true
+              },
+              {
+                "type": "file_new",
+                "placeholder": {
+                  "es": "C:/Users/Usuario/Desktop/imagen.png",
+                  "en": "C:/Users/User/Desktop/image.png",
+                  "pr": "C:/Users/Usuário/Desktop/imagem.png"
+                },
+                "title": {
+                  "es": "Ruta y nombre de la imagen a guardar",
+                  "en": "Path and name of the image to save",
+                  "pr": "Caminho e nome da imagem para salvar"
+                },
+                "id": "img_path",
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": true
+              }
+            ]
+          },
+          "linux": true,
+          "windows": true,
+          "mac": true,
+          "video_youtube": "",
+          "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAADsAAAA7AF5KHG9AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAglJREFUWIXt18+LTmEUB/DPvCNMkR+NN0VEjKLmH2BiZcFQNkSsbNhJSbEgO00kWZlYjPIjFiIrP2KkKDYWFI2FNAYvw1DMyIzFc6fuXO993+tO3ndhvvX03HvOec753nOf59xz+d/RELtuwxFMT7G9jKMZ/W7BvhTdIE7iUpLAc7zDw5SFN3E7I4FWbEvRLcU6zMKPuKKEXRkDjAerMYIiFGoQsCImCNSdwKQcawrYjIUJeT/O41teMhexKoPdMQyhJzEGcFf1rC7AHUzJQ3IlfmFHGV2rUGT25nGchhnowuNofMbVCvYHhew8iexvoKVSgIZKysjhHpyJ7nvRie+Yi7VoElL6MvK3VcgGoeL1YFOVOKk4gftl5GvwCV/xUUj9zjJ2x/GgUoA8x7AR54SnLqIZHTglbLC/Qh4CyzAfh4RXMYLDkS7LKRo3gYFoLsZkszEZX2pB4A1u4TTahT7iCl7jXi0IwHa8wDV0Yxo2yFEF85RiQuOyHjOFY/g2p58xBNrxCB9isn4swf6c/tvQl5BNFerCBcYWovdC4emMyZpxFityEujDbjxNkOrGHJTiGSgIZzyOEjbmDJ6GQnyuez8wQaDuBOKb8CfmYXGKba/Ej0QFNPqzZRvFomgeSio6hA9L2ujKGBwOVPF1fdQw2ZC0SP83fCUUpixowvIU3SCeYTijr3+L354fboCYij0lAAAAAElFTkSuQmCC",
+          "module": "getImage",
           "module_name": "webpro",
           "visible": true,
           "options": false,

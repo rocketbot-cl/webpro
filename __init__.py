@@ -1256,6 +1256,30 @@ try:
         actionChains = ActionChains(driver)
         elementLocator = driver.find_element(data_type, data)
         actionChains.context_click(elementLocator).perform()
+
+    if module == "getImage":
+        data = GetParams("data")
+        data_type = GetParams("data_type")
+        img_path = GetParams("img_path")
+        img_path = img_path.replace("/", os.sep)
+
+        try:
+            import urllib.request
+
+            element = driver.find_element(data_type, data)
+            src = element.get_attribute("src")
+            
+            if src.startswith("data:image"):
+                src = src.split(",")[1]
+                src = base64.b64decode(src)
+                with open(img_path, "wb") as fh:
+                    fh.write(src)
+            else:
+                urllib.request.urlretrieve(src, img_path)
+
+        except Exception as e:
+            PrintException()
+            raise e
         
 
 except Exception as e:
