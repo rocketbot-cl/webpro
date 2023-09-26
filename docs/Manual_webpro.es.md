@@ -2,7 +2,7 @@
   
 Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
 
-*Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
+
   
 ![banner](imgs/Banner_webpro.png)
 ## Como instalar este módulo
@@ -310,13 +310,6 @@ Abre el nuevo Edge basado en Chromium
 |Iniciar en modo Internet Explorer|Inicia el navegador en modo Internet Explorer|True|
 |Seleccionar ejecutable de Edge|Selecciona el ejecutable de Edge para abrir en modo IE|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
-### Acceder a Shadow DOM
-  
-Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.
-|Parámetros|Descripción|ejemplo|
-| --- | --- | --- |
-|Dato a buscar|Colocamos el selector a buscar|Dato|
-
 ### Click Pro
   
 Hace click sobre un objeto seleccionado esperando que se encuentre cliqueable
@@ -370,6 +363,7 @@ Imprimir la página como PDF en Chrome. El PDF se genera en base al contenido di
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |El pdf se descargará en la carpeta de descargas por defecto del navegador.|||
+|Imprimir con diseño horizontal|Si se marca, el pdf se imprimirá en formato horizontal.|True|
 
 ### Forzar Descarga
   
@@ -436,3 +430,13 @@ Hace click derecho sobre un objeto seleccionado
 | --- | --- | --- |
 |Dato a buscar|Colocamos el selector a buscar|Dato|
 |Tipo de dato|Colocamos el tipo de dato a buscar|xpath|
+
+### Obtener imagen
+  
+Este comando permite descargar una imagen a partir de una etiqueta `<img>`
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Dato a buscar|Colocamos el selector del elemento a descargar|Data|
+|Tipo de dato|Seleccionamos el tipo de dato a buscar|xpath|
+|Carpeta donde guardar la imagen|Colocamos la carpeta donde se guardará la imagen|C:/Users/Usuario/Desktop|
+|Nombre y extensión de la imagen a guardar|Colocamos el nombre de la imagen a guardar. Si no se coloca el nombre de la imagen o la extensión, se guardará con el nombre o extensión por defecto.|imagen.png|

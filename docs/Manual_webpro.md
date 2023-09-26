@@ -307,13 +307,6 @@ Open the new Edge based on Chromium
 |Start in Internet Explorer mode|Starts the browser in Internet Explorer mode|True|
 |Select Edge executable|Select the Edge executable to open in IE mode|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
-### Access Shadow DOM
-  
-Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
-|Parameters|Description|example|
-| --- | --- | --- |
-|Data to search|We put the selector to search|Data|
-
 ### Click Pro
   
 Click on a selected object waiting that it's clickeable
@@ -367,6 +360,7 @@ Print the page as a PDF in Chrome. The PDF is generated based on the available c
 |Parameters|Description|example|
 | --- | --- | --- |
 |The pdf will be downloaded to the browser's default downloads folder.|||
+|Print with horizontal design|If checked, the pdf will be printed in horizontal format.|True|
 
 ### Force Download
   
@@ -433,3 +427,13 @@ Right click on a selected object
 | --- | --- | --- |
 |Data to search|We put the selector to search|Data|
 |Data type|We put the type of data to search|xpath|
+
+### Get image
+  
+This command allows you to download an image from an `<img>` tag
+|Parameters|Description|example|
+| --- | --- | --- |
+|Data to search|Put the selector of the element to download|Data|
+|Data type|Select the type of data to search|xpath|
+|Folder to save the image|We put the folder where the image will be saved|C:/Users/User/Desktop|
+|Name and extension of the image to save|We put the name of the image to save. If you do not put the name of the image or the extension, it will be saved with the name or extension by default.|image.png|
