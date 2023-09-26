@@ -80,47 +80,47 @@ Passar o mouse sobre o elemento
 22. Abrir Edge (Chromium)  
 Abrir o novo Chromium-based Edge
 
-23. Acessar ao Shadow DOM  
-Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root.
-
-24. Clique Pro  
+23. Clique Pro  
 Clica em um objeto selecionado, esperando que ele se torne clicável.
 
-25. Extrair Texto Pro  
+24. Extrair Texto Pro  
 Obtém o texto de um objeto esperando que ele esteja disponível.
 
-26. Selecionar objeto Pro  
+25. Selecionar objeto Pro  
 Seleciona um objeto esperando que ele esteja presente
 
-27. Mudar para iframe Pro  
+26. Mudar para iframe Pro  
 Troca para um iframe esperando que ele esteja presente
 
-28. Enviar Teclas  
+27. Enviar Teclas  
 Similar ao Send Web Text, mas em um nível inferior
 
-29. Imprimir como PDF (Chrome)  
+28. Imprimir como PDF (Chrome)  
 Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disponível da página. Não representa uma cópia verdadeira do site.
 
-30. Forçar o download  
+29. Forçar o download  
 Forçando um download
 
-31. Abrir Nova Aba  
+30. Abrir Nova Aba  
 Abre uma nova aba com a URL
 
-32. Abrir navegador  
+31. Abrir navegador  
 Abre o navegador indicando a URL
 
-33. Drag and drop  
+32. Drag and drop  
 Fazer um drag and drop
 
-34. Subir arquivo  
+33. Subir arquivo  
 Comando para fazer upload um ou mais arquivos para um input do tipo file. Basta preencher um único valor, dependendo de quantos arquivos você deseja enviar.
 
-35. Enviar combinação de teclas  
+34. Enviar combinação de teclas  
 Comando para enviar combinação de teclas
 
-36. Clique direito  
-Clique direito sobre um objeto selecionado  
+35. Clique direito  
+Clique direito sobre um objeto selecionado
+
+36. Obter imagem  
+Este comando permite baixar uma imagem de uma tag <img>  
 
 
 

@@ -80,47 +80,47 @@ Move mouse over the element
 22. Open Edge (Chromium)  
 Open the new Edge based on Chromium
 
-23. Access Shadow DOM  
-Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
-
-24. Click Pro  
+23. Click Pro  
 Click on a selected object waiting that it's clickeable
 
-25. Extract text Pro  
+24. Extract text Pro  
 Get a text object waiting that it's present
 
-26. Select object Pro  
+25. Select object Pro  
 Select an object waiting that it's present
 
-27. Change to iframe Pro  
+26. Change to iframe Pro  
 Change to iframe waiting that it's present
 
-28. Send Keys  
+27. Send Keys  
 Similar to Send keys web, but low level
 
-29. Print to PDF (Chrome)  
+28. Print to PDF (Chrome)  
 Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 
-30. Force Download  
+29. Force Download  
 Force Download
 
-31. Open New Tab  
+30. Open New Tab  
 Open new tab with the URL
 
-32. Open Browser  
+31. Open Browser  
 Open a browser the URL
 
-33. Drag and drop  
+32. Drag and drop  
 Do a drag and drop
 
-34. Upload files  
+33. Upload files  
 Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
 
-35. Send key combination  
+34. Send key combination  
 Command to send key combination
 
-36. Right Click  
-Right click on a selected object  
+35. Right Click  
+Right click on a selected object
+
+36. Get image  
+This command allows you to download an image from an <img> tag  
 
 
 

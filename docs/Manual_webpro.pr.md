@@ -308,13 +308,6 @@ Abrir o novo Chromium-based Edge
 |Comezar no modo Internet Explorer|Comeza o navegador no modo Internet Explorer|True|
 |Seleccionar executábel de Edge|Selecciona o executábel de Edge para abrir no modo IE|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
-### Acessar ao Shadow DOM
-  
-Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root.
-|Parâmetros|Descrição|exemplo|
-| --- | --- | --- |
-|Dado a buscar|Colocamos o seletor para pesquisar|Dado|
-
 ### Clique Pro
   
 Clica em um objeto selecionado, esperando que ele se torne clicável.
@@ -368,6 +361,7 @@ Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disp
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |O pdf será baixado para a pasta de downloads padrão do navegador.|||
+|Imprimir com design horizontal|Se marcado, o pdf será impresso em formato horizontal.|True|
 
 ### Forçar o download
   
@@ -434,3 +428,13 @@ Clique direito sobre um objeto selecionado
 | --- | --- | --- |
 |Dado a buscar|Colocamos o seletor para pesquisar|Dado|
 |Tipo de dado|Colocamos o tipo de dados para procurar|xpath|
+
+### Obter imagem
+  
+Este comando permite baixar uma imagem de uma tag `<img>`
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Dado a buscar|Colocamos o seletor do elemento a baixar|Data|
+|Tipo de dado|Selecionamos o tipo de dado a buscar|xpath|
+|Pasta para salvar a imagem|Colocamos a pasta onde a imagem será salva|C:/Users/Usuário/Desktop|
+|Nome e extensão da imagem para salvar|Colocamos o nome da imagem para salvar. Se você não colocar o nome da imagem ou a extensão, ela será salva com o nome ou extensão padrão.|imagem.png|

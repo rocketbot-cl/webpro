@@ -198,40 +198,50 @@ if module == "webelementlist":
     data_ = GetParams("data_")
     var_ = GetParams("result")
 
+    try:
     
-    global getChild
+        global getChild
 
 
-    def getChild(el):
-        res = []
-        if len(el) > 0:
-            for c in el:
-                tmp = c.attrs
-                tmp["text"] = c.text
-                tmp["etype"] = c.name
-                tmp['value'] = c.get('value')
+        def getChild(el):
+            import bs4
+            
+            res = []
+            if len(el) > 0:
+                for c in el:
+                    if isinstance(c, bs4.element.NavigableString):
+                        res.append(c)
+                        continue
+                    tmp = c.attrs
+                    tmp["text"] = c.text
+                    tmp["etype"] = c.name
+                    tmp['value'] = c.get('value')
+                    res.append(tmp)
+                    if len(c.findChildren()) > 1:
+                        res.append(getChild(c.findChildren()))
+            else:
+                tmp = el.attrs
+                tmp["text"] = el.text
+                tmp["etype"] = el.name
                 res.append(tmp)
-                if len(c.findChildren()) > 1:
-                    res.append(getChild(c.findChildren()))
-        else:
-            tmp = el.attrs
-            tmp["text"] = el.text
-            tmp["etype"] = el.name
-            res.append(tmp)
 
-        return res
+            return res
 
 
-    html = BeautifulSoup(driver.page_source, 'html.parser')
-    objs = html.find_all(el_, attrs={type_: data_})
-    re = []
-    for element in objs:
-        if element.findChildren():
-            re.append(getChild(element.findChildren()))
-        else:
-            re.append(getChild(element))
+        html = BeautifulSoup(driver.page_source, 'html.parser')
+        objs = html.find_all(el_, attrs={type_: data_})
+        re = []
+        for element in objs:
+            if element.findChildren():
+                re.append(getChild(element.findChildren()))
+            else:
+                re.append(getChild(element))
 
-    SetVar(var_, str(re))
+        SetVar(var_, str(re))
+    
+    except Exception as e:
+        traceback.print_exc()
+        raise e
 
 if module == "CleanInputs":
     
@@ -419,7 +429,13 @@ if module == "clickElement":
 
         if option_ == 'xpath':
             elements = driver.find_elements("xpath", search)[index_]
-            elements.click()
+            
+            wait = WebDriverWait(driver, int(5))
+            elements = wait.until(EC.visibility_of(elements))
+            try:
+                elements.click()
+            except:
+                driver.execute_script("arguments[0].click();", elements)
             webdriver._object_selected = elements
             
 
@@ -1006,6 +1022,19 @@ if module == "printPDF":
     import json
     from selenium import webdriver as wd
     chrome_options = wd.ChromeOptions()
+    landscape = GetParams("landscape")
+
+    if landscape:
+        script = """
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            style.innerHTML = '@page { size: landscape; }';
+            document.head.appendChild(style);
+        """
+
+        driver.execute_script(script)
+
+
     settings = {
        "recentDestinations": [{
             "id": "Save as PDF",
@@ -1220,6 +1249,63 @@ try:
         shadow_root = Shadow(driver)
         element_root = shadow_root.find_element(data)
 
+    if module == "RightClick":
+        data = GetParams("data")
+        data_type = GetParams("data_type")
+
+        actionChains = ActionChains(driver)
+        elementLocator = driver.find_element(data_type, data)
+        actionChains.context_click(elementLocator).perform()
+
+    if module == "getImage":
+        data = GetParams("data")
+        data_type = GetParams("data_type")
+        img_path = GetParams("img_path")
+        img_path = img_path.replace("/", os.sep)
+        img_name = GetParams("img_name")
+
+        try:
+            import urllib.request
+
+            element = driver.find_element(data_type, data)
+            src = element.get_attribute("src")
+
+            if os.path.isdir(img_path):
+                if not img_name:
+                    filename = os.path.basename(src)
+                    print(filename)
+
+                    if not "." in filename:
+                        filename = filename + ".jpg"
+
+                    img_path = os.path.join(img_path, filename)
+
+                else:
+                    if not "." in img_name:
+                        img_name = img_name + ".jpg"
+                        
+                    img_path = os.path.join(img_path, img_name)
+            
+            if not img_name:
+                filename = os.path.basename(src)
+                print(filename)
+
+                if not "." in filename:
+                    filename = filename + ".jpg"
+
+
+            if src.startswith("data:image"):
+                src = src.split(",")[1]
+                src = base64.b64decode(src)
+                with open(img_path, "wb") as fh:
+                    fh.write(src)
+            else:
+                urllib.request.urlretrieve(src, img_path)
+
+        except Exception as e:
+            PrintException()
+            raise e
+        
 
 except Exception as e:
     PrintException()
