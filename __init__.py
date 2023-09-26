@@ -1262,13 +1262,38 @@ try:
         data_type = GetParams("data_type")
         img_path = GetParams("img_path")
         img_path = img_path.replace("/", os.sep)
+        img_name = GetParams("img_name")
 
         try:
             import urllib.request
 
             element = driver.find_element(data_type, data)
             src = element.get_attribute("src")
+
+            if os.path.isdir(img_path):
+                if not img_name:
+                    filename = os.path.basename(src)
+                    print(filename)
+
+                    if not "." in filename:
+                        filename = filename + ".jpg"
+
+                    img_path = os.path.join(img_path, filename)
+
+                else:
+                    if not "." in img_name:
+                        img_name = img_name + ".jpg"
+                        
+                    img_path = os.path.join(img_path, img_name)
             
+            if not img_name:
+                filename = os.path.basename(src)
+                print(filename)
+
+                if not "." in filename:
+                    filename = filename + ".jpg"
+
+
             if src.startswith("data:image"):
                 src = src.split(",")[1]
                 src = base64.b64decode(src)
