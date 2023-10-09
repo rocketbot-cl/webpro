@@ -120,8 +120,10 @@ Comando para enviar combinacion de dos teclas
 Hace click derecho sobre un objeto seleccionado
 
 36. Obtener imagen  
-Este comando permite descargar una imagen a partir de una etiqueta <img>  
+Este comando permite descargar una imagen a partir de una etiqueta <img>
 
+37. Seleccionar múltiples opciones  
+Selecciona múltiples opciones de un select
 
 
 ### Changes
@@ -141,7 +143,7 @@ Wed Mar 11 14:24:59 2020  Merge branch master of https://github.com/rocketbot-cl
 - docker
 
 ### Dependencies
-- [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)- [**requests**](https://pypi.org/project/requests/)- [**pyshadow**](https://pypi.org/project/pyshadow/)
+- [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)- [**requests**](https://pypi.org/project/requests/)
 ### License
   
 ![MIT](https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265)  

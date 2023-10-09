@@ -2088,62 +2088,6 @@
       },
       {
         "title": {
-          "es": "Acceder a Shadow DOM",
-          "en": "Access Shadow DOM",
-          "pr": "Acessar ao Shadow DOM"
-        },
-        "description": {
-          "es": "Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.",
-          "en": "Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.",
-          "pr": "Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root."
-        },
-        "form": {
-          "css": "modal-lg",
-          "inputs": [
-            {
-              "type": "input",
-              "placeholder": {
-                "es": "Dato",
-                "en": "Data",
-                "pr": "Dado"
-              },
-              "title": {
-                "es": "Dato a buscar",
-                "en": "Data to search",
-                "pr": "Dado a buscar"
-              },
-              "description": {
-                "es": "Colocamos el selector a buscar",
-                "en": "We put the selector to search",
-                "pr": "Colocamos o seletor para pesquisar"
-              },
-              "help": {
-                "es": "Debe ser un css selector. Por ejemplo #id, .class, tag",
-                "en": "It must be a css selector. For example #id, .class, tag",
-                "pr": "Deve ser um seletor css. Por exemplo #id, .class, tag"
-              },
-              "id": "data",
-              "css": "col-md-12",
-              "data_type": "str",
-              "default": null,
-              "required": true
-            }
-          ]
-        },
-        "linux": true,
-        "windows": true,
-        "mac": true,
-        "video_youtube": "",
-        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAbrqAAG66gHB8Tn1AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAchQTFRF////REREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREAF92QAAAAJd0Uk5TAAECAwQFBgcJCgsMDQ8QERIUFRcZGhscHh8jJCcoKSwtLi8wMTQ1Njc9P0FCREVISUpLTE1PUFFSU1VXWFlaXGFkZWdpamxtbm9xcnN3e4CBgoaHjI6PkJKUn6CipKapqqusr7CxsrO2ur3Aw8TFx8jKy8zNzs/Q0dbY2drd3t/i4+Tl5unq7O7v8PLz9Pb3+Pn6+/z9/jk7kY4AAAnASURBVHja7d3Zb1XVHsDx3UKBUmZoAeWCTE4EaEElCsoo4INCMVgnhlCMUIY/Bx98EK3EEIwihiAxGFAjiMYhIRKNMTEgGjXRIBEpoPeBcC9Cy1nn7NNhrX6+L9qe39rQ0w89a++enlZmPbwXEq+779/KTL06AAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQ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s50GxtqUrRPzHmLi1ikZANE2uqU+3wHqW0ZnAETcoI0P51n+8MZBGQBxnwyseqLkj7nyiVV9MgBib2Fzib9BfGDzwvTujd74nMBZLbWlLKttmZUBkESTt04qftGkrZMzABKprqWh2CUNLXUZAMlU01zkS/kvba7JAEjpZKCxqYgPvbKpsU8GQFot2Bh8MjBw44Jk74Ze/AIRDVsCH9XrtjRkACRY4L6+pHMGAGKodnPAmf2szbUZAKmeDGwo+JrSyzbUZAD04DbnamvBF/85uDXfnwCAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABoK4A8EIPr6ffwT39/vMVwFcAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAgf0XsEXq36D3gLEAAAAASUVORK5CYII=",
-        "module": "shadow_dom",
-        "module_name": "webpro",
-        "visible": false,
-        "options": false,
-        "father": "module",
-        "group": "scripts"
-      },
-      {
-        "title": {
           "es": "Click Pro",
           "en": "Click Pro",
           "pr": "Clique Pro"
@@ -4587,6 +4531,62 @@
           "module": "multiple_select",
           "module_name": "webpro",
           "visible": true,
+          "options": false,
+          "father": "module",
+          "group": "scripts"
+        },
+        {
+          "title": {
+            "es": "Acceder a Shadow DOM",
+            "en": "Access Shadow DOM",
+            "pr": "Acessar ao Shadow DOM"
+          },
+          "description": {
+            "es": "Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.",
+            "en": "Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.",
+            "pr": "Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root."
+          },
+          "form": {
+            "css": "modal-lg",
+            "inputs": [
+              {
+                "type": "input",
+                "placeholder": {
+                  "es": "Dato",
+                  "en": "Data",
+                  "pr": "Dado"
+                },
+                "title": {
+                  "es": "Dato a buscar",
+                  "en": "Data to search",
+                  "pr": "Dado a buscar"
+                },
+                "description": {
+                  "es": "Colocamos el selector a buscar",
+                  "en": "We put the selector to search",
+                  "pr": "Colocamos o seletor para pesquisar"
+                },
+                "help": {
+                  "es": "Debe ser un css selector. Por ejemplo #id, .class, tag",
+                  "en": "It must be a css selector. For example #id, .class, tag",
+                  "pr": "Deve ser um seletor css. Por exemplo #id, .class, tag"
+                },
+                "id": "data",
+                "css": "col-md-12",
+                "data_type": "str",
+                "default": null,
+                "required": true
+              }
+            ]
+          },
+          "linux": true,
+          "windows": true,
+          "mac": true,
+          "video_youtube": "",
+          "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAbrqAAG66gHB8Tn1AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAchQTFRF////REREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREAF92QAAAAJd0Uk5TAAECAwQFBgcJCgsMDQ8QERIUFRcZGhscHh8jJCcoKSwtLi8wMTQ1Njc9P0FCREVISUpLTE1PUFFSU1VXWFlaXGFkZWdpamxtbm9xcnN3e4CBgoaHjI6PkJKUn6CipKapqqusr7CxsrO2ur3Aw8TFx8jKy8zNzs/Q0dbY2drd3t/i4+Tl5unq7O7v8PLz9Pb3+Pn6+/z9/jk7kY4AAAnASURBVHja7d3Zb1XVHsDx3UKBUmZoAeWCTE4EaEElCsoo4INCMVgnhlCMUIY/Bx98EK3EEIwihiAxGFAjiMYhIRKNMTEgGjXRIBEpoPeBcC9Cy1nn7NNhrX6+L9qe39rQ0w89a++enlZmPbwXEq+779/KTL06AAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEAgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAARAF7a5c9te6M/f3sl/AQC6twG5B3wFiLr+uQcAiLp+uQcAAAAAewAAIq1P7gEAom5w7gEAom5E7gEAfAUAIN4G5R4AwEMAAPE2MvcAAFE/AgwtNDF0EAAJN7osIwBE23/KMgJAtI0pywgA0VZblhEAov3oJxSemVAJQLLdUlN4puYWAJJtYtmGAEh1D5j6LrB3A5hctiEAYmzk+JCp8SMBSLRpFSFTFdMASLRxZR0DILruLOsYALE1PvAiX+14AJJsRtkHAYhrD1j2QQCiughwW+jkbZMBSLB7OmUUgFiqmhk+O7MKgORqGB4+O7wBgN57DpD2eUCvBTCiOAAjAEisOUU9rFfNASCxpnfqOAA9vUlFPs9n4iQAeutFgLQvBfRSAFX1xa6orwIgoeqHF7tieD0ACfVAlywBoMfuAEp4jsed9wCQShVLSlm1pAKARJo7oZRVE+YCkEZ9F5S2bkFfAJLowVtLW3frgwCkUP/5pa6c3x+ABFpU8ou+jF4EQPwNnFf62nkDAYi+JTm+tT9iCQCxNzTXydzcoQBE3uIheVYPWQxA3I3JeTVn7hgAoq4x5zZuYCMAUT8A5H5674zFAMTb2OX5j7F8LACxVtFYhld+HtRYAUCsDwBleW7v9MUAxNm4gAeAy5cDHgTGARBjNWsCXhf0wIEyHQiAHldTwCu9fLR//0eFp8Y3ARBfj95beOaX17Ps9V8Kz937KACxNX1ZwNDh81l2/nDA4LLpAER2BeDpgN8Be+pIlmXZkVOFJ/s8PRaAmBqybljA1KHLWZZllw8FjA5bNwSAeBqwNuR5wCc/vvLfj08GDE9YOwCAWOq7LuSF3s69efX/3jwXMD5tXV8A4qjiyZCf6/tnz/8e+0/t+SdgQf2TFQB0f3cUHlkd9ByA947///+PvxeyYu7qsvz1AMjVpoLP8XxsYchxftp/7Vv7fwpZs/CxQhPzNgHQ2fu7Zwp8d27xI0HHeev8tW+dfyto0SM3/75QReMzAwDo9Jaur77JrQ+sCjrIsS/+/fYXx4KWrbrZD41Xr19qD9AV3belrsPbZjQFfYR/7L/+Pfv/CLr7mjp+ilHdlvtsArumydtv72gPtrZf0BHe/fX69/z6btDCfms72ubdvj2Kl5hO4zRw5Kb2N/qT14d94/brdi7+Hfo6aGnN+vY/z3M3xfG7phK5DlD97Mp2toJ3PT8saPWlfX/f+M6/910KWjzs+bva2f6tfLbadYAubdm6Gzbcs58bHLb28Hftvfe7w2GrBz83+4ZTk3XLYrnf0rkSOOf6reD89YH/CL/Z1/77930T+OVn/fzrt3/xvLJsQpeCp2ybeu2by5sCr9Wf232x/Rsu7j4XdoS+Tf96tuHUbVMyALqhUZuv2QquXBF6pf7tMx3dcubtwENUrFh5zfZv86gMgG7aCl79rFc8Ffwg/MH7Hd/2/gfBW5Cnrv7JK2LZ/iUIIMuWX9kKVq15KHTF6b03u3Xv6dDjPLSm6sr2b3lc91hq3w6e01KbZdXN94fOt+3+82Y3/7m7LfRI9zdXZ1ltS2y/WCC55wNM3T51yMbw3wf1zrc3v/3bd4IPNXPjkKnbp2YAdPtWcNvdwcMfFvw5kAMfBh/s7m1Rbf9SBZBVh//k1ok9hWf2nAg+3LjqDICYOr0r4BG+bdfplO+D3gzg952/l3EMgNhqe+WHsMEfXmkDIMHeOBk6efINANLr4JHw2SMHAUito3uLmd57FIC0Orm7uPndJwFIqTOtF4pbcKH1DADpdHbnb8Uu+W3nWQBS6WLrqeIXnWq9CEAaXXrtRCnLTrx2CYAk/v3vKnFLf3TXRQAS+Py/eqzUpcdevQhA7LW1Hi998fHWNgBi//x/kmf5J8kJ6GUA2l7+NN8BPn25DYB4u7Dzs7yH+GznBQBi7a+XPs9/kM9f+guAODv74pflOMyXL54FIMZ+3vFVeQ701Y6fAYivH3d8X65Dfb/jRwCiq66Mr+88vQ6A6Orz+OoyfbCVqx/vA0CELdpQluftV29I6ZeI96rTwNktZfjJnVEts50GxtqUrRPzHmLi1ikZANE2uqU+3wHqW0ZnAETcoI0P51n+8MZBGQBxnwyseqLkj7nyiVV9MgBib2Fzib9BfGDzwvTujd74nMBZLbWlLKttmZUBkESTt04qftGkrZMzABKprqWh2CUNLXUZAMlU01zkS/kvba7JAEjpZKCxqYgPvbKpsU8GQFot2Bh8MjBw44Jk74Ze/AIRDVsCH9XrtjRkACRY4L6+pHMGAGKodnPAmf2szbUZAKmeDGwo+JrSyzbUZAD04DbnamvBF/85uDXfnwCAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABoK4A8EIPr6ffwT39/vMVwFcAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAgf0XsEXq36D3gLEAAAAASUVORK5CYII=",
+          "module": "shadow_dom",
+          "module_name": "webpro",
+          "visible": false,
           "options": false,
           "father": "module",
           "group": "scripts"

@@ -120,9 +120,10 @@ Command to send key combination
 Right click on a selected object
 
 36. Get image  
-This command allows you to download an image from an <img> tag  
+This command allows you to download an image from an <img> tag
 
-
+37. Select multiple options  
+Select multiple options from a select
 
 ### Changes
 Tue Sep 13 19:15:44 2022  Merge branch qa of https://github.com/rocketbot-cl/webpro
@@ -141,7 +142,7 @@ Wed Mar 11 14:24:59 2020  Merge branch master of https://github.com/rocketbot-cl
 - docker
 
 ### Dependencies
-- [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)- [**requests**](https://pypi.org/project/requests/)- [**pyshadow**](https://pypi.org/project/pyshadow/)
+- [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)- [**requests**](https://pypi.org/project/requests/)
 ### License
   
 ![MIT](https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265)  

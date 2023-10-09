@@ -2,7 +2,7 @@
   
 Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
 
-
+*Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
   
 ![banner](imgs/Banner_webpro.png)
 ## Como instalar este módulo
@@ -440,3 +440,13 @@ Este comando permite descargar una imagen a partir de una etiqueta `<img>`
 |Tipo de dato|Seleccionamos el tipo de dato a buscar|xpath|
 |Carpeta donde guardar la imagen|Colocamos la carpeta donde se guardará la imagen|C:/Users/Usuario/Desktop|
 |Nombre y extensión de la imagen a guardar|Colocamos el nombre de la imagen a guardar. Si no se coloca el nombre de la imagen o la extensión, se guardará con el nombre o extensión por defecto.|imagen.png|
+
+### Seleccionar múltiples opciones
+  
+Selecciona múltiples opciones de un select
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Tipo de dato|Seleccionamos el tipo de dato a buscar.|xpath|
+|Dato a buscar|Colocamos el selector del elemento a seleccionar.|Data|
+|Tipo de selección|Seleccionamos el tipo de selección a realizar.|value|
+|Opciones a seleccionar|Colocamos las opciones a seleccionar. Si seleccionamos el tipo de selección 'select all' o 'deselect all', no es necesario colocar las opciones.|0,1,2,3|
