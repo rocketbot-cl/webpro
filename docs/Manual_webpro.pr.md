@@ -438,3 +438,13 @@ Este comando permite baixar uma imagem de uma tag `<img>`
 |Tipo de dado|Selecionamos o tipo de dado a buscar|xpath|
 |Pasta para salvar a imagem|Colocamos a pasta onde a imagem será salva|C:/Users/Usuário/Desktop|
 |Nome e extensão da imagem para salvar|Colocamos o nome da imagem para salvar. Se você não colocar o nome da imagem ou a extensão, ela será salva com o nome ou extensão padrão.|imagem.png|
+
+### Selecionar várias opções
+  
+Selecione várias opções de um seletor
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Tipo de dado|Selecionamos o tipo de dado a buscar.|xpath|
+|Dado a buscar|Colocamos o seletor do elemento a selecionar.|Data|
+|Tipo de seleção|Selecione o tipo de seleção a ser realizada.|value|
+|Opções para selecionar|Colocamos as opções para selecionar. Se selecionarmos o tipo de seleção 'selecionar tudo' ou 'desmarcar tudo', não é necessário colocar as opções.|0,1,2,3|

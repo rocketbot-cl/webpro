@@ -24,7 +24,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 
-__version__ = '11.6.0'
+__version__ = '12.4.0'
 __author__ = 'Rocketbot <contacto@rocketbot.com>'
 
 import base64
@@ -49,7 +49,7 @@ sys.path.append(cur_path)
 print(cur_path)
 
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -1306,6 +1306,38 @@ try:
             PrintException()
             raise e
         
+    if module == "multiple_select":
+        data_type = GetParams("data_type")
+        data = GetParams("data")
+        selection_type = GetParams("selection_type")
+        options = GetParams("options")
+
+        try:
+            element = driver.find_element(data_type, data)
+            select = Select(element)
+            options = options.split(",")
+
+            if selection_type == "select_all":
+                options = [x for x in range(len(select.options))]
+                for option in options:
+                    select.select_by_index(int(option))
+            elif selection_type == "deselect_all":
+                select.deselect_all()
+            elif selection_type == "index":
+                for option in options:
+                    select.select_by_index(int(option))
+            elif selection_type == "value":
+                for option in options:
+                    select.select_by_value(option)
+            elif selection_type == "text":
+                for option in options:
+                    select.select_by_visible_text(option)
+            else:
+                raise Exception("Invalid selection type")
+
+        except Exception as e:
+            PrintException()
+            raise e
 
 except Exception as e:
     PrintException()

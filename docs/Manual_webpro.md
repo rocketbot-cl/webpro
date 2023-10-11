@@ -437,3 +437,13 @@ This command allows you to download an image from an `<img>` tag
 |Data type|Select the type of data to search|xpath|
 |Folder to save the image|We put the folder where the image will be saved|C:/Users/User/Desktop|
 |Name and extension of the image to save|We put the name of the image to save. If you do not put the name of the image or the extension, it will be saved with the name or extension by default.|image.png|
+
+### Select multiple options
+  
+Select multiple options from a select
+|Parameters|Description|example|
+| --- | --- | --- |
+|Data type|Select the type of data to search.|xpath|
+|Data to search|Put the selector of the element to select.|Data|
+|Selection type|Select the type of selection to perform.|value|
+|Options to select|We put the options to select. If we select the type of selection 'select all' or 'deselect all', it is not necessary to put the options.|0,1,2,3|

@@ -7,7 +7,7 @@
       "pr": "Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web"
     },
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "12.3.2",
+    "version": "12.4.0",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "name": "webpro",
@@ -18,8 +18,7 @@
     "type": "module",
     "dependencies": {
       "beautifulsoup4": "4.7.1",
-      "requests": "2.21.0",
-      "pyshadow": "0.0.5"
+      "requests": "2.21.0"
     },
     "title": {
       "en": "WEB Pro",
@@ -2083,62 +2082,6 @@
         "module": "Edge_",
         "module_name": "webpro",
         "visible": true,
-        "options": false,
-        "father": "module",
-        "group": "scripts"
-      },
-      {
-        "title": {
-          "es": "Acceder a Shadow DOM",
-          "en": "Access Shadow DOM",
-          "pr": "Acessar ao Shadow DOM"
-        },
-        "description": {
-          "es": "Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.",
-          "en": "Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.",
-          "pr": "Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root."
-        },
-        "form": {
-          "css": "modal-lg",
-          "inputs": [
-            {
-              "type": "input",
-              "placeholder": {
-                "es": "Dato",
-                "en": "Data",
-                "pr": "Dado"
-              },
-              "title": {
-                "es": "Dato a buscar",
-                "en": "Data to search",
-                "pr": "Dado a buscar"
-              },
-              "description": {
-                "es": "Colocamos el selector a buscar",
-                "en": "We put the selector to search",
-                "pr": "Colocamos o seletor para pesquisar"
-              },
-              "help": {
-                "es": "Debe ser un css selector. Por ejemplo #id, .class, tag",
-                "en": "It must be a css selector. For example #id, .class, tag",
-                "pr": "Deve ser um seletor css. Por exemplo #id, .class, tag"
-              },
-              "id": "data",
-              "css": "col-md-12",
-              "data_type": "str",
-              "default": null,
-              "required": true
-            }
-          ]
-        },
-        "linux": true,
-        "windows": true,
-        "mac": true,
-        "video_youtube": "",
-        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAbrqAAG66gHB8Tn1AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAchQTFRF////REREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREAF92QAAAAJd0Uk5TAAECAwQFBgcJCgsMDQ8QERIUFRcZGhscHh8jJCcoKSwtLi8wMTQ1Njc9P0FCREVISUpLTE1PUFFSU1VXWFlaXGFkZWdpamxtbm9xcnN3e4CBgoaHjI6PkJKUn6CipKapqqusr7CxsrO2ur3Aw8TFx8jKy8zNzs/Q0dbY2drd3t/i4+Tl5unq7O7v8PLz9Pb3+Pn6+/z9/jk7kY4AAAnASURBVHja7d3Zb1XVHsDx3UKBUmZoAeWCTE4EaEElCsoo4INCMVgnhlCMUIY/Bx98EK3EEIwihiAxGFAjiMYhIRKNMTEgGjXRIBEpoPeBcC9Cy1nn7NNhrX6+L9qe39rQ0w89a++enlZmPbwXEq+779/KTL06AAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQ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s50GxtqUrRPzHmLi1ikZANE2uqU+3wHqW0ZnAETcoI0P51n+8MZBGQBxnwyseqLkj7nyiVV9MgBib2Fzib9BfGDzwvTujd74nMBZLbWlLKttmZUBkESTt04qftGkrZMzABKprqWh2CUNLXUZAMlU01zkS/kvba7JAEjpZKCxqYgPvbKpsU8GQFot2Bh8MjBw44Jk74Ze/AIRDVsCH9XrtjRkACRY4L6+pHMGAGKodnPAmf2szbUZAKmeDGwo+JrSyzbUZAD04DbnamvBF/85uDXfnwCAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABoK4A8EIPr6ffwT39/vMVwFcAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAgf0XsEXq36D3gLEAAAAASUVORK5CYII=",
-        "module": "shadow_dom",
-        "module_name": "webpro",
-        "visible": false,
         "options": false,
         "father": "module",
         "group": "scripts"
@@ -4407,6 +4350,243 @@
           "module": "getImage",
           "module_name": "webpro",
           "visible": true,
+          "options": false,
+          "father": "module",
+          "group": "scripts"
+        },
+        {
+          "title": {
+            "es": "Seleccionar múltiples opciones",
+            "en": "Select multiple options",
+            "pr": "Selecionar várias opções"
+          },
+          "description": {
+            "es": "Selecciona múltiples opciones de un select",
+            "en": "Select multiple options from a select",
+            "pr": "Selecione várias opções de um seletor"
+          },
+          "form": {
+            "css": "modal-lg",
+            "inputs": [
+              {
+                "type": "select",
+                "placeholder": {
+                  "es": "xpath",
+                  "en": "xpath",
+                  "pr": "xpath"
+                },
+                "title": {
+                  "es": "Tipo de dato",
+                  "en": "Data type",
+                  "pr": "Tipo de dado"
+                },
+                "options": [
+                  {
+                    "title": "name",
+                    "value": "name"
+                  },
+                  {
+                    "title": "id",
+                    "value": "id"
+                  },
+                  {
+                    "title": "class",
+                    "value": "class name"
+                  },
+                  {
+                    "title": "xpath",
+                    "value": "xpath"
+                  },
+                  {
+                    "title": "tag",
+                    "value": "tag name"
+                  },
+                  {
+                    "title": "link text",
+                    "value": "link text"
+                  },
+                  {
+                    "title": "partial link text",
+                    "value": "partial link text"
+                  },
+                  {
+                    "title": "css selector",
+                    "value": "css selector"
+                  }
+                ],
+                "description": {
+                  "es": "Seleccionamos el tipo de dato a buscar.",
+                  "en": "Select the type of data to search.",
+                  "pr": "Selecionamos o tipo de dado a buscar."
+                },
+                "id": "data_type",
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": true
+              },
+              {
+                "type": "input",
+                "placeholder": {
+                  "es": "Data",
+                  "en": "Data",
+                  "pr": "Data"
+                },
+                "title": {
+                  "es": "Dato a buscar",
+                  "en": "Data to search",
+                  "pr": "Dado a buscar"
+                },
+                "description": {
+                  "es": "Colocamos el selector del elemento a seleccionar.",
+                  "en": "Put the selector of the element to select.",
+                  "pr": "Colocamos o seletor do elemento a selecionar."
+                },
+                "id": "data",
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": true
+              },
+              {
+                "type": "select",
+                "placeholder": {
+                  "es": "value",
+                  "en": "value",
+                  "pr": "value"
+                },
+                "title": {
+                  "es": "Tipo de selección",
+                  "en": "Selection type",
+                  "pr": "Tipo de seleção"
+                },
+                "options": [
+                  {
+                    "title": "value",
+                    "value": "value"
+                  },
+                  {
+                    "title": "text",
+                    "value": "text"
+                  },
+                  {
+                    "title": "index",
+                    "value": "index"
+                  },
+                  {
+                    "title": "select all",
+                    "value": "select_all"
+                  },
+                  {
+                    "title": "deselect all",
+                    "value": "deselect_all"
+                  }
+                ],
+                "description": {
+                  "es": "Seleccionamos el tipo de selección a realizar.",
+                  "en": "Select the type of selection to perform.",
+                  "pr": "Selecione o tipo de seleção a ser realizada."
+                },
+                "id": "selection_type",
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": true
+              },
+              {
+                "type": "input",
+                "placeholder": {
+                  "es": "0,1,2,3",
+                  "en": "0,1,2,3",
+                  "pr": "0,1,2,3"
+                },
+                "title": {
+                  "es": "Opciones a seleccionar",
+                  "en": "Options to select",
+                  "pr": "Opções para selecionar"
+                },
+                "description": {
+                  "es": "Colocamos las opciones a seleccionar. Si seleccionamos el tipo de selección 'select all' o 'deselect all', no es necesario colocar las opciones.",
+                  "en": "We put the options to select. If we select the type of selection 'select all' or 'deselect all', it is not necessary to put the options.",
+                  "pr": "Colocamos as opções para selecionar. Se selecionarmos o tipo de seleção 'selecionar tudo' ou 'desmarcar tudo', não é necessário colocar as opções."
+                },
+                "help": {
+                  "es": "Separar opciones por coma. Si seleccionamos el tipo de selección 'select all' o 'deselect all', no es necesario colocar las opciones.",
+                  "en": "Optional. Separate options by comma. If we select the type of selection 'select all' or 'deselect all', it is not necessary to put the options.",
+                  "pr": "Opcional. Separe as opções por vírgula. Se selecionarmos o tipo de seleção 'selecionar tudo' ou 'desmarcar tudo', não é necessário colocar as opções."
+                },
+                "id": "options",
+                "css": "col-md-6",
+                "data_type": "str",
+                "default": null,
+                "required": false
+              }
+            ]
+          },
+          "linux": true,
+          "windows": true,
+          "mac": true,
+          "video_youtube": "",
+          "icon": "data:image/png;base64,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",
+          "module": "multiple_select",
+          "module_name": "webpro",
+          "visible": true,
+          "options": false,
+          "father": "module",
+          "group": "scripts"
+        },
+        {
+          "title": {
+            "es": "Acceder a Shadow DOM",
+            "en": "Access Shadow DOM",
+            "pr": "Acessar ao Shadow DOM"
+          },
+          "description": {
+            "es": "Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.",
+            "en": "Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.",
+            "pr": "Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root."
+          },
+          "form": {
+            "css": "modal-lg",
+            "inputs": [
+              {
+                "type": "input",
+                "placeholder": {
+                  "es": "Dato",
+                  "en": "Data",
+                  "pr": "Dado"
+                },
+                "title": {
+                  "es": "Dato a buscar",
+                  "en": "Data to search",
+                  "pr": "Dado a buscar"
+                },
+                "description": {
+                  "es": "Colocamos el selector a buscar",
+                  "en": "We put the selector to search",
+                  "pr": "Colocamos o seletor para pesquisar"
+                },
+                "help": {
+                  "es": "Debe ser un css selector. Por ejemplo #id, .class, tag",
+                  "en": "It must be a css selector. For example #id, .class, tag",
+                  "pr": "Deve ser um seletor css. Por exemplo #id, .class, tag"
+                },
+                "id": "data",
+                "css": "col-md-12",
+                "data_type": "str",
+                "default": null,
+                "required": true
+              }
+            ]
+          },
+          "linux": true,
+          "windows": true,
+          "mac": true,
+          "video_youtube": "",
+          "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAbrqAAG66gHB8Tn1AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAchQTFRF////REREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREAF92QAAAAJd0Uk5TAAECAwQFBgcJCgsMDQ8QERIUFRcZGhscHh8jJCcoKSwtLi8wMTQ1Njc9P0FCREVISUpLTE1PUFFSU1VXWFlaXGFkZWdpamxtbm9xcnN3e4CBgoaHjI6PkJKUn6CipKapqqusr7CxsrO2ur3Aw8TFx8jKy8zNzs/Q0dbY2drd3t/i4+Tl5unq7O7v8PLz9Pb3+Pn6+/z9/jk7kY4AAAnASURBVHja7d3Zb1XVHsDx3UKBUmZoAeWCTE4EaEElCsoo4INCMVgnhlCMUIY/Bx98EK3EEIwihiAxGFAjiMYhIRKNMTEgGjXRIBEpoPeBcC9Cy1nn7NNhrX6+L9qe39rQ0w89a++enlZmPbwXEq+779/KTL06AAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQ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s50GxtqUrRPzHmLi1ikZANE2uqU+3wHqW0ZnAETcoI0P51n+8MZBGQBxnwyseqLkj7nyiVV9MgBib2Fzib9BfGDzwvTujd74nMBZLbWlLKttmZUBkESTt04qftGkrZMzABKprqWh2CUNLXUZAMlU01zkS/kvba7JAEjpZKCxqYgPvbKpsU8GQFot2Bh8MjBw44Jk74Ze/AIRDVsCH9XrtjRkACRY4L6+pHMGAGKodnPAmf2szbUZAKmeDGwo+JrSyzbUZAD04DbnamvBF/85uDXfnwCAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABoK4A8EIPr6ffwT39/vMVwFcAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAAAgAASAABIAAEAACQAAIAAEgAASAABAAAkAACAABIAAEgAAQAAJAgf0XsEXq36D3gLEAAAAASUVORK5CYII=",
+          "module": "shadow_dom",
+          "module_name": "webpro",
+          "visible": false,
           "options": false,
           "father": "module",
           "group": "scripts"
