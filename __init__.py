@@ -585,7 +585,13 @@ if module == "Edge_":
 
         else:
             if platform_.lower() == "windows":
-                edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
+                try:
+                    edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
+                except:
+                    try:
+                        edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\win\edge\x64"), "msedgedriver.exe")
+                    except:
+                        edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\win\edge\x84"), "msedgedriver.exe")
             else:
                 edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
 
@@ -1045,10 +1051,11 @@ if module == "printPDF":
         "version": 2
         }
     prefs = {'printing.print_preview_sticky_settings.appState': json.dumps(settings)}
+    
     chrome_options.add_experimental_option('prefs', prefs)
     chrome_options.add_argument('--kiosk-printing')
 
-    driver.execute_script('return window.print();')
+    driver.execute_script('window.print();')
 
 
 if module == "forceDownload":
@@ -1101,8 +1108,11 @@ if module == "open_browser":
     
 
     custom_options = GetParams("custom_options")
+    arguments = GetParams("arguments")
+    
     try:
         custom_options = eval(custom_options)
+        arguments = eval(arguments)
     except:
         pass
 
@@ -1142,12 +1152,13 @@ if module == "open_browser":
             caps.add_experimental_option("prefs", prefs)
             caps.add_argument('--kiosk-printing')
             
-
-            
             if profile_path == "":
                 pass
             else:
                 caps.add_argument("--user-data-dir=" + profile_path)
+            
+            for arg in arguments:
+                caps.add_argument(arg)
             
             browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
 
@@ -1340,5 +1351,6 @@ try:
             raise e
 
 except Exception as e:
+    traceback.print_exc()
     PrintException()
     raise e
