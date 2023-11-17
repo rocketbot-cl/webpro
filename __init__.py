@@ -1171,6 +1171,8 @@ if module == "open_browser":
                 
             
             firefox_options = FirefoxOptions()
+            firefox_options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
+            
             
             if profile_path != "":
                 profile = FirefoxProfile(profile_path)
@@ -1188,8 +1190,10 @@ if module == "open_browser":
                 for key, value in custom_options.items():
                     firefox_options.set_preference(key, value)
             
-            
-            browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=profile)
+            try:
+                browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=profile)
+            except:
+                browser_driver = Firefox(executable_path=firefox_driver, options=firefox_options, firefox_profile=profile)
 
         if not timeout:
             timeout = 100
