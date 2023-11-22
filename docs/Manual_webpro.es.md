@@ -393,7 +393,7 @@ Abre el navegador indicando la URL
 |Carpeta de descargas|Ruta de la carpeta de descargas para el navegador abierto|C:/folder|
 |Forzar descargas|Fuerza las descargas para hacerlas automaticas|True|
 |Opciones personalizadas para el navegador|Opciones personalizadas en formato dict|{'download.default_directory': download_path}|
-
+|Argumentos para abrir el navegador:|Argumentos en formato lista|['--incognito','--kiosk-printing','--new-window']|
 ### Drag and drop
   
 Realiza un drag and drop
