@@ -390,6 +390,7 @@ Open a browser the URL
 |Download Folder|Download folder for the opened browser|C:/folder|
 |Force downloads|Force the downloads to make them automatically|True|
 |Custom options for the browser|Custom options in dict format|{'download.default_directory': download_path}|
+|Arguments to open the browser:|Arguments in list format|['--incognito','--kiosk-printing','--new-window']|
 
 ### Drag and drop
   

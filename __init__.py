@@ -58,8 +58,6 @@ from selenium.common.exceptions import TimeoutException
 from PIL import Image
 from pathlib import Path
 from pyshadow.main import Shadow
-import logging
-from selenium.webdriver.remote.remote_connection import LOGGER
 
 global shadow_root # pylint: disable=global-at-module-level
 global element_root # pylint: disable=global-at-module-level
@@ -588,7 +586,6 @@ if module == "Edge_":
                 edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers\edge"), "msedgedriver.exe")
             else:
                 edge_driver = os.path.join(cur_path, os.path.normpath(r"drivers/edge"), "msedgedriver")
-
             
             edge_options = EdgeOptions()
 
@@ -603,11 +600,19 @@ if module == "Edge_":
 
 
             edge_options.add_argument('start-maximized')
-            driver = ws.Edge(edge_driver, options=edge_options, keep_alive=True)
-            
-            web.driver_list[web.driver_actual_id] = driver
-            if url:
-                web.driver_list[web.driver_actual_id].get(url)
+            try:
+                driver = ws.Edge(edge_driver, options=edge_options, keep_alive=True)
+                
+                web.driver_list[web.driver_actual_id] = driver
+                if url:
+                    web.driver_list[web.driver_actual_id].get(url)
+            except:
+                edge_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\edge\x86"), "msedgedriver.exe")
+                driver = ws.Edge(edge_driver, options=edge_options, keep_alive=True)
+
+                web.driver_list[web.driver_actual_id] = driver
+                if url:
+                    web.driver_list[web.driver_actual_id].get(url)
         
 
 
@@ -1045,10 +1050,11 @@ if module == "printPDF":
         "version": 2
         }
     prefs = {'printing.print_preview_sticky_settings.appState': json.dumps(settings)}
+    
     chrome_options.add_experimental_option('prefs', prefs)
     chrome_options.add_argument('--kiosk-printing')
 
-    driver.execute_script('return window.print();')
+    driver.execute_script('window.print();')
 
 
 if module == "forceDownload":
@@ -1101,8 +1107,15 @@ if module == "open_browser":
     
 
     custom_options = GetParams("custom_options")
+    arguments = GetParams("arguments")
+    
     try:
         custom_options = eval(custom_options)
+    except:
+        pass
+
+    try:
+        arguments = eval(arguments)
     except:
         pass
 
@@ -1142,12 +1155,14 @@ if module == "open_browser":
             caps.add_experimental_option("prefs", prefs)
             caps.add_argument('--kiosk-printing')
             
-
-            
             if profile_path == "":
                 pass
             else:
                 caps.add_argument("--user-data-dir=" + profile_path)
+            
+            if arguments:
+                for arg in arguments:
+                    caps.add_argument(arg)
             
             browser_driver = Chrome(executable_path=chrome_driver, chrome_options=caps)
 
@@ -1160,6 +1175,8 @@ if module == "open_browser":
                 
             
             firefox_options = FirefoxOptions()
+            firefox_options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
+            
             
             if profile_path != "":
                 profile = FirefoxProfile(profile_path)
@@ -1177,8 +1194,10 @@ if module == "open_browser":
                 for key, value in custom_options.items():
                     firefox_options.set_preference(key, value)
             
-            
-            browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=profile)
+            try:
+                browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=profile)
+            except:
+                browser_driver = Firefox(executable_path=firefox_driver, options=firefox_options, firefox_profile=profile)
 
         if not timeout:
             timeout = 100
@@ -1340,5 +1359,6 @@ try:
             raise e
 
 except Exception as e:
+    traceback.print_exc()
     PrintException()
     raise e

@@ -391,6 +391,7 @@ Abre o navegador indicando a URL
 |Pasta de download|Caminho da pasta de downloads para o navegador aberto|C:/folder|
 |Forçar downloads|Forçar downloads para torná-los automáticos|True|
 |Opções personalizadas para o navegador|Opções personalizadas no formato dict|{'download.default_directory': download_path}|
+|Argumentos para abrir o navegador:|Argumentos em formato de lista|['--incognito','--kiosk-printing','--new-window']|
 
 ### Drag and drop
   
