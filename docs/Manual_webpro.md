@@ -448,3 +448,16 @@ Select multiple options from a select
 |Data to search|Put the selector of the element to select.|Data|
 |Selection type|Select the type of selection to perform.|value|
 |Options to select|We put the options to select. If we select the type of selection 'select all' or 'deselect all', it is not necessary to put the options.|0,1,2,3|
+
+### Delete cookies
+  
+Delete browser cookies
+|Parameters|Description|example|
+| --- | --- | --- |
+
+### Get Cookies
+  
+Get the current browser cookies
+|Parameters|Description|example|
+| --- | --- | --- |
+|Variable where the result will be stored|Name of the variable where the cookies will be stored|Variable|
