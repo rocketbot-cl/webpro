@@ -449,3 +449,16 @@ Selecione várias opções de um seletor
 |Dado a buscar|Colocamos o seletor do elemento a selecionar.|Data|
 |Tipo de seleção|Selecione o tipo de seleção a ser realizada.|value|
 |Opções para selecionar|Colocamos as opções para selecionar. Se selecionarmos o tipo de seleção 'selecionar tudo' ou 'desmarcar tudo', não é necessário colocar as opções.|0,1,2,3|
+
+### Excluir cookies
+  
+Exclua os cookies do navegador
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+
+### Obter Cookies
+  
+Obtenha os cookies do navegador atual
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Variável onde o resultado será armazenado|Nome da variável onde os cookies serão armazenados|Variável|

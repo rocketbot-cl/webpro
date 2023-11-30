@@ -1357,6 +1357,14 @@ try:
         except Exception as e:
             PrintException()
             raise e
+        
+    if module == "get_cookies":
+        var_ = GetParams("var_")
+        cookies = driver.get_cookies()
+        SetVar(var_, str(cookies))
+        
+    if module == "delete_cookies":
+        driver.delete_all_cookies()
 
 except Exception as e:
     traceback.print_exc()
