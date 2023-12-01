@@ -243,8 +243,7 @@ if module == "webelementlist":
         traceback.print_exc()
         raise e
 
-if module == "CleanInputs":
-    
+if module == "CleancdInputs":
     
     search = GetParams('search_data')
     texto = GetParams('texto')
@@ -260,20 +259,20 @@ if module == "CleanInputs":
         sleep_ = eval(GetParams('sleep_'))
     except:
         sleep_ = False
-
-    print(search_type)
+    
     search_type = {"tag": "tag name", "class": "class name"}.get(search_type, search_type)
     
     element = driver.find_element(search_type, search)
 
-    if element is not None and texto is not None:
+    if element is not None:
         element.clear()
         if sleep_:
             time.sleep(1)
         if simulationKey:
             element.send_keys(Keys.SHIFT, Keys.ARROW_UP)
             element.send_keys(Keys.DELETE)
-        element.send_keys(texto)
+        if texto is not None:
+            element.send_keys(texto)
 
 if module == "LoadCookies":
     import pickle
