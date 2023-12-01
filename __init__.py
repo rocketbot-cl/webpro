@@ -241,7 +241,7 @@ if module == "webelementlist":
         traceback.print_exc()
         raise e
 
-if module == "CleancdInputs":
+if module == "CleanInputs":
     
     search = GetParams('search_data')
     texto = GetParams('texto')
