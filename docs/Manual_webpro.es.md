@@ -393,7 +393,7 @@ Abre el navegador indicando la URL
 |Carpeta de descargas|Ruta de la carpeta de descargas para el navegador abierto|C:/folder|
 |Forzar descargas|Fuerza las descargas para hacerlas automaticas|True|
 |Opciones personalizadas para el navegador|Opciones personalizadas en formato dict|{'download.default_directory': download_path}|
-
+|Argumentos para abrir el navegador:|Argumentos en formato lista|['--incognito','--kiosk-printing','--new-window']|
 ### Drag and drop
   
 Realiza un drag and drop
@@ -450,3 +450,16 @@ Selecciona múltiples opciones de un select
 |Dato a buscar|Colocamos el selector del elemento a seleccionar.|Data|
 |Tipo de selección|Seleccionamos el tipo de selección a realizar.|value|
 |Opciones a seleccionar|Colocamos las opciones a seleccionar. Si seleccionamos el tipo de selección 'select all' o 'deselect all', no es necesario colocar las opciones.|0,1,2,3|
+
+### Borrar cookies
+  
+Borra las cookies del navegador
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+
+### Obtener Cookies
+  
+Obtiene las cookies actuales del navegador
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Variable donde se almacenará el resultado|Nombre de la variable donde se almacenarán las cookies|Variable|

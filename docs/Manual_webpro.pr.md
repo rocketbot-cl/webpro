@@ -391,6 +391,7 @@ Abre o navegador indicando a URL
 |Pasta de download|Caminho da pasta de downloads para o navegador aberto|C:/folder|
 |Forçar downloads|Forçar downloads para torná-los automáticos|True|
 |Opções personalizadas para o navegador|Opções personalizadas no formato dict|{'download.default_directory': download_path}|
+|Argumentos para abrir o navegador:|Argumentos em formato de lista|['--incognito','--kiosk-printing','--new-window']|
 
 ### Drag and drop
   
@@ -448,3 +449,16 @@ Selecione várias opções de um seletor
 |Dado a buscar|Colocamos o seletor do elemento a selecionar.|Data|
 |Tipo de seleção|Selecione o tipo de seleção a ser realizada.|value|
 |Opções para selecionar|Colocamos as opções para selecionar. Se selecionarmos o tipo de seleção 'selecionar tudo' ou 'desmarcar tudo', não é necessário colocar as opções.|0,1,2,3|
+
+### Excluir cookies
+  
+Exclua os cookies do navegador
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+
+### Obter Cookies
+  
+Obtenha os cookies do navegador atual
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Variável onde o resultado será armazenado|Nome da variável onde os cookies serão armazenados|Variável|

@@ -125,13 +125,11 @@ This command allows you to download an image from an <img> tag
 37. Select multiple options  
 Select multiple options from a select
 
-### Changes
-Tue Sep 13 19:15:44 2022  Merge branch qa of https://github.com/rocketbot-cl/webpro
-Thu Aug 4 13:00:30 2022  [Merge] added Open browser with or without profile by jmsiro
-Mon May 2 16:53:22 2022  Merge from QA - Merge pull request from rocketbot-cl
-Thu Aug 19 13:24:01 2021  Merge branch master of github.com:rocketbot-cl/webpro
-Fri Apr 24 16:28:55 2020  Merge branch master of https://github.com/rocketbot-cl/webpro
-Wed Mar 11 14:24:59 2020  Merge branch master of https://github.com/rocketbot-cl/webpro
+38. Delete cookies  
+Delete browser cookies
+
+39. Get Cookies  
+Get the current browser cookies
 
 ----
 ### OS
