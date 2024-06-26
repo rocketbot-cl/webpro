@@ -106,6 +106,29 @@ A esto lo asignas a la variable que quieras, y en la misma tendrás el valor cod
 2. En la barra de direcciones, escriba lo siguiente: edge://version
 3. En la sección "Ruta de acceso al perfil" se encuentra la carpeta que contiene el perfil que está utilizando. Copie la ruta de la carpeta y péguela en el campo "Ruta del perfil" del comando "Abrir Edge (Chromium)" del módulo webpro.
 
+### Cómo utilizar perfil de usuario en navegador Firefox
+Firefox no permite ingresar una carpeta en blanco para crear un perfil como en Chrome, se le debe asignar la ruta a un perfil existente. Puedes ubicar la ruta de un perfil ya existente o crear uno debes ir a Firefox y buscar en el buscador lo siguiente: about:profiles. Debes utilizar la ruta indicada en Directorio Raíz del perfil con el cual quieras abrir el navegador.
+
+### Cómo actualizar Firefox en LINUX
+Si presenta errores en cuanto a la versión de Firefox en Linux, por favor siga los siguientes pasos:
+1. Descargue el último paquete tar de Firefox: navegue a la página oficial de descarga de Firefox y obtenga la última versión para Linux, o use wget en la terminal:
+
+        wget -O firefox-latest.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US" 
+
+2. Extrae el tarball
+
+        tar xjf firefox-latest.tar.bz2 
+
+3. Mueva los archivos extraídos: mueva los archivos extraídos al directorio /opt, que es un directorio estándar para guardar software opcional en Linux.
+
+        sudo mv firefox /opt/firefox-latest 
+
+4. Cree un enlace simbólico: para asegurarse de que el sistema utilice la última versión, cree un enlace simbólico.
+
+        sudo ln -s /opt/firefox-latest/firefox /usr/bin/firefox 
+
+Link: https://tecadmin.net/how-to-install-firefox-on-ubuntu/  => Metodo 2
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## How to use this module
@@ -215,7 +238,28 @@ To this you assign it to the variable that you want, and in the same one you wil
 2. In the address bar, type the following: edge://version
 3. In the "Profile Path" section you will find the folder containing the profile you are using. Copy the path of the folder and paste it in the "Profile Path" field of the "Open Edge (Chromium)" command of the webpro module.
 
+### How to use user profile in Firefox browser
+Firefox does not allow you to enter a blank folder to create a profile like in Chrome, you must assign the path to an existing profile. You can locate the path of an existing profile or create one by going to Firefox and searching in the search engine for the following: about:profiles. You must use the path indicated in the Root Directory of the profile with which you want to open the browser.
 
+### How to update Firefox on LINUX
+If you have errors regarding the version of Firefox on Linux, please follow the following steps:
+1. Download the latest Firefox tar package: Navigate to the official Firefox download page and get the latest version for Linux, or use wget in the terminal:
+
+        wget -O firefox-latest.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+
+2. Extract the tarball
+
+        tar xjf firefox-latest.tar.bz2
+
+3. Move the extracted files: Move the extracted files to the /opt directory, which is a standard directory for saving optional software in Linux.
+
+       sudo mv firefox /opt/firefox-latest
+
+4. Create a symbolic link: To ensure that the system uses the latest version, create a symbolic link.
+
+        sudo ln -s /opt/firefox-latest/firefox /usr/bin/firefox
+
+Link: https://tecadmin.net/how-to-install-firefox-on-ubuntu/ => Method 2
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Como usar este módulo
@@ -325,3 +369,26 @@ Atribua isso à variável de sua escolha e, nessa variável, você terá o valor
 1. Abra o navegador Edge com o perfil que deseja usar.
 2. Na barra de endereços, digite o seguinte: edge://version
 3. Na seção "Caminho do perfil", você encontrará a pasta que contém o perfil que está usando. Copie o caminho da pasta e cole-o no campo "Caminho do perfil" do comando "Abrir Edge (Chromium)" do módulo webpro.
+
+### Como usar o perfil de usuário no navegador Firefox
+O Firefox não permite que você insira uma pasta em branco para criar um perfil como no Chrome, você deve atribuir o caminho a um perfil existente. Você pode localizar o caminho de um perfil existente ou criar um acessando o Firefox e pesquisando no mecanismo de busca o seguinte: 'about:profiles'. Você deve utilizar o caminho indicado no diretório raiz do perfil com o qual deseja abrir o navegador.
+
+### Como atualizar o Firefox no LINUX
+Se você tiver erros relacionados à versão do Firefox no Linux, siga as seguintes etapas:
+1. Baixe o pacote tar mais recente do Firefox: Navegue até a página oficial de download do Firefox e obtenha a versão mais recente para Linux ou use wget no terminal:
+
+        wget -O firefox-latest.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+
+2. Extraia o tarball
+
+        tar xjf firefox-latest.tar.bz2
+
+3. Mova os arquivos extraídos: Mova os arquivos extraídos para o diretório /opt, que é um diretório padrão para salvar software opcional no Linux.
+
+         sudo mv firefox /opt/firefox-latest
+
+4. Crie um link simbólico: Para garantir que o sistema utilize a versão mais recente, crie um link simbólico.
+
+        sudo ln -s /opt/firefox-latest/firefox /usr/bin/firefox
+
+Link: https://tecadmin.net/how-to-install-firefox-on-ubuntu/ => Método 2
