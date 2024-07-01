@@ -43,6 +43,8 @@ from selenium.webdriver import Chrome
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities 
+
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + 'webpro' + os.sep + 'libs' + os.sep
 sys.path.append(cur_path)
@@ -1118,16 +1120,38 @@ if module == "open_browser":
     except:
         pass
 
-    try:
+    try:    
         if browser_ == "chrome":
             platform_ = platform.system()
             if platform_.endswith('dows'):
                 chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+            elif platform_ == "Linux" or platform_ == "Linux2":
+                chrome_driver = os.path.join(base_path, "drivers", "linux", "chrome", "chromedriver")
             else:
                 chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
             
             caps = selenium.webdriver.ChromeOptions()
-            caps.add_argument("--safebrowsing-disable-download-protection")
+            
+            if platform_ == "Linux" or platform_ == "Linux2":
+                caps.add_argument("start-maximized")
+                caps.add_argument("disable-infobars")
+                caps.add_argument("--disable-extensions")
+                caps.add_argument('log-level=3')
+                settings = {
+                        "recentDestinations": [{
+                                "id": "Save as PDF",
+                                "origin": "local",
+                                "account": "",
+                            }],
+                            "selectedDestinationId": "Save as PDF",
+                            "version": 2
+                        }
+                prefs = {'printing.print_preview_sticky_settings.appState': json.dumps(settings)}
+                caps.add_experimental_option('prefs', prefs)
+                caps.add_argument('--kiosk-printing')
+            else:
+                caps.add_argument("--safebrowsing-disable-download-protection")
+            
             prefs = {"download.default_directory": download_path}
 
             if force_downloads == "True":
@@ -1169,23 +1193,39 @@ if module == "open_browser":
             platform_ = platform.system()
             if platform_.endswith('dows'):
                 firefox_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\firefox\x64"), "geckodriver.exe")
+            elif platform_ == "Linux" or platform_ == "Linux2":
+                firefox_driver = os.path.join(base_path, os.path.normpath(r"drivers/linux/firefox"), "geckodriver")
             else:
                 firefox_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "geckodriver")
                 
-            
+                
             firefox_options = FirefoxOptions()
-            firefox_options.binary_location = r"C:\Program Files\Mozilla Firefox\firefox.exe"
-            
-            
+
+            if platform_ == "Linux" or platform_ == "Linux2":
+                firefox_capabilities = DesiredCapabilities.FIREFOX.copy()
+                firefox_capabilities['marionette'] = True
+                firefox_options.binary_location = r'/usr/bin/firefox'
+
             if profile_path != "":
                 profile = FirefoxProfile(profile_path)
+                #firefox_options.add_argument("-profile")
+                #firefox_options.add_argument(profile_path)
+                
             else:
-                profile = FirefoxProfile()
-            
+                from time import sleep
+                new_path = os.path.join(base_path, "firefox_temp_profile")
+                if not os.path.exists(new_path):
+                    os.makedirs(new_path)
+                sleep(2)
+                profile = FirefoxProfile(new_path)
+                profile.set_preference("profile_dir", new_path)
+
             if download_path:
                 firefox_options.set_preference("browser.download.folderList", 2)
                 firefox_options.set_preference("browser.download.dir", download_path)
-                
+                profile.set_preference("browser.download.manager.showWhenStarting", False)  
+                profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "*")
+
             if force_downloads == "True":
                 firefox_options.set_preference("browser.helperApps.neverAsk.saveToDisk", "*")
             
@@ -1194,9 +1234,12 @@ if module == "open_browser":
                     firefox_options.set_preference(key, value)
             
             try:
-                browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options, firefox_profile=profile)
+                browser_driver = Firefox(executable_path=firefox_driver, firefox_options=firefox_options)
             except:
-                browser_driver = Firefox(executable_path=firefox_driver, options=firefox_options, firefox_profile=profile)
+                try:
+                    browser_driver = Firefox(executable_path=firefox_driver, options=firefox_options, firefox_profile=profile)
+                except:
+                    browser_driver = Firefox(executable_path=firefox_driver, options=firefox_options)
 
         if not timeout:
             timeout = 100
