@@ -1212,11 +1212,11 @@ if module == "open_browser":
                 #firefox_options.add_argument(profile_path)
                 
             else:
-                import time
+                from time import sleep
                 new_path = os.path.join(base_path, "firefox_temp_profile")
                 if not os.path.exists(new_path):
                     os.makedirs(new_path)
-                time.sleep(2)
+                sleep(2)
                 profile = FirefoxProfile(new_path)
                 profile.set_preference("profile_dir", new_path)
 
