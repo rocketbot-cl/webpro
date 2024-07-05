@@ -1,3 +1,7 @@
+
+
+
+
 # WEB Pro
   
 Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
@@ -130,6 +134,15 @@ Borra las cookies del navegador
 
 39. Obtener Cookies  
 Obtiene las cookies actuales del navegador
+
+40. Acceder a Shadow DOM  
+Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.
+
+41. Zoom  
+Realiza Zoom In o Zoom Out en los navegadores Google Chrome y Firefox.  
+
+
+
 
 ----
 ### OS

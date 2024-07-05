@@ -1,3 +1,7 @@
+
+
+
+
 # WEB Pro
   
 Module with extended functionalities for the browser that works as a complement to the commands of the web section  
@@ -11,113 +15,6 @@ To install the module in Rocketbot Studio, it can be done in two ways:
 1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
 2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
 
-
-## How to use this module
-This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
-
-### In order to use Edge in Internet Explorer mode, the following settings must be made:
-1. Configure the browser based on the following documentation: https://docs.rocketbot.com/?p=169
-2. Download the Internet Explorer driver from the link below: https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.13.0/IEDriverServer_Win32_3.13.0.zip and place it in Rocketbot/drivers/win/ie/x86/
-3. To be able to access the developer tools, IEChooser.exe must be opened. To do so, press the Windows key + R and type the following: %systemroot%\system32\f12\IEChooser.exe and then press accept. Select the window of your browser, and you will be able to explore the elements of the page.
-
-### Tips for handling elements within a shadow root:
-1. Handling iframes:
-First locate all the shadow-root you need to enter to get to the iframe you need to access. For example if you have this structure:
-
-```html
-<div id="div1">
-  shadow-root(open)
-    <div id="div2">
-      <div id="div3">
-        shadow-root(open)
-          <div id="div4">
-            <iframe id="id_iframe">
-                <div id="div_shadow">
-                  shadow-root(open)
-                    <a id="link1">
-                    <input id="input1">
-                    <p id="paragraph">Text</p>.
-```
-
-You must enter the first shadow-root, and then the second.
-To accomplish this you must use the Run Python command. First you must import everything you need to handle the web elements, and then access each shadow root, and finish by accessing the iframe you need:
-
-```python
-from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-
-webdriver = GetGlobals("web")
-if webdriver.driver_actual_id in webdriver.driver_list:
-    driver = webdriver.driver_list[webdriver.driver_actual_id].
-    
-# First you select the parent of the first shadow-root
-shadow_host = driver.find_element(By.ID, '#div1') 
-
-# These next three lines are always the same
-shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
-shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
-shadow_root = WebElement(driver, shadow_root_id, w3c=True)
-
-# Here you select the element inside the first shadow-root that is the parent of the second shadow-root.
-shadow_content = shadow_root.find_element(By.ID, '#div3')
-
-
-shadow_host = shadow_content
-
-# These next three lines are always the same
-shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
-shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
-shadow_root = WebElement(driver, shadow_root_id, w3c=True)
-
-# When you enter the last shadow-root, you should only get the element that corresponds to the iframe that you should enter
-shadow_content = shadow_root.find_element(By.ID, '#id_iframe')
-
-# Y para finalizar, utilizas el comando que cambia al iframe
-driver.switch_to_frame(shadow_content)
-```
-
-#### Keep in mind that if you need to access more elements to get to the iframe, you only need to follow the same steps as many times as necessary.
-Once you have access to the iframe, you will be able to interact with all elements using javascript, regardless of whether they have shadow-root or not.
-
-2. Handling of elements within a shadow-root:
-To perform a click, copy the js path of the element. Then in Rocketbot use the Run JS command. In this command, paste the js_path and at the end add .click()
-Using the example at the beginning, to click on the \<a> tag inside the iframe, it should look something like this:
-
-```javascript
-document.querySelector("#div_shadow").shadowRoot.querySelector("#link1").click()
-```
-
-If for example you want to complete an input, it may vary depending on the input format of the page.
-Most inputs can be completed using Javascript and the Execute JS command as follows:
-
-```javascript
-document.querySelector("#div_shadow").shadowRoot.querySelector("#input1").value = "your_value"
-```
-
-In other cases, it is necessary that the input has focus to be able to enter a value. For this you must do the following steps:
-In a JS command place the following:
-
-```javascript
-// With this you give focus to the input
-document.querySelector("#div_shadow").shadowRoot.querySelector("#input1").setAttribute('focused', '')
-document.querySelector("#div_shadow").shadowRoot.querySelector("#input1").focus()
-```
-
-When you have it in focus, you can use the Send Keys command of the webpro module and it will write what you need.
-Finally, you can get the text of an element also with javascript, in the following way:
-Run a JS command with the following:
-    
-```javascript
-return document.querySelector("#div_shadow").shadowRoot.querySelector("#paragraph").innerHTML
-```
-To this you assign it to the variable that you want, and in the same one you will have the coded value. To get it clean, run an Assign Variable command with the following: {var}.decode('utf-8')
-
-
-### How to use existing user profile in Edge browser
-1. Open the Edge browser with the profile you want to use.
-2. In the address bar, type the following: edge://version
-3. In the "Profile Path" section you will find the folder containing the profile you are using. Copy the path of the folder and paste it in the "Profile Path" field of the "Open Edge (Chromium)" command of the webpro module.
 
 ## Description of the commands
 
@@ -163,13 +60,11 @@ Loads a file with cookies
 Reload Page
 |Parameters|Description|example|
 | --- | --- | --- |
-| --- | --- | --- |
 
 ### Back
   
 Back to previous page
 |Parameters|Description|example|
-| --- | --- | --- |
 | --- | --- | --- |
 
 ### Double Click
@@ -390,7 +285,7 @@ Open a browser the URL
 |Download Folder|Download folder for the opened browser|C:/folder|
 |Force downloads|Force the downloads to make them automatically|True|
 |Custom options for the browser|Custom options in dict format|{'download.default_directory': download_path}|
-|Arguments to open the browser:|Arguments in list format|['--incognito','--kiosk-printing','--new-window']|
+|Arguments to open the browser|Arguments in list format|['--incognito','--kiosk-printing','--new-window']|
 
 ### Drag and drop
   
@@ -431,7 +326,7 @@ Right click on a selected object
 
 ### Get image
   
-This command allows you to download an image from an `<img>` tag
+This command allows you to download an image from an <img> tag
 |Parameters|Description|example|
 | --- | --- | --- |
 |Data to search|Put the selector of the element to download|Data|
@@ -461,3 +356,17 @@ Get the current browser cookies
 |Parameters|Description|example|
 | --- | --- | --- |
 |Variable where the result will be stored|Name of the variable where the cookies will be stored|Variable|
+
+### Access Shadow DOM
+  
+Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Data to search|We put the selector to search|Data|
+
+### Zoom
+  
+Zoom In or Zoom Out in Google Chrome and Firefox browsers.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Zoom type|Select the type of zoom to perform.|Zoom In|
