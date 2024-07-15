@@ -1,3 +1,7 @@
+
+
+
+
 # WEB Pro
   
 Module with extended functionalities for the browser that works as a complement to the commands of the web section  
@@ -130,6 +134,15 @@ Delete browser cookies
 
 39. Get Cookies  
 Get the current browser cookies
+
+40. Access Shadow DOM  
+Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
+
+41. Zoom  
+Zoom In or Zoom Out in Google Chrome and Firefox browsers.  
+
+
+
 
 ----
 ### OS

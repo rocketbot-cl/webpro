@@ -1408,6 +1408,26 @@ try:
     if module == "delete_cookies":
         driver.delete_all_cookies()
 
+    if module == "zoom":
+        selection = GetParams("selection_zoom")
+        try:
+            current_zoom = driver.execute_script("return document.body.style.zoom || '1'")
+            step=0.1
+            if selection == "in":
+                current_zoom = float(current_zoom)
+                new_zoom = current_zoom + step
+                driver.execute_script(f"document.body.style.zoom='{new_zoom}'")
+            elif selection == "out":
+                current_zoom = float(current_zoom)
+                new_zoom = current_zoom - step
+                driver.execute_script(f"document.body.style.zoom='{new_zoom}'")
+            elif selection == "reset":
+                driver.execute_script(f"document.body.style.zoom='1'")
+        except Exception as e:
+            traceback.print_exc()
+            PrintException()
+            raise e
+
 except Exception as e:
     traceback.print_exc()
     PrintException()

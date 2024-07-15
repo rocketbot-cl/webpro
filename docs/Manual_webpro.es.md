@@ -1,3 +1,7 @@
+
+
+
+
 # WEB Pro
   
 Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
@@ -10,10 +14,6 @@ Modulo con funcionalidades extendidas para el navegador que funciona como comple
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
 2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
-
-
-## Como usar este modulo
-Este modulo se complementa con los modulos y comandos nativos Web que ya vienen por defecto en Rocketbot. Para poder usar el modulo debes tener un navegador ya abierto desde Rocketbot con el comando de "Abrir Navegador". Luego de esto ya podremos utilizar los comandos con normalidad.
 
 ### Para poder utilizar Edge en modo Internet Explorer, deben realizarse las siguientes configuraciones:
 1. Configurar el navegador en base a la siguiente documentación: https://docs.rocketbot.com/?p=169
@@ -114,13 +114,33 @@ return document.querySelector("#div_shadow").shadowRoot.querySelector("#parrafo"
 ```
 A esto lo asignas a la variable que quieras, y en la misma tendrás el valor codificado. Para obtenerlo limpio, ejecuta un comando de Asignar variable con lo siguiente: {var}.decode('latin-1')
 
-
-
 ### Cómo utilizar perfil de usuario existente en el navegador Edge
 1. Abra el navegador Edge con el perfil que desea utilizar.
 2. En la barra de direcciones, escriba lo siguiente: edge://version
 3. En la sección "Ruta de acceso al perfil" se encuentra la carpeta que contiene el perfil que está utilizando. Copie la ruta de la carpeta y péguela en el campo "Ruta del perfil" del comando "Abrir Edge (Chromium)" del módulo webpro.
 
+### Cómo utilizar perfil de usuario en navegador Firefox
+Firefox no permite ingresar una carpeta en blanco para crear un perfil como en Chrome, se le debe asignar la ruta a un perfil existente. Puedes ubicar la ruta de un perfil ya existente o crear uno debes ir a Firefox y buscar en el buscador lo siguiente: about:profiles. Debes utilizar la ruta indicada en Directorio Raíz del perfil con el cual quieras abrir el navegador.
+
+### Cómo actualizar Firefox en LINUX
+Si presenta errores en cuanto a la versión de Firefox en Linux, por favor siga los siguientes pasos:
+1. Descargue el último paquete tar de Firefox: navegue a la página oficial de descarga de Firefox y obtenga la última versión para Linux, o use wget en la terminal:
+
+        wget -O firefox-latest.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US" 
+
+2. Extrae el tarball
+
+        tar xjf firefox-latest.tar.bz2 
+
+3. Mueva los archivos extraídos: mueva los archivos extraídos al directorio /opt, que es un directorio estándar para guardar software opcional en Linux.
+
+        sudo mv firefox /opt/firefox-latest 
+
+4. Cree un enlace simbólico: para asegurarse de que el sistema utilice la última versión, cree un enlace simbólico.
+
+        sudo ln -s /opt/firefox-latest/firefox /usr/bin/firefox 
+
+Link: https://tecadmin.net/how-to-install-firefox-on-ubuntu/  => Metodo 2
 
 ## Descripción de los comandos
 
@@ -166,13 +186,11 @@ Carga un archivo con las cookies
 Recarga una página
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-| --- | --- | --- |
 
 ### Volver atrás
   
 Volver a la página anterior
 |Parámetros|Descripción|ejemplo|
-| --- | --- | --- |
 | --- | --- | --- |
 
 ### Doble Click
@@ -393,7 +411,8 @@ Abre el navegador indicando la URL
 |Carpeta de descargas|Ruta de la carpeta de descargas para el navegador abierto|C:/folder|
 |Forzar descargas|Fuerza las descargas para hacerlas automaticas|True|
 |Opciones personalizadas para el navegador|Opciones personalizadas en formato dict|{'download.default_directory': download_path}|
-|Argumentos para abrir el navegador:|Argumentos en formato lista|['--incognito','--kiosk-printing','--new-window']|
+|Argumentos para abrir el navegador|Argumentos en formato lista|['--incognito','--kiosk-printing','--new-window']|
+
 ### Drag and drop
   
 Realiza un drag and drop
@@ -433,7 +452,7 @@ Hace click derecho sobre un objeto seleccionado
 
 ### Obtener imagen
   
-Este comando permite descargar una imagen a partir de una etiqueta `<img>`
+Este comando permite descargar una imagen a partir de una etiqueta <img>
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Dato a buscar|Colocamos el selector del elemento a descargar|Data|
@@ -463,3 +482,17 @@ Obtiene las cookies actuales del navegador
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Variable donde se almacenará el resultado|Nombre de la variable donde se almacenarán las cookies|Variable|
+
+### Acceder a Shadow DOM
+  
+Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Dato a buscar|Colocamos el selector a buscar|Dato|
+
+### Zoom
+  
+Realiza Zoom In o Zoom Out en los navegadores Google Chrome y Firefox.
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Tipo de Zoom|Seleccionamos el tipo de zoom a realizar.|Zoom In|

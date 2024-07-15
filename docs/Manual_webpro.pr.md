@@ -1,3 +1,7 @@
+
+
+
+
 # WEB Pro
   
 Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web  
@@ -10,10 +14,6 @@ Módulo com funcionalidades estendidas para o navegador que funciona como comple
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1. Manual: __Baixe__ o arquivo .zip e descompacte-o na pasta módulos. O nome da pasta deve ser o mesmo do módulo e dentro dela devem ter os seguintes arquivos e pastas: \__init__.py, package.json, docs, example e libs. Se você tiver o aplicativo aberto, atualize seu navegador para poder usar o novo módulo.
 2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.  
-
-
-## Como usar este módulo
-Este módulo é complementado pelos módulos e comandos nativos da Web que vêm por padrão no Rocketbot. Para usar o módulo você deve ter um navegador já aberto do Rocketbot com o comando "Open Browser". Depois disso, podemos usar os comandos normalmente.
 
 ### Para usar o Edge no modo Internet Explorer, as seguintes configurações devem ser feitas:
 1. Configure o navegador com base na seguinte documentação: https://docs.rocketbot.com/?p=169
@@ -120,6 +120,29 @@ Atribua isso à variável de sua escolha e, nessa variável, você terá o valor
 2. Na barra de endereços, digite o seguinte: edge://version
 3. Na seção "Caminho do perfil", você encontrará a pasta que contém o perfil que está usando. Copie o caminho da pasta e cole-o no campo "Caminho do perfil" do comando "Abrir Edge (Chromium)" do módulo webpro.
 
+### Como usar o perfil de usuário no navegador Firefox
+O Firefox não permite que você insira uma pasta em branco para criar um perfil como no Chrome, você deve atribuir o caminho a um perfil existente. Você pode localizar o caminho de um perfil existente ou criar um acessando o Firefox e pesquisando no mecanismo de busca o seguinte: 'about:profiles'. Você deve utilizar o caminho indicado no diretório raiz do perfil com o qual deseja abrir o navegador.
+
+### Como atualizar o Firefox no LINUX
+Se você tiver erros relacionados à versão do Firefox no Linux, siga as seguintes etapas:
+1. Baixe o pacote tar mais recente do Firefox: Navegue até a página oficial de download do Firefox e obtenha a versão mais recente para Linux ou use wget no terminal:
+
+        wget -O firefox-latest.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+
+2. Extraia o tarball
+
+        tar xjf firefox-latest.tar.bz2
+
+3. Mova os arquivos extraídos: Mova os arquivos extraídos para o diretório /opt, que é um diretório padrão para salvar software opcional no Linux.
+
+         sudo mv firefox /opt/firefox-latest
+
+4. Crie um link simbólico: Para garantir que o sistema utilize a versão mais recente, crie um link simbólico.
+
+        sudo ln -s /opt/firefox-latest/firefox /usr/bin/firefox
+
+Link: https://tecadmin.net/how-to-install-firefox-on-ubuntu/ => Método 2
+
 ## Descrição do comando
 
 ### Lista de itens
@@ -164,13 +187,11 @@ Carrega um arquivo com cookies
 Recarregar página
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-| --- | --- | --- |
 
 ### Back
   
 retorna à página anterior
 |Parâmetros|Descrição|exemplo|
-| --- | --- | --- |
 | --- | --- | --- |
 
 ### Clique duplo
@@ -391,7 +412,7 @@ Abre o navegador indicando a URL
 |Pasta de download|Caminho da pasta de downloads para o navegador aberto|C:/folder|
 |Forçar downloads|Forçar downloads para torná-los automáticos|True|
 |Opções personalizadas para o navegador|Opções personalizadas no formato dict|{'download.default_directory': download_path}|
-|Argumentos para abrir o navegador:|Argumentos em formato de lista|['--incognito','--kiosk-printing','--new-window']|
+|Argumentos para abrir o navegador|Argumentos em formato de lista|['--incognito','--kiosk-printing','--new-window']|
 
 ### Drag and drop
   
@@ -432,7 +453,7 @@ Clique direito sobre um objeto selecionado
 
 ### Obter imagem
   
-Este comando permite baixar uma imagem de uma tag `<img>`
+Este comando permite baixar uma imagem de uma tag <img>
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Dado a buscar|Colocamos o seletor do elemento a baixar|Data|
@@ -462,3 +483,17 @@ Obtenha os cookies do navegador atual
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Variável onde o resultado será armazenado|Nome da variável onde os cookies serão armazenados|Variável|
+
+### Acessar ao Shadow DOM
+  
+Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root.
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Dado a buscar|Colocamos o seletor para pesquisar|Dado|
+
+### Zoom
+  
+Aumente ou diminua o zoom nos navegadores Google Chrome e Firefox.
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Tipo de Zoom|Selecione o tipo de zoom a ser realizada.|Zoom In|

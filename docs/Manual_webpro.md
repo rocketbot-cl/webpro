@@ -1,3 +1,7 @@
+
+
+
+
 # WEB Pro
   
 Module with extended functionalities for the browser that works as a complement to the commands of the web section  
@@ -10,10 +14,6 @@ Module with extended functionalities for the browser that works as a complement 
 To install the module in Rocketbot Studio, it can be done in two ways:
 1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
 2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
-
-
-## How to use this module
-This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
 
 ### In order to use Edge in Internet Explorer mode, the following settings must be made:
 1. Configure the browser based on the following documentation: https://docs.rocketbot.com/?p=169
@@ -119,6 +119,29 @@ To this you assign it to the variable that you want, and in the same one you wil
 2. In the address bar, type the following: edge://version
 3. In the "Profile Path" section you will find the folder containing the profile you are using. Copy the path of the folder and paste it in the "Profile Path" field of the "Open Edge (Chromium)" command of the webpro module.
 
+### How to use user profile in Firefox browser
+Firefox does not allow you to enter a blank folder to create a profile like in Chrome, you must assign the path to an existing profile. You can locate the path of an existing profile or create one by going to Firefox and searching in the search engine for the following: about:profiles. You must use the path indicated in the Root Directory of the profile with which you want to open the browser.
+
+### How to update Firefox on LINUX
+If you have errors regarding the version of Firefox on Linux, please follow the following steps:
+1. Download the latest Firefox tar package: Navigate to the official Firefox download page and get the latest version for Linux, or use wget in the terminal:
+
+        wget -O firefox-latest.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+
+2. Extract the tarball
+
+        tar xjf firefox-latest.tar.bz2
+
+3. Move the extracted files: Move the extracted files to the /opt directory, which is a standard directory for saving optional software in Linux.
+
+       sudo mv firefox /opt/firefox-latest
+
+4. Create a symbolic link: To ensure that the system uses the latest version, create a symbolic link.
+
+        sudo ln -s /opt/firefox-latest/firefox /usr/bin/firefox
+
+Link: https://tecadmin.net/how-to-install-firefox-on-ubuntu/ => Method 2
+
 ## Description of the commands
 
 ### List of items
@@ -163,13 +186,11 @@ Loads a file with cookies
 Reload Page
 |Parameters|Description|example|
 | --- | --- | --- |
-| --- | --- | --- |
 
 ### Back
   
 Back to previous page
 |Parameters|Description|example|
-| --- | --- | --- |
 | --- | --- | --- |
 
 ### Double Click
@@ -390,7 +411,7 @@ Open a browser the URL
 |Download Folder|Download folder for the opened browser|C:/folder|
 |Force downloads|Force the downloads to make them automatically|True|
 |Custom options for the browser|Custom options in dict format|{'download.default_directory': download_path}|
-|Arguments to open the browser:|Arguments in list format|['--incognito','--kiosk-printing','--new-window']|
+|Arguments to open the browser|Arguments in list format|['--incognito','--kiosk-printing','--new-window']|
 
 ### Drag and drop
   
@@ -431,7 +452,7 @@ Right click on a selected object
 
 ### Get image
   
-This command allows you to download an image from an `<img>` tag
+This command allows you to download an image from an <img> tag
 |Parameters|Description|example|
 | --- | --- | --- |
 |Data to search|Put the selector of the element to download|Data|
@@ -461,3 +482,17 @@ Get the current browser cookies
 |Parameters|Description|example|
 | --- | --- | --- |
 |Variable where the result will be stored|Name of the variable where the cookies will be stored|Variable|
+
+### Access Shadow DOM
+  
+Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Data to search|We put the selector to search|Data|
+
+### Zoom
+  
+Zoom In or Zoom Out in Google Chrome and Firefox browsers.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Zoom type|Select the type of zoom to perform.|Zoom In|
