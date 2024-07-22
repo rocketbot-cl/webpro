@@ -3773,6 +3773,18 @@
                   "value": "F9"
                 },
                 {
+                  "title": "F10",
+                  "value": "F10"
+                },
+                {
+                  "title": "F11",
+                  "value": "F11"
+                },
+                {
+                  "title": "F12",
+                  "value": "F12"
+                },
+                {
                   "title": "HELP",
                   "value": "HELP"
                 },
@@ -4012,6 +4024,18 @@
                 {
                   "title": "F9",
                   "value": "F9"
+                },
+                {
+                  "title": "F10",
+                  "value": "F10"
+                },
+                {
+                  "title": "F11",
+                  "value": "F11"
+                },
+                {
+                  "title": "F12",
+                  "value": "F12"
                 },
                 {
                   "title": "HELP",
