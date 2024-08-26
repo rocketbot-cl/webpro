@@ -15,6 +15,9 @@ Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1. Manual: __Baixe__ o arquivo .zip e descompacte-o na pasta módulos. O nome da pasta deve ser o mesmo do módulo e dentro dela devem ter os seguintes arquivos e pastas: \__init__.py, package.json, docs, example e libs. Se você tiver o aplicativo aberto, atualize seu navegador para poder usar o novo módulo.
 2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.  
 
+## Como usar este módulo
+Este módulo é complementado pelos módulos e comandos nativos da Web que vêm por padrão no Rocketbot. Para usar o módulo você deve ter um navegador já aberto do Rocketbot com o comando "Open Browser". Depois disso, podemos usar os comandos normalmente.
+
 ### Para usar o Edge no modo Internet Explorer, as seguintes configurações devem ser feitas:
 1. Configure o navegador com base na seguinte documentação: https://docs.rocketbot.com/?p=169
 2. Baixe o driver do Internet Explorer a partir do link abaixo: https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.13.0/IEDriverServer_Win32_3.13.0.zip e colocá-lo em Rocketbot/drivers/win/ie/x86/
@@ -367,6 +370,16 @@ Troca para um iframe esperando que ele esteja presente
 |Selecionar por índice|Caixa de seleção para escolher iframe por índice|True|
 |Índice|Índice do frame dentro do código HTML da página da web|0|
 |Esperar|Colocamos o tempo de espera|5|
+
+### Mudar para iframes aninhados
+  
+Entrar em varios iframes aguardando que se encontrem presentes
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Dados a buscar|Colocar os seletores de cada iframe separados por virgula|Data1, Data2|
+|Tipo de dado|Selecionamos o tipo de dado|xpath|
+|Esperar|Colocamos o tempo de espera|5|
+|Atribuir resultado à variável|Variável onde True ou False será armazenado dependendo se o iframe pode ser introduzido|Variável|
 
 ### Enviar Teclas
   

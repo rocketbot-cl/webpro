@@ -96,49 +96,52 @@ Select an object waiting that it's present
 26. Change to iframe Pro  
 Change to iframe waiting that it's present
 
-27. Send Keys  
+27. Change to iframes nested  
+Enter multiple iframes waiting for them to appear
+
+28. Send Keys  
 Similar to Send keys web, but low level
 
-28. Print to PDF (Chrome)  
+29. Print to PDF (Chrome)  
 Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 
-29. Force Download  
+30. Force Download  
 Force Download
 
-30. Open New Tab  
+31. Open New Tab  
 Open new tab with the URL
 
-31. Open Browser  
+32. Open Browser  
 Open a browser the URL
 
-32. Drag and drop  
+33. Drag and drop  
 Do a drag and drop
 
-33. Upload files  
+34. Upload files  
 Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
 
-34. Send key combination  
+35. Send key combination  
 Command to send key combination
 
-35. Right Click  
+36. Right Click  
 Right click on a selected object
 
-36. Get image  
+37. Get image  
 This command allows you to download an image from an <img> tag
 
-37. Select multiple options  
+38. Select multiple options  
 Select multiple options from a select
 
-38. Delete cookies  
+39. Delete cookies  
 Delete browser cookies
 
-39. Get Cookies  
+40. Get Cookies  
 Get the current browser cookies
 
-40. Access Shadow DOM  
+41. Access Shadow DOM  
 Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
 
-41. Zoom  
+42. Zoom  
 Zoom In or Zoom Out in Google Chrome and Firefox browsers.  
 
 
