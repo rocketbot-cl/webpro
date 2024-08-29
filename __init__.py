@@ -1002,6 +1002,50 @@ if module == "changeIframePro":
         PrintException()
         raise e
 
+if module == "changeMultipleIframes":
+    data_list = GetParams("data_list") 
+    wait_ = GetParams("wait")
+    data_type = GetParams("data_type")
+    var_ = GetParams("var_")
+    
+    try:
+        if not wait_:
+            wait_ = 5
+        actionChains = ActionChains(driver)
+        wait = WebDriverWait(driver, int(wait_))
+
+        if data_list:
+            data_list = eval(data_list)
+        if isinstance(data_list, list):
+            iframe_identifiers = data_list 
+            for iframe in iframe_identifiers:
+                try:
+                    # if index_check and eval(index_check):
+                    #     print(iframe)
+                    #     driver.switch_to.frame(int(iframe))
+                    # else:
+                    elementLocator = wait.until(EC.presence_of_element_located((types[data_type], iframe)))
+                    if sys.maxsize > 2**32:
+                        driver.switch_to.frame(elementLocator)
+                    else:
+                        driver.switch_to_frame(elementLocator)
+
+                    time.sleep(0.5)
+                    SetVar(var_, True)
+                except Exception as e:
+                    SetVar(var_, False)
+                    import traceback
+                    traceback.print_exc()
+                    raise e
+        else:
+            SetVar(var_, False)
+            raise ValueError("No iframe identifiers provided")
+    except Exception as e:
+        SetVar(var_, False)
+        print("\x1B[" + "31;40mEXCEPTION \x1B[" + "0m")
+        PrintException()
+        raise e
+
 if module == "sendkeys":
 
     text = GetParams("text")

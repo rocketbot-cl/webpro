@@ -9,11 +9,15 @@ Modulo con funcionalidades extendidas para el navegador que funciona como comple
 *Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
   
 ![banner](imgs/Banner_webpro.png)
+
 ## Como instalar este módulo
   
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
 2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
+
+## Como usar este modulo
+Este modulo se complementa con los modulos y comandos nativos Web que ya vienen por defecto en Rocketbot. Para poder usar el modulo debes tener un navegador ya abierto desde Rocketbot con el comando de "Abrir Navegador". Luego de esto ya podremos utilizar los comandos con normalidad.
 
 ### Para poder utilizar Edge en modo Internet Explorer, deben realizarse las siguientes configuraciones:
 1. Configurar el navegador en base a la siguiente documentación: https://docs.rocketbot.com/?p=169
@@ -105,7 +109,6 @@ document.querySelector("#div_shadow").shadowRoot.querySelector("#input1").focus(
 ```
 
 Al tenerlo en foco, puedes utilizar el comando Enviar Teclas del módulo webpro y escribirá lo que necesites.
-
 Para finalizar, puedes obtener el texto de un elemento también con javascript, de la siguiente forma:
 Ejecuta un comando JS con lo siguiente:
     
@@ -113,6 +116,8 @@ Ejecuta un comando JS con lo siguiente:
 return document.querySelector("#div_shadow").shadowRoot.querySelector("#parrafo").innerHTML
 ```
 A esto lo asignas a la variable que quieras, y en la misma tendrás el valor codificado. Para obtenerlo limpio, ejecuta un comando de Asignar variable con lo siguiente: {var}.decode('latin-1')
+
+
 
 ### Cómo utilizar perfil de usuario existente en el navegador Edge
 1. Abra el navegador Edge con el perfil que desea utilizar.
@@ -366,6 +371,16 @@ Cambia a un iframe esperando que se encuentre presente
 |Seleccionar por índice|Casilla para elegir iframe por índice|True|
 |Índice|Indice del frame dentro del codigo HTML de la pagina web|0|
 |Esperar|Colocamos el tiempo de espera|5|
+
+### Cambiar a iframes anidados
+  
+Ingresa a multiples iframes esperando que se encuentren presentes
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Datos a buscar|Colocar los selectores de cada iframe en formato lista|['Data1', 'Data2']|
+|Tipo de dato|Seleccionamos el tipo de dato|xpath|
+|Esperar|Colocamos el tiempo de espera|5|
+|Asignar resultado a variable|Variable donde se almacenará True o False dependiendo si se pudo ingresar a cada iframe|Variable|
 
 ### Enviar Teclas
   

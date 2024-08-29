@@ -96,49 +96,52 @@ Selecciona un objeto esperando que se encuentre presente
 26. Cambiar a iframe Pro  
 Cambia a un iframe esperando que se encuentre presente
 
-27. Enviar Teclas  
+27. Cambiar a iframes anidados  
+Ingresa a multiples iframes esperando que se encuentren presentes
+
+28. Enviar Teclas  
 Similar a Enviar texto web, pero a más bajo nivel
 
-28. Imprimir como PDF (Chrome)  
+29. Imprimir como PDF (Chrome)  
 Imprimir la página como PDF en Chrome. El PDF se genera en base al contenido disponible de la página. No representa una copia fiel del sitio.
 
-29. Forzar Descarga  
+30. Forzar Descarga  
 Forzar una descarga
 
-30. Abrir Nueva Pestaña  
+31. Abrir Nueva Pestaña  
 Abre una nueva pestaña indicando la URL
 
-31. Abrir navegador  
+32. Abrir navegador  
 Abre el navegador indicando la URL
 
-32. Drag and drop  
+33. Drag and drop  
 Realiza un drag and drop
 
-33. Subir Archivo  
+34. Subir Archivo  
 Comando para subir uno o más archivos a un input de tipo file. Solo completar un unico valor según cuántos archivos se deseen subir.
 
-34. Enviar combinacion de teclas  
+35. Enviar combinacion de teclas  
 Comando para enviar combinacion de dos teclas
 
-35. Click Derecho  
+36. Click Derecho  
 Hace click derecho sobre un objeto seleccionado
 
-36. Obtener imagen  
+37. Obtener imagen  
 Este comando permite descargar una imagen a partir de una etiqueta <img>
 
-37. Seleccionar múltiples opciones  
+38. Seleccionar múltiples opciones  
 Selecciona múltiples opciones de un select
 
-38. Borrar cookies  
+39. Borrar cookies  
 Borra las cookies del navegador
 
-39. Obtener Cookies  
+40. Obtener Cookies  
 Obtiene las cookies actuales del navegador
 
-40. Acceder a Shadow DOM  
+41. Acceder a Shadow DOM  
 Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.
 
-41. Zoom  
+42. Zoom  
 Realiza Zoom In o Zoom Out en los navegadores Google Chrome y Firefox.  
 
 
