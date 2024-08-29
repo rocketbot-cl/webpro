@@ -1015,9 +1015,10 @@ if module == "changeMultipleIframes":
         wait = WebDriverWait(driver, int(wait_))
 
         if data_list:
-            iframe_identifiers = data_list.split(",")
-
-            for i, iframe in enumerate(iframe_identifiers):
+            data_list = eval(data_list)
+        if isinstance(data_list, list):
+            iframe_identifiers = data_list 
+            for iframe in iframe_identifiers:
                 try:
                     # if index_check and eval(index_check):
                     #     print(iframe)
@@ -1031,9 +1032,11 @@ if module == "changeMultipleIframes":
 
                     time.sleep(0.5)
                     SetVar(var_, True)
-                except TimeoutException:
+                except Exception as e:
                     SetVar(var_, False)
-                    raise Exception(f"The iframe '{iframe}' is not available to be clicked")
+                    import traceback
+                    traceback.print_exc()
+                    raise e
         else:
             SetVar(var_, False)
             raise ValueError("No iframe identifiers provided")

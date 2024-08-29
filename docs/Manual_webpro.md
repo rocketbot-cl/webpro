@@ -514,7 +514,7 @@ Change to iframe waiting that it's present
 Enter multiple iframes waiting for them to appear
 |Parameters|Description|example|
 | --- | --- | --- |
-|Data to search|Put the selectors of each iframe separated by commas|Data1, Data2|
+|Data to search|Put the selectors of each iframe in a list format|['Data1', 'Data2']|
 |Data type|Select the type of data|xpath|
 |Wait|Put the time of wait|5|
 |Assign result to variable|Variable where True or False will be stored depending on whether the iframe could be entered|Variable|

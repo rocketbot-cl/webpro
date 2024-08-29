@@ -2697,9 +2697,9 @@
             {
               "type": "input",
               "placeholder": {
-                "es": "Data1, Data2",
-                "en": "Data1, Data2",
-                "pr": "Data1, Data2"
+                "es": "['Data1', 'Data2']",
+                "en": "['Data1', 'Data2']",
+                "pr": "['Data1', 'Data2']"
               },
               "title": {
                 "es": "Datos a buscar",
@@ -2707,9 +2707,9 @@
                 "pr": "Dados a buscar"
               },
               "description": {
-                "es": "Colocar los selectores de cada iframe separados por coma",
-                "en": "Put the selectors of each iframe separated by commas",
-                "pr": "Colocar os seletores de cada iframe separados por virgula"
+                "es": "Colocar los selectores de cada iframe en formato lista",
+                "en": "Put the selectors of each iframe in a list format",
+                "pr": "Colocar os seletores de cada iframe em formato lista"
               },
               "id": "data_list",
               "css": "col-md-6",

@@ -377,7 +377,7 @@ Cambia a un iframe esperando que se encuentre presente
 Ingresa a multiples iframes esperando que se encuentren presentes
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Datos a buscar|Colocar los selectores de cada iframe separados por coma|Data1, Data2|
+|Datos a buscar|Colocar los selectores de cada iframe en formato lista|['Data1', 'Data2']|
 |Tipo de dato|Seleccionamos el tipo de dato|xpath|
 |Esperar|Colocamos el tiempo de espera|5|
 |Asignar resultado a variable|Variable donde se almacenará True o False dependiendo si se pudo ingresar a cada iframe|Variable|
