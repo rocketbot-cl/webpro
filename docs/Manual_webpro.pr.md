@@ -1,14 +1,10 @@
-
-
-
-
 # WEB Pro
   
 Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web  
 
 *Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
   
-![banner](imgs/Banner_webpro.png)
+![banner](imgs/Banner_webpro.png o jpg)
 ## Como instalar este módulo
   
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
@@ -496,6 +492,12 @@ Obtenha os cookies do navegador atual
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Variável onde o resultado será armazenado|Nome da variável onde os cookies serão armazenados|Variável|
+
+### Limpar Cache Chrome
+  
+Limpa o cache armazenado no navegador
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
 
 ### Acessar ao Shadow DOM
   

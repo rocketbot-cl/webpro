@@ -1,9 +1,5 @@
-
-
-
-
 # WEB Pro
-  
+
 Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
 
 *Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
@@ -497,6 +493,12 @@ Obtiene las cookies actuales del navegador
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Variable donde se almacenará el resultado|Nombre de la variable donde se almacenarán las cookies|Variable|
+
+### Limpiar Cache Chrome
+  
+Limpia el cache almacenado en el navegador
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
 
 ### Acceder a Shadow DOM
   

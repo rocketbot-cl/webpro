@@ -1452,6 +1452,18 @@ try:
     if module == "delete_cookies":
         driver.delete_all_cookies()
 
+    if module == "clear_cache":
+        driver.execute_cdp_cmd('Network.clearBrowserCache', {})
+        driver.execute_script("window.localStorage.clear(); window.sessionStorage.clear();")
+        driver.execute_cdp_cmd('Storage.clearDataForOrigin', {
+            "origin": "*",
+            "storageTypes": "all"
+        })
+        driver.execute_cdp_cmd('Storage.clearDataForOrigin', {
+            "origin": "*",
+            "storageTypes": "ache_storage, indexeddb, local_storage, service_workers, websql"
+        })
+        
     if module == "zoom":
         selection = GetParams("selection_zoom")
         try:

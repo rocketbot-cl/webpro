@@ -138,10 +138,13 @@ Borra las cookies del navegador
 40. Obtener Cookies  
 Obtiene las cookies actuales del navegador
 
-41. Acceder a Shadow DOM  
+41. Limpiar Cache Chrome  
+Limpia el cache almacenado en el navegador
+
+42. Acceder a Shadow DOM  
 Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.
 
-42. Zoom  
+43. Zoom  
 Realiza Zoom In o Zoom Out en los navegadores Google Chrome y Firefox.  
 
 
