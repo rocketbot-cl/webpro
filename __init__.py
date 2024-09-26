@@ -1244,6 +1244,12 @@ if module == "open_browser":
                 
                 
             firefox_options = FirefoxOptions()
+            
+            if platform_.endswith('dows'):
+                if os.path.exists(r'C:\Program Files\Mozilla Firefox\firefox.exe'):
+                    firefox_options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
+                elif os.path.exists(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe'):
+                    firefox_options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
 
             if platform_ == "Linux" or platform_ == "Linux2":
                 firefox_capabilities = DesiredCapabilities.FIREFOX.copy()
