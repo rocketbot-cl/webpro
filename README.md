@@ -138,10 +138,13 @@ Delete browser cookies
 40. Get Cookies  
 Get the current browser cookies
 
-41. Access Shadow DOM  
+41. Clear Cache Chrome  
+Clears the cache stored in the browser
+
+42. Access Shadow DOM  
 Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
 
-42. Zoom  
+43. Zoom  
 Zoom In or Zoom Out in Google Chrome and Firefox browsers.  
 
 

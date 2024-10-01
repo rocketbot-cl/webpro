@@ -39,6 +39,16 @@ jobs:
           body: ${{ steps.extract_commit_message.outputs.MESSAGE }}
           draft: false
           prerelease: false
+        
+      - name: Login to Market API
+        id: login_api
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: 'https://market-api.rocketbot.com/api/loginApi'
+          method: 'POST'
+          contentType: 'application/json'
+          data: '{"email": "${{ secrets.ACCOUNT }}", "password": "${{ secrets.PASS }}"}'
+
       - name: Module Information
         uses: fjogeleit/http-request-action@v1
         id: module_info
@@ -50,9 +60,20 @@ jobs:
         id: module_id
         run: echo "MODULE_ID=${{ fromJson(steps.module_info.outputs.response).data.id }}" >> "$GITHUB_OUTPUT"
 
+      - name: Token
+        id: token
+        run: echo "TOKEN=${{ fromJson(steps.login_api.outputs.response).token }}" >> "$GITHUB_OUTPUT"
+
       - name: Update module in Market
         uses: fjogeleit/http-request-action@v1
         id: update_module
         with:
           url: 'https://market-api.rocketbot.com/modules/update/${{ steps.module_id.outputs.MODULE_ID }}'
           method: 'POST'
+          bearerToken: ${{ fromJson(steps.login_api.outputs.response).token }}
+          timeout: 10000
+          preventFailureOnNoResponse: 'true'
+          ignoreStatusCodes: '502'
+          maskResponse: 'true'
+          retry: 3
+          retryWait: 5000

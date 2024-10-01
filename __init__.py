@@ -1244,6 +1244,12 @@ if module == "open_browser":
                 
                 
             firefox_options = FirefoxOptions()
+            
+            if platform_.endswith('dows'):
+                if os.path.exists(r'C:\Program Files\Mozilla Firefox\firefox.exe'):
+                    firefox_options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
+                elif os.path.exists(r'C:\Program Files (x86)\Mozilla Firefox\firefox.exe'):
+                    firefox_options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
 
             if platform_ == "Linux" or platform_ == "Linux2":
                 firefox_capabilities = DesiredCapabilities.FIREFOX.copy()
@@ -1452,6 +1458,18 @@ try:
     if module == "delete_cookies":
         driver.delete_all_cookies()
 
+    if module == "clear_cache":
+        driver.execute_cdp_cmd('Network.clearBrowserCache', {})
+        driver.execute_script("window.localStorage.clear(); window.sessionStorage.clear();")
+        driver.execute_cdp_cmd('Storage.clearDataForOrigin', {
+            "origin": "*",
+            "storageTypes": "all"
+        })
+        driver.execute_cdp_cmd('Storage.clearDataForOrigin', {
+            "origin": "*",
+            "storageTypes": "ache_storage, indexeddb, local_storage, service_workers, websql"
+        })
+        
     if module == "zoom":
         selection = GetParams("selection_zoom")
         try:
