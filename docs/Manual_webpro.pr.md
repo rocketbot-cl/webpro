@@ -1,15 +1,21 @@
+
+
+
+
 # WEB Pro
   
 Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web  
 
 *Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
   
-![banner](imgs/Banner_webpro.png o jpg)
+![banner](imgs/Banner_webpro.png)
 ## Como instalar este módulo
   
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1. Manual: __Baixe__ o arquivo .zip e descompacte-o na pasta módulos. O nome da pasta deve ser o mesmo do módulo e dentro dela devem ter os seguintes arquivos e pastas: \__init__.py, package.json, docs, example e libs. Se você tiver o aplicativo aberto, atualize seu navegador para poder usar o novo módulo.
 2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.  
+
+
 
 ## Como usar este módulo
 Este módulo é complementado pelos módulos e comandos nativos da Web que vêm por padrão no Rocketbot. Para usar o módulo você deve ter um navegador já aberto do Rocketbot com o comando "Open Browser". Depois disso, podemos usar os comandos normalmente.
@@ -19,7 +25,8 @@ Este módulo é complementado pelos módulos e comandos nativos da Web que vêm 
 2. Baixe o driver do Internet Explorer a partir do link abaixo: https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.13.0/IEDriverServer_Win32_3.13.0.zip e colocá-lo em Rocketbot/drivers/win/ie/x86/
 3. Para acessar as ferramentas de desenvolvimento, você deve abrir o IEChooser.exe. Para fazer isso, pressione a tecla Windows + R e digite o seguinte: %systemroot%\system32\f12\IEChooser.exe e depois clique em "accept". Selecione sua janela do navegador, e você poderá explorar os elementos da página
 
-### Dicas para lidar com elementos em uma raiz de sombra:
+### Dicas para 
+lidar com elementos em uma raiz de sombra:
 1. Manipulação de iframes:
 Primeiro, localize todo shadow root na qual precisa entrar para chegar ao iframe que precisa acessar. Por exemplo, se você tiver esta estrutura:
 
@@ -44,7 +51,8 @@ Para fazer isso, deve usar o comando Run Python. Primeiro, deve importar tudo o 
 ```python
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
+from 
+selenium.webdriver.common.by import By
 
 webdriver = GetGlobals("web")
 if webdriver.driver_actual_id in webdriver.driver_list:
@@ -67,7 +75,8 @@ shadow_host = shadow_content
 # As próximas três linhas são sempre as mesmas
 shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
 shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
-shadow_root = WebElement(driver, shadow_root_id, w3c=True)
+shadow_root = WebElement(driver, shadow_root_id, 
+w3c=True)
 
 # Ao inserir o último shadow-root, deve obter apenas o elemento que corresponde ao iframe que deve inserir
 shadow_content = shadow_root.find_element(By.ID, '#id_iframe')
@@ -87,7 +96,8 @@ Usando o exemplo do início, para clicar na tag \<a> dentro do iframe, ela deve 
 document.querySelector("#div_shadow").shadowRoot.querySelector("#link1").click()
 ```
 
-Se, por exemplo, quiser completar um input, isso pode variar dependendo do formato do input na página.
+Se, por 
+exemplo, quiser completar um input, isso pode variar dependendo do formato do input na página.
 A maioria dos inputs pode ser completada usando Javascript e o comando Execute JS da seguinte forma:
 
 ```javascript
@@ -108,7 +118,8 @@ Por fim, pode obter o texto de um elemento também com javascript, da seguinte f
 Execute um comando JS com o seguinte:
     
 ```javascript
-return document.querySelector("#div_shadow").shadowRoot.querySelector("#paragraph").innerHTML
+return 
+document.querySelector("#div_shadow").shadowRoot.querySelector("#paragraph").innerHTML
 ```
 
 Atribua isso à variável de sua escolha e, nessa variável, você terá o valor codificado. Para obter um valor limpo, execute um comando Assign Variable com o seguinte: {var}.decode('latin-1')
@@ -120,7 +131,8 @@ Atribua isso à variável de sua escolha e, nessa variável, você terá o valor
 3. Na seção "Caminho do perfil", você encontrará a pasta que contém o perfil que está usando. Copie o caminho da pasta e cole-o no campo "Caminho do perfil" do comando "Abrir Edge (Chromium)" do módulo webpro.
 
 ### Como usar o perfil de usuário no navegador Firefox
-O Firefox não permite que você insira uma pasta em branco para criar um perfil como no Chrome, você deve atribuir o caminho a um perfil existente. Você pode localizar o caminho de um perfil existente ou criar um acessando o Firefox e pesquisando no mecanismo de busca o seguinte: 'about:profiles'. Você deve utilizar o caminho indicado no diretório raiz do perfil com o qual deseja abrir o navegador.
+O Firefox não permite que você insira uma pasta em branco para criar um perfil como no Chrome, você deve atribuir o caminho a um perfil existente. Você pode localizar o caminho de um perfil existente ou criar um acessando o Firefox e pesquisando no mecanismo de busca o 
+seguinte: 'about:profiles'. Você deve utilizar o caminho indicado no diretório raiz do perfil com o qual deseja abrir o navegador.
 
 ### Como atualizar o Firefox no LINUX
 Se você tiver erros relacionados à versão do Firefox no Linux, siga as seguintes etapas:
@@ -140,7 +152,8 @@ Se você tiver erros relacionados à versão do Firefox no Linux, siga as seguin
 
         sudo ln -s /opt/firefox-latest/firefox /usr/bin/firefox
 
-Link: https://tecadmin.net/how-to-install-firefox-on-ubuntu/ => Método 2
+Link: 
+https://tecadmin.net/how-to-install-firefox-on-ubuntu/ => Método 2
 
 ## Descrição do comando
 

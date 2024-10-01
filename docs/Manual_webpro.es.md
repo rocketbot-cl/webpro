@@ -1,16 +1,21 @@
-# WEB Pro
 
+
+
+
+# WEB Pro
+  
 Modulo con funcionalidades extendidas para el navegador que funciona como complemento a los comandos de la seccion web  
 
 *Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
   
 ![banner](imgs/Banner_webpro.png)
-
 ## Como instalar este módulo
   
 Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 1. Manual: __Descargar__ el archivo .zip y descomprimirlo en la carpeta modules. El nombre de la carpeta debe ser el mismo al del módulo y dentro debe tener los siguientes archivos y carpetas: \__init__.py, package.json, docs, example y libs. Si tiene abierta la aplicación, refresca el navegador para poder utilizar el nuevo modulo.
 2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
+
+
 
 ## Como usar este modulo
 Este modulo se complementa con los modulos y comandos nativos Web que ya vienen por defecto en Rocketbot. Para poder usar el modulo debes tener un navegador ya abierto desde Rocketbot con el comando de "Abrir Navegador". Luego de esto ya podremos utilizar los comandos con normalidad.
@@ -18,7 +23,8 @@ Este modulo se complementa con los modulos y comandos nativos Web que ya vienen 
 ### Para poder utilizar Edge en modo Internet Explorer, deben realizarse las siguientes configuraciones:
 1. Configurar el navegador en base a la siguiente documentación: https://docs.rocketbot.com/?p=169
 2. Descargar el driver de Internet Explorer del siguiente link: https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.13.0/IEDriverServer_Win32_3.13.0.zip y ubicarlo en Rocketbot/drivers/win/ie/x86/
-3. Para poder acceder a las herramientas de desarrollador, se debe abrir IEChooser.exe. Para realizarlo presionar la tecla Windows + R y colocar lo siguiente: %systemroot%\system32\f12\IEChooser.exe  luego apretar aceptar. Seleccione la ventana de su navegador, y podrá explorar los elementos de la página
+3. Para poder acceder a las herramientas de desarrollador, se debe abrir IEChooser.exe. Para realizarlo presionar la tecla Windows + R y colocar lo siguiente: %systemroot%\system32\f12\IEChooser.exe  luego apretar aceptar. Seleccione la ventana de su navegador, y podrá 
+explorar los elementos de la página
 
 ### Consejos para manejar elementos dentro de un shadow root:
 1. Manejo de iframes:
@@ -44,7 +50,8 @@ Para lograr esto debes utilizar el comando Ejecutar Python. Primero debes import
 
 ```python
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.ui import WebDriverWait
+from 
+selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
 webdriver = GetGlobals("web")
@@ -67,7 +74,8 @@ shadow_host = shadow_content
 
 # Estas siguientes tres líneas son siempre igual
 shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shadow_host)
-shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
+shadow_root_id = 
+shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
 # Cuando ingresas al ultimo shadow-root, solo debes obtener el elemento que corresponda con el iframe al que debes ingresar
@@ -82,7 +90,8 @@ Una vez tengas acceso al iframe, podrás interactuar con todos los elementos uti
 
 2. Manejo de elementos dentro de un shadow-root:
 Para realizar un click, copia el js path del elemento. Luego en Rocketbot utiliza el comando Ejecuta JS. En este comando, pega el js_path y al final agrégale .click()
-Utilizando el ejemplo del comienzo, para darle click a la etiqueta \<a> dentro del iframe, deberia quedarte similar a esto:
+Utilizando el ejemplo del comienzo, para darle click a la etiqueta \<a> 
+dentro del iframe, deberia quedarte similar a esto:
 
 ```javascript
 document.querySelector("#div_shadow").shadowRoot.querySelector("#link1").click()
@@ -105,7 +114,8 @@ document.querySelector("#div_shadow").shadowRoot.querySelector("#input1").focus(
 ```
 
 Al tenerlo en foco, puedes utilizar el comando Enviar Teclas del módulo webpro y escribirá lo que necesites.
-Para finalizar, puedes obtener el texto de un elemento también con javascript, de la siguiente forma:
+Para 
+finalizar, puedes obtener el texto de un elemento también con javascript, de la siguiente forma:
 Ejecuta un comando JS con lo siguiente:
     
 ```javascript
@@ -121,7 +131,8 @@ A esto lo asignas a la variable que quieras, y en la misma tendrás el valor cod
 3. En la sección "Ruta de acceso al perfil" se encuentra la carpeta que contiene el perfil que está utilizando. Copie la ruta de la carpeta y péguela en el campo "Ruta del perfil" del comando "Abrir Edge (Chromium)" del módulo webpro.
 
 ### Cómo utilizar perfil de usuario en navegador Firefox
-Firefox no permite ingresar una carpeta en blanco para crear un perfil como en Chrome, se le debe asignar la ruta a un perfil existente. Puedes ubicar la ruta de un perfil ya existente o crear uno debes ir a Firefox y buscar en el buscador lo siguiente: about:profiles. Debes utilizar la ruta indicada en Directorio Raíz del perfil con el cual quieras abrir el navegador.
+Firefox no permite ingresar una carpeta en blanco para crear un 
+perfil como en Chrome, se le debe asignar la ruta a un perfil existente. Puedes ubicar la ruta de un perfil ya existente o crear uno debes ir a Firefox y buscar en el buscador lo siguiente: about:profiles. Debes utilizar la ruta indicada en Directorio Raíz del perfil con el cual quieras abrir el navegador.
 
 ### Cómo actualizar Firefox en LINUX
 Si presenta errores en cuanto a la versión de Firefox en Linux, por favor siga los siguientes pasos:
@@ -137,11 +148,13 @@ Si presenta errores en cuanto a la versión de Firefox en Linux, por favor siga 
 
         sudo mv firefox /opt/firefox-latest 
 
-4. Cree un enlace simbólico: para asegurarse de que el sistema utilice la última versión, cree un enlace simbólico.
+4. 
+Cree un enlace simbólico: para asegurarse de que el sistema utilice la última versión, cree un enlace simbólico.
 
         sudo ln -s /opt/firefox-latest/firefox /usr/bin/firefox 
 
 Link: https://tecadmin.net/how-to-install-firefox-on-ubuntu/  => Metodo 2
+
 
 ## Descripción de los comandos
 

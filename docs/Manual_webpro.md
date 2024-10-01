@@ -1,3 +1,7 @@
+
+
+
+
 # WEB Pro
   
 Module with extended functionalities for the browser that works as a complement to the commands of the web section  
@@ -5,7 +9,6 @@ Module with extended functionalities for the browser that works as a complement 
 *Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
   
 ![banner](imgs/Banner_webpro.png)
-
 ## How to install this module
   
 To install the module in Rocketbot Studio, it can be done in two ways:
@@ -20,7 +23,8 @@ This module complements the native Web modules and commands that come by default
 2. Download the Internet Explorer driver from the link below: https://github.com/SeleniumHQ/selenium/releases/download/selenium-3.13.0/IEDriverServer_Win32_3.13.0.zip and place it in Rocketbot/drivers/win/ie/x86/
 3. To be able to access the developer tools, IEChooser.exe must be opened. To do so, press the Windows key + R and type the following: %systemroot%\system32\f12\IEChooser.exe and then press accept. Select the window of your browser, and you will be able to explore the elements of the page.
 
-### Tips for handling elements within a shadow root:
+### Tips for handling elements 
+within a shadow root:
 1. Handling iframes:
 First locate all the shadow-root you need to enter to get to the iframe you need to access. For example if you have this structure:
 
@@ -47,7 +51,8 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 
-webdriver = GetGlobals("web")
+webdriver = 
+GetGlobals("web")
 if webdriver.driver_actual_id in webdriver.driver_list:
     driver = webdriver.driver_list[webdriver.driver_actual_id].
     
@@ -70,7 +75,8 @@ shadow_root_dict = driver.execute_script('return arguments[0].shadowRoot', shado
 shadow_root_id = shadow_root_dict['shadow-6066-11e4-a52e-4f735466cecf']
 shadow_root = WebElement(driver, shadow_root_id, w3c=True)
 
-# When you enter the last shadow-root, you should only get the element that corresponds to the iframe that you should enter
+# When you enter the last
+ shadow-root, you should only get the element that corresponds to the iframe that you should enter
 shadow_content = shadow_root.find_element(By.ID, '#id_iframe')
 
 # Y para finalizar, utilizas el comando que cambia al iframe
@@ -88,7 +94,8 @@ Using the example at the beginning, to click on the \<a> tag inside the iframe, 
 document.querySelector("#div_shadow").shadowRoot.querySelector("#link1").click()
 ```
 
-If for example you want to complete an input, it may vary depending on the input format of the page.
+If for 
+example you want to complete an input, it may vary depending on the input format of the page.
 Most inputs can be completed using Javascript and the Execute JS command as follows:
 
 ```javascript
@@ -109,7 +116,8 @@ Finally, you can get the text of an element also with javascript, in the followi
 Run a JS command with the following:
     
 ```javascript
-return document.querySelector("#div_shadow").shadowRoot.querySelector("#paragraph").innerHTML
+return 
+document.querySelector("#div_shadow").shadowRoot.querySelector("#paragraph").innerHTML
 ```
 To this you assign it to the variable that you want, and in the same one you will have the coded value. To get it clean, run an Assign Variable command with the following: {var}.decode('utf-8')
 
@@ -120,7 +128,8 @@ To this you assign it to the variable that you want, and in the same one you wil
 3. In the "Profile Path" section you will find the folder containing the profile you are using. Copy the path of the folder and paste it in the "Profile Path" field of the "Open Edge (Chromium)" command of the webpro module.
 
 ### How to use user profile in Firefox browser
-Firefox does not allow you to enter a blank folder to create a profile like in Chrome, you must assign the path to an existing profile. You can locate the path of an existing profile or create one by going to Firefox and searching in the search engine for the following: about:profiles. You must use the path indicated in the Root Directory of the profile with which you want to open the browser.
+Firefox does not allow you to enter a blank folder to create a profile like in Chrome, you must assign the path to an existing profile. You can locate the path of an existing profile or create one by going to Firefox and searching in the search engine for the following:
+ about:profiles. You must use the path indicated in the Root Directory of the profile with which you want to open the browser.
 
 ### How to update Firefox on LINUX
 If you have errors regarding the version of Firefox on Linux, please follow the following steps:
@@ -140,7 +149,9 @@ If you have errors regarding the version of Firefox on Linux, please follow the 
 
         sudo ln -s /opt/firefox-latest/firefox /usr/bin/firefox
 
-Link: https://tecadmin.net/how-to-install-firefox-on-ubuntu/ => Method 2
+Link: https://tecadmin.net/how-to-
+install-firefox-on-ubuntu/ => Method 2
+
 
 ## Description of the commands
 
