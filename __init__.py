@@ -38,7 +38,11 @@ import traceback
 import time
 from bs4 import BeautifulSoup
 from selenium import webdriver as ws
-from selenium.webdriver import ActionChains
+try:
+    # Use import of undetected_chrome if available
+    from selenium_uc.webdriver import ActionChains
+except:
+    from selenium.webdriver import ActionChains
 from selenium.webdriver import Chrome
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
