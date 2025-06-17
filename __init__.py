@@ -1133,6 +1133,8 @@ if module == "forceDownload":
 if module == "new_tab":
     url_ = GetParams("url_")
     # open tab
+    driver = webdriver.driver_list[webdriver.driver_actual_id]
+
     driver.execute_script(f'''window.open("{url_}","_blank");''')
     driver.switch_to.window(driver.window_handles[-1])
 
@@ -1274,6 +1276,10 @@ if module == "open_browser":
                 profile = FirefoxProfile(new_path)
                 profile.set_preference("profile_dir", new_path)
 
+            profile.set_preference("browser.link.open_newwindow", 3)  
+            profile.set_preference("browser.link.open_newwindow.restriction", 0)  
+
+            
             if download_path:
                 firefox_options.set_preference("browser.download.folderList", 2)
                 firefox_options.set_preference("browser.download.dir", download_path)
