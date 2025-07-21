@@ -387,10 +387,16 @@ if module == "selectElement":
             raise Exception('Debe seleccionar una opcion')
 
         if option_ == 'name':
-            element = driver.find_elements_by_name(search)[index_]
+
+                elements = driver.find_elements(By.NAME, search)
+                element = elements[index_]
+
+            
         if option_ == 'class':
-            elements = driver.find_elements_by_xpath(f'//*[contains(@class,"{search}")]')[index_]
-            webdriver._object_selected = elements
+            elements = driver.find_elements(By.XPATH, f'//*[contains(@class,"{search}")]')
+            element = elements[index_]
+            webdriver._object_selected = element
+
 
     except Exception as e:
         PrintException()
