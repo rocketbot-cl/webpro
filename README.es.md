@@ -145,7 +145,13 @@ Limpia el cache almacenado en el navegador
 Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.
 
 43. Zoom  
-Realiza Zoom In o Zoom Out en los navegadores Google Chrome y Firefox.  
+Realiza Zoom In o Zoom Out en los navegadores Google Chrome y Firefox.
+
+44. Obtener títulos de pestañas  
+Devuelve una lista con los títulos de todas las pestañas abiertas en el navegador.
+
+45. Cambiar a pestaña por título  
+Cambia el control del navegador a la primera pestaña cuyo título contenga el texto indicado.  
 
 
 
