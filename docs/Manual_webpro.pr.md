@@ -525,3 +525,18 @@ Aumente ou diminua o zoom nos navegadores Google Chrome e Firefox.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Tipo de Zoom|Selecione o tipo de zoom a ser realizada.|Zoom In|
+
+### Obter títulos das abas
+  
+Retorna uma lista com os títulos de todas as abas abertas no navegador.
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Variável|Variável onde o resultado do comando será armazenado.|var|
+
+### Mudar para aba por título
+  
+Altera o controle do navegador para a primeira aba cujo título contenha o texto indicado.
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Titulo|Título da aba para alterar|Google|
+|Variável|Armazena True se a aba foi alterada com sucesso, False se nenhum título correspondente foi encontrado.|var|

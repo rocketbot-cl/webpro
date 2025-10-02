@@ -526,3 +526,18 @@ Realiza Zoom In o Zoom Out en los navegadores Google Chrome y Firefox.
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Tipo de Zoom|Seleccionamos el tipo de zoom a realizar.|Zoom In|
+
+### Obtener títulos de pestañas
+  
+Devuelve una lista con los títulos de todas las pestañas abiertas en el navegador.
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Variable|Variable donde se alojará el resultado del comando.|var|
+
+### Cambiar a pestaña por título
+  
+Cambia el control del navegador a la primera pestaña cuyo título contenga el texto indicado.
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Título|Titulo de la pestaña a cambiar|Google|
+|Variable|Guarda True si se cambió correctamente a la pestaña, False si no se encontró ninguna coicidencia.|var|

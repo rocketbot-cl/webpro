@@ -523,3 +523,18 @@ Zoom In or Zoom Out in Google Chrome and Firefox browsers.
 |Parameters|Description|example|
 | --- | --- | --- |
 |Zoom type|Select the type of zoom to perform.|Zoom In|
+
+### Get tab titles
+  
+Returns a list with the titles of all open tabs in the browser.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Variable|Variable where the result of the command will be stored.|var|
+
+### Switch tab by title
+  
+Switches browser control to the first tab whose title contains the specified text.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Title|Tab title to change|Google|
+|Variable|Stores True if the tab was successfully switched, False if no matching title was found.|var|

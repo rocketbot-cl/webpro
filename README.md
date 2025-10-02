@@ -145,7 +145,13 @@ Clears the cache stored in the browser
 Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
 
 43. Zoom  
-Zoom In or Zoom Out in Google Chrome and Firefox browsers.  
+Zoom In or Zoom Out in Google Chrome and Firefox browsers.
+
+44. Get tab titles  
+Returns a list with the titles of all open tabs in the browser.
+
+45. Switch tab by title  
+Switches browser control to the first tab whose title contains the specified text.  
 
 
 

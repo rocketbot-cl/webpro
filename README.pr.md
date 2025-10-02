@@ -145,7 +145,13 @@ Limpa o cache armazenado no navegador
 Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root.
 
 43. Zoom  
-Aumente ou diminua o zoom nos navegadores Google Chrome e Firefox.  
+Aumente ou diminua o zoom nos navegadores Google Chrome e Firefox.
+
+44. Obter títulos das abas  
+Retorna uma lista com os títulos de todas as abas abertas no navegador.
+
+45. Mudar para aba por título  
+Altera o controle do navegador para a primeira aba cujo título contenha o texto indicado.  
 
 
 

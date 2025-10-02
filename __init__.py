@@ -1506,6 +1506,42 @@ try:
             PrintException()
             raise e
 
+    if module == "getAllTitles":
+        var_ = GetParams("var_")
+        try:
+            web_driver = GetGlobals("web")
+            driver = web_driver.driver_list[web_driver.driver_actual_id]
+            window_handles = driver.window_handles
+            titles = []
+            for handle in window_handles:
+                driver.switch_to.window(handle)
+                titles.append(driver.title)
+            if var_:
+                SetVar(var_, titles)
+        except Exception as e:
+            PrintException()
+            raise e
+
+
+    if module == "switchByTitle":
+        title_ = GetParams("title_")
+        var_ = GetParams("var_")
+        try:
+            web_driver = GetGlobals("web")
+            driver = web_driver.driver_list[web_driver.driver_actual_id]
+            window_handles = driver.window_handles
+            found = False
+            for handle in window_handles:
+                driver.switch_to.window(handle)
+                if title_ in driver.title:
+                    found = True
+                    break
+            if var_:
+                SetVar(var_, found)
+        except Exception as e:
+            PrintException()
+            raise e
+    
 except Exception as e:
     traceback.print_exc()
     PrintException()
