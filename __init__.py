@@ -900,11 +900,11 @@ if module == "clickPro":
                     actionChains.click(elementLocator).perform()
                 except Exception as e1:
                     try:
-                        print("Try 1")
+                        
                         elementLocator.click()
                     except Exception:
                         try:
-                            print("Try 2")
+                            
                             driver.execute_script("arguments[0].click();", elementLocator)
                         except Exception:
                             raise e1
