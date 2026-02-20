@@ -1123,6 +1123,21 @@ if module == "printPDF":
 
     driver.execute_script('window.print();')
 
+if module == "printPDF2":
+    import base64, os
+
+    download_path = GetParams("download_path")
+    name_ = GetParams("name_") or "output.pdf"
+    os.makedirs(download_path, exist_ok=True)
+
+    pdf = driver.execute_cdp_cmd("Page.printToPDF", {
+        "printBackground": True,
+        "landscape": GetParams("landscape") == "True"
+    })
+
+    out = os.path.join(download_path, name_)
+    with open(out, "wb") as f:
+        f.write(base64.b64decode(pdf["data"]))
 
 if module == "forceDownload":
     url_file = GetParams("url_file")
@@ -1220,7 +1235,8 @@ if module == "open_browser":
             else:
                 caps.add_argument("--safebrowsing-disable-download-protection")
             
-            prefs = {"download.default_directory": download_path}
+            prefs = {"download.default_directory": download_path,
+                    "savefile.default_directory": download_path}
 
             if force_downloads == "True":
                 force_download_params = {

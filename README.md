@@ -105,52 +105,55 @@ Similar to Send keys web, but low level
 29. Print to PDF (Chrome)  
 Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 
-30. Force Download  
+30. Print to PDF 2  
+Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
+
+31. Force Download  
 Force Download
 
-31. Open New Tab  
+32. Open New Tab  
 Open new tab with the URL
 
-32. Open Browser  
+33. Open Browser  
 Open a browser the URL
 
-33. Drag and drop  
+34. Drag and drop  
 Do a drag and drop
 
-34. Upload files  
+35. Upload files  
 Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
 
-35. Send key combination  
+36. Send key combination  
 Command to send key combination
 
-36. Right Click  
+37. Right Click  
 Right click on a selected object
 
-37. Get image  
+38. Get image  
 This command allows you to download an image from an <img> tag
 
-38. Select multiple options  
+39. Select multiple options  
 Select multiple options from a select
 
-39. Delete cookies  
+40. Delete cookies  
 Delete browser cookies
 
-40. Get Cookies  
+41. Get Cookies  
 Get the current browser cookies
 
-41. Clear Cache Chrome  
+42. Clear Cache Chrome  
 Clears the cache stored in the browser
 
-42. Access Shadow DOM  
+43. Access Shadow DOM  
 Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
 
-43. Zoom  
+44. Zoom  
 Zoom In or Zoom Out in Google Chrome and Firefox browsers.
 
-44. Get tab titles  
+45. Get tab titles  
 Returns a list with the titles of all open tabs in the browser.
 
-45. Switch tab by title  
+46. Switch tab by title  
 Switches browser control to the first tab whose title contains the specified text.  
 
 

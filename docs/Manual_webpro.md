@@ -404,6 +404,15 @@ Print the page as a PDF in Chrome. The PDF is generated based on the available c
 |The pdf will be downloaded to the browser's default downloads folder.|||
 |Print with horizontal design|If checked, the pdf will be printed in horizontal format.|True|
 
+### Print to PDF 2
+  
+Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
+|Parameters|Description|example|
+| --- | --- | --- |
+|PDF download path|Select the folder where the generated PDF file will be downloaded.|/path/to/download/folder|
+|PDF file name|Specifies the name and extension of the PDF file to be generated.|document.pdf|
+|Print with horizontal design|If checked, the pdf will be printed in horizontal format.|True|
+
 ### Force Download
   
 Force Download
