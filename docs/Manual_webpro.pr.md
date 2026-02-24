@@ -406,6 +406,15 @@ Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disp
 |O pdf será baixado para a pasta de downloads padrão do navegador.|||
 |Imprimir com design horizontal|Se marcado, o pdf será impresso em formato horizontal.|True|
 
+### Imprimir como PDF 2
+  
+Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disponível da página. Não representa uma cópia verdadeira do site.
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Caminho de download do PDF|Selecione a pasta onde o arquivo PDF gerado será baixado.|/path/to/download/folder|
+|Nome do arquivo PDF|Especifica o nome e a extensão do arquivo PDF a ser gerado.|document.pdf|
+|Imprimir com design horizontal|Se marcado, o pdf será impresso em formato horizontal.|True|
+
 ### Forçar o download
   
 Forçando um download

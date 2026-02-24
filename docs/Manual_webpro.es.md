@@ -407,6 +407,15 @@ Imprimir la página como PDF en Chrome. El PDF se genera en base al contenido di
 |El pdf se descargará en la carpeta de descargas por defecto del navegador.|||
 |Imprimir con diseño horizontal|Si se marca, el pdf se imprimirá en formato horizontal.|True|
 
+### Imprimir como PDF 2
+  
+Imprimir la página como PDF en Chrome. El PDF se genera en base al contenido disponible de la página. No representa una copia fiel del sitio.
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Ruta de descarga del PDF|Selecciona la carpeta donde se descargará el archivo PDF generado.|/path/to/download/folder|
+|Nombre del archivo PDF|Especifica el nombre y extensión del archivo PDF que se generará.|document.pdf|
+|Imprimir con diseño horizontal|Si se marca, el pdf se imprimirá en formato horizontal.|True|
+
 ### Forzar Descarga
   
 Forzar una descarga

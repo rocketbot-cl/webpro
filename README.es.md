@@ -105,52 +105,55 @@ Similar a Enviar texto web, pero a más bajo nivel
 29. Imprimir como PDF (Chrome)  
 Imprimir la página como PDF en Chrome. El PDF se genera en base al contenido disponible de la página. No representa una copia fiel del sitio.
 
-30. Forzar Descarga  
+30. Imprimir como PDF 2  
+Imprimir la página como PDF en Chrome. El PDF se genera en base al contenido disponible de la página. No representa una copia fiel del sitio.
+
+31. Forzar Descarga  
 Forzar una descarga
 
-31. Abrir Nueva Pestaña  
+32. Abrir Nueva Pestaña  
 Abre una nueva pestaña indicando la URL
 
-32. Abrir navegador  
+33. Abrir navegador  
 Abre el navegador indicando la URL
 
-33. Drag and drop  
+34. Drag and drop  
 Realiza un drag and drop
 
-34. Subir Archivo  
+35. Subir Archivo  
 Comando para subir uno o más archivos a un input de tipo file. Solo completar un unico valor según cuántos archivos se deseen subir.
 
-35. Enviar combinacion de teclas  
+36. Enviar combinacion de teclas  
 Comando para enviar combinacion de dos teclas
 
-36. Click Derecho  
+37. Click Derecho  
 Hace click derecho sobre un objeto seleccionado
 
-37. Obtener imagen  
+38. Obtener imagen  
 Este comando permite descargar una imagen a partir de una etiqueta <img>
 
-38. Seleccionar múltiples opciones  
+39. Seleccionar múltiples opciones  
 Selecciona múltiples opciones de un select
 
-39. Borrar cookies  
+40. Borrar cookies  
 Borra las cookies del navegador
 
-40. Obtener Cookies  
+41. Obtener Cookies  
 Obtiene las cookies actuales del navegador
 
-41. Limpiar Cache Chrome  
+42. Limpiar Cache Chrome  
 Limpia el cache almacenado en el navegador
 
-42. Acceder a Shadow DOM  
+43. Acceder a Shadow DOM  
 Acceder a un elemento dentro de un Shadow DOM. El dato debe pertenecer al elemento padre del shadow-root.
 
-43. Zoom  
+44. Zoom  
 Realiza Zoom In o Zoom Out en los navegadores Google Chrome y Firefox.
 
-44. Obtener títulos de pestañas  
+45. Obtener títulos de pestañas  
 Devuelve una lista con los títulos de todas las pestañas abiertas en el navegador.
 
-45. Cambiar a pestaña por título  
+46. Cambiar a pestaña por título  
 Cambia el control del navegador a la primera pestaña cuyo título contenga el texto indicado.  
 
 

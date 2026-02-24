@@ -105,52 +105,55 @@ Similar ao Send Web Text, mas em um nível inferior
 29. Imprimir como PDF (Chrome)  
 Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disponível da página. Não representa uma cópia verdadeira do site.
 
-30. Forçar o download  
+30. Imprimir como PDF 2  
+Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disponível da página. Não representa uma cópia verdadeira do site.
+
+31. Forçar o download  
 Forçando um download
 
-31. Abrir Nova Aba  
+32. Abrir Nova Aba  
 Abre uma nova aba com a URL
 
-32. Abrir navegador  
+33. Abrir navegador  
 Abre o navegador indicando a URL
 
-33. Drag and drop  
+34. Drag and drop  
 Fazer um drag and drop
 
-34. Subir arquivo  
+35. Subir arquivo  
 Comando para fazer upload um ou mais arquivos para um input do tipo file. Basta preencher um único valor, dependendo de quantos arquivos você deseja enviar.
 
-35. Enviar combinação de teclas  
+36. Enviar combinação de teclas  
 Comando para enviar combinação de teclas
 
-36. Clique direito  
+37. Clique direito  
 Clique direito sobre um objeto selecionado
 
-37. Obter imagem  
+38. Obter imagem  
 Este comando permite baixar uma imagem de uma tag <img>
 
-38. Selecionar várias opções  
+39. Selecionar várias opções  
 Selecione várias opções de um seletor
 
-39. Excluir cookies  
+40. Excluir cookies  
 Exclua os cookies do navegador
 
-40. Obter Cookies  
+41. Obter Cookies  
 Obtenha os cookies do navegador atual
 
-41. Limpar Cache Chrome  
+42. Limpar Cache Chrome  
 Limpa o cache armazenado no navegador
 
-42. Acessar ao Shadow DOM  
+43. Acessar ao Shadow DOM  
 Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root.
 
-43. Zoom  
+44. Zoom  
 Aumente ou diminua o zoom nos navegadores Google Chrome e Firefox.
 
-44. Obter títulos das abas  
+45. Obter títulos das abas  
 Retorna uma lista com os títulos de todas as abas abertas no navegador.
 
-45. Mudar para aba por título  
+46. Mudar para aba por título  
 Altera o controle do navegador para a primeira aba cujo título contenha o texto indicado.  
 
 
