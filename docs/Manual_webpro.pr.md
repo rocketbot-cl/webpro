@@ -3,17 +3,17 @@
 
 
 # WEB Pro
-  
-Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web  
+
+Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web
 
 *Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
-  
+
 ![banner](imgs/Banner_webpro.png)
 ## Como instalar este módulo
-  
+
 Para instalar o módulo no Rocketbot Studio, pode ser feito de duas formas:
 1. Manual: __Baixe__ o arquivo .zip e descompacte-o na pasta módulos. O nome da pasta deve ser o mesmo do módulo e dentro dela devem ter os seguintes arquivos e pastas: \__init__.py, package.json, docs, example e libs. Se você tiver o aplicativo aberto, atualize seu navegador para poder usar o novo módulo.
-2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.  
+2. Automático: Ao entrar no Rocketbot Studio na margem direita você encontrará a seção **Addons**, selecione **Install Mods**, procure o módulo desejado e aperte instalar.
 
 
 
@@ -158,7 +158,7 @@ https://tecadmin.net/how-to-install-firefox-on-ubuntu/ => Método 2
 ## Descrição do comando
 
 ### Lista de itens
-  
+
 Obtém uma lista de todos os elementos e seus filhos de uma classe ou nome, para poder iterar sobre ela.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -168,7 +168,7 @@ Obtém uma lista de todos os elementos e seus filhos de uma classe ou nome, para
 |Variável onde armazenar o resultado|Neste campo devemos colocar o nome da variável onde armazenaremos o resultado.|Variável|
 
 ### Limpa uma entrada e envia o texto
-  
+
 Deleta o conteúdo de um objeto tipo input e envia o texto
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -179,7 +179,7 @@ Deleta o conteúdo de um objeto tipo input e envia o texto
 |Espera de 1 segundo|Atribui uma espera de 1 segundo entre o apagar e o enviar elemento|True|
 
 ### Salvar Cookies
-  
+
 Salva os cookies de uma página para que possam ser carregados em outra instância
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -187,7 +187,7 @@ Salva os cookies de uma página para que possam ser carregados em outra instânc
 |Variável onde os cookies serão salvos|Neste campo indicamos o nome da variável onde os cookies serão salvos|cookies|
 
 ### Carregar Cookies
-  
+
 Carrega um arquivo com cookies
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -195,19 +195,19 @@ Carrega um arquivo com cookies
 |Atribuir resultado à variável|Variável onde True ou False será armazenado dependendo se os cookies podem ser carregados|Variável|
 
 ### Recarregar página
-  
+
 Recarregar página
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 
 ### Back
-  
+
 retorna à página anterior
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 
 ### Clique duplo
-  
+
 Clique duplo sobre um objeto selecionado
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -215,14 +215,14 @@ Clique duplo sobre um objeto selecionado
 |Tipo de dado|Colocamos o tipo de dado a buscar|xpath|
 
 ### Scroll
-  
+
 Rolar para uma determinada posição
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Posição|Escolhemos a posição em pixels|1500|
 
 ### Contar iten
-  
+
 Entregar o número total de itens
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -230,7 +230,7 @@ Entregar o número total de itens
 |Atribuir resultado à variável|Nome da variável onde o resultado será guardado|Variable|
 
 ### Selecionar Objeto por Índice
-  
+
 Seleciona um objeto passando-lhe o índice
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -239,7 +239,7 @@ Seleciona um objeto passando-lhe o índice
 |Tipo de dado|Selecionamos o tipo de dado a buscar|name|
 
 ### Clique Objeto por Índice
-  
+
 Clique em um objeto passando o índice
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -248,7 +248,7 @@ Clique em um objeto passando o índice
 |Tipo de dado|Colocamos o tipo do dado a clicar.|class|
 
 ### Exportar página para PDF
-  
+
 Exporte a página para um arquivo PDF. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação adequada.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -257,14 +257,14 @@ Exporte a página para um arquivo PDF. Se a página contiver elementos fixos, el
 |Atribuir resultado à variável|Selecione o nome da variável para a qual queremos atribuir o resultado|Variável|
 
 ### Abrir Chrome em modo headless
-  
+
 Abre Chrome em modo headless
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |URL do Servidor|Escreva a URL da página a abrir.|http://www.rocketbot.co|
 
 ### Tomar captura por coordenadas
-  
+
 Tira uma foto da tela de uma seção da página usando coordenadas
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -273,7 +273,7 @@ Tira uma foto da tela de uma seção da página usando coordenadas
 |Caminho e nome onde a imagem será salva|Caminho e nome onde a imagem será salva|/Users/User/folder/image.jpg|
 
 ### Obter o retângulo de delimitação
-  
+
 Obtém as coordenadas x e y e as dimensões de um objeto.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -282,7 +282,7 @@ Obtém as coordenadas x e y e as dimensões de um objeto.
 |Variável onde armazenar o resultadoo|Nome da variável sem {}|Variável|
 
 ### Obter coordenadas de um objeto
-  
+
 Obtém as coordenadas x e y de um objeto.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -291,7 +291,7 @@ Obtém as coordenadas x e y de um objeto.
 |Variável onde armazenar o resultado|Nome da variável sem {}|Variável|
 
 ### Obter dimensões de um objeto
-  
+
 Obtém dimensões de um objeto
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -300,7 +300,7 @@ Obtém dimensões de um objeto
 |Variável onde armazenar o resultado|Nome da variável sem {}|Variável|
 
 ### Abrir Chrome modo desenvolvedor
-  
+
 Abre o Google Chrome em modo seguro ou debugger
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -308,7 +308,7 @@ Abre o Google Chrome em modo seguro ou debugger
 |Modo|Selecionamos o modo em que o navegador será aberto.|Debugger|
 
 ### Ver Consola
-  
+
 Obtém informações do console
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -316,7 +316,7 @@ Obtém informações do console
 |Nível |Nível de informação a mostrar|Severe|
 
 ### Converter página para PNG
-  
+
 Ele tira vários instantâneos da página da Web e os concatena em um. Se a página contiver elementos fixos, eles podem ser removidos com Javascript para obter uma exportação correta.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -324,7 +324,7 @@ Ele tira vários instantâneos da página da Web e os concatena em um. Se a pág
 |Pasta de download|Caminho onde a imagem gerada será baixada|C:/Users/user/Desktop|
 
 ### Hover Element
-  
+
 Passar o mouse sobre o elemento
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -332,7 +332,7 @@ Passar o mouse sobre o elemento
 |Tipo de dado|Colocamos o tipo de dado que queremos buscar.|xpath|
 
 ### Abrir Edge (Chromium)
-  
+
 Abrir o novo Chromium-based Edge
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -342,7 +342,7 @@ Abrir o novo Chromium-based Edge
 |Seleccionar executábel de Edge|Selecciona o executábel de Edge para abrir no modo IE|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
 ### Clique Pro
-  
+
 Clica em um objeto selecionado, esperando que ele se torne clicável.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -351,7 +351,7 @@ Clica em um objeto selecionado, esperando que ele se torne clicável.
 |Esperar|Colocamos o tempo em segundos que esperaremos a que o elemento se torne clicável.|5|
 
 ### Extrair Texto Pro
-  
+
 Obtém o texto de um objeto esperando que ele esteja disponível.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -361,7 +361,7 @@ Obtém o texto de um objeto esperando que ele esteja disponível.
 |Variável onde armazenar o resultado|Colocamos o nome da variável onde armazenaremos o resultado.|Variável|
 
 ### Selecionar objeto Pro
-  
+
 Seleciona um objeto esperando que ele esteja presente
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -370,7 +370,7 @@ Seleciona um objeto esperando que ele esteja presente
 |Esperar|Colocamos o tempo em segundos que esperaremos a que o elemento apareça.|5|
 
 ### Mudar para iframe Pro
-  
+
 Troca para um iframe esperando que ele esteja presente
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -381,7 +381,7 @@ Troca para um iframe esperando que ele esteja presente
 |Esperar|Colocamos o tempo de espera|5|
 
 ### Mudar para iframes aninhados
-  
+
 Entrar em varios iframes aguardando que se encontrem presentes
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -391,7 +391,7 @@ Entrar em varios iframes aguardando que se encontrem presentes
 |Atribuir resultado à variável|Variável onde True ou False será armazenado dependendo se o iframe pode ser introduzido|Variável|
 
 ### Enviar Teclas
-  
+
 Similar ao Send Web Text, mas em um nível inferior
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -399,7 +399,7 @@ Similar ao Send Web Text, mas em um nível inferior
 |Tecla especial|Tecla especial a enviar|SPACE|
 
 ### Imprimir como PDF (Chrome)
-  
+
 Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disponível da página. Não representa uma cópia verdadeira do site.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -407,7 +407,7 @@ Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disp
 |Imprimir com design horizontal|Se marcado, o pdf será impresso em formato horizontal.|True|
 
 ### Imprimir como PDF 2
-  
+
 Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disponível da página. Não representa uma cópia verdadeira do site.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -416,7 +416,7 @@ Imprima a página como PDF no Chrome. O PDF é gerado com base no conteúdo disp
 |Imprimir com design horizontal|Se marcado, o pdf será impresso em formato horizontal.|True|
 
 ### Forçar o download
-  
+
 Forçando um download
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -424,14 +424,14 @@ Forçando um download
 |Nome do arquivo|Colocamos o nome do arquivo a forçar|file.csv|
 
 ### Abrir Nova Aba
-  
+
 Abre uma nova aba com a URL
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |URL|URL para abrir em uma nova aba|http://www.google.com|
 
 ### Abrir navegador
-  
+
 Abre o navegador indicando a URL
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -446,7 +446,7 @@ Abre o navegador indicando a URL
 |Argumentos para abrir o navegador|Argumentos em formato de lista|['--incognito','--kiosk-printing','--new-window']|
 
 ### Drag and drop
-  
+
 Fazer um drag and drop
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -455,7 +455,7 @@ Fazer um drag and drop
 |Tipo de dado|Tipo de dado a buscar|Dado a buscar|
 
 ### Subir arquivo
-  
+
 Comando para fazer upload um ou mais arquivos para um input do tipo file. Basta preencher um único valor, dependendo de quantos arquivos você deseja enviar.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -466,7 +466,7 @@ Comando para fazer upload um ou mais arquivos para um input do tipo file. Basta 
 |Carregar vários arquivos|Selecionamos o arquivo a subir|['C:/Users/user/file1.pdf', 'C:/Users/user/file2.pdf']|
 
 ### Enviar combinação de teclas
-  
+
 Comando para enviar combinação de teclas
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -475,7 +475,7 @@ Comando para enviar combinação de teclas
 |Segunda tecla especial|Segunda tecla especial para combinar com a primeira tecla se necessário.|SPACE|
 
 ### Clique direito
-  
+
 Clique direito sobre um objeto selecionado
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -483,7 +483,7 @@ Clique direito sobre um objeto selecionado
 |Tipo de dado|Colocamos o tipo de dados para procurar|xpath|
 
 ### Obter imagem
-  
+
 Este comando permite baixar uma imagem de uma tag <img>
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -493,7 +493,7 @@ Este comando permite baixar uma imagem de uma tag <img>
 |Nome e extensão da imagem para salvar|Colocamos o nome da imagem para salvar. Se você não colocar o nome da imagem ou a extensão, ela será salva com o nome ou extensão padrão.|imagem.png|
 
 ### Selecionar várias opções
-  
+
 Selecione várias opções de um seletor
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
@@ -503,49 +503,58 @@ Selecione várias opções de um seletor
 |Opções para selecionar|Colocamos as opções para selecionar. Se selecionarmos o tipo de seleção 'selecionar tudo' ou 'desmarcar tudo', não é necessário colocar as opções.|0,1,2,3|
 
 ### Excluir cookies
-  
+
 Exclua os cookies do navegador
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 
 ### Obter Cookies
-  
+
 Obtenha os cookies do navegador atual
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Variável onde o resultado será armazenado|Nome da variável onde os cookies serão armazenados|Variável|
 
 ### Limpar Cache Chrome
-  
+
 Limpa o cache armazenado no navegador
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 
 ### Acessar ao Shadow DOM
-  
+
 Acessar um elemento dentro de um Shadow DOM. O dado deve pertencer ao elemento pai do shadow-root.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Dado a buscar|Colocamos o seletor para pesquisar|Dado|
 
 ### Zoom
-  
+
 Aumente ou diminua o zoom nos navegadores Google Chrome e Firefox.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Tipo de Zoom|Selecione o tipo de zoom a ser realizada.|Zoom In|
 
 ### Obter títulos das abas
-  
+
 Retorna uma lista com os títulos de todas as abas abertas no navegador.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Variável|Variável onde o resultado do comando será armazenado.|var|
 
 ### Mudar para aba por título
-  
+
 Altera o controle do navegador para a primeira aba cujo título contenha o texto indicado.
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Titulo|Título da aba para alterar|Google|
 |Variável|Armazena True se a aba foi alterada com sucesso, False se nenhum título correspondente foi encontrado.|var|
+
+### Pegar Playwright
+
+Retorna uma lista com os títulos de todas as abas abertas no navegador. Para fechar o navegador, você terá que usar o comando Fechar navegador do módulo Playwright
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Porta de Depuração|Porta de depuração da janela aberta pelo Playwright.|9222|
+|Id|Id do navegador|4|
+|Tempo de espera|Tiempo de espera en segundos|5|
