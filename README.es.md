@@ -157,7 +157,7 @@ Devuelve una lista con los títulos de todas las pestañas abiertas en el navega
 Cambia el control del navegador a la primera pestaña cuyo título contenga el texto indicado.
 
 47. Tomar Playwright
-Devuelve una lista con los títulos de todas las pestañas abiertas en el navegador. Para cerrar el navegador se tendra que usar el comando Cerrar navegador del modulo Playwright
+Comando que permite el utilizar los comandos de modulos que utilizan selenium como este o el modulo nativo web con el navegador abierto por Playwright. Para cerrar el navegador se tendra que usar el comando Cerrar navegador del modulo Playwright
 
 
 

@@ -157,7 +157,7 @@ Returns a list with the titles of all open tabs in the browser.
 Switches browser control to the first tab whose title contains the specified text.
 
 47. Take Playwright
-Returns a list with the titles of all open tabs in the browser. To close the browser you will have to use the Close browser command from the Playwright module
+Command that allows using the commands of modules that use selenium such as this one or the native web module with the browser opened by Playwright. To close the browser you will have to use the Close browser command from the Playwright module
 
 
 

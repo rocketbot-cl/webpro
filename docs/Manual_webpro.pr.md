@@ -552,7 +552,7 @@ Altera o controle do navegador para a primeira aba cujo título contenha o texto
 
 ### Pegar Playwright
 
-Retorna uma lista com os títulos de todas as abas abertas no navegador. Para fechar o navegador, você terá que usar o comando Fechar navegador do módulo Playwright
+Comando que permite o uso dos comandos de módulos que usam selenium como este ou o módulo web nativo com o navegador aberto pelo Playwright. Para fechar o navegador, você terá que usar o comando Fechar navegador do módulo Playwright
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Porta de Depuração|Porta de depuração da janela aberta pelo Playwright.|9222|

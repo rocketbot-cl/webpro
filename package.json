@@ -5181,9 +5181,9 @@
             "pr": "Pegar Playwright"
           },
           "description": {
-            "es": "Devuelve una lista con los títulos de todas las pestañas abiertas en el navegador. Para cerrar el navegador se tendra que usar el comando Cerrar navegador del modulo Playwright",
-            "en": "Returns a list with the titles of all open tabs in the browser. To close the browser you will have to use the Close browser command from the Playwright module",
-            "pr": "Retorna uma lista com os títulos de todas as abas abertas no navegador. Para fechar o navegador, você terá que usar o comando Fechar navegador do módulo Playwright"
+            "es": "Comando que permite el utilizar los comandos de modulos que utilizan selenium como este o el modulo nativo web con el navegador abierto por Playwright. Para cerrar el navegador se tendra que usar el comando Cerrar navegador del modulo Playwright",
+            "en": "Command that allows using the commands of modules that use selenium such as this one or the native web module with the browser opened by Playwright. To close the browser you will have to use the Close browser command from the Playwright module",
+            "pr": "Comando que permite o uso dos comandos de módulos que usam selenium como este ou o módulo web nativo com o navegador aberto pelo Playwright. Para fechar o navegador, você terá que usar o comando Fechar navegador do módulo Playwright"
           },
           "form": {
             "css": "modal-lg",
