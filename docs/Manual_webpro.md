@@ -3,17 +3,17 @@
 
 
 # WEB Pro
-  
-Module with extended functionalities for the browser that works as a complement to the commands of the web section  
+
+Module with extended functionalities for the browser that works as a complement to the commands of the web section
 
 *Read this in other languages: [English](Manual_webpro.md), [Português](Manual_webpro.pr.md), [Español](Manual_webpro.es.md)*
-  
+
 ![banner](imgs/Banner_webpro.png)
 ## How to install this module
-  
+
 To install the module in Rocketbot Studio, it can be done in two ways:
 1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
-2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.
 
 ## How to use this module
 This module complements the native Web modules and commands that come by default in Rocketbot. In order to use the module you must have a browser opened from Rocketbot with the "Open Browser" command. After that, you will be able to use the commands.
@@ -156,7 +156,7 @@ install-firefox-on-ubuntu/ => Method 2
 ## Description of the commands
 
 ### List of items
-  
+
 Gets a list of all elements and their children from a class or name in order to iterate over it.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -166,7 +166,7 @@ Gets a list of all elements and their children from a class or name in order to 
 |Variable where to store the result|In this field we should put the name of the variable where we will store the result.|Variable|
 
 ### Clean input and send text
-  
+
 Deletes the contents of an input object and sends the text
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -177,7 +177,7 @@ Deletes the contents of an input object and sends the text
 |Wait 1 second|Assigns a 1 second wait between the erase and the send element|True|
 
 ### Save Cookies
-  
+
 Saves the cookies of a page so that it can be loaded in another instance
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -185,7 +185,7 @@ Saves the cookies of a page so that it can be loaded in another instance
 |Variable where cookies will be stored|In this field we indicate the name of the variable where the cookies will be stored|cookies|
 
 ### Load Cookies
-  
+
 Loads a file with cookies
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -193,19 +193,19 @@ Loads a file with cookies
 |Assign result to variable|Variable where True or False will be stored depending on whether the cookies could be loaded|Variable|
 
 ### Reload Page
-  
+
 Reload Page
 |Parameters|Description|example|
 | --- | --- | --- |
 
 ### Back
-  
+
 Back to previous page
 |Parameters|Description|example|
 | --- | --- | --- |
 
 ### Double Click
-  
+
 Double click on a selected object
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -213,14 +213,14 @@ Double click on a selected object
 |Data type|We put the type of data to search|xpath|
 
 ### Scroll
-  
+
 Scroll to a specific position
 |Parameters|Description|example|
 | --- | --- | --- |
 |Position|Choose the position in pixels|1500|
 
 ### Count Elements
-  
+
 Delivers the total number of elements
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -228,7 +228,7 @@ Delivers the total number of elements
 |Assign result to variable|Name of the variable where the result will be stored|Variable|
 
 ### Select Object by Index
-  
+
 Select an object by passing it the index
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -237,7 +237,7 @@ Select an object by passing it the index
 |Data type|We select the type of data to search|name|
 
 ### Click Object by Index
-  
+
 Click an object by passing it the index
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -246,7 +246,7 @@ Click an object by passing it the index
 |Data type|We put the type of the data to click.|class|
 
 ### Export page to PDF
-  
+
 Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -255,14 +255,14 @@ Export the page to a PDF file. If the page contains sticky elements, they can be
 |Assign result to variable|Select the name of the variable to which we want to assign the result|Variable|
 
 ### Open Chrome headless
-  
+
 Open Chrome in headless mode
 |Parameters|Description|example|
 | --- | --- | --- |
 |Server URL|Write the URL of the page to open.|http://www.rocketbot.co|
 
 ### Take screenshot from coordinates
-  
+
 Take a screenshot to a section of the page by coordinates
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -271,7 +271,7 @@ Take a screenshot to a section of the page by coordinates
 |Path and name where the image will be saved|Path and name where the image will be saved|/Users/User/folder/image.jpg|
 
 ### Get bounding rectangle
-  
+
 Obtains x and y coordinates and dimensions of an object
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -280,7 +280,7 @@ Obtains x and y coordinates and dimensions of an object
 |Variable where to store result|Variable name without {}|Variable|
 
 ### Get location of an object
-  
+
 Get x and y coordinates of an object
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -289,7 +289,7 @@ Get x and y coordinates of an object
 |Variable where to store result|Variable name without {}|Variable|
 
 ### Get size of an object
-  
+
 Get size of an object
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -298,7 +298,7 @@ Get size of an object
 |Variable where to store result|Variable name without {}|Variable|
 
 ### Open Chrome developer mode
-  
+
 Open Google Chrome with unsafe mode or debugger mode
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -306,7 +306,7 @@ Open Google Chrome with unsafe mode or debugger mode
 |Mode|Select the mode in which the browser will be opened.|Debugger|
 
 ### See Console
-  
+
 Get info from console
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -314,7 +314,7 @@ Get info from console
 |Level |Level of information to show|Severe|
 
 ### WebPage to PNG
-  
+
 It takes multiple snapshots of the web page and concatenates them into one. If the page contains fixed elements, they can be removed with Javascript to obtain a correct export.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -322,7 +322,7 @@ It takes multiple snapshots of the web page and concatenates them into one. If t
 |Download folder|Path where the generated image will be downloaded|C:/Users/user/Desktop|
 
 ### Hover Element
-  
+
 Move mouse over the element
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -330,7 +330,7 @@ Move mouse over the element
 |Data type|We put the type of data we want to search.|xpath|
 
 ### Open Edge (Chromium)
-  
+
 Open the new Edge based on Chromium
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -340,7 +340,7 @@ Open the new Edge based on Chromium
 |Select Edge executable|Select the Edge executable to open in IE mode|C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe|
 
 ### Click Pro
-  
+
 Click on a selected object waiting that it's clickeable
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -349,7 +349,7 @@ Click on a selected object waiting that it's clickeable
 |Wait|Put the time in seconds that we will wait for the element to be clickeable.|5|
 
 ### Extract text Pro
-  
+
 Get a text object waiting that it's present
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -359,7 +359,7 @@ Get a text object waiting that it's present
 |Variable where to store result|Put the name of the variable where we will store the result.|Variable|
 
 ### Select object Pro
-  
+
 Select an object waiting that it's present
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -368,7 +368,7 @@ Select an object waiting that it's present
 |Wait|Put the time in seconds that we will wait for the element to appear.|5|
 
 ### Change to iframe Pro
-  
+
 Change to iframe waiting that it's present
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -379,7 +379,7 @@ Change to iframe waiting that it's present
 |Wait|Put the time of wait|5|
 
 ### Change to iframes nested
-  
+
 Enter multiple iframes waiting for them to appear
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -389,7 +389,7 @@ Enter multiple iframes waiting for them to appear
 |Assign result to variable|Variable where True or False will be stored depending on whether the iframe could be entered|Variable|
 
 ### Send Keys
-  
+
 Similar to Send keys web, but low level
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -397,7 +397,7 @@ Similar to Send keys web, but low level
 |Special Key|Special key to send|SPACE|
 
 ### Print to PDF (Chrome)
-  
+
 Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -405,7 +405,7 @@ Print the page as a PDF in Chrome. The PDF is generated based on the available c
 |Print with horizontal design|If checked, the pdf will be printed in horizontal format.|True|
 
 ### Print to PDF 2
-  
+
 Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -414,7 +414,7 @@ Print the page as a PDF in Chrome. The PDF is generated based on the available c
 |Print with horizontal design|If checked, the pdf will be printed in horizontal format.|True|
 
 ### Force Download
-  
+
 Force Download
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -422,14 +422,14 @@ Force Download
 |File Name|Put the name of the file to force|file.csv|
 
 ### Open New Tab
-  
+
 Open new tab with the URL
 |Parameters|Description|example|
 | --- | --- | --- |
 |URL|URL to open in a new tab|http://www.google.com|
 
 ### Open Browser
-  
+
 Open a browser the URL
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -444,7 +444,7 @@ Open a browser the URL
 |Arguments to open the browser|Arguments in list format|['--incognito','--kiosk-printing','--new-window']|
 
 ### Drag and drop
-  
+
 Do a drag and drop
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -453,7 +453,7 @@ Do a drag and drop
 |Data type|Data type to search|Data to search|
 
 ### Upload files
-  
+
 Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -464,7 +464,7 @@ Command to upload one or more files to an input of type file. Just complete a si
 |Load multiple files|Select the file to upload|['C:/Users/user/file1.pdf', 'C:/Users/user/file2.pdf']|
 
 ### Send key combination
-  
+
 Command to send key combination
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -473,7 +473,7 @@ Command to send key combination
 |Second special key|Second special key to combine with the first key if necessary.|SPACE|
 
 ### Right Click
-  
+
 Right click on a selected object
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -481,7 +481,7 @@ Right click on a selected object
 |Data type|We put the type of data to search|xpath|
 
 ### Get image
-  
+
 This command allows you to download an image from an <img> tag
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -491,7 +491,7 @@ This command allows you to download an image from an <img> tag
 |Name and extension of the image to save|We put the name of the image to save. If you do not put the name of the image or the extension, it will be saved with the name or extension by default.|image.png|
 
 ### Select multiple options
-  
+
 Select multiple options from a select
 |Parameters|Description|example|
 | --- | --- | --- |
@@ -501,49 +501,58 @@ Select multiple options from a select
 |Options to select|We put the options to select. If we select the type of selection 'select all' or 'deselect all', it is not necessary to put the options.|0,1,2,3|
 
 ### Delete cookies
-  
+
 Delete browser cookies
 |Parameters|Description|example|
 | --- | --- | --- |
 
 ### Get Cookies
-  
+
 Get the current browser cookies
 |Parameters|Description|example|
 | --- | --- | --- |
 |Variable where the result will be stored|Name of the variable where the cookies will be stored|Variable|
 
 ### Clear Cache Chrome
-  
+
 Clears the cache stored in the browser
 |Parameters|Description|example|
 | --- | --- | --- |
 
 ### Access Shadow DOM
-  
+
 Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
 |Parameters|Description|example|
 | --- | --- | --- |
 |Data to search|We put the selector to search|Data|
 
 ### Zoom
-  
+
 Zoom In or Zoom Out in Google Chrome and Firefox browsers.
 |Parameters|Description|example|
 | --- | --- | --- |
 |Zoom type|Select the type of zoom to perform.|Zoom In|
 
 ### Get tab titles
-  
+
 Returns a list with the titles of all open tabs in the browser.
 |Parameters|Description|example|
 | --- | --- | --- |
 |Variable|Variable where the result of the command will be stored.|var|
 
 ### Switch tab by title
-  
+
 Switches browser control to the first tab whose title contains the specified text.
 |Parameters|Description|example|
 | --- | --- | --- |
 |Title|Tab title to change|Google|
 |Variable|Stores True if the tab was successfully switched, False if no matching title was found.|var|
+
+### Take Playwright
+
+Command that allows using the commands of modules that use selenium such as this one or the native web module with the browser opened by Playwright. To close the browser you will have to use the Close browser command from the Playwright module
+|Parameters|Description|example|
+| --- | --- | --- |
+|Debugging Port|Debugging port of the window opened by Playwright.|9222|
+|Id|Id of the browser|4|
+|Timeout|Timeout in seconds|5|

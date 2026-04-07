@@ -1569,6 +1569,48 @@ try:
         except Exception as e:
             PrintException()
             raise e
+        
+    if module == "usePlayWright":
+        debugging_port = GetParams("debugging_port")
+        newId = GetParams("newId")
+        timeout = GetParams("timeout")
+
+        debugger_address = f"127.0.0.1:{debugging_port}"
+        
+        if not newId:
+            newId = "default"
+        
+        if not timeout:
+                timeout = 100
+            
+        if not debugging_port:
+            raise Exception ("Debuggin Port cannot be empty")
+        try:    
+            platform_ = platform.system()
+            # Rutas idénticas a tu módulo original
+            if platform_.endswith('dows'):
+                chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+            elif platform_ == "Linux" or platform_ == "Linux2":
+                chrome_driver = os.path.join(base_path, "drivers", "linux", "chrome", "chromedriver")
+            else:
+                chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+            
+            caps = selenium.webdriver.ChromeOptions()
+            caps.add_experimental_option("debuggerAddress", debugger_address)
+            browser_driver = Chrome(executable_path=chrome_driver, options=caps)
+            
+            try:
+                browser_driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+            except:
+                pass
+
+            webdriver.driver_actual_id = newId
+            webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
+            webdriver.driver_list[webdriver.driver_actual_id].set_page_load_timeout(int(timeout))
+                        
+        except Exception as e:
+            PrintException()
+            raise e
     
 except Exception as e:
     traceback.print_exc()

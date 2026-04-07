@@ -3,158 +3,161 @@
 
 
 # WEB Pro
-  
-Module with extended functionalities for the browser that works as a complement to the commands of the web section  
+
+Module with extended functionalities for the browser that works as a complement to the commands of the web section
 
 *Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
 
 ## How to install this module
-  
+
 To install the module in Rocketbot Studio, it can be done in two ways:
 1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
-2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.
 
 
 ## Overview
 
 
-1. List of items  
+1. List of items
 Gets a list of all elements and their children from a class or name in order to iterate over it.
 
-2. Clean input and send text  
+2. Clean input and send text
 Deletes the contents of an input object and sends the text
 
-3. Save Cookies  
+3. Save Cookies
 Saves the cookies of a page so that it can be loaded in another instance
 
-4. Load Cookies  
+4. Load Cookies
 Loads a file with cookies
 
-5. Reload Page  
+5. Reload Page
 Reload Page
 
-6. Back  
+6. Back
 Back to previous page
 
-7. Double Click  
+7. Double Click
 Double click on a selected object
 
-8. Scroll  
+8. Scroll
 Scroll to a specific position
 
-9. Count Elements  
+9. Count Elements
 Delivers the total number of elements
 
-10. Select Object by Index  
+10. Select Object by Index
 Select an object by passing it the index
 
-11. Click Object by Index  
+11. Click Object by Index
 Click an object by passing it the index
 
-12. Export page to PDF  
+12. Export page to PDF
 Export the page to a PDF file. If the page contains sticky elements, they can be removed with Javascript to get a proper export.
 
-13. Open Chrome headless  
+13. Open Chrome headless
 Open Chrome in headless mode
 
-14. Take screenshot from coordinates  
+14. Take screenshot from coordinates
 Take a screenshot to a section of the page by coordinates
 
-15. Get bounding rectangle  
+15. Get bounding rectangle
 Obtains x and y coordinates and dimensions of an object
 
-16. Get location of an object  
+16. Get location of an object
 Get x and y coordinates of an object
 
-17. Get size of an object  
+17. Get size of an object
 Get size of an object
 
-18. Open Chrome developer mode  
+18. Open Chrome developer mode
 Open Google Chrome with unsafe mode or debugger mode
 
-19. See Console  
+19. See Console
 Get info from console
 
-20. WebPage to PNG  
+20. WebPage to PNG
 It takes multiple snapshots of the web page and concatenates them into one. If the page contains fixed elements, they can be removed with Javascript to obtain a correct export.
 
-21. Hover Element  
+21. Hover Element
 Move mouse over the element
 
-22. Open Edge (Chromium)  
+22. Open Edge (Chromium)
 Open the new Edge based on Chromium
 
-23. Click Pro  
+23. Click Pro
 Click on a selected object waiting that it's clickeable
 
-24. Extract text Pro  
+24. Extract text Pro
 Get a text object waiting that it's present
 
-25. Select object Pro  
+25. Select object Pro
 Select an object waiting that it's present
 
-26. Change to iframe Pro  
+26. Change to iframe Pro
 Change to iframe waiting that it's present
 
-27. Change to iframes nested  
+27. Change to iframes nested
 Enter multiple iframes waiting for them to appear
 
-28. Send Keys  
+28. Send Keys
 Similar to Send keys web, but low level
 
-29. Print to PDF (Chrome)  
+29. Print to PDF (Chrome)
 Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 
-30. Print to PDF 2  
+30. Print to PDF 2
 Print the page as a PDF in Chrome. The PDF is generated based on the available content of the page. It does not represent a true copy of the site.
 
-31. Force Download  
+31. Force Download
 Force Download
 
-32. Open New Tab  
+32. Open New Tab
 Open new tab with the URL
 
-33. Open Browser  
+33. Open Browser
 Open a browser the URL
 
-34. Drag and drop  
+34. Drag and drop
 Do a drag and drop
 
-35. Upload files  
+35. Upload files
 Command to upload one or more files to an input of type file. Just complete a single value depending on how many files you want to upload.
 
-36. Send key combination  
+36. Send key combination
 Command to send key combination
 
-37. Right Click  
+37. Right Click
 Right click on a selected object
 
-38. Get image  
+38. Get image
 This command allows you to download an image from an <img> tag
 
-39. Select multiple options  
+39. Select multiple options
 Select multiple options from a select
 
-40. Delete cookies  
+40. Delete cookies
 Delete browser cookies
 
-41. Get Cookies  
+41. Get Cookies
 Get the current browser cookies
 
-42. Clear Cache Chrome  
+42. Clear Cache Chrome
 Clears the cache stored in the browser
 
-43. Access Shadow DOM  
+43. Access Shadow DOM
 Access an element within a Shadow DOM. The data must belong to the parent element of the shadow-root.
 
-44. Zoom  
+44. Zoom
 Zoom In or Zoom Out in Google Chrome and Firefox browsers.
 
-45. Get tab titles  
+45. Get tab titles
 Returns a list with the titles of all open tabs in the browser.
 
-46. Switch tab by title  
-Switches browser control to the first tab whose title contains the specified text.  
+46. Switch tab by title
+Switches browser control to the first tab whose title contains the specified text.
+
+47. Take Playwright
+Command that allows using the commands of modules that use selenium such as this one or the native web module with the browser opened by Playwright. To close the browser you will have to use the Close browser command from the Playwright module
 
 
 
@@ -170,6 +173,6 @@ Switches browser control to the first tab whose title contains the specified tex
 ### Dependencies
 - [**beautifulsoup4**](https://pypi.org/project/beautifulsoup4/)- [**requests**](https://pypi.org/project/requests/)
 ### License
-  
-![MIT](https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265)  
-[MIT](http://opensource.org/licenses/mit-license.ph)
+
+![MIT](https://img.shields.io/github/license/instaloader/instaloader.svg)
+[MIT](https://opensource.org/license/mit)
