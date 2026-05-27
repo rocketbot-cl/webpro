@@ -559,3 +559,24 @@ Comando que permite el utilizar los comandos de modulos que utilizan selenium co
 |Puerto de Depuración|Puerto de depuracion de la ventana abierta por Playwright.|9222|
 |Id|Id del navegador|4|
 |Tiempo de espera|Tiempo de espera en segundos|5|
+
+### Abrir Navegador del Sistema
+
+Abre un navegador del sistema y, con un puerto de depuración, lo asocia a Selenium para utilizar comandos del módulo webpro.
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|URL inicial|URL opcional para abrir al iniciar el navegador.|https://www.google.com|
+|Ejecutable|Ruta del ejecutable del navegador del sistema.|C:/Program Files/Google/Chrome/Application/chrome.exe|
+|Carpeta de perfil|Carpeta de perfil opcional para abrir el navegador con datos persistentes.|C:/Users/user/AppData/Local/Google/Chrome/User Data|
+|Puerto de depuración|Puerto de depuración remota del navegador del sistema.|9222|
+|Id|Id del navegador|4|
+|Tiempo de espera|Tiempo de espera en segundos|100|
+|Variable PID navegador|Variable donde se almacenará el PID del navegador del sistema para luego cerrarlo.|pid_browser|
+
+### Cerrar Navegador del Sistema
+
+Cierra el navegador del sistema utilizando el PID guardado.
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Id|Id del navegador|4|
+|Variable PID navegador|Variable donde se guardó el PID del navegador del sistema.|pid_browser|

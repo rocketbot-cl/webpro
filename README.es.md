@@ -159,6 +159,12 @@ Cambia el control del navegador a la primera pestaña cuyo título contenga el t
 47. Tomar Playwright
 Comando que permite el utilizar los comandos de modulos que utilizan selenium como este o el modulo nativo web con el navegador abierto por Playwright. Para cerrar el navegador se tendra que usar el comando Cerrar navegador del modulo Playwright
 
+48. Abrir Navegador del Sistema
+Abre un navegador del sistema y, con un puerto de depuración, lo asocia a Selenium para utilizar comandos del módulo webpro.
+
+49. Cerrar Navegador del Sistema
+Cierra el navegador del sistema utilizando el PID guardado.
+
 
 
 
