@@ -113,6 +113,45 @@ def getBoundingClientRect(type_element, selector):
 
     return rect
 
+def useOpenedBrowser(newId, timeout, debugger_address):
+    import os
+    import platform
+    from selenium.webdriver import Chrome
+    from selenium.webdriver.chrome.options import Options
+
+    platform_ = platform.system()
+
+    if platform_.endswith('dows'):
+        chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
+    elif platform_ == "Linux" or platform_ == "Linux2":
+        chrome_driver = os.path.join(base_path, "drivers", "linux", "chrome", "chromedriver")
+    else:
+        chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
+
+    caps = Options()
+    caps.add_experimental_option("debuggerAddress", debugger_address)
+    browser_driver = Chrome(executable_path=chrome_driver, options=caps)
+
+    try:
+        browser_driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    except:
+        pass
+
+    try:
+        browser_driver.execute_cdp_cmd(
+            "Page.addScriptToEvaluateOnNewDocument",
+            {
+                "source": "const newProto = navigator.__proto__;delete newProto.webdriver;navigator.__proto__ = newProto;",
+            },
+        )
+    except Exception as e:
+        print(f"Error while trying to configure the detection bypass: {e}")
+
+    web_driver = GetGlobals("web")
+    web_driver.driver_actual_id = newId
+    web_driver.driver_list[web_driver.driver_actual_id] = browser_driver
+    web_driver.driver_list[web_driver.driver_actual_id].set_page_load_timeout(int(timeout))
+
 types = {
         "name": By.NAME,
         "id": By.ID,
@@ -1575,6 +1614,9 @@ try:
         newId = GetParams("newId")
         timeout = GetParams("timeout")
 
+        if not debugging_port:
+            raise Exception ("Debuggin Port cannot be empty")
+        
         debugger_address = f"127.0.0.1:{debugging_port}"
         
         if not newId:
@@ -1583,34 +1625,98 @@ try:
         if not timeout:
                 timeout = 100
             
-        if not debugging_port:
-            raise Exception ("Debuggin Port cannot be empty")
-        try:    
-            platform_ = platform.system()
-            # Rutas idénticas a tu módulo original
-            if platform_.endswith('dows'):
-                chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers\win\chrome"), "chromedriver.exe")
-            elif platform_ == "Linux" or platform_ == "Linux2":
-                chrome_driver = os.path.join(base_path, "drivers", "linux", "chrome", "chromedriver")
-            else:
-                chrome_driver = os.path.join(base_path, os.path.normpath(r"drivers/mac/chrome"), "chromedriver")
-            
-            caps = selenium.webdriver.ChromeOptions()
-            caps.add_experimental_option("debuggerAddress", debugger_address)
-            browser_driver = Chrome(executable_path=chrome_driver, options=caps)
-            
-            try:
-                browser_driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-            except:
-                pass
-
-            webdriver.driver_actual_id = newId
-            webdriver.driver_list[webdriver.driver_actual_id] = browser_driver
-            webdriver.driver_list[webdriver.driver_actual_id].set_page_load_timeout(int(timeout))
+        try:
+            useOpenedBrowser(newId, timeout, debugger_address)    
                         
         except Exception as e:
             PrintException()
             raise e
+        
+    if module == "openSystemBrowser":
+        import subprocess
+        from time import sleep
+
+        depuration_port = GetParams("depuration_port")
+        profile_folder = GetParams("profile_folder")
+        url = GetParams("url")
+        executable = GetParams("executable")
+        newId = GetParams("newId")
+        pid_chrome = GetParams("pid_chrome")
+        timeout = GetParams("timeout")
+
+        if not executable:
+            raise Exception ("Executable cannot be left empty")
+        
+        if not depuration_port:
+            raise Exception ("Debuggin Port cannot be left empty")
+        
+        if not profile_folder:
+            raise Exception ("Profile folder cannot be left empty")
+        
+        if not newId:
+            newId = "default"
+
+        if not timeout:
+            timeout = 100
+        
+
+        debugger_address = f"127.0.0.1:{depuration_port}"
+
+        browser_parameters = [f"{executable}", f"--remote-debugging-port={depuration_port}", "--start-maximized"]
+
+        if profile_folder:
+            browser_parameters.append(f"--user-data-dir={profile_folder}")
+        
+        if url:
+            browser_parameters.append(f"{url}")
+
+        try:
+            proc = subprocess.Popen(browser_parameters)
+
+            sleep(3)
+
+            cmd_netstat = f'netstat -ano | findstr :{depuration_port}'
+            resultado_netstat = os.popen(cmd_netstat).read()
+
+            pid_real = ""
+            for linea in resultado_netstat.strip().split('\n'):
+                if 'LISTENING' in linea:
+                    pid_real = linea.split()[-1]
+                    break
+
+            useOpenedBrowser(newId, timeout, debugger_address)
+
+            print("Browser's pid: ", pid_real)
+            SetVar(pid_chrome, pid_real)
+        
+        except Exception as e:
+            PrintException()
+            raise e
+
+    if module == "closeSystemBrowser":
+        newId = GetParams("newId")
+        pid_chrome = GetParams("pid_chrome")
+        if not pid_chrome:
+            raise Exception("Pid Chrome cannot be left empty")
+        
+        if not newId:
+            newId = webdriver.driver_actual_id
+
+        try:
+            os.system(f"taskkill /PID {pid_chrome} /T /F")
+
+            if newId in webdriver.driver_list:
+                driver_to_close = webdriver.driver_list[newId]
+
+                driver_to_close.quit()
+                
+                del webdriver.driver_list[newId]
+
+                if webdriver.driver_actual_id == newId:
+                    webdriver.driver_actual_id = "default"
+
+        except Exception:
+            pass
     
 except Exception as e:
     traceback.print_exc()

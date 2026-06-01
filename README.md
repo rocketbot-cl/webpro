@@ -159,6 +159,12 @@ Switches browser control to the first tab whose title contains the specified tex
 47. Take Playwright
 Command that allows using the commands of modules that use selenium such as this one or the native web module with the browser opened by Playwright. To close the browser you will have to use the Close browser command from the Playwright module
 
+48. Open System Browser
+Opens a system browser and, with a debugging port, attaches it to Selenium to use webpro module commands.
+
+49. Close System Browser
+Closes the system browser using the stored PID.
+
 
 
 

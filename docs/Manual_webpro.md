@@ -556,3 +556,24 @@ Command that allows using the commands of modules that use selenium such as this
 |Debugging Port|Debugging port of the window opened by Playwright.|9222|
 |Id|Id of the browser|4|
 |Timeout|Timeout in seconds|5|
+
+### Open System Browser
+
+Opens a system browser and, with a debugging port, attaches it to Selenium to use webpro module commands.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Initial URL|Optional URL to open when launching the browser.|https://www.google.com|
+|Executable|Path to the system browser executable.|C:/Program Files/Google/Chrome/Application/chrome.exe|
+|Profile folder|Optional profile folder to open browser with persistent data.|C:/Users/user/AppData/Local/Google/Chrome/User Data|
+|Debugging port|Remote debugging port of the system browser.|9222|
+|Id|Id of the browser|4|
+|Timeout|Timeout in seconds|100|
+|Browser PID variable|Variable where the system browser PID will be stored to close it later.|pid_browser|
+
+### Close System Browser
+
+Closes the system browser using the stored PID.
+|Parameters|Description|example|
+| --- | --- | --- |
+|Id|Id of the browser|4|
+|Browser PID variable|Variable where the system browser PID was stored.|pid_browser|
