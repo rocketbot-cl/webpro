@@ -1718,6 +1718,26 @@ try:
         except Exception:
             pass
     
+    
+    if module == "closeBrowser":
+            newId = GetParams("newId")
+            
+            if not newId:
+                raise Exception("id Chrome cannot be left empty")
+    
+            try:
+                if newId in webdriver.driver_list:
+                    driver_to_close = webdriver.driver_list[newId]
+    
+                    driver_to_close.quit()
+                    
+                    del webdriver.driver_list[newId]
+    
+                    if webdriver.driver_actual_id == newId:
+                        webdriver.driver_actual_id = "default"
+    
+            except Exception as e:
+                PrintException()
 except Exception as e:
     traceback.print_exc()
     PrintException()
