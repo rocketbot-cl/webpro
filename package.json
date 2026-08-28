@@ -7,7 +7,7 @@
       "pr": "Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web"
     },
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "12.14.10",
+    "version": "12.14.11",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "name": "webpro",
@@ -5352,6 +5352,29 @@
                 "data_type": "str",
                 "default": null,
                 "required": true
+              },
+              {
+                "type": "folder_select",
+                "placeholder": {
+                  "es": "C:/folder",
+                  "en": "C:/folder",
+                  "pr": "C:/folder"
+                },
+                "title": {
+                  "es": "Carpeta de descargas:",
+                  "en": "Download Folder:",
+                  "pr": "Pasta de download:"
+                },
+                "description": {
+                  "es": "Ruta de la carpeta de descargas para el navegador abierto",
+                  "en": "Download folder for the opened browser",
+                  "pr": "Caminho da pasta de downloads para o navegador aberto"
+                },
+                "id": "download_path",
+                "css": "col-md-12",
+                "data_type": "str",
+                "default": null,
+                "required": false
               },
               {
                 "type": "input",

@@ -1643,6 +1643,10 @@ try:
         newId = GetParams("newId")
         pid_chrome = GetParams("pid_chrome")
         timeout = GetParams("timeout")
+        download_path = GetParams("download_path")
+        
+        if download_path:
+            download_path = download_path.replace("/", os.sep)
 
         if not executable:
             raise Exception ("Executable cannot be left empty")
@@ -1650,9 +1654,33 @@ try:
         if not depuration_port:
             raise Exception ("Debuggin Port cannot be left empty")
         
-        if not profile_folder:
+        if not profile_folder or not os.path.isdir(profile_folder):
             raise Exception ("Profile folder cannot be left empty")
-        
+
+        if download_path:
+            preferences_directory = os.path.join(profile_folder, "Default")
+            if not os.path.isdir(preferences_directory):
+                os.makedirs(preferences_directory)
+
+            preferences_file = os.path.join(profile_folder, "Preferences")
+            current_preferences = {}
+            if os.path.isfile(preferences_file):
+                try:
+                    with open(preferences_file, "r", encoding="utf-8") as file:
+                        current_preferences = json.load(file)
+                except Exception:
+                    pass
+
+            if "download" not in current_preferences:
+                current_preferences["download"] = {}
+
+            current_preferences["download"]["default_directory"] = download_path
+            current_preferences["download"]["prompt_for_download"] = False
+
+            print(download_path)
+            with open(preferences_file, "w", encoding="utf-8") as f:
+                json.dump(current_preferences, f, indent=4) 
+
         if not newId:
             newId = "default"
 
