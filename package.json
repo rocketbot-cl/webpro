@@ -369,6 +369,7 @@
                 "en": "In this field we indicate the path to the file where the cookies will be saved",
                 "pr": "Neste campo indicamos o caminho para o arquivo onde os cookies serão salvos"
               },
+              "remove_vars": true,
               "id": "file_",
               "css": "col-md-12",
               "data_type": "str",
