@@ -7,7 +7,7 @@
       "pr": "Módulo com funcionalidades estendidas para o navegador que funciona como complemento aos comandos da seção web"
     },
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version": "12.14.11",
+    "version": "12.14.12",
     "license": "MIT",
     "homepage": "http://rocketbot.com/",
     "name": "webpro",
@@ -5343,15 +5343,43 @@
                   "pr": "Pasta de perfil"
                 },
                 "description": {
-                  "es": "Carpeta de perfil opcional para abrir el navegador con datos persistentes.",
-                  "en": "Optional profile folder to open browser with persistent data.",
-                  "pr": "Pasta de perfil opcional para abrir o navegador com dados persistentes."
+                  "es": "Carpeta de perfil. Valor requerido debido a que si no es pasada se abrirá el navegador con el perfil default del sistema.",
+                  "en": "Profile folder. Required because if not passed, the browser will open with the system default profile.",
+                  "pr": "Pasta de perfil. opcional para abrir o navegador com dados persistentes."
                 },
                 "id": "profile_folder",
                 "css": "col-md-12",
                 "data_type": "str",
                 "default": null,
                 "required": true
+              },
+              {
+                "type": "textarea",
+                "placeholder": {
+                  "es": "['--incognito','--kiosk-printing','--new-window']",
+                  "en": "['--incognito','--kiosk-printing','--new-window']",
+                  "pr": "['--incognito','--kiosk-printing','--new-window']"
+                },
+                "title": {
+                  "es": "Argumentos para abrir el navegador:",
+                  "en": "Arguments to open the browser:",
+                  "pr": "Argumentos para abrir o navegador:"
+                },
+                "description": {
+                  "es": "Argumentos en formato lista",
+                  "en": "Arguments in list format",
+                  "pr": "Argumentos em formato de lista"
+                },
+                "help": {
+                  "es": "Posibles valores de Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/chrome_switches.cc",
+                  "en": "Possible values of Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/chrome_switches.cc",
+                  "pr": "Valores possíveis do Chrome: https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/chrome_switches.cc"
+                },
+                "id": "arguments",
+                "css": "col-md-12",
+                "data_type": "str",
+                "default": null,
+                "required": false
               },
               {
                 "type": "folder_select",

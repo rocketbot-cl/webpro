@@ -1644,6 +1644,12 @@ try:
         pid_chrome = GetParams("pid_chrome")
         timeout = GetParams("timeout")
         download_path = GetParams("download_path")
+        arguments = GetParams("arguments")
+
+        try:
+            arguments = eval(arguments)
+        except:
+            pass
         
         if download_path:
             download_path = download_path.replace("/", os.sep)
@@ -1654,15 +1660,15 @@ try:
         if not depuration_port:
             raise Exception ("Debuggin Port cannot be left empty")
         
-        if not profile_folder or not os.path.isdir(profile_folder):
-            raise Exception ("Profile folder cannot be left empty")
+        #if not profile_folder or not os.path.isdir(profile_folder):
+        #    raise Exception ("Profile folder cannot be left empty")
 
         if download_path:
             preferences_directory = os.path.join(profile_folder, "Default")
             if not os.path.isdir(preferences_directory):
                 os.makedirs(preferences_directory)
 
-            preferences_file = os.path.join(profile_folder, "Preferences")
+            preferences_file = os.path.join(preferences_directory, "Preferences")
             current_preferences = {}
             if os.path.isfile(preferences_file):
                 try:
@@ -1677,7 +1683,6 @@ try:
             current_preferences["download"]["default_directory"] = download_path
             current_preferences["download"]["prompt_for_download"] = False
 
-            print(download_path)
             with open(preferences_file, "w", encoding="utf-8") as f:
                 json.dump(current_preferences, f, indent=4) 
 
@@ -1691,6 +1696,8 @@ try:
         debugger_address = f"127.0.0.1:{depuration_port}"
 
         browser_parameters = [f"{executable}", f"--remote-debugging-port={depuration_port}", "--start-maximized"]
+        if arguments and isinstance(arguments, list):
+            browser_parameters.extend(arguments)
 
         if profile_folder:
             browser_parameters.append(f"--user-data-dir={profile_folder}")
