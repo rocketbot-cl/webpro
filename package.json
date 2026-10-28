@@ -370,10 +370,7 @@
                 "pr": "Neste campo indicamos o caminho para o arquivo onde os cookies serão salvos"
               },
               "id": "file_",
-              "css": "col-md-12",
-              "data_type": "str",
-              "default": null,
-              "required": true
+              "css": "col-md-12"
             },
             {
               "type": "input",
@@ -397,7 +394,7 @@
               "css": "col-md-12",
               "data_type": "str",
               "default": null,
-              "required": true
+              "required": false
             }
           ]
         },
@@ -5640,4 +5637,3 @@
         }
     ]
   }
-  

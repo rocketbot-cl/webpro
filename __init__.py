@@ -346,11 +346,14 @@ if module == "SaveCookies":
     result = GetParams('result')
 
     try:
+        if not file_ and not result:
+            raise Exception("You must specify a file path or a variable to store the cookies")
         
         cookies = driver.get_cookies()
         print("--*", cookies)
-        with open(file_, 'wb') as filehandler:
-            pickle.dump(cookies, filehandler)
+        if file_:
+            with open(file_, 'wb') as filehandler:
+                pickle.dump(cookies, filehandler)
 
         if result:
             SetVar(result, str(cookies))  
@@ -1218,7 +1221,7 @@ if module == "open_browser":
     newId = GetParams("newId")
     download_path = GetParams("download_path")
     if download_path:
-        download_path = download_path.replace("/", os.sep)
+        download_path = download_path.replace("/", os.sep).rstrip(os.sep)
     force_downloads = GetParams("force_downloads")
     profile_path = GetParams("profile_path")
     
